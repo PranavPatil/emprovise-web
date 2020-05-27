@@ -1,4 +1,4 @@
-=====
+# [Chive](https://github.com/fusonic/chive) - MySQL Data Management tool (Deprecated July 2014)
 
 Chive is a modern Open-Source MySQL Data Management tool. With it's fast and elaborate user interface it is getting very popular especially by web engineers. Chive was created because of an disaffection with existing tools. They usually were hard to handle and very time-consuming while the daily use of an web engineer.
 
@@ -27,5 +27,3 @@ Chive is sponsored by Fusonic (http://www.fusonic.net)
 Licence
 =====
 Chive is released under the terms of the GNU General Public License v3.
-
-# Chive is no longer actively developed / maintained from July 2014
