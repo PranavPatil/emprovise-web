@@ -1,0 +1,146 @@
+<div>
+
+<div class="colmask leftmenu">
+<div class="colleft">
+
+<div class="col1"><!-- Column 1 start -->
+<p><strong>Date Created:</strong> Mon 11-Oct-2010</p>
+<ul><br>
+<font face="Arial">You want to deploy an application that has been built
+ by an ANT script in Eclipse. Eclipse makes it easy to use Ant build 
+scripts. But what if you want to run an external tool like ws_ant?. 
+WS_Ant scripts are not supported by ANT natively as WS_Ant is really 
+just a wrapper around some Java Libraries that provide for command line 
+utils.</font><br>
+<br>
+<font face="Arial">Since I am using Ant to compile my artefacts and make
+ a WAR, then build an EAR I want to continue to Use Eclipse to help me 
+deploy. Since in this case I am in development mode and do not want to 
+write in Jython, I want to use the same ANT like syntax. Below is my 
+sample WS_Ant build script. Below is how to create an external commend 
+tool option to call ws_ant from Eclipse.</font><br>
+<br>
+<font color="#808080" face="Courier New">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</font><br>
+<br>
+<font color="#000080" face="Courier New">&lt;project</font><font face="Courier New"> </font><font color="#000080" face="Courier New">name=</font><font color="#008000" face="Courier New">"LogViewEAR Application Depoyment"</font><font face="Courier New"> </font><font color="#000080" face="Courier New">default=</font><font color="#008000" face="Courier New">"build-all"</font><font face="Courier New"> </font><font color="#000080" face="Courier New">basedir=</font><font color="#008000" face="Courier New">"."</font><font color="#000080" face="Courier New">&gt;</font><br>
+<font face="Courier New">	</font><font color="#800000" face="Courier New">&lt;!-- global properties --&gt;</font><br>
+<font face="Courier New">	</font><font color="#000080" face="Courier New">&lt;property</font><font face="Courier New"> </font><font color="#000080" face="Courier New">name=</font><font color="#008000" face="Courier New">"hostName"</font><font face="Courier New"> </font><font color="#000080" face="Courier New">value=</font><font color="#008000" face="Courier New">"localhost"</font><font face="Courier New"> </font><font color="#000080" face="Courier New">/&gt;</font><br>
+<font face="Courier New">	</font><font color="#000080" face="Courier New">&lt;property</font><font face="Courier New"> </font><font color="#000080" face="Courier New">name=</font><font color="#008000" face="Courier New">"connType"</font><font face="Courier New"> </font><font color="#000080" face="Courier New">value=</font><font color="#008000" face="Courier New">"SOAP"</font><font face="Courier New"> </font><font color="#000080" face="Courier New">/&gt;</font><br>
+<font face="Courier New">	</font><font color="#000080" face="Courier New">&lt;property</font><font face="Courier New"> </font><font color="#000080" face="Courier New">name=</font><font color="#008000" face="Courier New">"port"</font><font face="Courier New"> </font><font color="#000080" face="Courier New">value=</font><font color="#008000" face="Courier New">"8880"</font><font face="Courier New"> </font><font color="#000080" face="Courier New">/&gt;</font><br>
+<font face="Courier New">	</font><font color="#000080" face="Courier New">&lt;property</font><font face="Courier New"> </font><font color="#000080" face="Courier New">name=</font><font color="#008000" face="Courier New">"userId"</font><font face="Courier New"> </font><font color="#000080" face="Courier New">value=</font><font color="#008000" face="Courier New">"wasadmin"</font><font face="Courier New"> </font><font color="#000080" face="Courier New">/&gt;</font><br>
+<font face="Courier New">	</font><font color="#000080" face="Courier New">&lt;property</font><font face="Courier New"> </font><font color="#000080" face="Courier New">name=</font><font color="#008000" face="Courier New">"password"</font><font face="Courier New"> </font><font color="#000080" face="Courier New">value=</font><font color="#008000" face="Courier New">"wasadmin"</font><font face="Courier New"> </font><font color="#000080" face="Courier New">/&gt;</font><br>
+<font face="Courier New">	</font><font color="#000080" face="Courier New">&lt;property</font><font face="Courier New"> </font><font color="#000080" face="Courier New">name=</font><font color="#008000" face="Courier New">"deployEar.dir"</font><font face="Courier New"> </font><font color="#000080" face="Courier New">value=</font><font color="#008000" face="Courier New">"c:/temp/antbuild/dist"</font><font face="Courier New"> </font><font color="#000080" face="Courier New">/&gt;</font><br>
+<font face="Courier New">	</font><font color="#000080" face="Courier New">&lt;property</font><font face="Courier New"> </font><font color="#000080" face="Courier New">name=</font><font color="#008000" face="Courier New">"deployEar"</font><font face="Courier New"> </font><font color="#000080" face="Courier New">value=</font><font color="#008000" face="Courier New">"logViewEAR.ear"</font><font face="Courier New"> </font><font color="#000080" face="Courier New">/&gt;</font><br>
+<font face="Courier New">	</font><font color="#000080" face="Courier New">&lt;property</font><font face="Courier New"> </font><font color="#000080" face="Courier New">name=</font><font color="#008000" face="Courier New">"wasHome.dir"</font><font face="Courier New"> </font><font color="#000080" face="Courier New">value=</font><font color="#008000" face="Courier New">"c:/was7/appserver"</font><font face="Courier New"> </font><font color="#000080" face="Courier New">/&gt;</font><br>
+<font face="Courier New">	</font><br>
+<font face="Courier New">    </font><font color="#800000" face="Courier New">&lt;!-- mbean declaration" --&gt;</font><br>
+<font face="Courier New">	</font><font color="#000080" face="Courier New">&lt;</font><u><font color="#000080" face="Courier New">taskdef</font></u><u><font face="Courier New"> </font></u><u><font color="#000080" face="Courier New">name=</font></u><u><font color="#008000" face="Courier New">"wsInstallApp"</font></u><u><font face="Courier New"> </font></u><u><font color="#000080" face="Courier New">classname=</font></u><u><font color="#008000" face="Courier New">"com.ibm.websphere.ant.tasks.InstallApplication"</font></u><u><font face="Courier New"> </font></u><u><font color="#000080" face="Courier New">/&gt;</font></u><br>
+<font face="Courier New">	</font><br>
+<font face="Courier New">	</font><font color="#800000" face="Courier New">&lt;!-- installation Target--&gt;</font><br>
+<font face="Courier New">	</font><font color="#000080" face="Courier New">&lt;target</font><font face="Courier New"> </font><font color="#000080" face="Courier New">name=</font><font color="#008000" face="Courier New">"installEar"</font><font color="#000080" face="Courier New">&gt;</font><br>
+<font face="Courier New">		</font><font color="#000080" face="Courier New">&lt;echo</font><font face="Courier New"> </font><font color="#000080" face="Courier New">message=</font><font color="#008000" face="Courier New">"Deployable EAR File found at: ${deployEar.dir}/${deployEar}"</font><font face="Courier New"> </font><font color="#000080" face="Courier New">/&gt;</font><br>
+<font face="Courier New">		</font><font color="#000080" face="Courier New">&lt;wsInstallApp</font><font face="Courier New"> </font><font color="#000080" face="Courier New">ear=</font><font color="#008000" face="Courier New">"${deployEar.dir}/${deployEar}"</font><font face="Courier New"> </font><br>
+<font face="Courier New">		</font><font color="#000080" face="Courier New">wasHome=</font><font color="#008000" face="Courier New">"${wasHome.dir}"</font><font face="Courier New"> </font><br>
+<font face="Courier New">		</font><font color="#000080" face="Courier New">conntype=</font><font color="#008000" face="Courier New">"${connType}"</font><br>
+<font face="Courier New">		</font><font color="#000080" face="Courier New">port=</font><font color="#008000" face="Courier New">"${port}"</font><font face="Courier New"> </font><br>
+<font face="Courier New">		</font><font color="#000080" face="Courier New">host=</font><font color="#008000" face="Courier New">"${hostName}"</font><font face="Courier New"> </font><br>
+<font face="Courier New">		</font><font color="#000080" face="Courier New">user=</font><font color="#008000" face="Courier New">"${userId}"</font><font face="Courier New"> </font><br>
+<font face="Courier New">		</font><font color="#000080" face="Courier New">password=</font><font color="#008000" face="Courier New">"${password}"</font><font face="Courier New"> </font><font color="#000080" face="Courier New">/&gt;</font><br>
+<font face="Courier New">	</font><font color="#000080" face="Courier New">&lt;/target&gt;</font><br>
+<br>
+<font face="Courier New">	</font><font color="#000080" face="Courier New">&lt;target</font><font face="Courier New"> </font><font color="#000080" face="Courier New">name=</font><font color="#008000" face="Courier New">"build-all"</font><font face="Courier New"> </font><font color="#000080" face="Courier New">depends=</font><font color="#008000" face="Courier New">"installEar"</font><font color="#000080" face="Courier New">&gt;</font><br>
+<font face="Courier New">		</font><font color="#800000" face="Courier New">&lt;!--Main Target--&gt;</font><br>
+<font face="Courier New">	</font><font color="#000080" face="Courier New">&lt;/target&gt;</font><br>
+<br>
+<font color="#000080" face="Courier New">&lt;/project&gt;</font><br>
+<br>
+<font color="#000080" face="Courier New">=============================</font><br>
+<br>
+<font face="Arial">How to create an external run configuration....</font><br>
+<br>
+<font face="Arial">Either right-mouse click on </font><img src="/content/articles/tools/images/wsantwitheclipse_files/0_002.gif" width="56" height="33"><font face="Arial"> in the Eclipse main menu or..</font><br>
+<br>
+<img src="/content/articles/tools/images/wsantwitheclipse_files/0.gif" width="596" height="706"><br>
+<br>
+<font face="Arial">then select External Tools Configuration</font><br>
+<br>
+<font face="Arial">click the new button (left button in External tools configuration window)</font><br>
+<br>
+<img src="/content/articles/tools/images/wsantwitheclipse_files/1.gif" width="642" height="403"><br>
+<br>
+<font face="Arial">Type in the name you want to refer to ie the name of the external configuration as you wish to see it in any shortcut menus.</font><br>
+<br>
+<font face="Arial">I have used WS_ANT</font><br>
+<br>
+<font face="Arial">Type in the location of ws_ant bat/shellscript</font><br>
+<br>
+<font face="Arial">C:\WAS7\AppServer\bin\ws_ant.bat</font><br>
+<br>
+<font face="Arial">Type in the working directory for the ANT project in 
+your Eclipse workspace that contains the build file. My build file is 
+called deploy.xml and my generic project for ANT script is called 
+BuildWAR</font><br>
+<br>
+<font face="Arial">so typing ${workspace_loc:/BuildWAR/} means that 
+ws_ant should start working within the BuildWAR folder from the root of 
+my Eclipse workspace.</font><br>
+<br>
+<font face="Arial">In the Argument section, I have typed -f deploy.xml 
+which is just like a normal ANT call where you passthe name of the build
+ file for example deploy.xml. </font><br>
+<br>
+<font face="Arial">Note: Using my generic build project allows me to group all my XML build scripts.</font><br>
+<br>
+<font face="Arial">click Apply to save the configuration,</font><br>
+<br>
+<font face="Arial">=============================</font><br>
+<br>
+<font face="Arial">Running the deployment script form within Eclipse.</font><br>
+<br>
+<font face="Arial">Simply right-mouse click the run external tools configuration toolbar button as shown below</font><br>
+<br>
+<img src="/content/articles/tools/images/wsantwitheclipse_files/3.gif" width="280" height="195"><br>
+<br>
+<font face="Arial">The result is logged within the Eclips econsile window:</font><br>
+<br>
+<font face="Courier New">Buildfile: deploy.xml</font><br>
+<br>
+<font face="Courier New">installEar:</font><br>
+<font face="Courier New">     [echo] Deployable EAR File found at: c:/temp/antbuild/dist/logViewEAR.ear</font><br>
+<font face="Courier New">[wsInstallApp] Installing Application [c:\temp\antbuild\dist\logViewEAR.ear]...</font><br>
+<font face="Courier New">  [wsadmin] WASX7209I: Connected to process 
+"server1" on node T60Windows7PNode01 using SOAP connector;  The type of 
+process is: UnManagedProcess</font><br>
+<font face="Courier New">  [wsadmin] WASX7017E: Exception received while
+ running file "C:\Users\SteveR\AppData\Local\Temp\wsant1030jacl"; 
+exception information: com.ibm.ws.scripting.ScriptingException: 
+WASX7109E: Insufficient data for install task "MapWebModToVH</font><br>
+<br>
+<font face="Courier New">  [wsadmin] ADMA0010E: A Validation error 
+occurred in task Selecting virtual hosts for Web modules. A virtual host
+ is not specified for Web module LogView with URI 
+LogViewWAR.war,WEB-INF/web.xml."</font><br>
+<br>
+<font face="Courier New">[wsInstallApp] Installed Application [c:\temp\antbuild\dist\logViewEAR.ear]</font><br>
+<br>
+<font face="Courier New">build-all:</font><br>
+<font color="#FF0000" face="Courier New">  [wsadmin] Java Result: 105</font><br>
+<br>
+<font face="Courier New">BUILD SUCCESSFUL</font><br>
+<font face="Courier New">Total time: 43 seconds</font><br>
+<br>
+<br>
+<img src="/content/articles/tools/images/wsantwitheclipse_files/4.gif" width="577" height="394"><br>
+<br>
+<font face="Arial">So we can now run the ANT build script to package my 
+EAR and then run the deploy script to deploy when we have a successful 
+build.</font><br>
+<br>
+<br>
+</ul>
+<br>
+<!-- Column 1 end --></div>
+</div><!-- End class footer -->
+
+</div>
+</div>

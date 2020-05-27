@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<tracklist>
+  <track>
+     <title>Love You Like A Love Song</title>
+     <artist>Selena Gomez</artist>
+     <rating>10</rating>
+     <cover>Love_Song-Selena_Gomez.jpg</cover>
+     <file>album1/Selena_Gomez_-_Love_You_Like_A_Love_Song</file>
+  </track>
+  <track>
+	 <title>What the Hell</title>
+     <artist>Avril Lavigne</artist>
+     <rating>10</rating>
+     <cover>What_the_Hell-Avril_Lavigne.jpg</cover>
+     <file>album1/Avril_Lavigne_-_What_the_Hell</file>
+  </track>
+  <track>
+	 <title>Secrets</title>
+     <artist>One Republic</artist>
+     <rating>10</rating>
+     <cover>OneRepublic-Secrets.jpg</cover>
+     <file>album1/OneRepublic_-_Secrets</file>
+  </track>
+  <track>
+	 <title>Mr Es Beautiful Blues</title>
+     <artist>Eels</artist>
+     <rating>10</rating>
+     <cover>Mr_Es_Beautiful_Blues-Eels.jpg</cover>
+     <file>album1/Eels_-_Mr_Es_Beautiful_Blues</file>
+  </track>
+  <track>
+	 <title>My Best Friends Girl</title>
+     <artist>The Cars</artist>
+     <rating>10</rating>
+     <cover>My_Best_Friends_Girl.jpg</cover>
+     <file>album1/The_Cars_-_My_Best_Friends_Girl</file>
+  </track>
+  <track>
+	 <title>Ten Million Flies</title>
+     <artist>Owl City</artist>
+     <rating>10</rating>
+     <cover>Fireflies-Owl_City.png</cover>
+     <file>album1/Owl_City_-_Ten_Million_Flies</file>
+  </track>
+</tracklist>

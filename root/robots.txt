@@ -1,0 +1,9 @@
+# robots.txt for Emprovise.comuf.com
+# Do Not delete this file.
+
+user-agent: *
+disallow: /content/articles/
+disallow: /content/music/
+disallow: /content/rss/
+disallow: /policy.html
+disallow: /terms.html

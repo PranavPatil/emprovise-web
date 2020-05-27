@@ -1,0 +1,357 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>Contact Us</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<meta name="description" content="Contact Emprovise Administrators to provide your valuable feedback" />
+<meta name="keywords" content="contact, us, feedback, suggestions, email, questions"/>
+<link rel="shortcut icon" type="image/x-icon" href="img/globals/emproviseicon.ico" />
+<link rel="stylesheet" href="css/styles.css" type="text/css" />
+<link rel="stylesheet" href="css/mac-menu.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="css/search-box.css" type="text/css" media="screen" />
+
+<!-- Contact Form Page -->
+<link rel="stylesheet" type="text/css" href="css/fancyform.css" />
+<link rel="stylesheet" type="text/css" href="css/bonbon-buttons.css" />
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" type="text/css" />
+<!-- Styles for Contact Form -->
+<style>
+
+  /* Pop Up */
+  #popupContact {
+	height: 430px;
+	width: 700px;
+	overflow: auto;
+	background-color: rgba(0, 0, 0, 0);
+
+	border: 2px solid #cecece;
+	z-index: 15;
+	padding: 20px;
+	color: #000;
+	-webkit-box-shadow: 0px 0px 4px #000 inset;
+	-moz-box-shadow: 0px 0px 4px #000 inset;
+	box-shadow: 0px 0px 4px #000 inset;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	-o-border-radius: 10px;
+	-ms-border-radius: 10px;
+	-khtml-border-radius: 10px;
+	border-radius: 10px;
+
+	-moz-box-shadow: inset 0 0 10px 10px #888;
+    -webkit-box-shadow: inset 0 0 10px 10px #888;
+    box-shadow: inset 0 0 10px 10px #888;
+  }
+
+  #popupContact  h2 {
+	font-size: 20px;
+	padding-top:10px;
+	padding-left:10px;
+    color: #fff;
+    text-shadow: 1px 1px 4px#000;
+  }
+
+  div.message {
+    font: italic normal 75% Georgia, serif;
+    text-align: center;
+    text-shadow: #FFF 0 1px;
+    background: #DDD;
+    background-clip: padding-box;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    display: inline-block;
+    border: 2px solid rgba(0, 0, 0, 0.5);
+    border-radius: 3px;
+    position: relative;
+  }
+
+  div.message:before, div.message:after {
+    content: "";
+    position: absolute;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+  }
+
+  #container{
+	color: #555;
+	font-size: 40px;
+	margin: 0 auto;
+	padding: 100px 0 100px;
+	width: 650px;
+	position:relative;
+	min-height: 90px;
+	line-height:70px;
+
+	font-family:'Open Sans Condensed',sans-serif;
+	text-shadow:1px 1px 0 rgba(255,255,255,0.5);
+	display:none;
+  }
+
+  #container:before{
+	content: ">";
+	font-size: 25px;
+	left: -40px;
+	opacity: 0.25;
+	position: absolute;
+	text-shadow: 1px 1px 0 white;
+	top: 210px;
+  }
+
+</style>
+
+<script type="text/javascript" src="js/fancyform/jquery.js"></script>
+<script type="text/javascript" src="js/fancyform/jquery.validate.min.js"></script>
+<script type="text/javascript" src="js/fancyform/jquery-ui.min.js"></script>
+<script type="text/javascript" src="js/fancyform/jquery.shuffleLetters.js"></script>
+<script type="text/javascript">
+  $(document).ready(function()
+  {
+	// container is the DOM element;
+	var container = $("#container");
+	// Shuffle the contents of container
+	container.shuffleLetters();
+
+	var statusmsg = null;
+
+    $("#html5form").validate({
+
+        rules: {
+            fname: "required",
+            lname: "required",
+            email: {
+					required: true,
+					email: true
+                },
+			feedback: {
+                    required: true,
+                    minlength: 5
+                }
+            },
+
+        errorElement: "div",
+        wrapper: "div",  // a wrapper around the error message
+        errorPlacement: function(error, element) {
+            error.addClass('message');  // add a class to the wrapper
+            offset = element.offset();
+            error.insertBefore(element);
+            error.css('position', 'absolute');
+            error.css('left', element.outerWidth() + 65);
+        },
+
+        messages: {
+            fname: "Please enter your firstname",
+            lname: "Please enter your lastname",
+            feedback: {
+                required: "Please provide your feedback",
+                minlength: "Your feedback must be at least 5 characters long"
+                },
+            email: "Please enter a valid email address"
+        },
+
+		showErrors: function(errorMap, errorList) {
+		    if (errorList.length) {
+		       var s = errorList.shift();
+		       var n = [];
+		       n.push(s);
+		       this.errorList = n;
+		    }
+		    this.defaultShowErrors();
+		},
+
+        submitHandler: function(form) {
+
+//          form.submit();
+			$("#html5form").hide("slide", { direction: "right" }, 1000, function() {
+
+				$("#container").show("slide", { direction: "left" }, 50, function() {
+
+					if(statusmsg == null) {
+						statusmsg = "Thank you for sending your feedback to us !";
+					}
+
+		 			// Shuffle the container with custom text
+					container.shuffleLetters({
+						"text": statusmsg
+					});
+				});
+			});
+        }
+    });
+
+	$("#html5form").removeAttr("novalidate");
+
+	$("#html5form").submit(function(e) {
+
+	   e.preventDefault();
+       dataString = $("#html5form").serialize();
+
+       $.ajax({
+       	  type: "POST",
+          url: "/lib/forms/contact.php",
+          data: dataString,
+          dataType: "json",
+          success: function(data) {
+
+          },
+		  error:function(x,e){
+			if(x.status==0){
+				statusmsg = 'You are offline. Please Check Your Network.';
+			}else if(x.status==404){
+				statusmsg = 'Requested URL not found.';
+			}else if(x.status==500){
+				statusmsg = 'Internel Server Error.';
+			}else if(e=='parsererror'){
+				statusmsg = 'Error. Parsing JSON Request failed. ' + x.responseText;
+			}else if(e=='timeout'){
+				statusmsg = 'Request Time out.';
+			}else {
+				statusmsg = 'Unknown Error. ' + x.responseText;
+			}
+		  }
+       });
+
+	   return false;
+    });
+  });
+</script>
+
+</head>
+<body>
+<div class="bg_png">
+
+<div id="main">
+<!-- header begins -->
+<div id="header">
+	<div id="macmenu">
+    <ul id="macmenu_nav">
+	<li><a href="/">Home</a></li>
+	<li><a href="#">Technology</a>
+		<ul>
+			<li><a href="/projects.php">Projects</a></li>
+			<li><a href="/articles.php">Articles</a></li>
+			<li><a href="/presentations.php">Presentations</a></li>
+		</ul>
+	</li>
+	<li><a href="#">Tools</a>
+		<ul>
+			<li><a href="/search.html">LinkSearch</a></li>
+			<li><a href="/enotes.php">E-Notes</a></li>
+		</ul>
+	</li>
+	<li><a href="#">Entertainment</a>
+		<ul>
+			<li><a href="/music.php">Music</a></li>
+			<li><a href="/video.php">Video</a></li>
+		</ul>
+	</li>
+	<li><a href="/aboutme.php">About</a></li>
+	<li class="current"><a href="/contactus.html">Contact Us</a></li>
+	<li style="float:right; margin-right: 7px; margin-top:-3px;">
+       <form id="searchform" class="searchform" action="/searchpage.php" method="get">
+	     <input name="query" id="query"
+				class="searchfield" value="Search..."
+                onfocus="if (this.value == 'Search...') {this.value = '';}"
+                onblur="if (this.value == '') {this.value = 'Search...';}"
+                type="text" />
+		 <input type="hidden" name="search" value="1" />
+         <input class="searchbutton" type="submit" value=""
+				style="background-image: url(img/searchbox/search-button.png); width: 17px; height: 16px;" />
+       </form>
+    </li>
+    </ul>
+
+    </div>
+	<div id="logo">
+    	<b><a href="/index.html"><img src="img/globals/emprovise.gif" alt="emprovise" width="172" height="28" /></a><br />
+        <span><a href="#"><small style="font-size:10px;">Enshrining Knowledge, Fabricating Ideas</small></a></span>
+        </b>
+    </div>
+   <hr />
+</div>
+<!-- header ends -->
+	<div class="temp_top"></div>
+	<!-- content begins -->
+  <div id="content">
+        <center></center>
+    	<div class="text" style="background:#000 url(img/fancyform/contactus.jpg) repeat top left;">
+            <div style="height:10px"></div>
+            <div style="height:10px"></div>
+
+        <!-- START OF ARTICLES -->
+
+        <div style="position:relative; z-index: auto; left: 90px;" id="popupContact">
+        	<h2 padding-left:20px; padding-top:10px;">Contact Us</h2>
+            <br />
+            <form id="html5form" class="fancyform">
+            <fieldset>
+                <legend>Contact Form</legend>
+                <div class="form_row">
+                    <label for="fname">
+                        First Name</label>
+                    <div class="input">
+                        <input type="text" name="fname" class="textbox" required placeholder="Enter your first name..."
+                        title="Please enter your firstname" x-moz-errormessage="Please enter your firstname" />
+                    </div>
+                </div>
+                <div class="form_row">
+                    <label for="lname">
+                        Last Name</label>
+                    <div class="input">
+                        <input type="text" name="lname" class="textbox" required placeholder="Enter your last name..."
+                        title="Please enter your lastname" x-moz-errormessage="Please enter your lastname" />
+                    </div>
+                </div>
+                <div class="form_row">
+                    <label for="email">
+                        Email</label>
+                    <div class="input">
+                        <input type="email" name="email" class="textbox" required placeholder="email@domain.com"
+                        title="Please enter a valid email address" x-moz-errormessage="Please enter a valid email address" />
+                    </div>
+                </div>
+                <div class="form_row">
+                    <label for="feedback">
+                        Feedback</label>
+                    <div class="input">
+                        <textarea type="text" name="feedback" class="textbox" required placeholder="Tell us your Feedback..."
+                        title="Please provide your feedback" x-moz-errormessage="Please provide your feedback"></textarea>
+                    </div>
+                </div>
+                <div class="form_row actions">
+                    <br />
+            		<input type="submit" value="Submit" class="button glossy glass" style="width:90px; height:32px; font-size:14px;" />
+            		<input type="reset" value="Reset" class="button glossy glass" style="width:90px; height:32px; font-size:14px;" />
+                </div>
+            </fieldset>
+            </form>
+            <div id="container"></div>
+        </div>
+
+        <!-- END OF ARTICLES -->
+        <div style="height:10px"></div>
+        <div style="height:10px"></div>
+        </div>
+    </div>
+    <!-- content ends -->
+<!-- footer begins -->
+            <div id="footer">
+          		<div style="float: left; width: 500;">
+                	<p>Copyright  2011. <!-- Do not remove -->Designed and Developed by <a href="http://www.emprovise.com" title="Emprovise">Emprovise</a><!-- end --></p>
+		        <p><a href="/policy.html">Privacy Policy</a> | <a href="/terms.html">Terms of Use</a> | <a href="http://validator.w3.org/check/referer" title="This page validates as XHTML 1.0 Transitional"><abbr title="eXtensible HyperText Markup Language">XHTML</abbr></a> | <a href="http://jigsaw.w3.org/css-validator/check/referer" title="This page validates as CSS"><abbr title="Cascading Style Sheets">CSS</abbr></a></p>
+             	</div>
+                <div style="float: right; width: 500; padding: 0px 0px 0px 0px; height: 37px;">
+                	<a href="#" class="a_fu_i"><img src="img/footer/fu_i5.gif" class="fu_i" alt="" /></a>
+                    <a href="#" class="a_fu_i"><img src="img/footer/fu_i4.gif" class="fu_i" alt="" /></a>
+                    <a href="#" class="a_fu_i"><img src="img/footer/fu_i3.gif" class="fu_i" alt="" /></a>
+                    <a href="https://twitter.com/#!/EmproviseWeb" class="a_fu_i"><img src="img/footer/fu_i2.gif" class="fu_i" alt="" /></a>
+                    <a href="http://www.facebook.com/people/Emprovise-Web/100003220944716" class="a_fu_i"><img src="img/footer/fu_i1.gif" class="fu_i" alt="" /></a>
+
+                </div>
+             </div>
+        <!-- footer ends -->
+</div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<tracklist>
+  <track>
+	 <title>Tik Tok</title>
+     <artist>Kesha</artist>
+     <rating>10</rating>
+     <cover>Tik_Tok-Kesha.jpg</cover>
+     <file>album1/Kesha_-_Tik_Tok</file>
+  </track>
+  <track>
+	 <title>X-Men FIrst Class</title>
+     <artist>Henry Jackman</artist>
+     <rating>10</rating>
+     <cover>X-Men_First_Class.jpg</cover>
+     <file>album1/X-Men_First_Class_-_Training</file>
+  </track>
+  <track>
+	 <title>I Gotta Feeling</title>
+     <artist>Black Eyed Peas</artist>
+     <rating>10</rating>
+     <cover>I_Gotta_Feeling-Black_Eyed_Peas.jpg</cover>
+     <file>album1/Black_Eyed_Peas_-_Good_Night</file>
+  </track>
+  <track>
+	 <title>Rolling in the Deep</title>
+     <artist>Adele</artist>
+     <rating>10</rating>
+     <cover>Rolling_in_the_Deep-Adele.jpg</cover>
+     <file>album1/Adele_-_Rolling_in_the_Deep</file>
+  </track>
+  <track>
+	 <title>Last Christmas</title>
+     <artist>Taylor Swift</artist>
+     <rating>10</rating>
+     <cover>Last_Christmas-Taylor_Swift.jpg</cover>
+     <file>album1/Taylor_Swift_-_Last_Christmas</file>
+  </track>
+</tracklist>

@@ -1,0 +1,701 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>Emprovise</title>
+<meta name="keywords" content="emprovise, technology, articles, presentations, source, code, enotes, video, music, aboutme" />
+<meta name="description" content="Emprovise is a technical knowledge base providing articles, presentations and project source code. We believe in sharing the knowledge and returning back to the internet community which have flourished us. Entertainment section provides a small set of trending music." />
+<link rel="shortcut icon" type="image/x-icon" href="img/globals/emproviseicon.ico" />
+<link rel="stylesheet" href="css/styles.css" type="text/css" />
+<link rel="stylesheet" href="css/mac-menu.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="css/search-box.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="css/sprintzoom.css" type="text/css" media="screen" />
+<link rel='stylesheet' href='css/google.font.css' type='text/css' />
+<link rel="stylesheet" href="css/slidorion.css" />
+<link rel='stylesheet' href="css/jquery.zrssfeed.css" type="text/css" />
+<link rel='stylesheet' href='css/diapo.css' type='text/css' media='all' />
+<link rel="stylesheet" href="css/yahooweather.css"  type="text/css" />
+<link rel='stylesheet' href='css/quotes.css' type='text/css' media='all' />
+
+<script type="text/javascript" src="js/simpleWeather/jquery.min.js" charset="utf-8"></script>
+
+<!-- SPRINT ZOOM BOXES-->
+<script type="text/javascript" src="js/sprintzoom/home.js" charset="utf-8"></script>
+
+<!-- YAHOO WEATHER WIDGET -->
+<script type="text/javascript" src="js/simpleWeather/jquery.simpleWeather.js" charset="utf-8"></script>
+<script type="text/javascript" src="js/simpleWeather/jquery.weatherWidget.js" charset="utf-8"></script>
+
+<!-- YAHOO FINANCE WITH STOCKCHARTS WIDGET -->
+<script type="text/javascript" src="js/stock/date.js"></script>
+<script type="text/javascript" src="js/stock/jquery.yql.stock.js"></script>
+<script type="text/javascript" src="js/stock/highstock.js"></script>
+<script type="text/javascript" src="js/stock/exporting.js"></script>
+
+<!-- Cover Flow -->
+<script type="text/javascript" src="js/contentflow/contentflow.js"></script>
+<!-- JPlayer MP# and OGG -->
+<script type="text/javascript" src="js/mpplayer/jquery.jplayer.min.js"></script>
+<!-- RSS News Feeder -->
+<script type="text/javascript" src="js/slidorion/jquery.easing.js"></script>
+<script type="text/javascript" src="js/slidorion/jquery.slidorion.min.js"></script>
+<script type="text/javascript" src="js/zrssfeed/jquery.zrssfeed.min.js"></script>
+
+<!-- Main Diapo Image Slider -->
+<!-- Required for Mobile Devices (iOS) -->
+<!--[if !IE]><!--><script type='text/javascript' src='js/diapo/jquery.mobile-1.0rc2.customized.min.js'></script><!--<![endif]-->
+<script type='text/javascript' src='js/diapo/jquery.hoverIntent.minified.js'></script>
+<script type='text/javascript' src='js/diapo/diapo.js'></script>
+
+<!-- Image Rounded corners -->
+<script type='text/javascript' src='js/corner/jquery.corner.js'></script>
+<script type='text/javascript' src='js/quotes/quote_6.js'></script>
+
+<script>
+$(function(){
+	$('.pix_diapo').diapo();
+	$('#wid2image').corner();
+
+	var timer = setInterval( showQuote, 15000);
+	var current = 0;
+	$('#mainquote').html(quotes[current]);
+	$('#quoteauthor').html(authors[current]);
+	current++;
+
+	function showQuote() {
+
+		$('#quotebox').fadeOut(600, function() {
+
+			if(current >= authors.length) { current = 0; }
+
+			$('#mainquote').html(quotes[current]);
+			$('#quoteauthor').html(authors[current]);
+			current++;
+			$('#quotebox').fadeIn(600);
+		});
+	}
+});
+</script>
+
+</head>
+<body>
+<div class="bg_png">
+
+
+<div id="main">
+<!-- header begins -->
+<div id="header">
+	<div id="macmenu">
+    <ul id="macmenu_nav">
+	<li class="current"><a href="/">Home</a></li>
+	<li><a href="#">Technology</a>
+		<ul>
+			<li><a href="/projects.php">Projects</a></li>
+			<li><a href="/articles.php">Articles</a></li>
+			<li><a href="/presentations.php">Presentations</a></li>
+		</ul>
+	</li>
+	<li><a href="#">Tools</a>
+		<ul>
+			<li><a href="/search.html">LinkSearch</a></li>
+			<li><a href="/enotes.php">E-Notes</a></li>
+		</ul>
+	</li>
+	<li><a href="#">Entertainment</a>
+		<ul>
+			<li><a href="/music.php">Music</a></li>
+			<li><a href="/video.php">Video</a></li>
+		</ul>
+	</li>
+	<li><a href="/aboutme.php">About</a></li>
+	<li><a href="/contactus.html">Contact Us</a></li>
+	<li style="float:right; margin-right: 7px; margin-top:-3px;">
+       <form id="searchform" class="searchform" action="/searchpage.php" method="get">
+	     <input name="query" id="query"
+				class="searchfield" value="Search..."
+                onfocus="if (this.value == 'Search...') {this.value = '';}"
+                onblur="if (this.value == '') {this.value = 'Search...';}"
+                type="text">
+		 <input type="hidden" name="search" value="1">
+         <input class="searchbutton" type="submit" value=""
+				style="background-image: url(img/searchbox/search-button.png); width: 17px; height: 16px;">
+       </form>
+    </li>
+    </ul>
+
+    </div>
+	<div id="logo">
+    	<b><a href="#"><img src="img/globals/emprovise.gif" alt="emprovise" width="172" height="28" /></a><br />
+        <span><a href="#"><small style="font-size:10px;">Enshrining Knowledge, Fabricating Ideas</small></a></span>
+        </b>
+    </div>
+
+</div>
+<!-- header ends -->
+	<div class="top_top"></div>
+    <div class="top">
+
+	  <div id="wrapper">
+               <!-- Start of #pix_diapo Image Slider -->
+                <div class="pix_diapo">
+
+                    <div data-thumb="img/diapo/thumbs/megamind1048.jpg">
+                        <img src="img/diapo/slides/appworld.jpg">
+                        <div class="caption elemHover fromLeft">
+                            Mobile and Tablet market is vibrant market leading a high demand for Apps development and giving rise to new open platforms such as HTML5.
+                        </div>
+                    </div>
+
+                    <div data-thumb="img/diapo/thumbs/megamind_07.jpg">
+                        <img src="img/diapo/slides/internetage.jpg">
+                        <div class="caption elemHover fromRight" style="bottom:65px; padding-bottom:5px; color:#ff0; text-transform:uppercase">
+                            Internet is Evolving.
+                        </div>
+                        <div class="caption elemHover fromLeft" style="padding-top:5px;">
+                            With the advent of social networking, cloud computing and new web platforms the internet has become more dominant than ever.
+                        </div>
+                    </div>
+
+                    <div data-thumb="img/diapo/thumbs/ratatouille2.jpg">
+                        <img src="img/diapo/slides/development.jpg">
+                        <div class="caption elemHover fromRight">
+                            Programming languages are evolving by adding more high level wrapping such as frameworks, toolkits and platforms, resulting the problem solving approach more complex.
+                        </div>
+                    </div>
+
+                    <div data-thumb="img/diapo/thumbs/ratatouille2.jpg">
+                        <img src="img/diapo/slides/hacking.jpg">
+                        <div class="caption elemHover fromRight">
+                            Hacking activities have been on the rise with the surge of ecommerce, smartphone revolution, social media and spiking web services.
+                        </div>
+                    </div>
+
+               </div>
+               <!-- End of #pix_diapo Image Slider -->
+
+	  </div>
+
+    </div>
+    <div class="top_bot"></div>
+    <!-- content begins -->
+    <div id="content" style="padding-bottom:10px;">
+
+        <!-- Start of Sprint -->
+
+        <div class="content sprint">
+  <div class="body" id="sprintHome">
+
+  <ul id="homeModules">
+
+	<li style="float: none; position: absolute; bottom: 0px; left: 0px; height: 125px; display: block; width: 223px; overflow: hidden;" id="module_1" class="module">
+
+        <div class="mboxDefault">
+
+ <div class="module homeModuleTemplateTwo" id="mys_hp_module_web_exclusive1_2878">
+	<div style="cursor: pointer; opacity: 1; display: block;" class="summary">
+		<h3> Live RSS Feed</h3>
+		<img style="opacity: 1; display: block; float:left; height:75px; width:75px; padding:20px 0px 0px 10px;" src="img/sprintzoom/rss_feed.png" alt="Save online only">
+		<div class="summaryText">
+		 <p> Top sources including CNN, CNET, Java World.</p>
+		</div>
+	</div>
+
+	<div style="display: none; opacity: 0;" class="full" id="rsslivefeeder">
+
+     <!-- START OF RSS NEWS FEEDER -->
+	  <div id="slidorion" class="slidorion">
+
+		<div id="newsslider">
+			<div id="newsslide1" class="newsslide">
+				<div class="newscontent">
+					<span>CNN Tech Pulse</span>
+                    <div id="rsswidget1" class="rsswidget"></div>
+				</div>
+			</div>
+			<div id="newsslide2" class="newsslide">
+				<div class="newscontent">
+					<span>Java Lobby Updates</span>
+                    <div id="rsswidget2" class="rsswidget"></div>
+				</div>
+			</div>
+			<div id="newsslide3" class="newsslide">
+				<div class="newscontent">
+					<span>Rotten Tomatoes: Box Office</span>
+                    <div id="rsswidget3" class="rsswidget"></div>
+				</div>
+			</div>
+		</div>
+
+		<div id="accordion">
+			<div class="link-header" title="rsswidget1">CNN Tech
+            <a id="rsslink1" href="http://rss.cnn.com/rss/edition_technology.rss" style="display:none;"></a></div>
+			<div class="link-content">
+				<p><br/>CNN is a leading U.S. cable news channel boradcasting news updates, interviews, discussions and debates.</p>
+				<p>The CNN Technology Pulse provides the lastest and greatest updates in the world of technology with co-operate news, trending products and overview of the lastest innovative research.</p>
+			</div>
+			<div class="link-header" title="rsswidget2">Java Lobby
+            <a id="rsslink2" href="http://feeds.dzone.com/javalobby/frontpage" style="display:none;"></a></div>
+			<div class="link-content">
+				<p><br/>DZone is a technology publishing company that produces valuable content for software architects and developers worldwide.</p>
+				<p>JavaLobby is one of the Zones of DZone, which provides Daily news, articles and announcements about the Java Developer Community.</p>
+			</div>
+			<div class="link-header" title="rsswidget3">Box Office
+            <a id="rsslink3" href="http://www.rottentomatoes.com/syndication/rss/complete_movies.xml" style="display:none;"></a></div>
+			<div class="link-content">
+				<p><br/>Rotten Tomatoes is a most popular website devoted to reviews, information, and news of films—widely known as a film review aggregator.</p>
+				<p>It provides a complete and comprehensive listing of the movies along with the Box Office revenues.</p>
+			</div>
+		</div>
+
+	  </div>
+
+      <script type="text/javascript">
+
+			var enablenews = false;
+
+		    $("#rsslivefeeder").hover(
+                function () {
+				   enablenews = true;
+				},
+                function () {
+				   enablenews = false;
+				}
+            );
+
+            $('.link-header').click(function(event) {
+    		 //alert($(this).find('a').attr('href'));
+
+			 if(enablenews == false) {
+               event.stopImmediatePropagation();
+			 }
+			 else if(enablenews == true) {
+    		   var feedurl = $(this).find('a').attr('href');
+    		   var widgetno = $(this).attr('title');
+
+               if (feedurl) {
+    		      $('#' + widgetno).rssfeed(feedurl);
+    		   }
+			 }
+
+             return false;
+            });
+
+    		$('#slidorion').slidorion({
+				autoPlay: true,
+    			hoverPause: true,
+    			interval: 3500,
+    			speed: 500,
+    			effect: 'fade'
+    		});
+
+  		    $('#rsswidget1').rssfeed($('#rsslink1').attr('href'));
+
+  	  </script>
+     <!-- END OF RSS NES FEEDER -->
+
+	</div>
+ </div>
+
+        </div>
+
+	</li>
+
+	<li style="float: none; position: absolute; bottom: 0px; left: 245px; width: 223px; display: block; height: 125px; overflow: hidden;" id="module_2" class="module">
+
+
+        <div class="mboxDefault">
+
+ 	<div class="summary" style="cursor: pointer; opacity: 1; display: block;">
+ 	  <div id="mys_hp_module_check_upgrade_eligibility" class="module homeModuleTemplateTwo">
+        <h3 style="width:110px;">Top Songs</h3>
+		<img alt="Music Coverflow" src="content/music/album1/cover/OneRepublic-Secrets.jpg" style="opacity: 1; display: block; float:left; height:85px; width:85px; margin:20px 0px 0px 10px;" id="wid2image">
+
+		<div class="summaryText" style="width:90px;" id="wid2text">
+         <p>Secrets: OneRepublic</p>
+		</div>
+ 	  </div>
+
+	</div>
+
+    <!-- <div style="display: none; opacity: 0;" class="full"> -->
+	<div id="helpme">
+
+      <!-- ===== FLOW ===== -->
+      <script type="text/javascript">
+
+	   var cf = new ContentFlow('contentFlow', {reflectionColor: "#000000", circularFlow: false});
+	   var playerloaded = false;
+
+	   $("#mys_hp_module_check_upgrade_eligibility").hover(
+         function () {
+			$("#helpme").css({
+              display: 'none',
+			  opacity: '0'
+            });
+
+			$("#helpme").addClass("full");
+         },
+         function () {
+         }
+       );
+
+		$(function() {
+
+			$("#jquery_jplayer").jPlayer({
+				oggSupport	: true,
+				preload		:"auto"
+			});
+
+		});
+
+		function clickSong(element) {
+			//console.log($(element).attr('class'));
+			if($("#wid2image").attr('src') != $(element).attr('src')) {
+			  playSong($(element).attr('name'));
+			  $("#wid2image").attr("src", $(element).attr('src'));
+			  $("#wid2text").html('<p>'+ $(element).parent().find(".flowcaption").html() +'</p>');
+			}
+			else if($("#jquery_jplayer").jPlayer('getData', 'diag.isPlaying') == false) {
+				if(playerloaded == false) {
+				   playSong($(element).attr('name'));
+				   playerloaded = true;
+				}
+				else {
+                   $("#jquery_jplayer").jPlayer("play");
+				}
+			}
+			else {
+				$("#jquery_jplayer").jPlayer("pause");
+			}
+			return false;
+		}
+
+		function playSong(song){
+			var mp3				= song + ".mp3";
+			var ogg				= song + ".ogg";
+			$("#jquery_jplayer").jPlayer("setFile", mp3, ogg).jPlayer("play");
+		}
+
+      </script>
+
+      <div id="contentFlow" class="ContentFlow" style=" padding-top:20px; width:380px; height:300px; background:#525354;" >
+        <!-- should be place before flow so that contained images will be loaded first -->
+        <div class="loadIndicator"><div class="indicator"></div></div>
+		<div id="jquery_jplayer" class="jp-jplayer" style="display:none;"></div>
+        <div class="flow">
+
+            <div class="item">
+                <img class="content" name="content/music/album1/Taylor_Swift_-_Last_Christmas" href="#"
+                     src="content/music/album1/cover/Last_Christmas-Taylor_Swift.jpg" onclick="javascript:clickSong(this);"/>
+                <div class="flowcaption">Last Christmas: Taylor Swift</div>
+            </div>
+            <div class="item">
+                <img class="content" name="content/music/album1/Adele_-_Rolling_in_the_Deep" href="#"
+                     src="content/music/album1/cover/Rolling_in_the_Deep-Adele.jpg" onclick="javascript:clickSong(this);"/>
+                <div class="flowcaption">Rolling in the Deep: Adele</div>
+            </div>
+            <div class="item">
+                <img class="content" name="content/music/album1/Selena_Gomez_-_Love_You_Like_A_Love_Song" href="#"
+                     src="content/music/album1/cover/Love_Song-Selena_Gomez.jpg" onclick="javascript:clickSong(this);"/>
+                <div class="flowcaption">Love You Like Love Song: Selena Gomez</div>
+            </div>
+            <div class="item">
+                <img class="content" name="content/music/album1/Black_Eyed_Peas_-_Good_Night" href="#"
+                     src="content/music/album1/cover/I_Gotta_Feeling-Black_Eyed_Peas.jpg" onclick="javascript:clickSong(this);"/>
+                <div class="flowcaption">I Gotta Feeling: Black Eyed Peas</div>
+            </div>
+            <div class="item">
+                <img class="content" name="content/music/album1/Avril_Lavigne_-_What_the_Hell" href="#"
+                     src="content/music/album1/cover/What_the_Hell-Avril_Lavigne.jpg" onclick="javascript:clickSong(this);"/>
+                <div class="flowcaption">What the Hell: Avril Lavigne</div>
+            </div>
+
+            <div class="item">
+                <img class="content" name="content/music/album1/OneRepublic_-_Secrets" href="#"
+                     src="content/music/album1/cover/OneRepublic-Secrets.jpg" onclick="javascript:clickSong(this);"/>
+                <div class="flowcaption">Secrets: OneRepublic</div>
+            </div>
+            <div class="item">
+                <img class="content" name="content/music/album1/Eels_-_Mr_Es_Beautiful_Blues" href="#"
+                     src="content/music/album1/cover/Mr_Es_Beautiful_Blues-Eels.jpg" onclick="javascript:clickSong(this);"/>
+                <div class="flowcaption">Mr Es Beautiful Blues: Eels</div>
+            </div>
+            <div class="item">
+                <img class="content" name="content/music/album1/The_Cars_-_My_Best_Friends_Girl" href="#"
+                     src="content/music/album1/cover/My_Best_Friends_Girl.jpg" onclick="javascript:clickSong(this);"/>
+                <div class="flowcaption">My Best Friends Girl: The Cars</div>
+            </div>
+            <div class="item">
+                <img class="content" name="content/music/album1/Owl_City_-_Ten_Million_Flies" href="#"
+                     src="content/music/album1/cover/Fireflies-Owl_City.png" onclick="javascript:clickSong(this);"/>
+                <div class="flowcaption">FireFlies: Owl City</div>
+            </div>
+
+            <div class="item">
+                <img class="content" name="content/music/album1/X-Men_First_Class_-_Training" href="#"
+                     src="content/music/album1/cover/X-Men_First_Class.jpg" onclick="javascript:clickSong(this);"/>
+                <div class="flowcaption">X-Men FIrst Class: Henry Jackman</div>
+            </div>
+            <div class="item">
+                <img class="content" name="content/music/album1/Kesha_-_Tik_Tok" href="#"
+                     src="content/music/album1/cover/Tik_Tok-Kesha.jpg" onclick="javascript:clickSong(this);"/>
+                <div class="flowcaption">Tik Tok: Kesha</div>
+            </div>
+
+        </div>
+        <div class="globalCaption"></div>
+        <div class="scrollbar">
+            <div class="slider"><div class="position"></div></div>
+        </div>
+
+      </div>
+      <!-- ===== END OF FLOW ===== -->
+
+	</div>
+
+        </div>
+
+
+	</li>
+
+	<li style="float: none; position: absolute; bottom: 0px; left: 490px; height: 125px; display: block; width: 223px; overflow: hidden;" id="module_3" class="module">
+
+
+        <div class="mboxDefault">
+
+    <div class="module homeModuleTemplateTwo" id="mys_hp_module_jd_power_3040">
+	<div style="cursor: pointer; opacity: 1; display: block;" class="summary" id="stockwidget">
+		<h3> Stock Updates</h3>
+		<img style="opacity: 1; display: block; float:right; height:48px; width:48px; padding:40px 0px 0px 30px;" src="img/stock/stock_unknown.png" alt="Sock Status" id="stockimage">
+
+		<div class="summaryText" id="stocktext">
+		 <p></p>
+		 <p>NASDAQ : <span id="stockvalue1">NA</span></p>
+		 <p>S&P 500 : <span id="stockvalue2">NA</span></p>
+		</div>
+	</div>
+
+	<div id="stockcontainer" style="display: none; opacity: 0;" class="full">
+	    <h2>Unable to access stock data from Remote Servers</h2>
+		<img style="opacity: 1; display: block; float:left; height:125px; width:125px; padding-left:120px; padding-top:60px;" src="img/stock/server_error.png" alt="Server Error">
+	</div>
+    </div>
+
+        </div>
+
+	</li>
+
+    <li style="float: none; position: absolute; bottom: 0px; left: 735px; height: 125px; display: block; width: 223px; overflow: hidden;" id="module_4" class="module last">
+
+        <div class="mboxDefault">
+
+    <div class="module homeModuleTemplateOne" id="widget4main">
+	<div style="cursor: pointer; opacity: 1; display: block;" class="summary" id="wid4summary">
+		<h3 id="wid4title"> ------------- </h3>
+    	<img style="opacity: 1; display: block; float:left; height:85px; width:115px; overflow:hidden; padding:30px 0px 0px 5px;" src="img/yahooweather/44d.png" alt="Talk. No limits." id="wid4image" />
+		<div class="summaryText" id="wid4text">
+	    	<p><br /><span style="font-size:30px; font-weight:600; color:#009; text-shadow: #999 5px 3px 2px;" id="ywtemp">--&deg;</span><br /><br />
+            <span id="ywcurrent" style="font-size:12px; font-style:oblique;"> ------- </span></p>
+		</div>
+	</div>
+
+	<div style="display: none; opacity: 0;" class="full">
+
+          <!-- Start of Large Box -->
+          <div class="yweather">
+          <div class="yui-t6">
+            <div id="yui-main">
+             <div class="yui-b" style="width: 380px;">
+                <div id="yw-forecast" style="height:280px;">
+                 <div id="yw-cond">Unknown</div>
+                 <dl>
+                     <dt>Current Weather:</dt><dd id="currentweather">---</dd>
+                     <dt>Pressure:</dt><dd  id="pressure" style="position:relative;">---</dd>
+                     <dt>Humidity:</dt><dd id="humidity">---</dd>
+                     <dt>Visibility:</dt><dd id="visibility">---</dd>
+                     <dt>Heat Index:</dt><dd id="heatindex">---</dd>
+                     <dt>Wind:</dt><dd id="wind">---</dd>
+                     <dt>US Zipcode:</dt>
+                         <dd id="zipcode">
+                            <div class="zipcode-input-border y-ln-3">
+                            <input id="zipcodetext" class="y-bg-1 small zipcode-input y-ln-1" name="s" type="text"
+                                   size="5" maxlength="5">
+                            </div>
+                         </dd>
+                     <dt>&nbsp;</dt><dd>&nbsp;</dd>
+                 </dl>
+
+                 <div class="forecast-temp">
+                     <div id="yw-temp">--&deg;</div>
+                     <p id="high-low">High: --&deg; Low: --&deg;</p>
+                     <ul>
+                       <li id="templink">&nbsp;&nbsp;&#187; <a id="cellink" class="seltempType">Celsius</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a id="ferlink" class="unseltempType">Fahrenheit</a></li>
+                     </ul>
+
+                 </div>
+
+                 <div id="forecast-icon" class="forecast-icon" style="background:url('img/yahooweather/44d.png'); _background-image/* */: none; ">
+                 </div>
+
+            <div id="yw-fivedayforecast">
+             <table>
+             <tbody>
+              <tr>
+                <th id="day1name">Today</th>
+                <th id="day2name">Tomorrow</th>
+                <th id="day3name">Mon</th>
+                <th id="day4name">Tue</th>
+                <th id="day5name">Wed</th>
+                <th class="nobg">6-10 Day</th>
+              </tr>
+
+              <tr class="fiveday-icons">
+                <td id="wiffday1"><img id="wiff" style="background-position: -2684px 0px; width: 61px; height: 34px;" alt="" src="img/yahooweather/spacer.gif"><br><div></div></td>
+
+                <td id="wiffday2"><img id="wiff" style="background-position: -2684px 0px; width: 61px; height: 34px;" alt="" src="img/yahooweather/spacer.gif"><br><div></div></td>
+
+                <td id="wiffday3"><img id="wiff" style="background-position: -2684px 0px; width: 61px; height: 34px;" alt="" src="img/yahooweather/spacer.gif"><br><div></div></td>
+
+                <td id="wiffday4"><img id="wiff" style="background-position: -2684px 0px; width: 61px; height: 34px;" alt="" src="img/yahooweather/spacer.gif"><br><div></div></td>
+
+                <td id="wiffday5"><img id="wiff" style="background-position: -2684px 0px; width: 61px; height: 34px;" alt="" src="img/yahooweather/spacer.gif"><br><div></div></td>
+
+                <td id="wiffday6" rowspan="2" class="extended"><a href="#">Extended Forecast</a>
+                </td>
+              </tr>
+
+              <tr class="fiveday-temps">
+                <td id="tempday1">High: --&deg; <div>Low: --&deg;</div></td>
+                <td id="tempday2">High: --&deg; <div>Low: --&deg;</div></td>
+                <td id="tempday3">High: --&deg; <div>Low: --&deg;</div></td>
+                <td id="tempday4">High: --&deg; <div>Low: --&deg;</div></td>
+                <td id="tempday5">High: --&deg; <div>Low: --&deg;</div></td>
+              </tr>
+
+             </tbody>
+             </table>
+            </div>
+
+            </div>
+
+            </div>
+           </div>
+          </div>
+          </div>
+          <!-- End of Large Box -->
+
+	</div>
+    </div>
+
+        </div>
+
+    </li>
+ </ul>
+</div>
+</div>
+
+
+
+
+
+        <!-- End of Sprint -->
+      	<div class="razd_h"></div>
+        <div style="height:15px"></div>
+        <div class="text">
+
+            <div class="home_box">
+                <img src="img/home/icon_article_64.png" class="img_l" alt="" />
+                <h2>Featured Technical Articles and Tutorials</h2>
+                <div style="clear: both"></div>
+                <div style="height:10px;"></div>
+                The technical articles include focus on the software core basics, programming project description, overviews of the modern trending tools in software development and research topics. Most of the articles are aimed more on implementative side of the software.
+                <div style="height:24px;"><a class="read" href="/articles.php">Learn more</a></div>
+            </div><div style="width: 38px; height:20px; float: left;"></div>
+
+            <div class="home_box">
+                <img src="img/home/icon_ppt_64.png" class="img_l" alt="" />
+                <h2>In-depth Presentations on Trending Technical Topics</h2>
+                <div style="clear: both"></div>
+                <div style="height:10px;"></div>
+                Technical presentations on Programming Languages, Core Topics and Trending Research Topics. The presentations provide a detail understanding of the topics with examples, sample code and diagrams. The presentations are also preferred as notes on the addressed topics.
+<div style="height:24px;"><a class="read" href="/presentations.php">Learn more</a></div>
+            </div><div style="width: 38px; height:20px; float: left;"></div>
+
+
+            <div class="home_box">
+                <img src="img/home/icon_code_64.png" class="img_l" alt="" />
+                <h2>Complete Source Code of Academic and Professional Projects</h2>
+                <div style="clear: both"></div>
+                <div style="height:10px;"></div>
+                The source code comprises of academic software projects and assignments, and few professional projects. It provides a sample and acts as an aid for reference. Comments are included in most of the examples for better understanding of the implmentation.
+                <div style="height:24px;"><a class="read" href="/projects.php">Learn more</a></div>
+            </div>
+          <div style="clear: both"></div>
+
+      </div>
+
+
+
+
+    </div>
+    <!-- content ends -->
+    <!-- bottom begin -->
+    <div id="bottom_bot">
+    <div id="bottom">
+    	<div id="b_col1">
+       	  	<h1>Our Goal</h1>
+        	<div style="height:5px"></div>
+            <img src="img/footer/img5.png" class="img_l" alt="" />
+            <span class="span_bot">Pass the Torch of Knowledge. </span><br />
+			We believe that Knowledge is the most vital resources of all. Everyone should have the opportunity to gain and share it. We believe that Knowledge amplifies and becomes more powerful when we spread it for good.
+
+   	  </div>
+        <div id="b_col2">
+          <h1>Recent Posts</h1>
+            <ul class="spis_bot">
+                <li><a href="http://emprovisetech.blogspot.com/">Recent updates on my Blog</a></li>
+                <li><a href="inspiration.php">The Organisations which inspire us to grow.</a></li>
+                <li><a href="#">Making a completely dynamic web search   </a></li>
+                <li><a href="#">Elements to build an Web Application in Spring  </a></li>
+                <li><a href="#">Morbi eget arcu metus, facilisis rhoncus mi. </a></li>
+                <li><a href="http://www.apple.com/hotnews/thoughts-on-flash/">The Man and The Idea which started it all.</a></li>
+            </ul>
+	  </div>
+  		<div id="b_col3">
+        	<h1>Quotes</h1>
+            <div style="height:5px"></div>
+            <div id="quotebox">
+			  <div id="quotetop">
+		  		<div style="display: block;" id="quote-content">
+		            <h1 class="quotetext"><div id='mainquote'>&nbsp;</div></h1>
+		            <span id="quoteauthor">&nbsp;</span>
+		        </div>
+			  </div>
+			  <div class="clear"></div>
+			</div>
+      	</div>
+      <div style="clear: both; height:20px;"></div>
+    </div>
+    </div>
+<!-- bottom end -->
+<!-- footer begins -->
+            <div id="footer">
+          		<div style="float: left; width: 500;">
+                	<p>Copyright  2011. <!-- Do not remove -->Designed and Developed by <a href="http://www.emprovise.com" title="Emprovise">Emprovise</a><!-- end --></p>
+		        <p><a href="/policy.html">Privacy Policy</a> | <a href="/terms.html">Terms of Use</a> | <a href="http://validator.w3.org/check/referer" title="This page validates as XHTML 1.0 Transitional"><abbr title="eXtensible HyperText Markup Language">XHTML</abbr></a> | <a href="http://jigsaw.w3.org/css-validator/check/referer" title="This page validates as CSS"><abbr title="Cascading Style Sheets">CSS</abbr></a></p>
+             	</div>
+                <div style="float: right; width: 500; padding: 0px 0px 0px 0px; height: 37px;">
+                	<a href="http://www.youtube.com/" class="a_fu_i"><img src="img/footer/fu_i5.gif" class="fu_i" alt="" /></a>
+                    <a href="#" class="a_fu_i"><img src="img/footer/fu_i4.gif" class="fu_i" alt="" /></a>
+                    <a href="#" class="a_fu_i"><img src="img/footer/fu_i3.gif" class="fu_i" alt="" /></a>
+                    <a href="https://twitter.com/#!/EmproviseWeb" class="a_fu_i"><img src="img/footer/fu_i2.gif" class="fu_i" alt="" /></a>
+                    <a href="http://www.facebook.com/people/Emprovise-Web/100003220944716" class="a_fu_i"><img src="img/footer/fu_i1.gif" class="fu_i" alt="" /></a>
+
+                </div>
+             </div>
+        <!-- footer ends -->
+</div>
+
+</div>
+</body>
+</html>

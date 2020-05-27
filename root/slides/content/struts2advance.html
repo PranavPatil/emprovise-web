@@ -1,0 +1,1983 @@
+﻿	<div id="wsSlidesRoot">
+      <div id="struts2advance_1Presentationpptx" class="Presentation">
+        <div id="Slide1" class="Slide Flow_Title_Slide">
+          <img class="SlideBackground" alt="" src="content/images/struts2advance/Title_Slide_BackGround.jpg" />
+          <div style="POSITION: absolute; BORDER-BOTTOM-STYLE: none; BORDER-LEFT-STYLE: none; WIDTH: 618px; BORDER-TOP-STYLE: none; BACKGROUND: none transparent scroll repeat 0% 0%; HEIGHT: 144px; BORDER-RIGHT-STYLE: none; TOP: 108px; LEFT: 42px" id="Slide1_Title_1" class="Title">
+            <table class="TextContainer" cellspacing="0" cellpadding="0">
+              <tr>
+                <td style="VERTICAL-ALIGN: bottom">
+                  <div style="POSITION: relative; TEXT-ALIGN: right; TEXT-TRANSFORM: none; FONT-VARIANT: normal; FONT-STYLE: normal; MARGIN: 0px 1px 0px 0px; LETTER-SPACING: 0px; FONT-FAMILY: 'Calibri'; DIRECTION: ltr; COLOR: rgb(77,225,234); FONT-SIZE: 53px; VERTICAL-ALIGN: bottom; FONT-WEIGHT: bold; text-shadow: rgb(0, 0, 0) 0px 2px 3px">
+                    <p class="P1">
+                      <span>Apache Struts 2</span>
+                    </p>
+                  </div>
+                </td>
+              </tr>
+            </table>
+          </div>
+          <div style="POSITION: absolute; BORDER-BOTTOM-STYLE: none; BORDER-LEFT-STYLE: none; WIDTH: 618px; BORDER-TOP-STYLE: none; BACKGROUND: none transparent scroll repeat 0% 0%; HEIGHT: 138px; BORDER-RIGHT-STYLE: none; TOP: 254px; LEFT: 42px" id="Slide1_Subtitle_2">
+            <div style="POSITION: relative; TEXT-ALIGN: right; TEXT-TRANSFORM: none; FONT-VARIANT: normal; FONT-STYLE: normal; MARGIN: 4px 1px 4px 0px; LETTER-SPACING: 0px; FONT-FAMILY: 'Constantia'; DIRECTION: ltr; COLOR: rgb(255,255,255); FONT-SIZE: 25px; VERTICAL-ALIGN: top; FONT-WEIGHT: normal">
+              <p class="P1">
+                <span>Going far beyond</span>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div id="Slide2" class="Slide Flow_Title_and_Content">
+          <img class="SlideBackground" alt="" src="content/images/struts2advance/Title_and_Content_BackGround.jpg" />
+          <div style="POSITION: absolute; BORDER-BOTTOM-STYLE: none; BORDER-LEFT-STYLE: none; WIDTH: 648px; BORDER-TOP-STYLE: none; BACKGROUND: none transparent scroll repeat 0% 0%; HEIGHT: 47px; BORDER-RIGHT-STYLE: none; TOP: 55px; LEFT: 36px" id="Slide2_Title_1" class="Title Title_1">
+            <table class="TextContainer" cellspacing="0" cellpadding="0">
+              <tr>
+                <td style="VERTICAL-ALIGN: bottom">
+                  <div style="POSITION: relative; TEXT-ALIGN: left; TEXT-TRANSFORM: none; FONT-VARIANT: normal; FONT-STYLE: normal; MARGIN: 4px 0px 0px; LETTER-SPACING: 0px; FONT-FAMILY: 'Calibri'; DIRECTION: ltr; COLOR: rgb(4,97,123); FONT-SIZE: 43px; VERTICAL-ALIGN: bottom; FONT-WEIGHT: normal">
+                    <p class="P1">
+                      <span>ActionContext and OGNL</span>
+                    </p>
+                  </div>
+                </td>
+              </tr>
+            </table>
+          </div>
+          <div style="POSITION: absolute; BORDER-BOTTOM-STYLE: none; BORDER-LEFT-STYLE: none; WIDTH: 648px; BORDER-TOP-STYLE: none; BACKGROUND: none transparent scroll repeat 0% 0%; HEIGHT: 426px; BORDER-RIGHT-STYLE: none; TOP: 102px; LEFT: 36px" id="Slide2_Content_Placeholder_2" class="Content_Placeholder_2">
+            <ul style="POSITION: relative; TEXT-ALIGN: left; TEXT-TRANSFORM: none; FONT-VARIANT: normal; FONT-STYLE: normal; MARGIN: 4px 7px; LETTER-SPACING: 0px; FONT-FAMILY: 'Constantia'; DIRECTION: ltr; COLOR: rgb(0,0,0); FONT-SIZE: 21px; VERTICAL-ALIGN: top; FONT-WEIGHT: normal">
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px" class="P1">
+                <span style="COLOR: rgb(0,0,0)">The ActionContext stores ValueStack which stores request data.<br /></span>
+              </li>
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px; PADDING-TOP: 4px" class="P2">
+                <span style="COLOR: rgb(0,0,0)">The ActionContext contains all of the data available to the framework’s processing of the request, including things ranging from application data to session- or application-scoped maps.&nbsp;<br /></span>
+              </li>
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px; PADDING-TOP: 4px" class="P3">
+                <span style="COLOR: rgb(0,0,0)">All application specific data are held in the ValueStack, one of the objects in the ActionContext.<br /></span>
+              </li>
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px; PADDING-TOP: 4px" class="P4">
+                <span style="COLOR: rgb(0,0,0)">All OGNL expressions must resolve against one of the objects contained in the ActionContext.&nbsp;<br /></span>
+              </li>
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px; PADDING-TOP: 4px" class="P5">
+                <span style="COLOR: rgb(0,0,0)">By default, the ValueStack will be the one chosen for OGNL resolution, but can specifically name one of the others, such as the session map.<br /></span>
+              </li>
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px; PADDING-TOP: 4px" class="P6">
+                <span style="COLOR: rgb(0,0,0)">The ActionContext provides a notion of simple container for all the important data and resources surrounding the execution of an action.<br /></span>
+              </li>
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px; PADDING-TOP: 4px" class="P7">
+                <span style="COLOR: rgb(0,0,0)">The ValueStack holds your application’s domain-specific data for a given action invocation.<br /></span>
+              </li>
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px; PADDING-TOP: 4px" class="P8">
+                <span style="COLOR: rgb(0,0,0)">The OGNL expression requires a root object contained in the ActionContext, against which resolution of references begin.</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div id="Slide3" class="Slide Flow_Title_and_Content">
+          <img class="SlideBackground" alt="" src="content/images/struts2advance/Title_and_Content_BackGround.jpg" />
+          <div style="POSITION: absolute; BORDER-BOTTOM-STYLE: none; BORDER-LEFT-STYLE: none; WIDTH: 648px; BORDER-TOP-STYLE: none; BACKGROUND: none transparent scroll repeat 0% 0%; HEIGHT: 53px; BORDER-RIGHT-STYLE: none; TOP: 55px; LEFT: 36px" id="Slide3_Title_1" class="Title Title_1">
+            <table class="TextContainer" cellspacing="0" cellpadding="0">
+              <tr>
+                <td style="VERTICAL-ALIGN: bottom">
+                  <div style="POSITION: relative; TEXT-ALIGN: left; TEXT-TRANSFORM: none; FONT-VARIANT: normal; FONT-STYLE: normal; MARGIN: 4px 0px 0px; LETTER-SPACING: 0px; FONT-FAMILY: 'Calibri'; DIRECTION: ltr; COLOR: rgb(4,97,123); FONT-SIZE: 43px; VERTICAL-ALIGN: bottom; FONT-WEIGHT: normal">
+                    <p class="P1">
+                      <span>Objects and Maps in ActionContext</span>
+                    </p>
+                  </div>
+                </td>
+              </tr>
+            </table>
+          </div>
+          <div style="POSITION: absolute; BORDER-BOTTOM-STYLE: none; BORDER-LEFT-STYLE: none; WIDTH: 648px; BORDER-TOP-STYLE: none; BACKGROUND: none transparent scroll repeat 0% 0%; HEIGHT: 354px; BORDER-RIGHT-STYLE: none; TOP: 144px; LEFT: 36px" id="Slide3_Content_Placeholder_2" class="Content_Placeholder_2">
+            <ul style="POSITION: relative; TEXT-ALIGN: left; TEXT-TRANSFORM: none; FONT-VARIANT: normal; FONT-STYLE: normal; MARGIN: 4px 7px; LETTER-SPACING: 0px; FONT-FAMILY: 'Constantia'; DIRECTION: ltr; COLOR: rgb(0,0,0); FONT-SIZE: 25px; VERTICAL-ALIGN: top; FONT-WEIGHT: normal">
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px" class="P1">
+                <span style="COLOR: rgb(0,0,0); FONT-WEIGHT: bold">parameters</span><span style="COLOR: rgb(0,0,0)">: Map of request parameters for the request.<br /></span>
+              </li>
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px; PADDING-TOP: 5px" class="P2">
+                <span style="COLOR: rgb(0,0,0); FONT-WEIGHT: bold">request</span><span style="COLOR: rgb(0,0,0)">: Map of request-scoped attributes.<br /></span>
+              </li>
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px; PADDING-TOP: 5px" class="P3">
+                <span style="COLOR: rgb(0,0,0); FONT-WEIGHT: bold">session</span><span style="COLOR: rgb(0,0,0)">: Map of session-scoped attributes.<br /></span>
+              </li>
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px; PADDING-TOP: 5px" class="P4">
+                <span style="COLOR: rgb(0,0,0); FONT-WEIGHT: bold">application</span><span style="COLOR: rgb(0,0,0)">: Map of application-scoped attributes.<br /></span>
+              </li>
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px; PADDING-TOP: 5px" class="P5">
+                <span style="COLOR: rgb(0,0,0); FONT-WEIGHT: bold">attr</span><span style="COLOR: rgb(0,0,0)">: Returns first occurrence of attribute occurring in page, request, session, or application scope, in such sequence.<br /></span>
+              </li>
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px; PADDING-TOP: 5px" class="P6">
+                <span style="COLOR: rgb(0,0,0); FONT-WEIGHT: bold">ValueStack</span><span style="COLOR: rgb(0,0,0)">: Contains all the application-domain–specific data for the request.</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div id="Slide4" class="Slide Flow_Title_and_Content">
+          <img class="SlideBackground" alt="" src="content/images/struts2advance/Title_and_Content_BackGround.jpg" />
+          <div style="POSITION: absolute; BORDER-BOTTOM-STYLE: none; BORDER-LEFT-STYLE: none; WIDTH: 648px; BORDER-TOP-STYLE: none; BACKGROUND: none transparent scroll repeat 0% 0%; HEIGHT: 90px; BORDER-RIGHT-STYLE: none; TOP: 55px; LEFT: 36px" id="Slide4_Title_1" class="Title Title_1">
+            <table class="TextContainer" cellspacing="0" cellpadding="0">
+              <tr>
+                <td style="VERTICAL-ALIGN: bottom">
+                  <div style="POSITION: relative; TEXT-ALIGN: left; TEXT-TRANSFORM: none; FONT-VARIANT: normal; FONT-STYLE: normal; MARGIN: 4px 0px 0px; LETTER-SPACING: 0px; FONT-FAMILY: 'Calibri'; DIRECTION: ltr; COLOR: rgb(4,97,123); FONT-SIZE: 48px; VERTICAL-ALIGN: bottom; FONT-WEIGHT: normal">
+                    <p class="P1">
+                      <span>ActionContext and OGNL</span>
+                    </p>
+                  </div>
+                </td>
+              </tr>
+            </table>
+          </div>
+          <div style="POSITION: absolute; BORDER-BOTTOM-STYLE: none; BORDER-LEFT-STYLE: none; WIDTH: 648px; BORDER-TOP-STYLE: none; BACKGROUND: none transparent scroll repeat 0% 0%; HEIGHT: 346px; BORDER-RIGHT-STYLE: none; TOP: 152px; LEFT: 36px" id="Slide4_Content_Placeholder_2" class="Content_Placeholder_2">
+            <ul style="POSITION: relative; TEXT-ALIGN: left; TEXT-TRANSFORM: none; FONT-VARIANT: normal; FONT-STYLE: normal; MARGIN: 4px 7px; LETTER-SPACING: 0px; FONT-FAMILY: 'Constantia'; DIRECTION: ltr; COLOR: rgb(0,0,0); FONT-SIZE: 25px; VERTICAL-ALIGN: top; FONT-WEIGHT: normal">
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px" class="P1">
+                <span style="COLOR: rgb(0,0,0)">An OGNL expression must choose one of the objects in the ActionContext to use as its root object.<br /></span>
+              </li>
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px; PADDING-TOP: 5px" class="P2">
+                <span style="COLOR: rgb(0,0,0)">By default, the ValueStack serves as the root object for resolving all OGNL expressions.<br /></span>
+              </li>
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px; PADDING-TOP: 5px" class="P3">
+                <span style="COLOR: rgb(0,0,0)">OGNL expression can be written in following syntax:<br /></span>
+              </li>
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px; PADDING-TOP: 5px" class="P4">
+                <span style="COLOR: rgb(0,0,0)">#session['user']<br /></span>
+              </li>
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px; PADDING-TOP: 5px" class="P5">
+                <span style="COLOR: rgb(0,0,0)">The # operator tells OGNL to use the named object, located in its context, as the initial object for resolving the rest of the expression.<br /></span>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div id="Slide5" class="Slide Flow_Title_and_Content">
+          <img class="SlideBackground" alt="" src="content/images/struts2advance/Title_and_Content_BackGround.jpg" />
+          <div style="POSITION: absolute; BORDER-BOTTOM-STYLE: none; BORDER-LEFT-STYLE: none; WIDTH: 648px; BORDER-TOP-STYLE: none; BACKGROUND: none transparent scroll repeat 0% 0%; HEIGHT: 53px; BORDER-RIGHT-STYLE: none; TOP: 55px; LEFT: 36px" id="Slide5_Title_1" class="Title Title_1">
+            <table class="TextContainer" cellspacing="0" cellpadding="0">
+              <tr>
+                <td style="VERTICAL-ALIGN: bottom">
+                  <div style="POSITION: relative; TEXT-ALIGN: left; TEXT-TRANSFORM: none; FONT-VARIANT: normal; FONT-STYLE: normal; MARGIN: 4px 0px 0px; LETTER-SPACING: 0px; FONT-FAMILY: 'Calibri'; DIRECTION: ltr; COLOR: rgb(4,97,123); FONT-SIZE: 43px; VERTICAL-ALIGN: bottom; FONT-WEIGHT: normal">
+                    <p class="P1">
+                      <span>The ValueStack: a virtual object</span>
+                    </p>
+                  </div>
+                </td>
+              </tr>
+            </table>
+          </div>
+          <div style="POSITION: absolute; BORDER-BOTTOM-STYLE: none; BORDER-LEFT-STYLE: none; WIDTH: 648px; BORDER-TOP-STYLE: none; BACKGROUND: none transparent scroll repeat 0% 0%; HEIGHT: 408px; BORDER-RIGHT-STYLE: none; TOP: 114px; LEFT: 36px" id="Slide5_Content_Placeholder_2" class="Content_Placeholder_2">
+            <ul style="POSITION: relative; TEXT-ALIGN: left; TEXT-TRANSFORM: none; FONT-VARIANT: normal; FONT-STYLE: normal; MARGIN: 4px 7px; LETTER-SPACING: 0px; FONT-FAMILY: 'Constantia'; DIRECTION: ltr; COLOR: rgb(0,0,0); FONT-SIZE: 23px; VERTICAL-ALIGN: top; FONT-WEIGHT: normal">
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px" class="P1">
+                <span style="COLOR: rgb(0,0,0)">When Struts 2 receives a request, it immediately creates an ActionContext, a ValueStack, and an action object.&nbsp;<br /></span>
+              </li>
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px; PADDING-TOP: 5px" class="P2">
+                <span style="COLOR: rgb(0,0,0)">As a carrier of application data, the action object is quickly placed on the ValueStack so that its properties will be accessible, via OGNL.<br /></span>
+              </li>
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px; PADDING-TOP: 5px" class="P3">
+                <span style="COLOR: rgb(0,0,0)">There are no infrastructural objects, such as Servlet API or Struts 2 objects, on the ValueStack.<br /></span>
+              </li>
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px; PADDING-TOP: 5px" class="P4">
+                <span style="COLOR: rgb(0,0,0)">The ValueStack pretends to be a single object when OGNL expressions are resolved against it.&nbsp;<br /></span>
+              </li>
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px; PADDING-TOP: 5px" class="P5">
+                <span style="COLOR: rgb(0,0,0)">The virtual object contains all the properties of all the objects that have been placed on the stack.&nbsp;<br /></span>
+              </li>
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px; PADDING-TOP: 5px" class="P6">
+                <span style="COLOR: rgb(0,0,0)">If multiple the occurrences of the same property exist, those lowest down in the stack are hidden by the uppermost occurrence of a similarly named property.</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div id="Slide6" class="Slide Flow_Title_and_Content">
+          <img class="SlideBackground" alt="" src="content/images/struts2advance/Title_and_Content_BackGround.jpg" />
+          <div style="POSITION: absolute; BORDER-BOTTOM-STYLE: none; BORDER-LEFT-STYLE: none; WIDTH: 648px; BORDER-TOP-STYLE: none; BACKGROUND: none transparent scroll repeat 0% 0%; HEIGHT: 47px; BORDER-RIGHT-STYLE: none; TOP: 55px; LEFT: 36px" id="Slide6_Title_1" class="Title Title_1">
+            <table class="TextContainer" cellspacing="0" cellpadding="0">
+              <tr>
+                <td style="VERTICAL-ALIGN: bottom">
+                  <div style="POSITION: relative; TEXT-ALIGN: left; TEXT-TRANSFORM: none; FONT-VARIANT: normal; FONT-STYLE: normal; MARGIN: 4px 0px 0px; LETTER-SPACING: 0px; FONT-FAMILY: 'Calibri'; DIRECTION: ltr; COLOR: rgb(4,97,123); FONT-SIZE: 43px; VERTICAL-ALIGN: bottom; FONT-WEIGHT: normal">
+                    <p class="P1">
+                      <span>Struts Tags</span>
+                    </p>
+                  </div>
+                </td>
+              </tr>
+            </table>
+          </div>
+          <div style="POSITION: absolute; BORDER-BOTTOM-STYLE: none; BORDER-LEFT-STYLE: none; WIDTH: 648px; BORDER-TOP-STYLE: none; BACKGROUND: none transparent scroll repeat 0% 0%; HEIGHT: 426px; BORDER-RIGHT-STYLE: none; TOP: 102px; LEFT: 36px" id="Slide6_Content_Placeholder_2" class="Content_Placeholder_2">
+            <ul style="POSITION: relative; TEXT-ALIGN: left; TEXT-TRANSFORM: none; FONT-VARIANT: normal; FONT-STYLE: normal; MARGIN: 4px 7px; LETTER-SPACING: 0px; FONT-FAMILY: 'Constantia'; DIRECTION: ltr; COLOR: rgb(0,0,0); FONT-SIZE: 23px; VERTICAL-ALIGN: top; FONT-WEIGHT: normal">
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px" class="P1">
+                <span style="COLOR: rgb(0,0,0)">The tag API specifies the attributes and parameters exposed by the tag.<br /></span>
+              </li>
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px; PADDING-TOP: 5px" class="P2">
+                <span style="COLOR: rgb(0,0,0)">Interfaces to the tag API are implemented in JSP, Velocity, or FreeMarker.<br /></span>
+              </li>
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px; PADDING-TOP: 5px" class="P3">
+                <span style="COLOR: rgb(0,0,0)">While setting the attributes in a tag, If an attribute is of type String, then its value is interpreted as a string literal in JSP or Velocity.&nbsp;<br /></span>
+              </li>
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px; PADDING-TOP: 5px" class="P4">
+                <span style="COLOR: rgb(0,0,0)">If an attribute is some non-String type (i.e. points to some property on the ValueStack), then the value of the attribute is interpreted as an OGNL expression.<br /></span>
+              </li>
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px; PADDING-TOP: 5px" class="P5">
+                <span style="COLOR: rgb(0,0,0)">&lt;s:property value="nonExistingProperty" default="</span><span style="COLOR: rgb(0,0,0); FONT-WEIGHT: bold">doesNotExist</span><span style="COLOR: rgb(0,0,0)">" /&gt; displays “doesNotExist” when nonExistingProperty doesn’t exist in ValueStack.<br /></span>
+              </li>
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px; PADDING-TOP: 5px" class="P6">
+                <span style="COLOR: rgb(0,0,0)">A string attribute to be interpreted as an OGNL expression by using the&nbsp;</span><span style="COLOR: rgb(0,0,0); FONT-WEIGHT: bold">%{</span><span style="FONT-STYLE: italic; COLOR: rgb(0,0,0); FONT-WEIGHT: bold">expression}</span><span style="COLOR: rgb(0,0,0)"><span>&nbsp;syntax</span></span><span style="FONT-STYLE: italic; FONT-FAMILY: '+mn-ea'; COLOR: rgb(0,0,0)">.</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div id="Slide7" class="Slide Flow_Title_and_Content">
+          <img class="SlideBackground" alt="" src="content/images/struts2advance/Title_and_Content_BackGround.jpg" />
+          <div style="POSITION: absolute; BORDER-BOTTOM-STYLE: none; BORDER-LEFT-STYLE: none; WIDTH: 648px; BORDER-TOP-STYLE: none; BACKGROUND: none transparent scroll repeat 0% 0%; HEIGHT: 53px; BORDER-RIGHT-STYLE: none; TOP: 42px; LEFT: 36px" id="Slide7_Title_1" class="Title Title_1">
+            <table class="TextContainer" cellspacing="0" cellpadding="0">
+              <tr>
+                <td style="VERTICAL-ALIGN: bottom">
+                  <div style="POSITION: relative; TEXT-ALIGN: left; TEXT-TRANSFORM: none; FONT-VARIANT: normal; FONT-STYLE: normal; MARGIN: 4px 0px 0px; LETTER-SPACING: 0px; FONT-FAMILY: 'Calibri'; DIRECTION: ltr; COLOR: rgb(4,97,123); FONT-SIZE: 43px; VERTICAL-ALIGN: bottom; FONT-WEIGHT: normal">
+                    <p class="P1">
+                      <span>Data Tags</span>
+                    </p>
+                  </div>
+                </td>
+              </tr>
+            </table>
+          </div>
+          <div style="POSITION: absolute; BORDER-BOTTOM-STYLE: none; BORDER-LEFT-STYLE: none; WIDTH: 648px; BORDER-TOP-STYLE: none; BACKGROUND: none transparent scroll repeat 0% 0%; HEIGHT: 426px; BORDER-RIGHT-STYLE: none; TOP: 102px; LEFT: 36px" id="Slide7_Content_Placeholder_2" class="Content_Placeholder_2">
+            <ul style="POSITION: relative; TEXT-ALIGN: left; TEXT-TRANSFORM: none; FONT-VARIANT: normal; FONT-STYLE: normal; MARGIN: 4px 7px; LETTER-SPACING: 0px; FONT-FAMILY: 'Constantia'; DIRECTION: ltr; COLOR: rgb(0,0,0); FONT-SIZE: 21px; VERTICAL-ALIGN: top; FONT-WEIGHT: normal">
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px" class="P1">
+                <span style="COLOR: rgb(0,0,0)">Data tags let you get data out of the ValueStack or place variables and objects onto the ValueStack.<br /></span>
+              </li>
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px; PADDING-TOP: 4px" class="P2">
+                <span style="COLOR: rgb(0,0,0)">They are the property, set, push, bean, and action tags.<br /></span>
+              </li>
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px; PADDING-TOP: 4px" class="P3">
+                <span style="COLOR: rgb(0,0,0)">The&nbsp;</span><span style="COLOR: rgb(0,0,0); FONT-WEIGHT: bold">property tag</span><span style="COLOR: rgb(0,0,0)"><span>&nbsp;provides a quick way of writing a property on ValueStack or &nbsp;in ActionContext into the rendering HTML.<br /></span></span>
+              </li>
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px; PADDING-TOP: 4px" class="P4">
+                <span style="COLOR: rgb(0,0,0)">It has attributes value, default (used when values is null) and escape (whether to escape HTML).<br /></span>
+              </li>
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px; PADDING-TOP: 4px" class="P5">
+                <span style="COLOR: rgb(0,0,0)">The&nbsp;</span><span style="COLOR: rgb(0,0,0); FONT-WEIGHT: bold">set tag</span><span style="COLOR: rgb(0,0,0)"><span>&nbsp;assigns a property to another name. It has attributes name, scope (</span>application, session, request, page, or action as&nbsp;default),value (expresson of value).<br /></span>
+              </li>
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px; PADDING-TOP: 4px" class="P6">
+                <span style="COLOR: rgb(0,0,0)">A named object in ActionContext can be referenced as a toplevel named object with an OGNL expression such as #myObject.<br /></span>
+              </li>
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px; PADDING-TOP: 4px" class="P7">
+                <span style="COLOR: rgb(0,0,0)">The&nbsp;</span><span style="COLOR: rgb(0,0,0); FONT-WEIGHT: bold">push tag</span><span style="COLOR: rgb(0,0,0)"><span>&nbsp;allows you to push properties onto the ValueStack and has opening and closing tags containing toplevel properties from ValueStack.<br /></span></span>
+              </li>
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px; PADDING-TOP: 4px" class="P8">
+                <span style="COLOR: rgb(0,0,0)">The&nbsp;</span><span style="COLOR: rgb(0,0,0); FONT-WEIGHT: bold">bean tag</span><span style="COLOR: rgb(0,0,0)"><span>&nbsp;is like a hybrid of the set and push tags. An instance of an object can either be pushed onto the ValueStack by default or set a top-level reference to it in the ActionContext.</span></span>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div id="Slide8" class="Slide Flow_Title_and_Content">
+          <img class="SlideBackground" alt="" src="content/images/struts2advance/Title_and_Content_BackGround.jpg" />
+          <div style="POSITION: absolute; BORDER-BOTTOM-STYLE: none; BORDER-LEFT-STYLE: none; WIDTH: 648px; BORDER-TOP-STYLE: none; BACKGROUND: none transparent scroll repeat 0% 0%; HEIGHT: 48px; BORDER-RIGHT-STYLE: none; TOP: 60px; LEFT: 36px" id="Slide8_Title_1" class="Title Title_1">
+            <table class="TextContainer" cellspacing="0" cellpadding="0">
+              <tr>
+                <td style="VERTICAL-ALIGN: bottom">
+                  <div style="POSITION: relative; TEXT-ALIGN: left; TEXT-TRANSFORM: none; FONT-VARIANT: normal; FONT-STYLE: normal; MARGIN: 4px 0px 0px; LETTER-SPACING: 0px; FONT-FAMILY: 'Calibri'; DIRECTION: ltr; COLOR: rgb(4,97,123); FONT-SIZE: 43px; VERTICAL-ALIGN: bottom; FONT-WEIGHT: normal">
+                    <p class="P1">
+                      <span>Data Tags: Action Tag</span>
+                    </p>
+                  </div>
+                </td>
+              </tr>
+            </table>
+          </div>
+          <div style="POSITION: absolute; BORDER-BOTTOM-STYLE: none; BORDER-LEFT-STYLE: none; WIDTH: 648px; BORDER-TOP-STYLE: none; BACKGROUND: none transparent scroll repeat 0% 0%; HEIGHT: 414px; BORDER-RIGHT-STYLE: none; TOP: 120px; LEFT: 36px" id="Slide8_Content_Placeholder_2" class="Content_Placeholder_2">
+            <ul style="POSITION: relative; TEXT-ALIGN: left; TEXT-TRANSFORM: none; FONT-VARIANT: normal; FONT-STYLE: normal; MARGIN: 4px 7px; LETTER-SPACING: 0px; FONT-FAMILY: 'Constantia'; DIRECTION: ltr; COLOR: rgb(0,0,0); FONT-SIZE: 21px; VERTICAL-ALIGN: top; FONT-WEIGHT: normal">
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px" class="P1">
+                <span style="COLOR: rgb(0,0,0)">Action tag allows to invoke another action from the view layer.<br /></span>
+              </li>
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px; PADDING-TOP: 4px" class="P2">
+                <span style="COLOR: rgb(0,0,0)">The executeResult attribute, allows to indicate whether the result for the secondary action should be written into the currently rendering page, and the name and namespace attributes, by which the secondary action is identified to be fired.&nbsp;<br /></span>
+              </li>
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px; PADDING-TOP: 4px" class="P3">
+                <span style="COLOR: rgb(0,0,0)">By default, the namespace of the current action is used.<br /></span>
+              </li>
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px; PADDING-TOP: 4px" class="P4">
+                <span style="COLOR: rgb(0,0,0); FONT-WEIGHT: bold">name:</span><span style="COLOR: rgb(0,0,0)"><span>&nbsp;The action name, is of type string.<br /></span></span>
+              </li>
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px; PADDING-TOP: 4px" class="P5">
+                <span style="COLOR: rgb(0,0,0); FONT-WEIGHT: bold">namespace:</span><span style="COLOR: rgb(0,0,0)"><span>&nbsp;The action namespace of type string; defaults to the current page namespace.<br /></span></span>
+              </li>
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px; PADDING-TOP: 4px" class="P6">
+                <span style="COLOR: rgb(0,0,0); FONT-WEIGHT: bold">var</span><span style="COLOR: rgb(0,0,0)">: Reference name of the action bean for use later in the page.<br /></span>
+              </li>
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px; PADDING-TOP: 4px" class="P7">
+                <span style="COLOR: rgb(0,0,0); FONT-WEIGHT: bold">executeResult</span><span style="COLOR: rgb(0,0,0)">: When set to true, executes the result of the action (default value: false).<br /></span>
+              </li>
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px; PADDING-TOP: 4px" class="P8">
+                <span style="COLOR: rgb(0,0,0); FONT-WEIGHT: bold">flush</span><span style="COLOR: rgb(0,0,0)">: When set to true, the writer will be flushed upon end of action component tag (default value: true)<br /></span>
+              </li>
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px; PADDING-TOP: 4px" class="P9">
+                <span style="COLOR: rgb(0,0,0); FONT-WEIGHT: bold">ignoreContextParams</span><span style="COLOR: rgb(0,0,0)">: When set to true, the request parameters are not included when the action is invoked (default value: false).</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div id="Slide9" class="Slide Flow_Title_and_Content">
+          <img class="SlideBackground" alt="" src="content/images/struts2advance/Title_and_Content_BackGround.jpg" />
+          <div style="POSITION: absolute; BORDER-BOTTOM-STYLE: none; BORDER-LEFT-STYLE: none; WIDTH: 648px; BORDER-TOP-STYLE: none; BACKGROUND: none transparent scroll repeat 0% 0%; HEIGHT: 35px; BORDER-RIGHT-STYLE: none; TOP: 43px; LEFT: 36px" id="Slide9_Title_1" class="Title Title_1">
+            <table class="TextContainer" cellspacing="0" cellpadding="0">
+              <tr>
+                <td style="VERTICAL-ALIGN: bottom">
+                  <div style="POSITION: relative; TEXT-ALIGN: left; TEXT-TRANSFORM: none; FONT-VARIANT: normal; FONT-STYLE: normal; MARGIN: 4px 0px 0px; LETTER-SPACING: 0px; FONT-FAMILY: 'Calibri'; DIRECTION: ltr; COLOR: rgb(4,97,123); FONT-SIZE: 43px; VERTICAL-ALIGN: bottom; FONT-WEIGHT: normal">
+                    <p class="P1">
+                      <span>Control Tags: Iterator Tag</span>
+                    </p>
+                  </div>
+                </td>
+              </tr>
+            </table>
+          </div>
+          <div style="POSITION: absolute; BORDER-BOTTOM-STYLE: none; BORDER-LEFT-STYLE: none; WIDTH: 648px; BORDER-TOP-STYLE: none; BACKGROUND: none transparent scroll repeat 0% 0%; HEIGHT: 456px; BORDER-RIGHT-STYLE: none; TOP: 78px; LEFT: 36px" id="Slide9_Content_Placeholder_2" class="Content_Placeholder_2">
+            <ul style="POSITION: relative; TEXT-ALIGN: left; TEXT-TRANSFORM: none; FONT-VARIANT: normal; FONT-STYLE: normal; MARGIN: 4px 7px; LETTER-SPACING: 0px; FONT-FAMILY: 'Constantia'; DIRECTION: ltr; COLOR: rgb(0,0,0); FONT-SIZE: 21px; VERTICAL-ALIGN: top; FONT-WEIGHT: normal">
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px" class="P1">
+                <span style="COLOR: rgb(0,0,0)">The&nbsp;</span><span style="COLOR: rgb(0,0,0); FONT-WEIGHT: bold">iterator tag</span><span style="COLOR: rgb(0,0,0)"><span>&nbsp;allows to loop over collections of objects.<br /></span></span>
+              </li>
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px; PADDING-TOP: 4px" class="P2">
+                <span style="COLOR: rgb(0,0,0)">It also provides the ability to define a variable in the ActionContext, the iterator status, lets it determine certain basic information about the current loop state such as loop odd or even rows.<br /></span>
+              </li>
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px; PADDING-TOP: 4px" class="P3">
+                <span style="COLOR: rgb(0,0,0)">The value attribute specifies the object to be looped over and the status specifies an&nbsp;</span><span style="COLOR: rgb(0,0,0); FONT-WEIGHT: bold">IteratorStatus</span><span style="COLOR: rgb(0,0,0)"><span>&nbsp;object placed in the action context with the name as value of the attribute.<br /></span></span>
+              </li>
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px; PADDING-TOP: 4px" class="P4">
+                <span style="COLOR: rgb(0,0,0)">IteratorStatus object consists information such as the size, current index, and whether the current object is in the even or odd index in the list.<br /></span>
+              </li>
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px; PADDING-TOP: 4px" class="P5">
+                <span style="COLOR: rgb(0,0,0)">The&nbsp;</span><span style="COLOR: rgb(0,0,0); FONT-WEIGHT: bold">if and else tags</span><span style="COLOR: rgb(0,0,0)"><span>&nbsp;provide a familiar if else control logic.<br /></span></span>
+              </li>
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px; PADDING-TOP: 4px" class="P6">
+                <span style="COLOR: rgb(0,0,0)">They have one Boolean attribute called test, that is evaluated for true or false.<br /></span>
+              </li>
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px; PADDING-TOP: 4px" class="P7">
+                <span style="COLOR: rgb(0,0,0)">&lt;</span><span style="COLOR: rgb(0,0,0); FONT-WEIGHT: bold">s:if</span><span style="COLOR: rgb(0,0,0)"><span>&nbsp;test="user.age &gt; 35"&gt;This user is too old.&lt;/</span></span><span style="COLOR: rgb(0,0,0); FONT-WEIGHT: bold">s:if</span><span style="COLOR: rgb(0,0,0)">&gt;<br /></span>
+              </li>
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px; PADDING-TOP: 4px" class="P8">
+                <span style="COLOR: rgb(0,0,0)">&lt;</span><span style="COLOR: rgb(0,0,0); FONT-WEIGHT: bold">s:elseif</span><span style="COLOR: rgb(0,0,0)"><span>&nbsp;test="user.age &lt; 35"&gt;This user is too young&lt;/</span></span><span style="COLOR: rgb(0,0,0); FONT-WEIGHT: bold">s:elseif</span><span style="COLOR: rgb(0,0,0)">&gt;<br /></span>
+              </li>
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px; PADDING-TOP: 4px" class="P9">
+                <span style="COLOR: rgb(0,0,0)">&lt;</span><span style="COLOR: rgb(0,0,0); FONT-WEIGHT: bold">s:else</span><span style="COLOR: rgb(0,0,0)">&gt;This user is just right&lt;/</span><span style="COLOR: rgb(0,0,0); FONT-WEIGHT: bold">s:else</span><span style="COLOR: rgb(0,0,0)">&gt;<br /></span>
+              </li>
+              <li style="TEXT-INDENT: -22px; MARGIN-LEFT: 22px; PADDING-TOP: 4px" class="NonBullet P10">
+                <span>&nbsp;<br /></span>
+              </li>
+            </ul>
+          </div>
+        </div>
+		
+		
+        <div id="Slide10" class="Slide Flow_Title_and_Content">
+          <img class="SlideBackground" alt="" src="content/images/struts2advance/Title_and_Content_BackGround.jpg" />
+          <div style="POSITION: absolute; BORDER-BOTTOM-STYLE: none; BORDER-LEFT-STYLE: none; WIDTH: 648px; BORDER-TOP-STYLE: none; BACKGROUND: none transparent scroll repeat 0% 0%; HEIGHT: 47px; BORDER-RIGHT-STYLE: none; TOP: 43px; LEFT: 36px" id="Slide10_Title_1" class="Title Title_1">
+            <table class="TextContainer" cellspacing="0" cellpadding="0">
+              <tr>
+                <td style="VERTICAL-ALIGN: bottom">
+                  <div style="POSITION: relative; TEXT-ALIGN: left; TEXT-TRANSFORM: none; FONT-VARIANT: normal; FONT-STYLE: normal; MARGIN: 4px 0px 0px; LETTER-SPACING: 0px; FONT-FAMILY: 'Calibri'; DIRECTION: ltr; COLOR: rgb(4,97,123); FONT-SIZE: 43px; VERTICAL-ALIGN: bottom; FONT-WEIGHT: normal">
+                    <p class="P1">
+                      <span>Miscellaneous Tags</span>
+                    </p>
+                  </div>
+                </td>
+              </tr>
+            </table>
+          </div>
+          <div style="POSITION: absolute; BORDER-BOTTOM-STYLE: none; BORDER-LEFT-STYLE: none; WIDTH: 648px; BORDER-TOP-STYLE: none; BACKGROUND: none transparent scroll repeat 0% 0%; HEIGHT: 438px; BORDER-RIGHT-STYLE: none; TOP: 96px; LEFT: 36px" id="Slide10_Content_Placeholder_2" class="Content_Placeholder_2">
+            <ul style="POSITION: relative; TEXT-ALIGN: left; TEXT-TRANSFORM: none; FONT-VARIANT: normal; FONT-STYLE: normal; MARGIN: 4px 7px; LETTER-SPACING: 0px; FONT-FAMILY: 'Constantia'; DIRECTION: ltr; COLOR: rgb(0,0,0); FONT-SIZE: 21px; VERTICAL-ALIGN: top; FONT-WEIGHT: normal">
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px" class="P1">
+                <span style="COLOR: rgb(0,0,0)">The&nbsp;</span><span style="COLOR: rgb(0,0,0); FONT-WEIGHT: bold">include tag</span><span style="COLOR: rgb(0,0,0)"><span>&nbsp;allows to execute a Servlet API–style include, allowing to include the output of any another web resource in the currently rendering page.<br /></span></span>
+              </li>
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px; PADDING-TOP: 4px" class="P2">
+                <span style="COLOR: rgb(0,0,0)">The include tag takes the attribute name of the page, action, servlet, or any reference able URL.<br /></span>
+              </li>
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px; PADDING-TOP: 4px" class="P3">
+                <span style="COLOR: rgb(0,0,0)">It provides native access to the ValueStack and a more extensible parameter model.<br /></span>
+              </li>
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px; PADDING-TOP: 4px" class="P4">
+                <span style="COLOR: rgb(0,0,0)">The&nbsp;</span><span style="COLOR: rgb(0,0,0); FONT-WEIGHT: bold">URL tag</span><span style="COLOR: rgb(0,0,0)"><span>&nbsp;supports URL management from controlling parameters to automatically persisting sessions in the absence of cookies.<br /></span></span>
+              </li>
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px; PADDING-TOP: 4px" class="P5">
+                <span style="COLOR: rgb(0,0,0)">&lt;</span><span style="COLOR: rgb(0,0,0); FONT-WEIGHT: bold">s:url</span><span style="COLOR: rgb(0,0,0)"><span>&nbsp;action="IteratorTag" var="myUrl"&gt;<br /></span></span>
+              </li>
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px; PADDING-TOP: 4px" class="P6">
+                <span style="COLOR: rgb(0,0,0)">&lt;</span><span style="COLOR: rgb(0,0,0); FONT-WEIGHT: bold">s:param</span><span style="COLOR: rgb(0,0,0)"><span>&nbsp;name="id" value="2"/&gt;<br /></span></span>
+              </li>
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px; PADDING-TOP: 4px" class="P7">
+                <span style="COLOR: rgb(0,0,0)">&lt;/</span><span style="COLOR: rgb(0,0,0); FONT-WEIGHT: bold">s:url</span><span style="COLOR: rgb(0,0,0)">&gt;<br /></span>
+              </li>
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px; PADDING-TOP: 4px" class="P8">
+                <span style="COLOR: rgb(0,0,0)">&lt;a href='&lt;s:property value="#myUrl" /&gt;'&gt; Click Me &lt;/a&gt;<br /></span>
+              </li>
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px; PADDING-TOP: 4px" class="P9">
+                <span style="COLOR: rgb(0,0,0)">The&nbsp;</span><span style="COLOR: rgb(0,0,0); FONT-WEIGHT: bold">param tag</span><span style="COLOR: rgb(0,0,0)"><span>&nbsp;specifies querystring parameters to be added to the generated URL.&nbsp;<br /></span></span>
+              </li>
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px; PADDING-TOP: 4px" class="P10">
+                <span style="COLOR: rgb(0,0,0)">The&nbsp;</span><span style="COLOR: rgb(0,0,0); FONT-WEIGHT: bold">includeParams</span><span style="COLOR: rgb(0,0,0)"><span>&nbsp;attribute specifies whether parameters from the current request are carried over into the new URL.<br /></span></span>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div id="Slide11" class="Slide Flow_Title_and_Content">
+          <img class="SlideBackground" alt="" src="content/images/struts2advance/Title_and_Content_BackGround.jpg" />
+          <div style="POSITION: absolute; BORDER-BOTTOM-STYLE: none; BORDER-LEFT-STYLE: none; WIDTH: 648px; BORDER-TOP-STYLE: none; BACKGROUND: none transparent scroll repeat 0% 0%; HEIGHT: 65px; BORDER-RIGHT-STYLE: none; TOP: 42px; LEFT: 36px" id="Slide11_Title_1" class="Title Title_1">
+            <table class="TextContainer" cellspacing="0" cellpadding="0">
+              <tr>
+                <td style="VERTICAL-ALIGN: bottom">
+                  <div style="POSITION: relative; TEXT-ALIGN: left; TEXT-TRANSFORM: none; FONT-VARIANT: normal; FONT-STYLE: normal; MARGIN: 4px 0px 0px; LETTER-SPACING: 0px; FONT-FAMILY: 'Calibri'; DIRECTION: ltr; COLOR: rgb(4,97,123); FONT-SIZE: 48px; VERTICAL-ALIGN: bottom; FONT-WEIGHT: normal">
+                    <p class="P1">
+                      <span>Miscellaneous Tags</span>
+                    </p>
+                  </div>
+                </td>
+              </tr>
+            </table>
+          </div>
+          <div style="POSITION: absolute; BORDER-BOTTOM-STYLE: none; BORDER-LEFT-STYLE: none; WIDTH: 648px; BORDER-TOP-STYLE: none; BACKGROUND: none transparent scroll repeat 0% 0%; HEIGHT: 408px; BORDER-RIGHT-STYLE: none; TOP: 120px; LEFT: 36px" id="Slide11_Content_Placeholder_2" class="Content_Placeholder_2">
+            <ul style="POSITION: relative; TEXT-ALIGN: left; TEXT-TRANSFORM: none; FONT-VARIANT: normal; FONT-STYLE: normal; MARGIN: 4px 7px; LETTER-SPACING: 0px; FONT-FAMILY: 'Constantia'; DIRECTION: ltr; COLOR: rgb(0,0,0); FONT-SIZE: 23px; VERTICAL-ALIGN: top; FONT-WEIGHT: normal">
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px" class="P1">
+                <span style="COLOR: rgb(0,0,0)">The&nbsp;</span><span style="COLOR: rgb(0,0,0); FONT-WEIGHT: bold">text tag</span><span style="COLOR: rgb(0,0,0)"><span>&nbsp;is used to display language-specific text, such as English or Spanish, based on a key lookup into a set of text resources.<br /></span></span>
+              </li>
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px; PADDING-TOP: 5px" class="P2">
+                <span style="COLOR: rgb(0,0,0)">It retrieves a message value from the&nbsp;</span><span style="COLOR: rgb(0,0,0); FONT-WEIGHT: bold">ResourceBundles</span><span style="COLOR: rgb(0,0,0)"><span>&nbsp;exposed through the framework’s own internationalization mechanisms.<br /></span></span>
+              </li>
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px; PADDING-TOP: 5px" class="P3">
+                <span style="COLOR: rgb(0,0,0)"><span>&nbsp;The&nbsp;</span></span><span style="COLOR: rgb(0,0,0); FONT-WEIGHT: bold">i18n tag</span><span style="COLOR: rgb(0,0,0)"><span>&nbsp;is used to manually specify ResourceBundle to be used in the test tag.<br /></span></span>
+              </li>
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px; PADDING-TOP: 5px" class="P4">
+                <span style="COLOR: rgb(0,0,0)">&lt;</span><span style="COLOR: rgb(0,0,0); FONT-WEIGHT: bold">s:i18n</span><span style="COLOR: rgb(0,0,0)"><span>&nbsp;name="maning.chapterSix.myResourceBundle_tr"&gt;<br /></span></span>
+              </li>
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px; PADDING-TOP: 5px" class="P5">
+                <span style="COLOR: rgb(0,0,0)">In &lt;</span><span style="COLOR: rgb(0,0,0); FONT-WEIGHT: bold">s:text</span><span style="COLOR: rgb(0,0,0)"><span>&nbsp;name="language"/&gt;,<br /></span></span>
+              </li>
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px; PADDING-TOP: 5px" class="P6">
+                <span style="COLOR: rgb(0,0,0)">&lt;</span><span style="COLOR: rgb(0,0,0); FONT-WEIGHT: bold">s:text</span><span style="COLOR: rgb(0,0,0)"><span>&nbsp;name="girl" var="foreignWord"/&gt;&lt;/</span></span><span style="COLOR: rgb(0,0,0); FONT-WEIGHT: bold">s:i18n</span><span style="COLOR: rgb(0,0,0)">&gt;<br /></span>
+              </li>
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px; PADDING-TOP: 5px" class="P7">
+                <span style="COLOR: rgb(0,0,0)">"&lt;</span><span style="COLOR: rgb(0,0,0); FONT-WEIGHT: bold">s:property</span><span style="COLOR: rgb(0,0,0)"><span>&nbsp; value="#foreignWord"/&gt;" means girl.<br /></span></span>
+              </li>
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px; PADDING-TOP: 5px" class="P8">
+                <span style="COLOR: rgb(0,0,0)">The&nbsp;</span><span style="COLOR: rgb(0,0,0); FONT-WEIGHT: bold">param tags</span><span style="COLOR: rgb(0,0,0)"><span>&nbsp;is a means for passing parameters into the custom utility objects.</span></span>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div id="Slide12" class="Slide Flow_Title_and_Content">
+          <img class="SlideBackground" alt="" src="content/images/struts2advance/Title_and_Content_BackGround.jpg" />
+          <div style="POSITION: absolute; BORDER-BOTTOM-STYLE: none; BORDER-LEFT-STYLE: none; WIDTH: 648px; BORDER-TOP-STYLE: none; BACKGROUND: none transparent scroll repeat 0% 0%; HEIGHT: 90px; BORDER-RIGHT-STYLE: none; TOP: 55px; LEFT: 36px" id="Slide12_Title_1" class="Title Title_1">
+            <table class="TextContainer" cellspacing="0" cellpadding="0">
+              <tr>
+                <td style="VERTICAL-ALIGN: bottom">
+                  <div style="POSITION: relative; TEXT-ALIGN: left; TEXT-TRANSFORM: none; FONT-VARIANT: normal; FONT-STYLE: normal; MARGIN: 4px 0px 0px; LETTER-SPACING: 0px; FONT-FAMILY: 'Calibri'; DIRECTION: ltr; COLOR: rgb(4,97,123); FONT-SIZE: 48px; VERTICAL-ALIGN: bottom; FONT-WEIGHT: normal">
+                    <p class="P1">
+                      <span>Results</span>
+                    </p>
+                  </div>
+                </td>
+              </tr>
+            </table>
+          </div>
+          <div style="POSITION: absolute; BORDER-BOTTOM-STYLE: none; BORDER-LEFT-STYLE: none; WIDTH: 648px; BORDER-TOP-STYLE: none; BACKGROUND: none transparent scroll repeat 0% 0%; HEIGHT: 346px; BORDER-RIGHT-STYLE: none; TOP: 152px; LEFT: 36px" id="Slide12_Content_Placeholder_2" class="Content_Placeholder_2">
+            <ul style="POSITION: relative; TEXT-ALIGN: left; TEXT-TRANSFORM: none; FONT-VARIANT: normal; FONT-STYLE: normal; MARGIN: 4px 7px; LETTER-SPACING: 0px; FONT-FAMILY: 'Constantia'; DIRECTION: ltr; COLOR: rgb(0,0,0); FONT-SIZE: 21px; VERTICAL-ALIGN: top; FONT-WEIGHT: normal">
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px" class="P1">
+                <span style="COLOR: rgb(0,0,0)">The result is the encapsulation of the MVC view concerns of the framework.<br /></span>
+              </li>
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px; PADDING-TOP: 4px" class="P2">
+                <span style="COLOR: rgb(0,0,0)">&nbsp;The Action class manages the application's state, while the Result Type manages the view.<br /></span>
+              </li>
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px; PADDING-TOP: 4px" class="P3">
+                <span style="COLOR: rgb(0,0,0)">By default, the framework uses a result type which works with JSPs to render the response pages.&nbsp;<br /></span>
+              </li>
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px; PADDING-TOP: 4px" class="P4">
+                <span style="COLOR: rgb(0,0,0)">The result, the dispatcher result, makes all the ValueStack data available to the executing JSP page.&nbsp;<br /></span>
+              </li>
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px; PADDING-TOP: 4px" class="P5">
+                <span style="COLOR: rgb(0,0,0)">&lt;action name="HomePage" class=". . . HomePage"&gt;<br /></span>
+              </li>
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px; PADDING-TOP: 4px" class="P6">
+                <span style="COLOR: rgb(0,0,0)">&lt;result&gt;/chapterEight/HomePage.jsp&lt;/result&gt;<br /></span>
+              </li>
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px; PADDING-TOP: 4px" class="P7">
+                <span style="COLOR: rgb(0,0,0)">&lt;/action&gt;<br /></span>
+              </li>
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px; PADDING-TOP: 4px" class="P8">
+                <span style="COLOR: rgb(0,0,0)">A result is the element into which you stuff the location of the JSP page.</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div id="Slide13" class="Slide Flow_Title_and_Content">
+          <img class="SlideBackground" alt="" src="content/images/struts2advance/Title_and_Content_BackGround.jpg" />
+          <div style="POSITION: absolute; BORDER-BOTTOM-STYLE: none; BORDER-LEFT-STYLE: none; WIDTH: 648px; BORDER-TOP-STYLE: none; BACKGROUND: none transparent scroll repeat 0% 0%; HEIGHT: 41px; BORDER-RIGHT-STYLE: none; TOP: 55px; LEFT: 36px" id="Slide13_Title_1" class="Title Title_1">
+            <table class="TextContainer" cellspacing="0" cellpadding="0">
+              <tr>
+                <td style="VERTICAL-ALIGN: bottom">
+                  <div style="POSITION: relative; TEXT-ALIGN: left; TEXT-TRANSFORM: none; FONT-VARIANT: normal; FONT-STYLE: normal; MARGIN: 4px 0px 0px; LETTER-SPACING: 0px; FONT-FAMILY: 'Calibri'; DIRECTION: ltr; COLOR: rgb(4,97,123); FONT-SIZE: 43px; VERTICAL-ALIGN: bottom; FONT-WEIGHT: normal">
+                    <p class="P1">
+                      <span>Predefined Result Types</span>
+                    </p>
+                  </div>
+                </td>
+              </tr>
+            </table>
+          </div>
+          <div style="POSITION: absolute; BORDER-BOTTOM-STYLE: none; BORDER-LEFT-STYLE: none; WIDTH: 648px; BORDER-TOP-STYLE: none; BACKGROUND: none transparent scroll repeat 0% 0%; HEIGHT: 60px; BORDER-RIGHT-STYLE: none; TOP: 102px; LEFT: 36px" id="Slide13_Content_Placeholder_2" class="Content_Placeholder_2">
+            <ul style="POSITION: relative; TEXT-ALIGN: left; TEXT-TRANSFORM: none; FONT-VARIANT: normal; FONT-STYLE: normal; MARGIN: 4px 7px; LETTER-SPACING: 0px; FONT-FAMILY: 'Constantia'; DIRECTION: ltr; COLOR: rgb(0,0,0); FONT-SIZE: 23px; VERTICAL-ALIGN: top; FONT-WEIGHT: normal">
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px" class="P1">
+                <span style="COLOR: rgb(0,0,0)">The framework provides several implementations of the&nbsp;com.opensymphony.xwork2.Result&nbsp;interface.<br /></span>
+              </li>
+            </ul>
+          </div>
+          <table style="POSITION: absolute; BACKGROUND-COLOR: rgb(0,0,0); WIDTH: 588px; BORDER-COLLAPSE: collapse; TABLE-LAYOUT: fixed; HEIGHT: 343px; TOP: 174px; LEFT: 48px" id="Slide13_Table_3">
+            <colgroup>
+              <col style="WIDTH: 150px" />
+              <col style="WIDTH: 438px" />
+            </colgroup>
+            <tbody>
+              <tr style="HEIGHT: 29px">
+                <td style="BORDER-BOTTOM: rgb(255,255,255) 3px solid; BORDER-LEFT: rgb(255,255,255) 1px solid; BACKGROUND-COLOR: rgb(219,245,249); VERTICAL-ALIGN: middle; BORDER-TOP: rgb(255,255,255) 1px solid; BORDER-RIGHT: rgb(255,255,255) 1px solid">
+                  <div style="POSITION: relative; TEXT-ALIGN: left; TEXT-TRANSFORM: none; FONT-VARIANT: normal; FONT-STYLE: normal; MARGIN: 4px 7px; LETTER-SPACING: 0px; FONT-FAMILY: 'Constantia'; DIRECTION: ltr; COLOR: rgb(0,0,0); FONT-SIZE: 13px; VERTICAL-ALIGN: middle; FONT-WEIGHT: normal">
+                    <p class="P1">
+                      <span>Chain<span>&nbsp;Result</span></span>
+                    </p>
+                  </div>
+                </td>
+                <td style="BORDER-BOTTOM: rgb(255,255,255) 3px solid; BORDER-LEFT: rgb(255,255,255) 1px solid; BACKGROUND-COLOR: rgb(219,245,249); VERTICAL-ALIGN: middle; BORDER-TOP: rgb(255,255,255) 1px solid; BORDER-RIGHT: rgb(255,255,255) 1px solid">
+                  <div style="POSITION: relative; TEXT-ALIGN: left; TEXT-TRANSFORM: none; FONT-VARIANT: normal; FONT-STYLE: normal; MARGIN: 4px 7px; LETTER-SPACING: 0px; FONT-FAMILY: 'Constantia'; DIRECTION: ltr; COLOR: rgb(0,0,0); FONT-SIZE: 13px; VERTICAL-ALIGN: middle; FONT-WEIGHT: normal">
+                    <p class="P1">
+                      <span>Used for Action Chaining</span>
+                    </p>
+                  </div>
+                </td>
+              </tr>
+              <tr style="HEIGHT: 31px">
+                <td style="BORDER-BOTTOM: rgb(255,255,255) 1px solid; BORDER-LEFT: rgb(255,255,255) 1px solid; BACKGROUND-COLOR: rgb(204,213,234); VERTICAL-ALIGN: middle; BORDER-TOP: rgb(255,255,255) 3px solid; BORDER-RIGHT: rgb(255,255,255) 1px solid">
+                  <div style="POSITION: relative; TEXT-ALIGN: left; TEXT-TRANSFORM: none; FONT-VARIANT: normal; FONT-STYLE: normal; MARGIN: 4px 7px; LETTER-SPACING: 0px; FONT-FAMILY: 'Constantia'; DIRECTION: ltr; COLOR: rgb(0,0,0); FONT-SIZE: 13px; VERTICAL-ALIGN: middle; FONT-WEIGHT: normal">
+                    <p class="P1">
+                      <span>Dispatcher Result</span>
+                    </p>
+                  </div>
+                </td>
+                <td style="BORDER-BOTTOM: rgb(255,255,255) 1px solid; BORDER-LEFT: rgb(255,255,255) 1px solid; BACKGROUND-COLOR: rgb(204,213,234); VERTICAL-ALIGN: middle; BORDER-TOP: rgb(255,255,255) 3px solid; BORDER-RIGHT: rgb(255,255,255) 1px solid">
+                  <div style="POSITION: relative; TEXT-ALIGN: left; TEXT-TRANSFORM: none; FONT-VARIANT: normal; FONT-STYLE: normal; MARGIN: 4px 7px; LETTER-SPACING: 0px; FONT-FAMILY: 'Constantia'; DIRECTION: ltr; COLOR: rgb(0,0,0); FONT-SIZE: 13px; VERTICAL-ALIGN: middle; FONT-WEIGHT: normal">
+                    <p class="P1">
+                      <span>Used for web resource integration, including JSP&nbsp;integration</span>
+                    </p>
+                  </div>
+                </td>
+              </tr>
+              <tr style="HEIGHT: 29px">
+                <td style="BORDER-BOTTOM: rgb(255,255,255) 1px solid; BORDER-LEFT: rgb(255,255,255) 1px solid; BACKGROUND-COLOR: rgb(219,245,249); VERTICAL-ALIGN: middle; BORDER-TOP: rgb(255,255,255) 1px solid; BORDER-RIGHT: rgb(255,255,255) 1px solid">
+                  <div style="POSITION: relative; TEXT-ALIGN: left; TEXT-TRANSFORM: none; FONT-VARIANT: normal; FONT-STYLE: normal; MARGIN: 4px 7px; LETTER-SPACING: 0px; FONT-FAMILY: 'Constantia'; DIRECTION: ltr; COLOR: rgb(0,0,0); FONT-SIZE: 13px; VERTICAL-ALIGN: middle; FONT-WEIGHT: normal">
+                    <p class="P1">
+                      <span>FreeMarker Result</span>
+                    </p>
+                  </div>
+                </td>
+                <td style="BORDER-BOTTOM: rgb(255,255,255) 1px solid; BORDER-LEFT: rgb(255,255,255) 1px solid; BACKGROUND-COLOR: rgb(219,245,249); VERTICAL-ALIGN: middle; BORDER-TOP: rgb(255,255,255) 1px solid; BORDER-RIGHT: rgb(255,255,255) 1px solid">
+                  <div style="POSITION: relative; TEXT-ALIGN: left; TEXT-TRANSFORM: none; FONT-VARIANT: normal; FONT-STYLE: normal; MARGIN: 4px 7px; LETTER-SPACING: 0px; FONT-FAMILY: 'Constantia'; DIRECTION: ltr; COLOR: rgb(0,0,0); FONT-SIZE: 13px; VERTICAL-ALIGN: middle; FONT-WEIGHT: normal">
+                    <p class="P1">
+                      <span>Used for FreeMarker&nbsp;integration</span>
+                    </p>
+                  </div>
+                </td>
+              </tr>
+              <tr style="HEIGHT: 29px">
+                <td style="BORDER-BOTTOM: rgb(255,255,255) 1px solid; BORDER-LEFT: rgb(255,255,255) 1px solid; BACKGROUND-COLOR: rgb(204,213,234); VERTICAL-ALIGN: middle; BORDER-TOP: rgb(255,255,255) 1px solid; BORDER-RIGHT: rgb(255,255,255) 1px solid">
+                  <div style="POSITION: relative; TEXT-ALIGN: left; TEXT-TRANSFORM: none; FONT-VARIANT: normal; FONT-STYLE: normal; MARGIN: 4px 7px; LETTER-SPACING: 0px; FONT-FAMILY: 'Constantia'; DIRECTION: ltr; COLOR: rgb(0,0,0); FONT-SIZE: 13px; VERTICAL-ALIGN: middle; FONT-WEIGHT: normal">
+                    <p class="P1">
+                      <span>HttpHeader Result</span>
+                    </p>
+                  </div>
+                </td>
+                <td style="BORDER-BOTTOM: rgb(255,255,255) 1px solid; BORDER-LEFT: rgb(255,255,255) 1px solid; BACKGROUND-COLOR: rgb(204,213,234); VERTICAL-ALIGN: middle; BORDER-TOP: rgb(255,255,255) 1px solid; BORDER-RIGHT: rgb(255,255,255) 1px solid">
+                  <div style="POSITION: relative; TEXT-ALIGN: left; TEXT-TRANSFORM: none; FONT-VARIANT: normal; FONT-STYLE: normal; MARGIN: 4px 7px; LETTER-SPACING: 0px; FONT-FAMILY: 'Constantia'; DIRECTION: ltr; COLOR: rgb(0,0,0); FONT-SIZE: 13px; VERTICAL-ALIGN: middle; FONT-WEIGHT: normal">
+                    <p class="P1">
+                      <span>Used to control special HTTP behaviors</span>
+                    </p>
+                  </div>
+                </td>
+              </tr>
+              <tr style="HEIGHT: 29px">
+                <td style="BORDER-BOTTOM: rgb(255,255,255) 1px solid; BORDER-LEFT: rgb(255,255,255) 1px solid; BACKGROUND-COLOR: rgb(219,245,249); VERTICAL-ALIGN: middle; BORDER-TOP: rgb(255,255,255) 1px solid; BORDER-RIGHT: rgb(255,255,255) 1px solid">
+                  <div style="POSITION: relative; TEXT-ALIGN: left; TEXT-TRANSFORM: none; FONT-VARIANT: normal; FONT-STYLE: normal; MARGIN: 4px 7px; LETTER-SPACING: 0px; FONT-FAMILY: 'Constantia'; DIRECTION: ltr; COLOR: rgb(0,0,0); FONT-SIZE: 13px; VERTICAL-ALIGN: middle; FONT-WEIGHT: normal">
+                    <p class="P1">
+                      <span>RedirectResult</span>
+                    </p>
+                  </div>
+                </td>
+                <td style="BORDER-BOTTOM: rgb(255,255,255) 1px solid; BORDER-LEFT: rgb(255,255,255) 1px solid; BACKGROUND-COLOR: rgb(219,245,249); VERTICAL-ALIGN: middle; BORDER-TOP: rgb(255,255,255) 1px solid; BORDER-RIGHT: rgb(255,255,255) 1px solid">
+                  <div style="POSITION: relative; TEXT-ALIGN: left; TEXT-TRANSFORM: none; FONT-VARIANT: normal; FONT-STYLE: normal; MARGIN: 4px 7px; LETTER-SPACING: 0px; FONT-FAMILY: 'Constantia'; DIRECTION: ltr; COLOR: rgb(0,0,0); FONT-SIZE: 13px; VERTICAL-ALIGN: middle; FONT-WEIGHT: normal">
+                    <p class="P1">
+                      <span>Used to redirect to another URL (web resource)</span>
+                    </p>
+                  </div>
+                </td>
+              </tr>
+              <tr style="HEIGHT: 40px">
+                <td style="BORDER-BOTTOM: rgb(255,255,255) 1px solid; BORDER-LEFT: rgb(255,255,255) 1px solid; BACKGROUND-COLOR: rgb(204,213,234); VERTICAL-ALIGN: middle; BORDER-TOP: rgb(255,255,255) 1px solid; BORDER-RIGHT: rgb(255,255,255) 1px solid">
+                  <div style="POSITION: relative; TEXT-ALIGN: left; TEXT-TRANSFORM: none; FONT-VARIANT: normal; FONT-STYLE: normal; MARGIN: 4px 7px; LETTER-SPACING: 0px; FONT-FAMILY: 'Constantia'; DIRECTION: ltr; COLOR: rgb(0,0,0); FONT-SIZE: 13px; VERTICAL-ALIGN: middle; FONT-WEIGHT: normal">
+                    <p class="P1">
+                      <span>Redirect ActionResult</span>
+                    </p>
+                  </div>
+                </td>
+                <td style="BORDER-BOTTOM: rgb(255,255,255) 1px solid; BORDER-LEFT: rgb(255,255,255) 1px solid; BACKGROUND-COLOR: rgb(204,213,234); VERTICAL-ALIGN: middle; BORDER-TOP: rgb(255,255,255) 1px solid; BORDER-RIGHT: rgb(255,255,255) 1px solid">
+                  <div style="POSITION: relative; TEXT-ALIGN: left; TEXT-TRANSFORM: none; FONT-VARIANT: normal; FONT-STYLE: normal; MARGIN: 4px 7px; LETTER-SPACING: 0px; FONT-FAMILY: 'Constantia'; DIRECTION: ltr; COLOR: rgb(0,0,0); FONT-SIZE: 13px; VERTICAL-ALIGN: middle; FONT-WEIGHT: normal">
+                    <p class="P1">
+                      <span>Used to redirect to another action mapping</span>
+                    </p>
+                  </div>
+                </td>
+              </tr>
+              <tr style="HEIGHT: 41px">
+                <td style="BORDER-BOTTOM: rgb(255,255,255) 1px solid; BORDER-LEFT: rgb(255,255,255) 1px solid; BACKGROUND-COLOR: rgb(219,245,249); VERTICAL-ALIGN: middle; BORDER-TOP: rgb(255,255,255) 1px solid; BORDER-RIGHT: rgb(255,255,255) 1px solid">
+                  <div style="POSITION: relative; TEXT-ALIGN: left; TEXT-TRANSFORM: none; FONT-VARIANT: normal; FONT-STYLE: normal; MARGIN: 4px 7px; LETTER-SPACING: 0px; FONT-FAMILY: 'Constantia'; DIRECTION: ltr; COLOR: rgb(0,0,0); FONT-SIZE: 13px; VERTICAL-ALIGN: middle; FONT-WEIGHT: normal">
+                    <p class="P1">
+                      <span>Stream Result</span>
+                    </p>
+                  </div>
+                </td>
+                <td style="BORDER-BOTTOM: rgb(255,255,255) 1px solid; BORDER-LEFT: rgb(255,255,255) 1px solid; BACKGROUND-COLOR: rgb(219,245,249); VERTICAL-ALIGN: middle; BORDER-TOP: rgb(255,255,255) 1px solid; BORDER-RIGHT: rgb(255,255,255) 1px solid">
+                  <div style="POSITION: relative; TEXT-ALIGN: left; TEXT-TRANSFORM: none; FONT-VARIANT: normal; FONT-STYLE: normal; MARGIN: 4px 7px; LETTER-SPACING: 0px; FONT-FAMILY: 'Constantia'; DIRECTION: ltr; COLOR: rgb(0,0,0); FONT-SIZE: 13px; VERTICAL-ALIGN: middle; FONT-WEIGHT: normal">
+                    <p class="P1">
+                      <span>Used to stream an InputStream (raw data) back to the browser (usually for file downloads)</span>
+                    </p>
+                  </div>
+                </td>
+              </tr>
+              <tr style="HEIGHT: 29px">
+                <td style="BORDER-BOTTOM: rgb(255,255,255) 1px solid; BORDER-LEFT: rgb(255,255,255) 1px solid; BACKGROUND-COLOR: rgb(204,213,234); VERTICAL-ALIGN: middle; BORDER-TOP: rgb(255,255,255) 1px solid; BORDER-RIGHT: rgb(255,255,255) 1px solid">
+                  <div style="POSITION: relative; TEXT-ALIGN: left; TEXT-TRANSFORM: none; FONT-VARIANT: normal; FONT-STYLE: normal; MARGIN: 4px 7px; LETTER-SPACING: 0px; FONT-FAMILY: 'Constantia'; DIRECTION: ltr; COLOR: rgb(0,0,0); FONT-SIZE: 13px; VERTICAL-ALIGN: middle; FONT-WEIGHT: normal">
+                    <p class="P1">
+                      <span>Velocity<span>&nbsp;Result</span></span>
+                    </p>
+                  </div>
+                </td>
+                <td style="BORDER-BOTTOM: rgb(255,255,255) 1px solid; BORDER-LEFT: rgb(255,255,255) 1px solid; BACKGROUND-COLOR: rgb(204,213,234); VERTICAL-ALIGN: middle; BORDER-TOP: rgb(255,255,255) 1px solid; BORDER-RIGHT: rgb(255,255,255) 1px solid">
+                  <div style="POSITION: relative; TEXT-ALIGN: left; TEXT-TRANSFORM: none; FONT-VARIANT: normal; FONT-STYLE: normal; MARGIN: 4px 7px; LETTER-SPACING: 0px; FONT-FAMILY: 'Constantia'; DIRECTION: ltr; COLOR: rgb(0,0,0); FONT-SIZE: 13px; VERTICAL-ALIGN: middle; FONT-WEIGHT: normal">
+                    <p class="P1">
+                      <span>Used for Velocity&nbsp;integration</span>
+                    </p>
+                  </div>
+                </td>
+              </tr>
+              <tr style="HEIGHT: 29px">
+                <td style="BORDER-BOTTOM: rgb(255,255,255) 1px solid; BORDER-LEFT: rgb(255,255,255) 1px solid; BACKGROUND-COLOR: rgb(219,245,249); VERTICAL-ALIGN: middle; BORDER-TOP: rgb(255,255,255) 1px solid; BORDER-RIGHT: rgb(255,255,255) 1px solid">
+                  <div style="POSITION: relative; TEXT-ALIGN: left; TEXT-TRANSFORM: none; FONT-VARIANT: normal; FONT-STYLE: normal; MARGIN: 4px 7px; LETTER-SPACING: 0px; FONT-FAMILY: 'Constantia'; DIRECTION: ltr; COLOR: rgb(0,0,0); FONT-SIZE: 13px; VERTICAL-ALIGN: middle; FONT-WEIGHT: normal">
+                    <p class="P1">
+                      <span>XSL Result</span>
+                    </p>
+                  </div>
+                </td>
+                <td style="BORDER-BOTTOM: rgb(255,255,255) 1px solid; BORDER-LEFT: rgb(255,255,255) 1px solid; BACKGROUND-COLOR: rgb(219,245,249); VERTICAL-ALIGN: middle; BORDER-TOP: rgb(255,255,255) 1px solid; BORDER-RIGHT: rgb(255,255,255) 1px solid">
+                  <div style="POSITION: relative; TEXT-ALIGN: left; TEXT-TRANSFORM: none; FONT-VARIANT: normal; FONT-STYLE: normal; MARGIN: 4px 7px; LETTER-SPACING: 0px; FONT-FAMILY: 'Constantia'; DIRECTION: ltr; COLOR: rgb(0,0,0); FONT-SIZE: 13px; VERTICAL-ALIGN: middle; FONT-WEIGHT: normal">
+                    <p class="P1">
+                      <span>Used for XML/XSLT integration</span>
+                    </p>
+                  </div>
+                </td>
+              </tr>
+              <tr style="HEIGHT: 31px">
+                <td style="BORDER-BOTTOM: rgb(255,255,255) 1px solid; BORDER-LEFT: rgb(255,255,255) 1px solid; BACKGROUND-COLOR: rgb(204,213,234); VERTICAL-ALIGN: middle; BORDER-TOP: rgb(255,255,255) 1px solid; BORDER-RIGHT: rgb(255,255,255) 1px solid">
+                  <div style="POSITION: relative; TEXT-ALIGN: left; TEXT-TRANSFORM: none; FONT-VARIANT: normal; FONT-STYLE: normal; MARGIN: 4px 7px; LETTER-SPACING: 0px; FONT-FAMILY: 'Constantia'; DIRECTION: ltr; COLOR: rgb(0,0,0); FONT-SIZE: 13px; VERTICAL-ALIGN: middle; FONT-WEIGHT: normal">
+                    <p class="P1">
+                      <span>PlainText Result</span>
+                    </p>
+                  </div>
+                </td>
+                <td style="BORDER-BOTTOM: rgb(255,255,255) 1px solid; BORDER-LEFT: rgb(255,255,255) 1px solid; BACKGROUND-COLOR: rgb(204,213,234); VERTICAL-ALIGN: middle; BORDER-TOP: rgb(255,255,255) 1px solid; BORDER-RIGHT: rgb(255,255,255) 1px solid">
+                  <div style="POSITION: relative; TEXT-ALIGN: left; TEXT-TRANSFORM: none; FONT-VARIANT: normal; FONT-STYLE: normal; MARGIN: 4px 7px; LETTER-SPACING: 0px; FONT-FAMILY: 'Constantia'; DIRECTION: ltr; COLOR: rgb(0,0,0); FONT-SIZE: 13px; VERTICAL-ALIGN: middle; FONT-WEIGHT: normal">
+                    <p class="P1">
+                      <span>Used to display the raw content of a particular page (i.e jsp, HTML)</span>
+                    </p>
+                  </div>
+                </td>
+              </tr>
+              <tr style="HEIGHT: 24px">
+                <td style="BORDER-BOTTOM: rgb(255,255,255) 1px solid; BORDER-LEFT: rgb(255,255,255) 1px solid; BACKGROUND-COLOR: rgb(219,245,249); VERTICAL-ALIGN: middle; BORDER-TOP: rgb(255,255,255) 1px solid; BORDER-RIGHT: rgb(255,255,255) 1px solid">
+                  <div style="POSITION: relative; TEXT-ALIGN: left; TEXT-TRANSFORM: none; FONT-VARIANT: normal; FONT-STYLE: normal; MARGIN: 4px 7px; LETTER-SPACING: 0px; FONT-FAMILY: 'Constantia'; DIRECTION: ltr; COLOR: rgb(0,0,0); FONT-SIZE: 13px; VERTICAL-ALIGN: middle; FONT-WEIGHT: normal">
+                    <p class="P1">
+                      <span>Tiles Result</span>
+                    </p>
+                  </div>
+                </td>
+                <td style="BORDER-BOTTOM: rgb(255,255,255) 1px solid; BORDER-LEFT: rgb(255,255,255) 1px solid; BACKGROUND-COLOR: rgb(219,245,249); VERTICAL-ALIGN: middle; BORDER-TOP: rgb(255,255,255) 1px solid; BORDER-RIGHT: rgb(255,255,255) 1px solid">
+                  <div style="POSITION: relative; TEXT-ALIGN: left; TEXT-TRANSFORM: none; FONT-VARIANT: normal; FONT-STYLE: normal; MARGIN: 4px 7px; LETTER-SPACING: 0px; FONT-FAMILY: 'Constantia'; DIRECTION: ltr; COLOR: rgb(0,0,0); FONT-SIZE: 13px; VERTICAL-ALIGN: middle; FONT-WEIGHT: normal">
+                    <p class="P1">
+                      <span>Used to provide Tiles integration</span>
+                    </p>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div id="Slide14" class="Slide Flow_Title_and_Content">
+          <img class="SlideBackground" alt="" src="content/images/struts2advance/Title_and_Content_BackGround.jpg" />
+          <div style="POSITION: absolute; BORDER-BOTTOM-STYLE: none; BORDER-LEFT-STYLE: none; WIDTH: 648px; BORDER-TOP-STYLE: none; BACKGROUND: none transparent scroll repeat 0% 0%; HEIGHT: 53px; BORDER-RIGHT-STYLE: none; TOP: 55px; LEFT: 36px" id="Slide14_Title_1" class="Title Title_1">
+            <table class="TextContainer" cellspacing="0" cellpadding="0">
+              <tr>
+                <td style="VERTICAL-ALIGN: bottom">
+                  <div style="POSITION: relative; TEXT-ALIGN: left; TEXT-TRANSFORM: none; FONT-VARIANT: normal; FONT-STYLE: normal; MARGIN: 4px 0px 0px; LETTER-SPACING: 0px; FONT-FAMILY: 'Calibri'; DIRECTION: ltr; COLOR: rgb(4,97,123); FONT-SIZE: 43px; VERTICAL-ALIGN: bottom; FONT-WEIGHT: normal">
+                    <p class="P1">
+                      <span>Chain Result</span>
+                    </p>
+                  </div>
+                </td>
+              </tr>
+            </table>
+          </div>
+          <div style="POSITION: absolute; BORDER-BOTTOM-STYLE: none; BORDER-LEFT-STYLE: none; WIDTH: 648px; BORDER-TOP-STYLE: none; BACKGROUND: none transparent scroll repeat 0% 0%; HEIGHT: 408px; BORDER-RIGHT-STYLE: none; TOP: 114px; LEFT: 36px" id="Slide14_Content_Placeholder_2" class="Content_Placeholder_2">
+            <ul style="POSITION: relative; TEXT-ALIGN: left; TEXT-TRANSFORM: none; FONT-VARIANT: normal; FONT-STYLE: normal; MARGIN: 4px 7px; LETTER-SPACING: 0px; FONT-FAMILY: 'Constantia'; DIRECTION: ltr; COLOR: rgb(0,0,0); FONT-SIZE: 17px; VERTICAL-ALIGN: top; FONT-WEIGHT: normal">
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px" class="P1">
+                <span style="COLOR: rgb(0,0,0)">This result invokes an entire other action, complete with it's own interceptor stack and result.<br /></span>
+              </li>
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px; PADDING-TOP: 4px" class="P2">
+                <span style="COLOR: rgb(8,55,99)">&lt;package name="public" extends="struts-default"&gt;&nbsp;<br /></span>
+              </li>
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px; PADDING-TOP: 4px" class="P3">
+                <span style="COLOR: rgb(8,55,99)">&lt;!-- Chain creatAccount to login, using the default parameter --&gt;&nbsp;<br /></span>
+              </li>
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px; PADDING-TOP: 4px" class="P4">
+                <span style="COLOR: rgb(8,55,99)">&lt;action name="createAccount" class="..."&gt;&nbsp;<br /></span>
+              </li>
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px; PADDING-TOP: 4px" class="P5">
+                <span style="COLOR: rgb(8,55,99)">&lt;result type="chain"&gt;login&lt;/result&gt;&nbsp;<br /></span>
+              </li>
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px; PADDING-TOP: 4px" class="P6">
+                <span style="COLOR: rgb(8,55,99)">&lt;/action&gt;&nbsp;<br /></span>
+              </li>
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px; PADDING-TOP: 4px" class="P7">
+                <span style="COLOR: rgb(8,55,99)">&lt;action name="login" class="..."&gt;&nbsp;<br /></span>
+              </li>
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px; PADDING-TOP: 4px" class="P8">
+                <span style="COLOR: rgb(8,55,99)">&lt;!-- Chain to another namespace --&gt;&nbsp;<br /></span>
+              </li>
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px; PADDING-TOP: 4px" class="P9">
+                <span style="COLOR: rgb(8,55,99)">&lt;result type="chain"&gt;&nbsp;<br /></span>
+              </li>
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px; PADDING-TOP: 4px" class="P10">
+                <span style="COLOR: rgb(8,55,99)">&lt;param name="actionName"&gt;dashboard&lt;/param&gt;&nbsp;<br /></span>
+              </li>
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px; PADDING-TOP: 4px" class="P11">
+                <span style="COLOR: rgb(8,55,99)">&lt;param name="namespace"&gt;/secure&lt;/param&gt;&nbsp;<br /></span>
+              </li>
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px; PADDING-TOP: 4px" class="P12">
+                <span style="COLOR: rgb(8,55,99)">&lt;/result&gt;&nbsp;<br /></span>
+              </li>
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px; PADDING-TOP: 4px" class="P13">
+                <span style="COLOR: rgb(8,55,99)">&lt;/action&gt;&nbsp;<br /></span>
+              </li>
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px; PADDING-TOP: 4px" class="P14">
+                <span style="COLOR: rgb(8,55,99)">&lt;/package&gt;&nbsp;<br /></span>
+              </li>
+              <li style="TEXT-INDENT: -22px; COLOR: rgb(8,55,99); MARGIN-LEFT: 22px; PADDING-TOP: 4px" class="NonBullet P15">
+                <span>&nbsp;<br /></span>
+              </li>
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px; PADDING-TOP: 4px" class="P16">
+                <span style="COLOR: rgb(8,55,99)">&lt;package name="secure" extends="struts-default" namespace="/secure"&gt;&nbsp;<br /></span>
+              </li>
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px; PADDING-TOP: 4px" class="P17">
+                <span style="COLOR: rgb(8,55,99)">&lt;action name="dashboard" class="..."&gt; &lt;result&gt;dashboard.jsp&lt;/result&gt; &lt;/action&gt; &lt;/package&gt;</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div id="Slide15" class="Slide Flow_Title_and_Content">
+          <img class="SlideBackground" alt="" src="content/images/struts2advance/Title_and_Content_BackGround.jpg" />
+          <div style="POSITION: absolute; BORDER-BOTTOM-STYLE: none; BORDER-LEFT-STYLE: none; WIDTH: 648px; BORDER-TOP-STYLE: none; BACKGROUND: none transparent scroll repeat 0% 0%; HEIGHT: 90px; BORDER-RIGHT-STYLE: none; TOP: 55px; LEFT: 36px" id="Slide15_Title_1" class="Title Title_1">
+            <table class="TextContainer" cellspacing="0" cellpadding="0">
+              <tr>
+                <td style="VERTICAL-ALIGN: bottom">
+                  <div style="POSITION: relative; TEXT-ALIGN: left; TEXT-TRANSFORM: none; FONT-VARIANT: normal; FONT-STYLE: normal; MARGIN: 4px 0px 0px; LETTER-SPACING: 0px; FONT-FAMILY: 'Calibri'; DIRECTION: ltr; COLOR: rgb(4,97,123); FONT-SIZE: 48px; VERTICAL-ALIGN: bottom; FONT-WEIGHT: normal">
+                    <p class="P1">
+                      <span>Dispatcher Result</span>
+                    </p>
+                  </div>
+                </td>
+              </tr>
+            </table>
+          </div>
+          <div style="POSITION: absolute; BORDER-BOTTOM-STYLE: none; BORDER-LEFT-STYLE: none; WIDTH: 648px; BORDER-TOP-STYLE: none; BACKGROUND: none transparent scroll repeat 0% 0%; HEIGHT: 346px; BORDER-RIGHT-STYLE: none; TOP: 152px; LEFT: 36px" id="Slide15_Content_Placeholder_2" class="Content_Placeholder_2">
+            <ul style="POSITION: relative; TEXT-ALIGN: left; TEXT-TRANSFORM: none; FONT-VARIANT: normal; FONT-STYLE: normal; MARGIN: 4px 7px; LETTER-SPACING: 0px; FONT-FAMILY: 'Constantia'; DIRECTION: ltr; COLOR: rgb(0,0,0); FONT-SIZE: 25px; VERTICAL-ALIGN: top; FONT-WEIGHT: normal">
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px" class="P1">
+                <span style="COLOR: rgb(0,0,0)">Includes or forwards to a view (usually a jsp).&nbsp;<br /></span>
+              </li>
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px; PADDING-TOP: 5px" class="P2">
+                <span style="COLOR: rgb(0,0,0)">Behind the scenes Struts will use a RequestDispatcher, where the target servlet/JSP receives the same request/response objects as the original servlet/JSP.&nbsp;<br /></span>
+              </li>
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px; PADDING-TOP: 5px" class="P3">
+                <span style="COLOR: rgb(0,0,0)">Data can be passed between them using request.setAttribute() - the Struts action is available.<br /></span>
+              </li>
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px; PADDING-TOP: 5px" class="P4">
+                <span style="COLOR: rgb(8,55,99)">&lt;result name="success" type="dispatcher"&gt;&nbsp;<br /></span>
+              </li>
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px; PADDING-TOP: 5px" class="P5">
+                <span style="COLOR: rgb(8,55,99)">&lt;param name="location"&gt;foo.jsp&lt;/param&gt;&nbsp;<br /></span>
+              </li>
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px; PADDING-TOP: 5px" class="P6">
+                <span style="COLOR: rgb(8,55,99)">&lt;/result&gt;</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div id="Slide16" class="Slide Flow_Title_and_Content">
+          <img class="SlideBackground" alt="" src="content/images/struts2advance/Title_and_Content_BackGround.jpg" />
+          <div style="POSITION: absolute; BORDER-BOTTOM-STYLE: none; BORDER-LEFT-STYLE: none; WIDTH: 648px; BORDER-TOP-STYLE: none; BACKGROUND: none transparent scroll repeat 0% 0%; HEIGHT: 65px; BORDER-RIGHT-STYLE: none; TOP: 48px; LEFT: 36px" id="Slide16_Title_1" class="Title Title_1">
+            <table class="TextContainer" cellspacing="0" cellpadding="0">
+              <tr>
+                <td style="VERTICAL-ALIGN: bottom">
+                  <div style="POSITION: relative; TEXT-ALIGN: left; TEXT-TRANSFORM: none; FONT-VARIANT: normal; FONT-STYLE: normal; MARGIN: 4px 0px 0px; LETTER-SPACING: 0px; FONT-FAMILY: 'Calibri'; DIRECTION: ltr; COLOR: rgb(4,97,123); FONT-SIZE: 48px; VERTICAL-ALIGN: bottom; FONT-WEIGHT: normal">
+                    <p class="P1">
+                      <span>FreeMarker and Velocity Result</span>
+                    </p>
+                  </div>
+                </td>
+              </tr>
+            </table>
+          </div>
+          <div style="POSITION: absolute; BORDER-BOTTOM-STYLE: none; BORDER-LEFT-STYLE: none; WIDTH: 648px; BORDER-TOP-STYLE: none; BACKGROUND: none transparent scroll repeat 0% 0%; HEIGHT: 408px; BORDER-RIGHT-STYLE: none; TOP: 126px; LEFT: 36px" id="Slide16_Content_Placeholder_2" class="Content_Placeholder_2">
+            <ul style="POSITION: relative; TEXT-ALIGN: left; TEXT-TRANSFORM: none; FONT-VARIANT: normal; FONT-STYLE: normal; MARGIN: 4px 7px; LETTER-SPACING: 0px; FONT-FAMILY: 'Constantia'; DIRECTION: ltr; COLOR: rgb(0,0,0); FONT-SIZE: 19px; VERTICAL-ALIGN: top; FONT-WEIGHT: normal">
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px" class="P1">
+                <span style="COLOR: rgb(0,0,0); FONT-WEIGHT: bold; TEXT-DECORATION: underline">FreeMarker</span><span style="COLOR: rgb(0,0,0)">: Renders a view using the Freemarker template engine.<br /></span>
+              </li>
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px; PADDING-TOP: 4px" class="P2">
+                <span style="COLOR: rgb(0,0,0)">The FreemarkarManager class configures the template loaders so that the template location can be either relative to the web root folder. eg&nbsp;</span><span style="COLOR: rgb(0,0,0); FONT-WEIGHT: bold">/WEB-INF/views/home.ftl</span><span style="COLOR: rgb(0,0,0)"><span>&nbsp;or a a classpath resuorce. eg&nbsp;</span></span><span style="COLOR: rgb(0,0,0); FONT-WEIGHT: bold">/com/company/web/views/home.ftl</span><span style="FONT-FAMILY: '+mn-ea'; COLOR: rgb(0,0,0)">.<br /></span>
+              </li>
+              <li style="TEXT-INDENT: -22px; MARGIN-LEFT: 22px; PADDING-TOP: 4px" class="NonBullet P3">
+                <span>&nbsp;<br /></span>
+              </li>
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px; PADDING-TOP: 4px" class="P4">
+                <span style="COLOR: rgb(8,55,99)">&lt;result name="success“ type="freemarker"&gt;<br /></span>
+              </li>
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px; PADDING-TOP: 4px" class="P5">
+                <span style="COLOR: rgb(8,55,99)"><span>&nbsp; &nbsp;foo.ftl<br /></span></span>
+              </li>
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px; PADDING-TOP: 4px" class="P6">
+                <span style="COLOR: rgb(8,55,99)">&lt;/result&gt;&nbsp;<br /></span>
+              </li>
+              <li style="TEXT-INDENT: -22px; COLOR: rgb(8,55,99); MARGIN-LEFT: 22px; PADDING-TOP: 4px" class="NonBullet P7">
+                <span>&nbsp;<br /></span>
+              </li>
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px; PADDING-TOP: 4px" class="P8">
+                <span style="COLOR: rgb(0,0,0); FONT-WEIGHT: bold; TEXT-DECORATION: underline">Velocity</span><span style="COLOR: rgb(0,0,0)">: Using the Servlet container's JspFactory, this result mocks a JSP execution environment and then displays a Velocity template by streamming directly to the servlet output.<br /></span>
+              </li>
+              <li style="TEXT-INDENT: -22px; MARGIN-LEFT: 22px; PADDING-TOP: 4px" class="NonBullet P9">
+                <span>&nbsp;<br /></span>
+              </li>
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px; PADDING-TOP: 4px" class="P10">
+                <span style="COLOR: rgb(3,73,92)">&lt;result name="success" type="velocity"&gt;<br /></span>
+              </li>
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px; PADDING-TOP: 4px" class="P11">
+                <span style="COLOR: rgb(3,73,92)"><span>&nbsp; &nbsp;&lt;param name="location"&gt;foo.vm&lt;/param&gt;&nbsp;<br /></span></span>
+              </li>
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px; PADDING-TOP: 4px" class="P12">
+                <span style="COLOR: rgb(3,73,92)">&lt;/result&gt;<br />
+                &nbsp;<br /></span>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div id="Slide17" class="Slide Flow_Title_and_Content">
+          <img class="SlideBackground" alt="" src="content/images/struts2advance/Title_and_Content_BackGround.jpg" />
+          <div style="POSITION: absolute; BORDER-BOTTOM-STYLE: none; BORDER-LEFT-STYLE: none; WIDTH: 648px; BORDER-TOP-STYLE: none; BACKGROUND: none transparent scroll repeat 0% 0%; HEIGHT: 90px; BORDER-RIGHT-STYLE: none; TOP: 55px; LEFT: 36px" id="Slide17_Title_1" class="Title Title_1">
+            <table class="TextContainer" cellspacing="0" cellpadding="0">
+              <tr>
+                <td style="VERTICAL-ALIGN: bottom">
+                  <div style="POSITION: relative; TEXT-ALIGN: left; TEXT-TRANSFORM: none; FONT-VARIANT: normal; FONT-STYLE: normal; MARGIN: 4px 0px 0px; LETTER-SPACING: 0px; FONT-FAMILY: 'Calibri'; DIRECTION: ltr; COLOR: rgb(4,97,123); FONT-SIZE: 48px; VERTICAL-ALIGN: bottom; FONT-WEIGHT: normal">
+                    <p class="P1">
+                      <span>HttpHeader Result</span>
+                    </p>
+                  </div>
+                </td>
+              </tr>
+            </table>
+          </div>
+          <div style="POSITION: absolute; BORDER-BOTTOM-STYLE: none; BORDER-LEFT-STYLE: none; WIDTH: 648px; BORDER-TOP-STYLE: none; BACKGROUND: none transparent scroll repeat 0% 0%; HEIGHT: 346px; BORDER-RIGHT-STYLE: none; TOP: 152px; LEFT: 36px" id="Slide17_Content_Placeholder_2" class="Content_Placeholder_2">
+            <ul style="POSITION: relative; TEXT-ALIGN: left; TEXT-TRANSFORM: none; FONT-VARIANT: normal; FONT-STYLE: normal; MARGIN: 4px 7px; LETTER-SPACING: 0px; FONT-FAMILY: 'Constantia'; DIRECTION: ltr; COLOR: rgb(0,0,0); FONT-SIZE: 21px; VERTICAL-ALIGN: top; FONT-WEIGHT: normal">
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px" class="P1">
+                <span style="COLOR: rgb(0,0,0)">A custom Result type for setting HTTP headers and status by optionally evaluating against the ValueStack.&nbsp;<br /></span>
+              </li>
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px; PADDING-TOP: 4px" class="P2">
+                <span style="COLOR: rgb(0,0,0)">The result can also be used to send and error to the client.<br /></span>
+              </li>
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px; PADDING-TOP: 4px" class="P3">
+                <span style="COLOR: rgb(8,55,99)">&lt;result name="success" type="httpheader"&gt;&nbsp;<br /></span>
+              </li>
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px; PADDING-TOP: 4px" class="P4">
+                <span style="COLOR: rgb(8,55,99)">&lt;param name="status"&gt;204&lt;/param&gt;&nbsp;<br /></span>
+              </li>
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px; PADDING-TOP: 4px" class="P5">
+                <span style="COLOR: rgb(8,55,99)">&lt;param name="headers.a"&gt;a custom header value&lt;/param&gt;&nbsp;<br /></span>
+              </li>
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px; PADDING-TOP: 4px" class="P6">
+                <span style="COLOR: rgb(8,55,99)">&lt;param name="headers.b"&gt;more custom header value&lt;/param&gt;<br /></span>
+              </li>
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px; PADDING-TOP: 4px" class="P7">
+                <span style="COLOR: rgb(8,55,99)">&lt;/result&gt;&nbsp;<br /></span>
+              </li>
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px; PADDING-TOP: 4px" class="P8">
+                <span style="COLOR: rgb(8,55,99)">&lt;result name="proxyRequired" type="httpheader"&gt;&nbsp;<br /></span>
+              </li>
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px; PADDING-TOP: 4px" class="P9">
+                <span style="COLOR: rgb(8,55,99)">&lt;param name="error"&gt;305&lt;/param&gt;&nbsp;<br /></span>
+              </li>
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px; PADDING-TOP: 4px" class="P10">
+                <span style="COLOR: rgb(8,55,99)">&lt;param name="errorMessage"&gt;accessed through prozy&lt;/param&gt;&nbsp;<br /></span>
+              </li>
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px; PADDING-TOP: 4px" class="P11">
+                <span style="COLOR: rgb(8,55,99)">&lt;/result&gt;</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div id="Slide18" class="Slide Flow_Title_and_Content">
+          <img class="SlideBackground" alt="" src="content/images/struts2advance/Title_and_Content_BackGround.jpg" />
+          <div style="POSITION: absolute; BORDER-BOTTOM-STYLE: none; BORDER-LEFT-STYLE: none; WIDTH: 648px; BORDER-TOP-STYLE: none; BACKGROUND: none transparent scroll repeat 0% 0%; HEIGHT: 53px; BORDER-RIGHT-STYLE: none; TOP: 55px; LEFT: 36px" id="Slide18_Title_1" class="Title Title_1">
+            <table class="TextContainer" cellspacing="0" cellpadding="0">
+              <tr>
+                <td style="VERTICAL-ALIGN: bottom">
+                  <div style="POSITION: relative; TEXT-ALIGN: left; TEXT-TRANSFORM: none; FONT-VARIANT: normal; FONT-STYLE: normal; MARGIN: 4px 0px 0px; LETTER-SPACING: 0px; FONT-FAMILY: 'Calibri'; DIRECTION: ltr; COLOR: rgb(4,97,123); FONT-SIZE: 43px; VERTICAL-ALIGN: bottom; FONT-WEIGHT: normal">
+                    <p class="P1">
+                      <span>Adding Spring to Struts 2</span>
+                    </p>
+                  </div>
+                </td>
+              </tr>
+            </table>
+          </div>
+          <div style="POSITION: absolute; BORDER-BOTTOM-STYLE: none; BORDER-LEFT-STYLE: none; WIDTH: 648px; BORDER-TOP-STYLE: none; BACKGROUND: none transparent scroll repeat 0% 0%; HEIGHT: 414px; BORDER-RIGHT-STYLE: none; TOP: 114px; LEFT: 36px" id="Slide18_Content_Placeholder_2" class="Content_Placeholder_2">
+            <ul style="POSITION: relative; TEXT-ALIGN: left; TEXT-TRANSFORM: none; FONT-VARIANT: normal; FONT-STYLE: normal; MARGIN: 4px 7px; LETTER-SPACING: 0px; FONT-FAMILY: 'Constantia'; DIRECTION: ltr; COLOR: rgb(0,0,0); FONT-SIZE: 21px; VERTICAL-ALIGN: top; FONT-WEIGHT: normal">
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px" class="P1">
+                <span style="COLOR: rgb(0,0,0)">Spring can handle the objects created by Struts 2 by providing a Spring extension of the Struts 2 ObjectFactory, the class that creates each of the objects used in the framework.&nbsp;<br /></span>
+              </li>
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px; PADDING-TOP: 4px" class="P2">
+                <span style="COLOR: rgb(0,0,0)">A Spring plug-in is added to the framework providing a Spring extension of the core ObjectFactory.<br /></span>
+              </li>
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px; PADDING-TOP: 4px" class="P3">
+                <span style="COLOR: rgb(0,0,0)">Spring provides the opportunity to manage the creation of any objects that the struts framework creates.<br /></span>
+              </li>
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px; PADDING-TOP: 4px" class="P4">
+                <span style="COLOR: rgb(0,0,0)">The plug-in struts2-spring-plugin-2.0.9.jar and spring.jar are added to the lib directory.<br /></span>
+              </li>
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px; PADDING-TOP: 4px" class="P5">
+                <span style="COLOR: rgb(0,0,0)">The Spring container is created using a Spring application-context listener in the Spring JAR and is set up with the following snippet from the web.xml file:<br /></span>
+              </li>
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px; PADDING-TOP: 4px" class="P6">
+                <span style="COLOR: rgb(0,0,0)">&lt;listener&gt;<br /></span>
+              </li>
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px; PADDING-TOP: 4px" class="P7">
+                <span style="COLOR: rgb(0,0,0)">&lt;listener-class&gt;org.springframework.web.context.ContextLoaderListener<br /></span>
+              </li>
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px; PADDING-TOP: 4px" class="P8">
+                <span style="COLOR: rgb(0,0,0)">&lt;/listener-class&gt;<br /></span>
+              </li>
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px; PADDING-TOP: 4px" class="P9">
+                <span style="COLOR: rgb(0,0,0)">&lt;/listener&gt;</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+		
+		
+        <div id="Slide19" class="Slide Flow_Title_and_Content">
+          <img class="SlideBackground" alt="" src="content/images/struts2advance/Title_and_Content_BackGround.jpg" />
+          <div style="POSITION: absolute; BORDER-BOTTOM-STYLE: none; BORDER-LEFT-STYLE: none; WIDTH: 648px; BORDER-TOP-STYLE: none; BACKGROUND: none transparent scroll repeat 0% 0%; HEIGHT: 54px; BORDER-RIGHT-STYLE: none; TOP: 42px; LEFT: 36px" id="Slide19_Title_1" class="Title Title_1">
+            <table class="TextContainer" cellspacing="0" cellpadding="0">
+              <tr>
+                <td style="VERTICAL-ALIGN: bottom">
+                  <div style="POSITION: relative; TEXT-ALIGN: left; TEXT-TRANSFORM: none; FONT-VARIANT: normal; FONT-STYLE: normal; MARGIN: 4px 0px 0px; LETTER-SPACING: 0px; FONT-FAMILY: 'Calibri'; DIRECTION: ltr; COLOR: rgb(4,97,123); FONT-SIZE: 43px; VERTICAL-ALIGN: bottom; FONT-WEIGHT: normal">
+                    <p class="P1">
+                      <span>Adding Spring to Struts 2</span>
+                    </p>
+                  </div>
+                </td>
+              </tr>
+            </table>
+          </div>
+          <div style="POSITION: absolute; BORDER-BOTTOM-STYLE: none; BORDER-LEFT-STYLE: none; WIDTH: 648px; BORDER-TOP-STYLE: none; BACKGROUND: none transparent scroll repeat 0% 0%; HEIGHT: 432px; BORDER-RIGHT-STYLE: none; TOP: 102px; LEFT: 36px" id="Slide19_Content_Placeholder_2" class="Content_Placeholder_2">
+            <ul style="POSITION: relative; TEXT-ALIGN: left; TEXT-TRANSFORM: none; FONT-VARIANT: normal; FONT-STYLE: normal; MARGIN: 4px 7px; LETTER-SPACING: 0px; FONT-FAMILY: 'Constantia'; DIRECTION: ltr; COLOR: rgb(0,0,0); FONT-SIZE: 19px; VERTICAL-ALIGN: top; FONT-WEIGHT: normal">
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px" class="P1">
+                <span style="COLOR: rgb(0,0,0)">In order for the Spring to handle the objects, the objects are declared as Spring beans in a Spring configuration file.<br /></span>
+              </li>
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px; PADDING-TOP: 4px" class="P2">
+                <span style="COLOR: rgb(0,0,0)">The ContextLoaderListener by default looks up for the config file in /WEB-INF/applicationContext.xml.<br /></span>
+              </li>
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px; PADDING-TOP: 4px" class="P3">
+                <span style="COLOR: rgb(0,0,0)">Spring is given information to manage the object in the applicationContext.xml.<br /></span>
+              </li>
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px; PADDING-TOP: 4px" class="P4">
+                <span style="COLOR: rgb(0,0,0)">By default, Spring beans are created as singletons, which won’t work for Struts 2 actions, because they carry data related to each individual request, hence scope is set to prototype force Spring to create a unique instance for each request.<br /></span>
+              </li>
+              <li style="TEXT-INDENT: -22px; MARGIN-LEFT: 22px; PADDING-TOP: 4px" class="NonBullet P5">
+                <span>&nbsp;<br /></span>
+              </li>
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px; FONT-WEIGHT: bold; PADDING-TOP: 4px" class="P6">
+                <span style="COLOR: rgb(8,55,99)">&lt;bean id="portfolioService“<br /></span>
+              </li>
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px; FONT-WEIGHT: bold; PADDING-TOP: 4px" class="P7">
+                <span style="COLOR: rgb(8,55,99)"><span>&nbsp; class="main.chapterNine.utils.PortfolioServiceJPAImpl"/&gt;<br /></span></span>
+              </li>
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px; FONT-WEIGHT: bold; PADDING-TOP: 4px" class="P8">
+                <span style="COLOR: rgb(8,55,99)">&lt;bean id="</span><span style="COLOR: rgb(255,0,0)">springManagedLoginAction</span><span style="FONT-FAMILY: '+mn-ea'; COLOR: rgb(8,55,99)">"<span>&nbsp;</span>&nbsp;<br /></span>
+              </li>
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px; FONT-WEIGHT: bold; PADDING-TOP: 4px" class="P9">
+                <span style="COLOR: rgb(8,55,99)"><span>&nbsp; class="main.chapterNine.Login“&nbsp;<br /></span></span>
+              </li>
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px; FONT-WEIGHT: bold; PADDING-TOP: 4px" class="P10">
+                <span style="COLOR: rgb(8,55,99)"><span>&nbsp; scope="prototype"&gt;<br /></span></span>
+              </li>
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px; FONT-WEIGHT: bold; PADDING-TOP: 4px" class="P11">
+                <span style="COLOR: rgb(8,55,99)">&lt;property name="portfolioService" ref="portfolioService"/&gt;<br /></span>
+              </li>
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px; FONT-WEIGHT: bold; PADDING-TOP: 4px" class="P12">
+                <span style="COLOR: rgb(8,55,99)">&lt;/bean&gt;<br /></span>
+              </li>
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px; FONT-WEIGHT: bold; PADDING-TOP: 4px" class="P13">
+                <span style="COLOR: rgb(8,55,99)">&lt;/beans&gt;<br /></span>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div id="Slide20" class="Slide Flow_Title_and_Content">
+          <img class="SlideBackground" alt="" src="content/images/struts2advance/Title_and_Content_BackGround.jpg" />
+          <div style="POSITION: absolute; BORDER-BOTTOM-STYLE: none; BORDER-LEFT-STYLE: none; WIDTH: 648px; BORDER-TOP-STYLE: none; BACKGROUND: none transparent scroll repeat 0% 0%; HEIGHT: 53px; BORDER-RIGHT-STYLE: none; TOP: 55px; LEFT: 36px" id="Slide20_Title_1" class="Title Title_1">
+            <table class="TextContainer" cellspacing="0" cellpadding="0">
+              <tr>
+                <td style="VERTICAL-ALIGN: bottom">
+                  <div style="POSITION: relative; TEXT-ALIGN: left; TEXT-TRANSFORM: none; FONT-VARIANT: normal; FONT-STYLE: normal; MARGIN: 4px 0px 0px; LETTER-SPACING: 0px; FONT-FAMILY: 'Calibri'; DIRECTION: ltr; COLOR: rgb(4,97,123); FONT-SIZE: 43px; VERTICAL-ALIGN: bottom; FONT-WEIGHT: normal">
+                    <p class="P1">
+                      <span>Adding Spring to Struts 2</span>
+                    </p>
+                  </div>
+                </td>
+              </tr>
+            </table>
+          </div>
+          <div style="POSITION: absolute; BORDER-BOTTOM-STYLE: none; BORDER-LEFT-STYLE: none; WIDTH: 660px; BORDER-TOP-STYLE: none; BACKGROUND: none transparent scroll repeat 0% 0%; HEIGHT: 414px; BORDER-RIGHT-STYLE: none; TOP: 114px; LEFT: 36px" id="Slide20_Content_Placeholder_2" class="Content_Placeholder_2">
+            <ul style="POSITION: relative; TEXT-ALIGN: left; TEXT-TRANSFORM: none; FONT-VARIANT: normal; FONT-STYLE: normal; MARGIN: 4px 7px; LETTER-SPACING: 0px; FONT-FAMILY: 'Constantia'; DIRECTION: ltr; COLOR: rgb(0,0,0); FONT-SIZE: 21px; VERTICAL-ALIGN: top; FONT-WEIGHT: normal">
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px" class="P1">
+                <span style="COLOR: rgb(0,0,0)">Spring creates one of its beans after referring to the Spring bean’s ID from within the Struts 2 action mapping, as follows:<br /></span>
+              </li>
+              <li style="TEXT-INDENT: -22px; MARGIN-LEFT: 22px; PADDING-TOP: 4px" class="NonBullet P2">
+                <span>&nbsp;<br /></span>
+              </li>
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px; FONT-WEIGHT: bold; PADDING-TOP: 4px" class="P3">
+                <span style="COLOR: rgb(11,83,149)">&lt;action name="Login" class="</span><span style="COLOR: rgb(255,0,0)">springManagedLoginAction</span><span style="COLOR: rgb(11,83,149)">"&gt;<br /></span>
+              </li>
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px; FONT-WEIGHT: bold; PADDING-TOP: 4px" class="P4">
+                <span style="COLOR: rgb(11,83,149)">&lt;result type="redirectAction"&gt;<br /></span>
+              </li>
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px; FONT-WEIGHT: bold; PADDING-TOP: 4px" class="P5">
+                <span style="COLOR: rgb(11,83,149)">&lt;param name="actionName"&gt;AdminPortfolio&lt;/param&gt;<br /></span>
+              </li>
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px; FONT-WEIGHT: bold; PADDING-TOP: 4px" class="P6">
+                <span style="COLOR: rgb(11,83,149)">&lt;param &nbsp;name="namespace"&gt;/chapEight/secure&lt;/param&gt;<br /></span>
+              </li>
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px; FONT-WEIGHT: bold; PADDING-TOP: 4px" class="P7">
+                <span style="COLOR: rgb(11,83,149)">&lt;/result&gt;<br /></span>
+              </li>
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px; FONT-WEIGHT: bold; PADDING-TOP: 4px" class="P8">
+                <span style="COLOR: rgb(11,83,149)">&lt;result name="input"&gt;/chapEight/Login.jsp&lt;/result&gt;<br /></span>
+              </li>
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px; FONT-WEIGHT: bold; PADDING-TOP: 4px" class="P9">
+                <span style="COLOR: rgb(11,83,149)">&lt;/action&gt;<br /></span>
+              </li>
+              <li style="TEXT-INDENT: -22px; MARGIN-LEFT: 22px; PADDING-TOP: 4px" class="NonBullet P10">
+                <span>&nbsp;<br /></span>
+              </li>
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px; PADDING-TOP: 4px" class="P11">
+                <span style="COLOR: rgb(0,0,0)">The framework asks Spring for a bean going by the name of&nbsp;</span><span style="COLOR: rgb(255,0,0)">springManagedLoginAction</span><span style="COLOR: rgb(0,0,0)"><span>&nbsp;and Spring gladly returns that bean with the PortfolioService injected and ready to go.</span></span>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div id="Slide21" class="Slide Flow_Title_and_Content">
+          <img class="SlideBackground" alt="" src="content/images/struts2advance/Title_and_Content_BackGround.jpg" />
+          <div style="POSITION: absolute; BORDER-BOTTOM-STYLE: none; BORDER-LEFT-STYLE: none; WIDTH: 648px; BORDER-TOP-STYLE: none; BACKGROUND: none transparent scroll repeat 0% 0%; HEIGHT: 53px; BORDER-RIGHT-STYLE: none; TOP: 55px; LEFT: 36px" id="Slide21_Title_1" class="Title Title_1">
+            <table class="TextContainer" cellspacing="0" cellpadding="0">
+              <tr>
+                <td style="VERTICAL-ALIGN: bottom">
+                  <div style="POSITION: relative; TEXT-ALIGN: left; TEXT-TRANSFORM: none; FONT-VARIANT: normal; FONT-STYLE: normal; MARGIN: 4px 0px 0px; LETTER-SPACING: 0px; FONT-FAMILY: 'Calibri'; DIRECTION: ltr; COLOR: rgb(4,97,123); FONT-SIZE: 43px; VERTICAL-ALIGN: bottom; FONT-WEIGHT: normal">
+                    <p class="P1">
+                      <span>Validation Framework Architecture</span>
+                    </p>
+                  </div>
+                </td>
+              </tr>
+            </table>
+          </div>
+          <div style="POSITION: absolute; BORDER-BOTTOM-STYLE: none; BORDER-LEFT-STYLE: none; WIDTH: 648px; BORDER-TOP-STYLE: none; BACKGROUND: none transparent scroll repeat 0% 0%; HEIGHT: 390px; BORDER-RIGHT-STYLE: none; TOP: 120px; LEFT: 36px" id="Slide21_Content_Placeholder_2" class="Content_Placeholder_2">
+            <ul style="POSITION: relative; TEXT-ALIGN: left; TEXT-TRANSFORM: none; FONT-VARIANT: normal; FONT-STYLE: normal; MARGIN: 4px 7px; LETTER-SPACING: 0px; FONT-FAMILY: 'Constantia'; DIRECTION: ltr; COLOR: rgb(0,0,0); FONT-SIZE: 23px; VERTICAL-ALIGN: top; FONT-WEIGHT: normal">
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px" class="P1">
+                <span style="COLOR: rgb(0,0,0)">The validation framework provides a more versatile and maintainable solution to validation than the Validateable interface.<br /></span>
+              </li>
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px; PADDING-TOP: 5px" class="P2">
+                <span style="COLOR: rgb(0,0,0)">The Validator is the stronger points of the validation framework which is a reusable component in which the logic of specific types of validations are implemented.<br /></span>
+              </li>
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px; PADDING-TOP: 5px" class="P3">
+                <span style="COLOR: rgb(0,0,0)">The three main components in the validation framework are: the&nbsp;</span><span style="FONT-STYLE: italic; COLOR: rgb(0,0,0)">domain data, validation metadata,&nbsp;</span><span style="COLOR: rgb(0,0,0)">and the</span><span style="FONT-STYLE: italic; COLOR: rgb(0,0,0)"><span>&nbsp;validators.<br /></span></span>
+              </li>
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px; PADDING-TOP: 5px" class="P4">
+                <span style="COLOR: rgb(0,0,0); FONT-WEIGHT: bold">DOMAIN DATA</span><span style="COLOR: rgb(0,0,0)">: The domain data is the properties of a Struts 2 action.<br /></span>
+              </li>
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px; PADDING-TOP: 5px" class="P5">
+                <span style="COLOR: rgb(0,0,0)">These properties are assumed to hold the data for the action to work with when it begins execution.&nbsp;<br /></span>
+              </li>
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px; PADDING-TOP: 5px" class="P6">
+                <span style="COLOR: rgb(0,0,0)">The domain data could also be implemented in various ways such as via a ModelDriven action for instance.<br /></span>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div id="Slide22" class="Slide Flow_Title_and_Content">
+          <img class="SlideBackground" alt="" src="content/images/struts2advance/Title_and_Content_BackGround.jpg" />
+          <div style="POSITION: absolute; BORDER-BOTTOM-STYLE: none; BORDER-LEFT-STYLE: none; WIDTH: 648px; BORDER-TOP-STYLE: none; BACKGROUND: none transparent scroll repeat 0% 0%; HEIGHT: 41px; BORDER-RIGHT-STYLE: none; TOP: 55px; LEFT: 36px" id="Slide22_Title_1" class="Title Title_1">
+            <table class="TextContainer" cellspacing="0" cellpadding="0">
+              <tr>
+                <td style="VERTICAL-ALIGN: bottom">
+                  <div style="POSITION: relative; TEXT-ALIGN: left; TEXT-TRANSFORM: none; FONT-VARIANT: normal; FONT-STYLE: normal; MARGIN: 4px 0px 0px; LETTER-SPACING: 0px; FONT-FAMILY: 'Calibri'; DIRECTION: ltr; COLOR: rgb(4,97,123); FONT-SIZE: 43px; VERTICAL-ALIGN: bottom; FONT-WEIGHT: normal">
+                    <p class="P1">
+                      <span>Validation Framework Architecture</span>
+                    </p>
+                  </div>
+                </td>
+              </tr>
+            </table>
+          </div>
+          <div style="POSITION: absolute; BORDER-BOTTOM-STYLE: none; BORDER-LEFT-STYLE: none; WIDTH: 648px; BORDER-TOP-STYLE: none; BACKGROUND: none transparent scroll repeat 0% 0%; HEIGHT: 426px; BORDER-RIGHT-STYLE: none; TOP: 102px; LEFT: 36px" id="Slide22_Content_Placeholder_2" class="Content_Placeholder_2">
+            <ul style="POSITION: relative; TEXT-ALIGN: left; TEXT-TRANSFORM: none; FONT-VARIANT: normal; FONT-STYLE: normal; MARGIN: 4px 7px; LETTER-SPACING: 0px; FONT-FAMILY: 'Constantia'; DIRECTION: ltr; COLOR: rgb(0,0,0); FONT-SIZE: 19px; VERTICAL-ALIGN: top; FONT-WEIGHT: normal">
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px" class="P1">
+                <span style="COLOR: rgb(0,0,0); FONT-WEIGHT: bold">VALIDATION METADATA</span><span style="COLOR: rgb(0,0,0)">:&nbsp;<br /></span>
+              </li>
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px; PADDING-TOP: 4px" class="P2">
+                <span style="COLOR: rgb(0,0,0)">A middle component lies between the validators and the data properties.&nbsp;<br /></span>
+              </li>
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px; PADDING-TOP: 4px" class="P3">
+                <span style="COLOR: rgb(0,0,0)">Such middle component is the metadata that associates individual data properties with the validators that should be&nbsp;</span><span style="COLOR: rgb(0,0,0); TEXT-DECORATION: underline">used to verify the correctness of the values</span><span style="COLOR: rgb(0,0,0)"><span>&nbsp;in those properties at runtime.&nbsp;<br /></span></span>
+              </li>
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px; PADDING-TOP: 4px" class="P4">
+                <span style="COLOR: rgb(0,0,0)">Many validators can be associated with each property, including zero if that makes sense for the requirements.<br /></span>
+              </li>
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px; PADDING-TOP: 4px" class="P5">
+                <span style="COLOR: rgb(0,0,0)">The developer can map data properties to validators with XML files (</span><span style="COLOR: rgb(0,0,0); FONT-WEIGHT: bold">ActionClass-validations.xml</span><span style="COLOR: rgb(0,0,0)">)or with Java annotations.<br /></span>
+              </li>
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px; PADDING-TOP: 4px" class="P6">
+                <span style="COLOR: rgb(0,0,0); FONT-WEIGHT: bold">VALIDATORS</span><span style="COLOR: rgb(0,0,0)">:&nbsp;<br /></span>
+              </li>
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px; PADDING-TOP: 4px" class="P7">
+                <span style="COLOR: rgb(0,0,0)">A validator is a reusable component that contains the logic for performing some fine-grained act of validation.<br /></span>
+              </li>
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px; PADDING-TOP: 4px" class="P8">
+                <span style="COLOR: rgb(0,0,0)">The framework comes with a rich set of built-in validators such as stringlength validator.&nbsp;<br /></span>
+              </li>
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px; PADDING-TOP: 4px" class="P9">
+                <span style="COLOR: rgb(0,0,0)">To validate the data by the validators, the properties need to be wired up to the desired validators via some XML or Java annotations.<br /></span>
+              </li>
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px; PADDING-TOP: 4px" class="P10">
+                <span style="COLOR: rgb(0,0,0)">When the validation executes, each property is validated by the set of validators with which it’s been associated by the metadata layer.</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div id="Slide23" class="Slide Flow_Title_and_Content">
+          <img class="SlideBackground" alt="" src="content/images/struts2advance/Title_and_Content_BackGround.jpg" />
+          <div style="POSITION: absolute; BORDER-BOTTOM-STYLE: none; BORDER-LEFT-STYLE: none; WIDTH: 648px; BORDER-TOP-STYLE: none; BACKGROUND: none transparent scroll repeat 0% 0%; HEIGHT: 41px; BORDER-RIGHT-STYLE: none; TOP: 55px; LEFT: 36px" id="Slide23_Title_1" class="Title Title_1">
+            <table class="TextContainer" cellspacing="0" cellpadding="0">
+              <tr>
+                <td style="VERTICAL-ALIGN: bottom">
+                  <div style="POSITION: relative; TEXT-ALIGN: left; TEXT-TRANSFORM: none; FONT-VARIANT: normal; FONT-STYLE: normal; MARGIN: 4px 0px 0px; LETTER-SPACING: 0px; FONT-FAMILY: 'Calibri'; DIRECTION: ltr; COLOR: rgb(4,97,123); FONT-SIZE: 43px; VERTICAL-ALIGN: bottom; FONT-WEIGHT: normal">
+                    <p class="P1">
+                      <span>Basic Validation</span>
+                    </p>
+                  </div>
+                </td>
+              </tr>
+            </table>
+          </div>
+          <div style="POSITION: absolute; BORDER-BOTTOM-STYLE: none; BORDER-LEFT-STYLE: none; WIDTH: 648px; BORDER-TOP-STYLE: none; BACKGROUND: none transparent scroll repeat 0% 0%; HEIGHT: 432px; BORDER-RIGHT-STYLE: none; TOP: 102px; LEFT: 36px" id="Slide23_Content_Placeholder_2" class="Content_Placeholder_2">
+            <ul style="POSITION: relative; TEXT-ALIGN: left; TEXT-TRANSFORM: none; FONT-VARIANT: normal; FONT-STYLE: normal; MARGIN: 4px 7px; LETTER-SPACING: 0px; FONT-FAMILY: 'Constantia'; DIRECTION: ltr; COLOR: rgb(0,0,0); FONT-SIZE: 19px; VERTICAL-ALIGN: top; FONT-WEIGHT: normal">
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px" class="P1">
+                <span style="COLOR: rgb(0,0,0)">The actions extend ActionSupport class, which implements a couple of interfaces that play an important role in validation.&nbsp;<br /></span>
+              </li>
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px; PADDING-TOP: 4px" class="P2">
+                <span style="COLOR: rgb(0,0,0)">The interfaces are com.opensymphony.xwork2.Validateable and com.opensymphony.xwork2.ValidationAware.&nbsp;<br /></span>
+              </li>
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px; PADDING-TOP: 4px" class="P3">
+                <span style="COLOR: rgb(0,0,0)">Validateable exposes the validate() method, in which resides the validation code, and ValidationAware exposes methods for storing error messages generated when validation finds invalid data.&nbsp;<br /></span>
+              </li>
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px; PADDING-TOP: 4px" class="P4">
+                <span style="COLOR: rgb(0,0,0)">These interfaces work in tandem with the workflow interceptor.<br /></span>
+              </li>
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px; PADDING-TOP: 4px" class="P5">
+                <span style="COLOR: rgb(0,0,0)">When the workflow interceptor fires, it first checks to see whether the action implements Validateable.&nbsp;<br /></span>
+              </li>
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px; PADDING-TOP: 4px" class="P6">
+                <span style="COLOR: rgb(0,0,0)">If it does, the workflow interceptor invokes the validate() method.&nbsp;<br /></span>
+              </li>
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px; PADDING-TOP: 4px" class="P7">
+                <span style="COLOR: rgb(0,0,0)">If the validation code finds that some piece of data isn’t valid, an error message is created and added to one of the ValidationAware methods that store error messages.<br /></span>
+              </li>
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px; PADDING-TOP: 4px" class="P8">
+                <span style="COLOR: rgb(0,0,0)">When the validate() method returns, the workflow interceptor and still has another task, it calls ValidationAware’s hasErrors() method to see if there were any problems with validation.&nbsp;<br /></span>
+              </li>
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px; PADDING-TOP: 4px" class="P9">
+                <span style="COLOR: rgb(0,0,0)">If errors exist, the workflow interceptor intervenes by stopping further execution of the action by returning the input result, which returns the user back to the form that was submitted.</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div id="Slide24" class="Slide Flow_Title_and_Content">
+          <img class="SlideBackground" alt="" src="content/images/struts2advance/Title_and_Content_BackGround.jpg" />
+          <div style="POSITION: absolute; BORDER-BOTTOM-STYLE: none; BORDER-LEFT-STYLE: none; WIDTH: 648px; BORDER-TOP-STYLE: none; BACKGROUND: none transparent scroll repeat 0% 0%; HEIGHT: 59px; BORDER-RIGHT-STYLE: none; TOP: 60px; LEFT: 36px" id="Slide24_Title_1" class="Title Title_1">
+            <table class="TextContainer" cellspacing="0" cellpadding="0">
+              <tr>
+                <td style="VERTICAL-ALIGN: bottom">
+                  <div style="POSITION: relative; TEXT-ALIGN: left; TEXT-TRANSFORM: none; FONT-VARIANT: normal; FONT-STYLE: normal; MARGIN: 4px 0px 0px; LETTER-SPACING: 0px; FONT-FAMILY: 'Calibri'; DIRECTION: ltr; COLOR: rgb(4,97,123); FONT-SIZE: 43px; VERTICAL-ALIGN: bottom; FONT-WEIGHT: normal">
+                    <p class="P1">
+                      <span>Validation Framework</span>
+                    </p>
+                  </div>
+                </td>
+              </tr>
+            </table>
+          </div>
+          <div style="POSITION: absolute; BORDER-BOTTOM-STYLE: none; BORDER-LEFT-STYLE: none; WIDTH: 648px; BORDER-TOP-STYLE: none; BACKGROUND: none transparent scroll repeat 0% 0%; HEIGHT: 396px; BORDER-RIGHT-STYLE: none; TOP: 132px; LEFT: 36px" id="Slide24_Content_Placeholder_2" class="Content_Placeholder_2">
+            <ul style="POSITION: relative; TEXT-ALIGN: left; TEXT-TRANSFORM: none; FONT-VARIANT: normal; FONT-STYLE: normal; MARGIN: 4px 7px; LETTER-SPACING: 0px; FONT-FAMILY: 'Constantia'; DIRECTION: ltr; COLOR: rgb(0,0,0); FONT-SIZE: 17px; VERTICAL-ALIGN: top; FONT-WEIGHT: normal">
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px" class="P1">
+                <span style="COLOR: rgb(0,0,0)">The validation interceptor, which follows the conversionError interceptor in the defaultStack, provides the entry point into this validation process.<br /></span>
+              </li>
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px; PADDING-TOP: 4px" class="P2">
+                <span style="COLOR: rgb(0,0,0)">When the validation interceptor is fired, it conducts all the validation that’s been defined via the validation metadata.<br /></span>
+              </li>
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px; PADDING-TOP: 4px" class="P3">
+                <span style="COLOR: rgb(0,0,0)">If the validation is not true then an error is added to the ValidationAware methods.<br /></span>
+              </li>
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px; PADDING-TOP: 4px" class="P4">
+                <span style="COLOR: rgb(0,0,0)">Note that both conversion errors and validation errors are collected by ValidationAware.<br /></span>
+              </li>
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px; PADDING-TOP: 4px" class="P5">
+                <span style="COLOR: rgb(0,0,0)">Whether errors are added or not, it still proceeds to the next interceptor, the workflow interceptor.<br /></span>
+              </li>
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px; PADDING-TOP: 4px" class="P6">
+                <span style="COLOR: rgb(0,0,0)">The workflow interceptor first invokes the validate() method, if exposed by the current action in basic validation.<br /></span>
+              </li>
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px; PADDING-TOP: 4px" class="P7">
+                <span style="COLOR: rgb(0,0,0)">The workflow interceptor then checks for errors, by checking the ValidationAware method hasErrors().&nbsp;<br /></span>
+              </li>
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px; PADDING-TOP: 4px" class="P8">
+                <span style="COLOR: rgb(0,0,0)">If there are no errors, it passes control on to the rest of the action invocation process.&nbsp;<br /></span>
+              </li>
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px; PADDING-TOP: 4px" class="P9">
+                <span style="COLOR: rgb(0,0,0)">If errors are found, workflow is diverted and it returns to the input page and present the user with error messages.<br /></span>
+              </li>
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px; PADDING-TOP: 4px" class="P10">
+                <span style="COLOR: rgb(0,0,0)">The basic validation methods and the validation framework can be used at the same time.<br /></span>
+              </li>
+              <li style="TEXT-INDENT: -22px; MARGIN-LEFT: 22px; PADDING-TOP: 4px" class="NonBullet P11">
+                <span>&nbsp;<br /></span>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div id="Slide25" class="Slide Flow_Title_and_Content">
+          <img class="SlideBackground" alt="" src="content/images/struts2advance/Title_and_Content_BackGround.jpg" />
+          <div style="POSITION: absolute; BORDER-BOTTOM-STYLE: none; BORDER-LEFT-STYLE: none; WIDTH: 648px; BORDER-TOP-STYLE: none; BACKGROUND: none transparent scroll repeat 0% 0%; HEIGHT: 29px; BORDER-RIGHT-STYLE: none; TOP: 61px; LEFT: 36px" id="Slide25_Title_1" class="Title Title_1">
+            <table class="TextContainer" cellspacing="0" cellpadding="0">
+              <tr>
+                <td style="VERTICAL-ALIGN: bottom">
+                  <div style="POSITION: relative; TEXT-ALIGN: left; TEXT-TRANSFORM: none; FONT-VARIANT: normal; FONT-STYLE: normal; MARGIN: 4px 0px 0px; LETTER-SPACING: 0px; FONT-FAMILY: 'Calibri'; DIRECTION: ltr; COLOR: rgb(4,97,123); FONT-SIZE: 43px; VERTICAL-ALIGN: bottom; FONT-WEIGHT: normal">
+                    <p class="P1">
+                      <span>Sample Validation Metadata File</span>
+                    </p>
+                  </div>
+                </td>
+              </tr>
+            </table>
+          </div>
+          <div style="POSITION: absolute; BORDER-BOTTOM-STYLE: none; BORDER-LEFT-STYLE: none; WIDTH: 648px; BORDER-TOP-STYLE: none; BACKGROUND: none transparent scroll repeat 0% 0%; HEIGHT: 444px; BORDER-RIGHT-STYLE: none; TOP: 90px; LEFT: 36px" id="Slide25_Content_Placeholder_2" class="Content_Placeholder_2">
+            <ul style="POSITION: relative; TEXT-ALIGN: left; TEXT-TRANSFORM: none; FONT-VARIANT: normal; FONT-STYLE: normal; MARGIN: 4px 7px; LETTER-SPACING: 0px; FONT-FAMILY: 'Constantia'; DIRECTION: ltr; COLOR: rgb(0,0,0); FONT-SIZE: 17px; VERTICAL-ALIGN: top; FONT-WEIGHT: normal">
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px" class="P1">
+                <span style="COLOR: rgb(0,0,0)">&lt;validators&gt;<br /></span>
+              </li>
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px; PADDING-TOP: 4px" class="P2">
+                <span style="COLOR: rgb(0,0,0)"><span>&nbsp; &lt;field &nbsp; name="password"&gt;<br /></span></span>
+              </li>
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px; PADDING-TOP: 4px" class="P3">
+                <span style="COLOR: rgb(0,0,0)"><span>&nbsp; &nbsp; &lt;field-validator &nbsp;type="requiredstring"&gt;<br /></span></span>
+              </li>
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px; PADDING-TOP: 4px" class="P4">
+                <span style="COLOR: rgb(0,0,0)"><span>&nbsp; &nbsp; &nbsp; &nbsp;&lt;message&gt;You must enter a value for password.&lt;/message&gt;<br /></span></span>
+              </li>
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px; PADDING-TOP: 4px" class="P5">
+                <span style="COLOR: rgb(0,0,0)"><span>&nbsp; &nbsp; &lt;/field-validator&gt;<br /></span></span>
+              </li>
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px; PADDING-TOP: 4px" class="P6">
+                <span style="COLOR: rgb(0,0,0)"><span>&nbsp; &lt;/field&gt;<br /></span></span>
+              </li>
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px; PADDING-TOP: 4px" class="P7">
+                <span style="COLOR: rgb(0,0,0)"><span>&nbsp; &lt;field &nbsp;name="username"&gt;<br /></span></span>
+              </li>
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px; PADDING-TOP: 4px" class="P8">
+                <span style="COLOR: rgb(0,0,0)"><span>&nbsp; &nbsp; &lt;field-validator &nbsp; type="stringlength"&gt;<br /></span></span>
+              </li>
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px; PADDING-TOP: 4px" class="P9">
+                <span style="COLOR: rgb(0,0,0)"><span>&nbsp; &nbsp; &nbsp; &nbsp;&lt;param &nbsp; name="maxLength"&gt;8&lt;/param&gt;<br /></span></span>
+              </li>
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px; PADDING-TOP: 4px" class="P10">
+                <span style="COLOR: rgb(0,0,0)"><span>&nbsp; &nbsp; &nbsp; &nbsp;&lt;param &nbsp;name="minLength"&gt;5&lt;/param&gt;&nbsp;<br /></span></span>
+              </li>
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px; PADDING-TOP: 4px" class="P11">
+                <span style="COLOR: rgb(0,0,0)"><span>&nbsp; &nbsp; &nbsp; &nbsp;&lt;message&gt;While ${username} is a nice name, a valid username must<br /></span></span>
+              </li>
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px; PADDING-TOP: 4px" class="P12">
+                <span style="COLOR: rgb(0,0,0)">be between ${minLength} and ${maxLength} characters long.<br /></span>
+              </li>
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px; PADDING-TOP: 4px" class="P13">
+                <span style="COLOR: rgb(0,0,0)"><span>&nbsp; &nbsp; &nbsp; &nbsp;&lt;/message&gt;<br /></span></span>
+              </li>
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px; PADDING-TOP: 4px" class="P14">
+                <span style="COLOR: rgb(0,0,0)"><span>&nbsp; &nbsp; &lt;/field-validator&gt;<br /></span></span>
+              </li>
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px; PADDING-TOP: 4px" class="P15">
+                <span style="COLOR: rgb(0,0,0)"><span>&nbsp; &lt;/field&gt;<br /></span></span>
+              </li>
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px; PADDING-TOP: 4px" class="P16">
+                <span style="COLOR: rgb(0,0,0)"><span>&nbsp; &lt;validator &nbsp; type="expression"&gt;<br /></span></span>
+              </li>
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px; PADDING-TOP: 4px" class="P17">
+                <span style="COLOR: rgb(0,0,0)"><span>&nbsp; &nbsp; &lt;param &nbsp;name="expression"&gt;username != password&lt;/param&gt;<br /></span></span>
+              </li>
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px; PADDING-TOP: 4px" class="P18">
+                <span style="COLOR: rgb(0,0,0)"><span>&nbsp; &nbsp; &lt;message&gt;Username and password can't be the same.&lt;/message&gt;<br /></span></span>
+              </li>
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px; PADDING-TOP: 4px" class="P19">
+                <span style="COLOR: rgb(0,0,0)"><span>&nbsp; &lt;/validator&gt;<br /></span></span>
+              </li>
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px; PADDING-TOP: 4px" class="P20">
+                <span style="COLOR: rgb(0,0,0)">&lt;/validators&gt;</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div id="Slide26" class="Slide Flow_Title_and_Content">
+          <img class="SlideBackground" alt="" src="content/images/struts2advance/Title_and_Content_BackGround.jpg" />
+          <div style="POSITION: absolute; BORDER-BOTTOM-STYLE: none; BORDER-LEFT-STYLE: none; WIDTH: 648px; BORDER-TOP-STYLE: none; BACKGROUND: none transparent scroll repeat 0% 0%; HEIGHT: 90px; BORDER-RIGHT-STYLE: none; TOP: 55px; LEFT: 36px" id="Slide26_Title_1" class="Title Title_1">
+            <table class="TextContainer" cellspacing="0" cellpadding="0">
+              <tr>
+                <td style="VERTICAL-ALIGN: bottom">
+                  <div style="POSITION: relative; TEXT-ALIGN: left; TEXT-TRANSFORM: none; FONT-VARIANT: normal; FONT-STYLE: normal; MARGIN: 4px 0px 0px; LETTER-SPACING: 0px; FONT-FAMILY: 'Calibri'; DIRECTION: ltr; COLOR: rgb(4,97,123); FONT-SIZE: 48px; VERTICAL-ALIGN: bottom; FONT-WEIGHT: normal">
+                    <p class="P1">
+                      <span>Field Validators</span>
+                    </p>
+                  </div>
+                </td>
+              </tr>
+            </table>
+          </div>
+          <div style="POSITION: absolute; BORDER-BOTTOM-STYLE: none; BORDER-LEFT-STYLE: none; WIDTH: 648px; BORDER-TOP-STYLE: none; BACKGROUND: none transparent scroll repeat 0% 0%; HEIGHT: 346px; BORDER-RIGHT-STYLE: none; TOP: 152px; LEFT: 36px" id="Slide26_Content_Placeholder_2" class="Content_Placeholder_2">
+            <ul style="POSITION: relative; TEXT-ALIGN: left; TEXT-TRANSFORM: none; FONT-VARIANT: normal; FONT-STYLE: normal; MARGIN: 4px 7px; LETTER-SPACING: 0px; FONT-FAMILY: 'Constantia'; DIRECTION: ltr; COLOR: rgb(0,0,0); FONT-SIZE: 25px; VERTICAL-ALIGN: top; FONT-WEIGHT: normal">
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px" class="P1">
+                <span style="COLOR: rgb(0,0,0)">Field validators are validators that operate on an individual field or data property.<br /></span>
+              </li>
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px; PADDING-TOP: 5px" class="P2">
+                <span style="COLOR: rgb(0,0,0)">The fields are the HTML form fields that submitted the request.<br /></span>
+              </li>
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px; PADDING-TOP: 5px" class="P3">
+                <span style="COLOR: rgb(0,0,0)">The field-validator elements are inside the field element to declare which validators should validate this piece of data.<br /></span>
+              </li>
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px; PADDING-TOP: 5px" class="P4">
+                <span style="COLOR: rgb(0,0,0)">A field element can have more than one field validators.</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div id="Slide27" class="Slide Flow_Title_and_Content">
+          <img class="SlideBackground" alt="" src="content/images/struts2advance/Title_and_Content_BackGround.jpg" />
+          <div style="POSITION: absolute; BORDER-BOTTOM-STYLE: none; BORDER-LEFT-STYLE: none; WIDTH: 648px; BORDER-TOP-STYLE: none; BACKGROUND: none transparent scroll repeat 0% 0%; HEIGHT: 59px; BORDER-RIGHT-STYLE: none; TOP: 55px; LEFT: 36px" id="Slide27_Title_1" class="Title Title_1">
+            <table class="TextContainer" cellspacing="0" cellpadding="0">
+              <tr>
+                <td style="VERTICAL-ALIGN: bottom">
+                  <div style="POSITION: relative; TEXT-ALIGN: left; TEXT-TRANSFORM: none; FONT-VARIANT: normal; FONT-STYLE: normal; MARGIN: 4px 0px 0px; LETTER-SPACING: 0px; FONT-FAMILY: 'Calibri'; DIRECTION: ltr; COLOR: rgb(4,97,123); FONT-SIZE: 43px; VERTICAL-ALIGN: bottom; FONT-WEIGHT: normal">
+                    <p class="P1">
+                      <span>Non Field Validators</span>
+                    </p>
+                  </div>
+                </td>
+              </tr>
+            </table>
+          </div>
+          <div style="POSITION: absolute; BORDER-BOTTOM-STYLE: none; BORDER-LEFT-STYLE: none; WIDTH: 648px; BORDER-TOP-STYLE: none; BACKGROUND: none transparent scroll repeat 0% 0%; HEIGHT: 354px; BORDER-RIGHT-STYLE: none; TOP: 144px; LEFT: 36px" id="Slide27_Content_Placeholder_2" class="Content_Placeholder_2">
+            <ul style="POSITION: relative; TEXT-ALIGN: left; TEXT-TRANSFORM: none; FONT-VARIANT: normal; FONT-STYLE: normal; MARGIN: 4px 7px; LETTER-SPACING: 0px; FONT-FAMILY: 'Constantia'; DIRECTION: ltr; COLOR: rgb(0,0,0); FONT-SIZE: 25px; VERTICAL-ALIGN: top; FONT-WEIGHT: normal">
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px" class="P1">
+                <span style="COLOR: rgb(0,0,0)">Non field validators don’t apply logic targeted at a specific field.<br /></span>
+              </li>
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px; PADDING-TOP: 5px" class="P2">
+                <span style="COLOR: rgb(0,0,0)">Such validators apply to the whole action and often contain checks that involve more than one of the field values.&nbsp;<br /></span>
+              </li>
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px; PADDING-TOP: 5px" class="P3">
+                <span style="COLOR: rgb(0,0,0)">The built-in validators only offer one instance of a nonfield validator: the expression validator.&nbsp;<br /></span>
+              </li>
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px; PADDING-TOP: 5px" class="P4">
+                <span style="COLOR: rgb(0,0,0)">The expression validator allows to embed an OGNL expression containing the logic of the validation to perform and resolves against the ValueStack.&nbsp;</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+		
+
+        <div id="Slide28" class="Slide Flow_Title_and_Content">
+          <img class="SlideBackground" alt="" src="content/images/struts2advance/Title_and_Content_BackGround.jpg" />
+          <div style="POSITION: absolute; BORDER-BOTTOM-STYLE: none; BORDER-LEFT-STYLE: none; WIDTH: 648px; BORDER-TOP-STYLE: none; BACKGROUND: none transparent scroll repeat 0% 0%; HEIGHT: 90px; BORDER-RIGHT-STYLE: none; TOP: 55px; LEFT: 36px" id="Slide28_Title_1" class="Title Title_1">
+            <table class="TextContainer" cellspacing="0" cellpadding="0">
+              <tr>
+                <td style="VERTICAL-ALIGN: bottom">
+                  <div style="POSITION: relative; TEXT-ALIGN: left; TEXT-TRANSFORM: none; FONT-VARIANT: normal; FONT-STYLE: normal; MARGIN: 4px 0px 0px; LETTER-SPACING: 0px; FONT-FAMILY: 'Calibri'; DIRECTION: ltr; COLOR: rgb(4,97,123); FONT-SIZE: 48px; VERTICAL-ALIGN: bottom; FONT-WEIGHT: normal">
+                    <p class="P1">
+                      <span>The Message Element</span>
+                    </p>
+                  </div>
+                </td>
+              </tr>
+            </table>
+          </div>
+          <div style="POSITION: absolute; BORDER-BOTTOM-STYLE: none; BORDER-LEFT-STYLE: none; WIDTH: 648px; BORDER-TOP-STYLE: none; BACKGROUND: none transparent scroll repeat 0% 0%; HEIGHT: 346px; BORDER-RIGHT-STYLE: none; TOP: 152px; LEFT: 36px" id="Slide28_Content_Placeholder_2" class="Content_Placeholder_2">
+            <ul style="POSITION: relative; TEXT-ALIGN: left; TEXT-TRANSFORM: none; FONT-VARIANT: normal; FONT-STYLE: normal; MARGIN: 4px 7px; LETTER-SPACING: 0px; FONT-FAMILY: 'Constantia'; DIRECTION: ltr; COLOR: rgb(0,0,0); FONT-SIZE: 21px; VERTICAL-ALIGN: top; FONT-WEIGHT: normal">
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px" class="P1">
+                <span style="COLOR: rgb(0,0,0)">The&nbsp;</span><span style="COLOR: rgb(0,0,0); FONT-WEIGHT: bold">message element</span><span style="COLOR: rgb(0,0,0)"><span>&nbsp;is used to specify the message that the user should see in the event of a validation error.<br /></span></span>
+              </li>
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px; PADDING-TOP: 4px" class="P2">
+                <span style="COLOR: rgb(0,0,0)">OGNL expressions can be used to make the messsage dynamic, and are resolved againist the ValueStack.<br /></span>
+              </li>
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px; PADDING-TOP: 4px" class="P3">
+                <span style="COLOR: rgb(0,0,0)">OGNL in the XML files uses the $ rather than the % sign that’s normally used in OGNL.<br /></span>
+              </li>
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px; PADDING-TOP: 4px" class="P4">
+                <span style="COLOR: rgb(0,0,0)">The message can be externalize in a resource bundle as localized messages.<br /></span>
+              </li>
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px; PADDING-TOP: 4px" class="P5">
+                <span style="COLOR: rgb(0,0,0)">The&nbsp;</span><span style="COLOR: rgb(0,0,0); FONT-WEIGHT: bold">ActionSupport</span><span style="COLOR: rgb(0,0,0)"><span>&nbsp;implements the TextProvider interface to provide access to localized messages, and can be accessed by the&nbsp;</span></span><span style="COLOR: rgb(0,0,0); FONT-WEIGHT: bold">TextProvider’s getText()</span><span style="COLOR: rgb(0,0,0)"><span>&nbsp;method from the&nbsp;</span></span><span style="COLOR: rgb(0,0,0); FONT-WEIGHT: bold">validate()</span><span style="COLOR: rgb(0,0,0)"><span>&nbsp;method.<br /></span></span>
+              </li>
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px; PADDING-TOP: 4px" class="P6">
+                <span style="COLOR: rgb(0,0,0)">The message element doesn’t have a text body but, it sets the key attribute to a value to be used to look up the message via the TextProvider implementation in the&nbsp;</span><span style="FONT-STYLE: italic; COLOR: rgb(0,0,0)">ActionClass</span><span style="COLOR: rgb(0,0,0)">.properties file.</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div id="Slide29" class="Slide Flow_Title_and_Content">
+          <img class="SlideBackground" alt="" src="content/images/struts2advance/Title_and_Content_BackGround.jpg" />
+          <div style="POSITION: absolute; BORDER-BOTTOM-STYLE: none; BORDER-LEFT-STYLE: none; WIDTH: 648px; BORDER-TOP-STYLE: none; BACKGROUND: none transparent scroll repeat 0% 0%; HEIGHT: 53px; BORDER-RIGHT-STYLE: none; TOP: 24px; LEFT: 36px" id="Slide29_Title_1" class="Title Title_1">
+            <table class="TextContainer" cellspacing="0" cellpadding="0">
+              <tr>
+                <td style="VERTICAL-ALIGN: bottom">
+                  <div style="POSITION: relative; TEXT-ALIGN: left; TEXT-TRANSFORM: none; FONT-VARIANT: normal; FONT-STYLE: normal; MARGIN: 4px 0px 0px; LETTER-SPACING: 0px; FONT-FAMILY: 'Calibri'; DIRECTION: ltr; COLOR: rgb(4,97,123); FONT-SIZE: 43px; VERTICAL-ALIGN: bottom; FONT-WEIGHT: normal">
+                    <p class="P1">
+                      <span>Struts 2 Built-in Validators</span>
+                    </p>
+                  </div>
+                </td>
+              </tr>
+            </table>
+          </div>
+          <table style="POSITION: absolute; BORDER-BOTTOM-STYLE: none; BACKGROUND-COLOR: rgb(0,0,0); BORDER-LEFT-STYLE: none; WIDTH: 648px; BORDER-COLLAPSE: collapse; BORDER-TOP-STYLE: none; TABLE-LAYOUT: fixed; HEIGHT: 443px; BORDER-RIGHT-STYLE: none; TOP: 86px; LEFT: 36px" id="Slide29_Content_Placeholder_3">
+            <colgroup>
+              <col style="WIDTH: 138px" />
+              <col style="WIDTH: 126px" />
+              <col style="WIDTH: 384px" />
+            </colgroup>
+            <tbody>
+              <tr style="HEIGHT: 29px">
+                <td style="BORDER-BOTTOM: rgb(255,255,255) 3px solid; BORDER-LEFT: rgb(255,255,255) 1px solid; BACKGROUND-COLOR: rgb(15,111,198); VERTICAL-ALIGN: top; BORDER-TOP: rgb(255,255,255) 1px solid; BORDER-RIGHT: rgb(255,255,255) 1px solid">
+                  <div style="POSITION: relative; TEXT-ALIGN: left; TEXT-TRANSFORM: none; FONT-VARIANT: normal; FONT-STYLE: normal; MARGIN: 4px 7px; LETTER-SPACING: 0px; FONT-FAMILY: 'Constantia'; DIRECTION: ltr; COLOR: rgb(255,255,255); FONT-SIZE: 17px; VERTICAL-ALIGN: top; FONT-WEIGHT: bold">
+                    <p class="P1">
+                      <span>Validator</span>
+                    </p>
+                  </div>
+                </td>
+                <td style="BORDER-BOTTOM: rgb(255,255,255) 3px solid; BORDER-LEFT: rgb(255,255,255) 1px solid; BACKGROUND-COLOR: rgb(15,111,198); VERTICAL-ALIGN: top; BORDER-TOP: rgb(255,255,255) 1px solid; BORDER-RIGHT: rgb(255,255,255) 1px solid">
+                  <div style="POSITION: relative; TEXT-ALIGN: left; TEXT-TRANSFORM: none; FONT-VARIANT: normal; FONT-STYLE: normal; MARGIN: 4px 7px; LETTER-SPACING: 0px; FONT-FAMILY: 'Constantia'; DIRECTION: ltr; COLOR: rgb(255,255,255); FONT-SIZE: 17px; VERTICAL-ALIGN: top; FONT-WEIGHT: bold">
+                    <p class="P1">
+                      <span>Params</span>
+                    </p>
+                  </div>
+                </td>
+                <td style="BORDER-BOTTOM: rgb(255,255,255) 3px solid; BORDER-LEFT: rgb(255,255,255) 1px solid; BACKGROUND-COLOR: rgb(15,111,198); VERTICAL-ALIGN: top; BORDER-TOP: rgb(255,255,255) 1px solid; BORDER-RIGHT: rgb(255,255,255) 1px solid">
+                  <div style="POSITION: relative; TEXT-ALIGN: left; TEXT-TRANSFORM: none; FONT-VARIANT: normal; FONT-STYLE: normal; MARGIN: 4px 7px; LETTER-SPACING: 0px; FONT-FAMILY: 'Constantia'; DIRECTION: ltr; COLOR: rgb(255,255,255); FONT-SIZE: 17px; VERTICAL-ALIGN: top; FONT-WEIGHT: bold">
+                    <p class="P1">
+                      <span>Function</span>
+                    </p>
+                  </div>
+                </td>
+              </tr>
+              <tr style="HEIGHT: 29px">
+                <td style="BORDER-BOTTOM: rgb(255,255,255) 1px solid; BORDER-LEFT: rgb(255,255,255) 1px solid; BACKGROUND-COLOR: rgb(204,213,234); VERTICAL-ALIGN: top; BORDER-TOP: rgb(255,255,255) 3px solid; BORDER-RIGHT: rgb(255,255,255) 1px solid">
+                  <div style="POSITION: relative; TEXT-ALIGN: left; TEXT-TRANSFORM: none; FONT-VARIANT: normal; FONT-STYLE: normal; MARGIN: 4px 7px; LETTER-SPACING: 0px; FONT-FAMILY: 'Constantia'; DIRECTION: ltr; COLOR: rgb(0,0,0); FONT-SIZE: 17px; VERTICAL-ALIGN: top; FONT-WEIGHT: normal">
+                    <p class="P1">
+                      <span>required</span>
+                    </p>
+                  </div>
+                </td>
+                <td style="BORDER-BOTTOM: rgb(255,255,255) 1px solid; BORDER-LEFT: rgb(255,255,255) 1px solid; BACKGROUND-COLOR: rgb(204,213,234); VERTICAL-ALIGN: top; BORDER-TOP: rgb(255,255,255) 3px solid; BORDER-RIGHT: rgb(255,255,255) 1px solid">
+                  <div style="POSITION: relative; TEXT-ALIGN: left; TEXT-TRANSFORM: none; FONT-VARIANT: normal; FONT-STYLE: normal; MARGIN: 4px 7px; LETTER-SPACING: 0px; FONT-FAMILY: 'Constantia'; DIRECTION: ltr; COLOR: rgb(0,0,0); FONT-SIZE: 17px; VERTICAL-ALIGN: top; FONT-WEIGHT: normal">
+                    <p class="P1">
+                      <span>None</span>
+                    </p>
+                  </div>
+                </td>
+                <td style="BORDER-BOTTOM: rgb(255,255,255) 1px solid; BORDER-LEFT: rgb(255,255,255) 1px solid; BACKGROUND-COLOR: rgb(204,213,234); VERTICAL-ALIGN: top; BORDER-TOP: rgb(255,255,255) 3px solid; BORDER-RIGHT: rgb(255,255,255) 1px solid">
+                  <div style="POSITION: relative; TEXT-ALIGN: left; TEXT-TRANSFORM: none; FONT-VARIANT: normal; FONT-STYLE: normal; MARGIN: 4px 7px; LETTER-SPACING: 0px; FONT-FAMILY: 'Constantia'; DIRECTION: ltr; COLOR: rgb(0,0,0); FONT-SIZE: 17px; VERTICAL-ALIGN: top; FONT-WEIGHT: normal">
+                    <p class="P1">
+                      <span>Verifies that value is non-null.</span>
+                    </p>
+                  </div>
+                </td>
+              </tr>
+              <tr style="HEIGHT: 29px">
+                <td style="BORDER-BOTTOM: rgb(255,255,255) 1px solid; BORDER-LEFT: rgb(255,255,255) 1px solid; BACKGROUND-COLOR: rgb(231,235,245); VERTICAL-ALIGN: top; BORDER-TOP: rgb(255,255,255) 1px solid; BORDER-RIGHT: rgb(255,255,255) 1px solid">
+                  <div style="POSITION: relative; TEXT-ALIGN: left; TEXT-TRANSFORM: none; FONT-VARIANT: normal; FONT-STYLE: normal; MARGIN: 4px 7px; LETTER-SPACING: 0px; FONT-FAMILY: 'Constantia'; DIRECTION: ltr; COLOR: rgb(0,0,0); FONT-SIZE: 17px; VERTICAL-ALIGN: top; FONT-WEIGHT: normal">
+                    <p class="P1">
+                      <span>requiredString</span>
+                    </p>
+                  </div>
+                </td>
+                <td style="BORDER-BOTTOM: rgb(255,255,255) 1px solid; BORDER-LEFT: rgb(255,255,255) 1px solid; BACKGROUND-COLOR: rgb(231,235,245); VERTICAL-ALIGN: top; BORDER-TOP: rgb(255,255,255) 1px solid; BORDER-RIGHT: rgb(255,255,255) 1px solid">
+                  <div style="POSITION: relative; TEXT-ALIGN: left; TEXT-TRANSFORM: none; FONT-VARIANT: normal; FONT-STYLE: normal; MARGIN: 4px 7px; LETTER-SPACING: 0px; FONT-FAMILY: 'Constantia'; DIRECTION: ltr; COLOR: rgb(0,0,0); FONT-SIZE: 17px; VERTICAL-ALIGN: top; FONT-WEIGHT: normal">
+                    <p class="P1">
+                      <span>trim</span>
+                    </p>
+                  </div>
+                </td>
+                <td style="BORDER-BOTTOM: rgb(255,255,255) 1px solid; BORDER-LEFT: rgb(255,255,255) 1px solid; BACKGROUND-COLOR: rgb(231,235,245); VERTICAL-ALIGN: top; BORDER-TOP: rgb(255,255,255) 1px solid; BORDER-RIGHT: rgb(255,255,255) 1px solid">
+                  <div style="POSITION: relative; TEXT-ALIGN: left; TEXT-TRANSFORM: none; FONT-VARIANT: normal; FONT-STYLE: normal; MARGIN: 4px 7px; LETTER-SPACING: 0px; FONT-FAMILY: 'Constantia'; DIRECTION: ltr; COLOR: rgb(0,0,0); FONT-SIZE: 17px; VERTICAL-ALIGN: top; FONT-WEIGHT: normal">
+                    <p class="P1">
+                      <span>Verifies value is non-null, &amp; not an empty string</span>
+                    </p>
+                  </div>
+                </td>
+              </tr>
+              <tr style="HEIGHT: 29px">
+                <td style="BORDER-BOTTOM: rgb(255,255,255) 1px solid; BORDER-LEFT: rgb(255,255,255) 1px solid; BACKGROUND-COLOR: rgb(204,213,234); VERTICAL-ALIGN: top; BORDER-TOP: rgb(255,255,255) 1px solid; BORDER-RIGHT: rgb(255,255,255) 1px solid">
+                  <div style="POSITION: relative; TEXT-ALIGN: left; TEXT-TRANSFORM: none; FONT-VARIANT: normal; FONT-STYLE: normal; MARGIN: 4px 7px; LETTER-SPACING: 0px; FONT-FAMILY: 'Constantia'; DIRECTION: ltr; COLOR: rgb(0,0,0); FONT-SIZE: 17px; VERTICAL-ALIGN: top; FONT-WEIGHT: normal">
+                    <p class="P1">
+                      <span>stringlength</span>
+                    </p>
+                  </div>
+                </td>
+                <td style="BORDER-BOTTOM: rgb(255,255,255) 1px solid; BORDER-LEFT: rgb(255,255,255) 1px solid; BACKGROUND-COLOR: rgb(204,213,234); VERTICAL-ALIGN: top; BORDER-TOP: rgb(255,255,255) 1px solid; BORDER-RIGHT: rgb(255,255,255) 1px solid">
+                  <div style="POSITION: relative; TEXT-ALIGN: left; TEXT-TRANSFORM: none; FONT-VARIANT: normal; FONT-STYLE: normal; MARGIN: 4px 7px; LETTER-SPACING: 0px; FONT-FAMILY: 'Constantia'; DIRECTION: ltr; COLOR: rgb(0,0,0); FONT-SIZE: 17px; VERTICAL-ALIGN: top; FONT-WEIGHT: normal">
+                    <p class="P1">
+                      <span>trim,min,max</span>
+                    </p>
+                  </div>
+                </td>
+                <td style="BORDER-BOTTOM: rgb(255,255,255) 1px solid; BORDER-LEFT: rgb(255,255,255) 1px solid; BACKGROUND-COLOR: rgb(204,213,234); VERTICAL-ALIGN: top; BORDER-TOP: rgb(255,255,255) 1px solid; BORDER-RIGHT: rgb(255,255,255) 1px solid">
+                  <div style="POSITION: relative; TEXT-ALIGN: left; TEXT-TRANSFORM: none; FONT-VARIANT: normal; FONT-STYLE: normal; MARGIN: 4px 7px; LETTER-SPACING: 0px; FONT-FAMILY: 'Constantia'; DIRECTION: ltr; COLOR: rgb(0,0,0); FONT-SIZE: 17px; VERTICAL-ALIGN: top; FONT-WEIGHT: normal">
+                    <p class="P1">
+                      <span>Verifies string length falls within the params</span>
+                    </p>
+                  </div>
+                </td>
+              </tr>
+              <tr style="HEIGHT: 29px">
+                <td style="BORDER-BOTTOM: rgb(255,255,255) 1px solid; BORDER-LEFT: rgb(255,255,255) 1px solid; BACKGROUND-COLOR: rgb(231,235,245); VERTICAL-ALIGN: top; BORDER-TOP: rgb(255,255,255) 1px solid; BORDER-RIGHT: rgb(255,255,255) 1px solid">
+                  <div style="POSITION: relative; TEXT-ALIGN: left; TEXT-TRANSFORM: none; FONT-VARIANT: normal; FONT-STYLE: normal; MARGIN: 4px 7px; LETTER-SPACING: 0px; FONT-FAMILY: 'Constantia'; DIRECTION: ltr; COLOR: rgb(0,0,0); FONT-SIZE: 17px; VERTICAL-ALIGN: top; FONT-WEIGHT: normal">
+                    <p class="P1">
+                      <span>int</span>
+                    </p>
+                  </div>
+                </td>
+                <td style="BORDER-BOTTOM: rgb(255,255,255) 1px solid; BORDER-LEFT: rgb(255,255,255) 1px solid; BACKGROUND-COLOR: rgb(231,235,245); VERTICAL-ALIGN: top; BORDER-TOP: rgb(255,255,255) 1px solid; BORDER-RIGHT: rgb(255,255,255) 1px solid">
+                  <div style="POSITION: relative; TEXT-ALIGN: left; TEXT-TRANSFORM: none; FONT-VARIANT: normal; FONT-STYLE: normal; MARGIN: 4px 7px; LETTER-SPACING: 0px; FONT-FAMILY: 'Constantia'; DIRECTION: ltr; COLOR: rgb(0,0,0); FONT-SIZE: 17px; VERTICAL-ALIGN: top; FONT-WEIGHT: normal">
+                    <p class="P1">
+                      <span>min, max</span>
+                    </p>
+                  </div>
+                </td>
+                <td style="BORDER-BOTTOM: rgb(255,255,255) 1px solid; BORDER-LEFT: rgb(255,255,255) 1px solid; BACKGROUND-COLOR: rgb(231,235,245); VERTICAL-ALIGN: top; BORDER-TOP: rgb(255,255,255) 1px solid; BORDER-RIGHT: rgb(255,255,255) 1px solid">
+                  <div style="POSITION: relative; TEXT-ALIGN: left; TEXT-TRANSFORM: none; FONT-VARIANT: normal; FONT-STYLE: normal; MARGIN: 4px 7px; LETTER-SPACING: 0px; FONT-FAMILY: 'Constantia'; DIRECTION: ltr; COLOR: rgb(0,0,0); FONT-SIZE: 17px; VERTICAL-ALIGN: top; FONT-WEIGHT: normal">
+                    <p class="P1">
+                      <span>Verifies integer value falls between min &amp; max</span>
+                    </p>
+                  </div>
+                </td>
+              </tr>
+              <tr style="HEIGHT: 50px">
+                <td style="BORDER-BOTTOM: rgb(255,255,255) 1px solid; BORDER-LEFT: rgb(255,255,255) 1px solid; BACKGROUND-COLOR: rgb(204,213,234); VERTICAL-ALIGN: top; BORDER-TOP: rgb(255,255,255) 1px solid; BORDER-RIGHT: rgb(255,255,255) 1px solid">
+                  <div style="POSITION: relative; TEXT-ALIGN: left; TEXT-TRANSFORM: none; FONT-VARIANT: normal; FONT-STYLE: normal; MARGIN: 4px 7px; LETTER-SPACING: 0px; FONT-FAMILY: 'Constantia'; DIRECTION: ltr; COLOR: rgb(0,0,0); FONT-SIZE: 17px; VERTICAL-ALIGN: top; FONT-WEIGHT: normal">
+                    <p class="P1">
+                      <span>double</span>
+                    </p>
+                  </div>
+                </td>
+                <td style="BORDER-BOTTOM: rgb(255,255,255) 1px solid; BORDER-LEFT: rgb(255,255,255) 1px solid; BACKGROUND-COLOR: rgb(204,213,234); VERTICAL-ALIGN: top; BORDER-TOP: rgb(255,255,255) 1px solid; BORDER-RIGHT: rgb(255,255,255) 1px solid">
+                  <div style="POSITION: relative; TEXT-ALIGN: left; TEXT-TRANSFORM: none; FONT-VARIANT: normal; FONT-STYLE: normal; MARGIN: 4px 7px; LETTER-SPACING: 0px; FONT-FAMILY: 'Constantia'; DIRECTION: ltr; COLOR: rgb(0,0,0); FONT-SIZE: 17px; VERTICAL-ALIGN: top; FONT-WEIGHT: normal">
+                    <p class="P1">
+                      <span>minIn,maxIn,<br /></span>
+                    </p>
+                    <p class="P2">
+                      <span>minEx, maxEx</span>
+                    </p>
+                  </div>
+                </td>
+                <td style="BORDER-BOTTOM: rgb(255,255,255) 1px solid; BORDER-LEFT: rgb(255,255,255) 1px solid; BACKGROUND-COLOR: rgb(204,213,234); VERTICAL-ALIGN: top; BORDER-TOP: rgb(255,255,255) 1px solid; BORDER-RIGHT: rgb(255,255,255) 1px solid">
+                  <div style="POSITION: relative; TEXT-ALIGN: left; TEXT-TRANSFORM: none; FONT-VARIANT: normal; FONT-STYLE: normal; MARGIN: 4px 7px; LETTER-SPACING: 0px; FONT-FAMILY: 'Constantia'; DIRECTION: ltr; COLOR: rgb(0,0,0); FONT-SIZE: 17px; VERTICAL-ALIGN: top; FONT-WEIGHT: normal">
+                    <p class="P1">
+                      <span>Verifies double value falls between the inclusively or exclusively specified parameters.</span>
+                    </p>
+                  </div>
+                </td>
+              </tr>
+              <tr style="HEIGHT: 29px">
+                <td style="BORDER-BOTTOM: rgb(255,255,255) 1px solid; BORDER-LEFT: rgb(255,255,255) 1px solid; BACKGROUND-COLOR: rgb(231,235,245); VERTICAL-ALIGN: top; BORDER-TOP: rgb(255,255,255) 1px solid; BORDER-RIGHT: rgb(255,255,255) 1px solid">
+                  <div style="POSITION: relative; TEXT-ALIGN: left; TEXT-TRANSFORM: none; FONT-VARIANT: normal; FONT-STYLE: normal; MARGIN: 4px 7px; LETTER-SPACING: 0px; FONT-FAMILY: 'Constantia'; DIRECTION: ltr; COLOR: rgb(0,0,0); FONT-SIZE: 17px; VERTICAL-ALIGN: top; FONT-WEIGHT: normal">
+                    <p class="P1">
+                      <span>date</span>
+                    </p>
+                  </div>
+                </td>
+                <td style="BORDER-BOTTOM: rgb(255,255,255) 1px solid; BORDER-LEFT: rgb(255,255,255) 1px solid; BACKGROUND-COLOR: rgb(231,235,245); VERTICAL-ALIGN: top; BORDER-TOP: rgb(255,255,255) 1px solid; BORDER-RIGHT: rgb(255,255,255) 1px solid">
+                  <div style="POSITION: relative; TEXT-ALIGN: left; TEXT-TRANSFORM: none; FONT-VARIANT: normal; FONT-STYLE: normal; MARGIN: 4px 7px; LETTER-SPACING: 0px; FONT-FAMILY: 'Constantia'; DIRECTION: ltr; COLOR: rgb(0,0,0); FONT-SIZE: 17px; VERTICAL-ALIGN: top; FONT-WEIGHT: normal">
+                    <p class="P1">
+                      <span>min, max</span>
+                    </p>
+                  </div>
+                </td>
+                <td style="BORDER-BOTTOM: rgb(255,255,255) 1px solid; BORDER-LEFT: rgb(255,255,255) 1px solid; BACKGROUND-COLOR: rgb(231,235,245); VERTICAL-ALIGN: top; BORDER-TOP: rgb(255,255,255) 1px solid; BORDER-RIGHT: rgb(255,255,255) 1px solid">
+                  <div style="POSITION: relative; TEXT-ALIGN: left; TEXT-TRANSFORM: none; FONT-VARIANT: normal; FONT-STYLE: normal; MARGIN: 4px 7px; LETTER-SPACING: 0px; FONT-FAMILY: 'Constantia'; DIRECTION: ltr; COLOR: rgb(0,0,0); FONT-SIZE: 17px; VERTICAL-ALIGN: top; FONT-WEIGHT: normal">
+                    <p class="P1">
+                      <span>Verifies date value falls between min &amp; max</span>
+                    </p>
+                  </div>
+                </td>
+              </tr>
+              <tr style="HEIGHT: 29px">
+                <td style="BORDER-BOTTOM: rgb(255,255,255) 1px solid; BORDER-LEFT: rgb(255,255,255) 1px solid; BACKGROUND-COLOR: rgb(204,213,234); VERTICAL-ALIGN: top; BORDER-TOP: rgb(255,255,255) 1px solid; BORDER-RIGHT: rgb(255,255,255) 1px solid">
+                  <div style="POSITION: relative; TEXT-ALIGN: left; TEXT-TRANSFORM: none; FONT-VARIANT: normal; FONT-STYLE: normal; MARGIN: 4px 7px; LETTER-SPACING: 0px; FONT-FAMILY: 'Constantia'; DIRECTION: ltr; COLOR: rgb(0,0,0); FONT-SIZE: 17px; VERTICAL-ALIGN: top; FONT-WEIGHT: normal">
+                    <p class="P1">
+                      <span>email</span>
+                    </p>
+                  </div>
+                </td>
+                <td style="BORDER-BOTTOM: rgb(255,255,255) 1px solid; BORDER-LEFT: rgb(255,255,255) 1px solid; BACKGROUND-COLOR: rgb(204,213,234); VERTICAL-ALIGN: top; BORDER-TOP: rgb(255,255,255) 1px solid; BORDER-RIGHT: rgb(255,255,255) 1px solid">
+                  <div style="POSITION: relative; TEXT-ALIGN: left; TEXT-TRANSFORM: none; FONT-VARIANT: normal; FONT-STYLE: normal; MARGIN: 4px 7px; LETTER-SPACING: 0px; FONT-FAMILY: 'Constantia'; DIRECTION: ltr; COLOR: rgb(0,0,0); FONT-SIZE: 17px; VERTICAL-ALIGN: top; FONT-WEIGHT: normal">
+                    <p class="P1">
+                      <span>None&nbsp;</span>
+                    </p>
+                  </div>
+                </td>
+                <td style="BORDER-BOTTOM: rgb(255,255,255) 1px solid; BORDER-LEFT: rgb(255,255,255) 1px solid; BACKGROUND-COLOR: rgb(204,213,234); VERTICAL-ALIGN: top; BORDER-TOP: rgb(255,255,255) 1px solid; BORDER-RIGHT: rgb(255,255,255) 1px solid">
+                  <div style="POSITION: relative; TEXT-ALIGN: left; TEXT-TRANSFORM: none; FONT-VARIANT: normal; FONT-STYLE: normal; MARGIN: 4px 7px; LETTER-SPACING: 0px; FONT-FAMILY: 'Constantia'; DIRECTION: ltr; COLOR: rgb(0,0,0); FONT-SIZE: 17px; VERTICAL-ALIGN: top; FONT-WEIGHT: normal">
+                    <p class="P1">
+                      <span>Verifies email address format.</span>
+                    </p>
+                  </div>
+                </td>
+              </tr>
+              <tr style="HEIGHT: 29px">
+                <td style="BORDER-BOTTOM: rgb(255,255,255) 1px solid; BORDER-LEFT: rgb(255,255,255) 1px solid; BACKGROUND-COLOR: rgb(231,235,245); VERTICAL-ALIGN: top; BORDER-TOP: rgb(255,255,255) 1px solid; BORDER-RIGHT: rgb(255,255,255) 1px solid">
+                  <div style="POSITION: relative; TEXT-ALIGN: left; TEXT-TRANSFORM: none; FONT-VARIANT: normal; FONT-STYLE: normal; MARGIN: 4px 7px; LETTER-SPACING: 0px; FONT-FAMILY: 'Constantia'; DIRECTION: ltr; COLOR: rgb(0,0,0); FONT-SIZE: 17px; VERTICAL-ALIGN: top; FONT-WEIGHT: normal">
+                    <p class="P1">
+                      <span>url</span>
+                    </p>
+                  </div>
+                </td>
+                <td style="BORDER-BOTTOM: rgb(255,255,255) 1px solid; BORDER-LEFT: rgb(255,255,255) 1px solid; BACKGROUND-COLOR: rgb(231,235,245); VERTICAL-ALIGN: top; BORDER-TOP: rgb(255,255,255) 1px solid; BORDER-RIGHT: rgb(255,255,255) 1px solid">
+                  <div style="POSITION: relative; TEXT-ALIGN: left; TEXT-TRANSFORM: none; FONT-VARIANT: normal; FONT-STYLE: normal; MARGIN: 4px 7px; LETTER-SPACING: 0px; FONT-FAMILY: 'Constantia'; DIRECTION: ltr; COLOR: rgb(0,0,0); FONT-SIZE: 17px; VERTICAL-ALIGN: top; FONT-WEIGHT: normal">
+                    <p class="P1">
+                      <span>None</span>
+                    </p>
+                  </div>
+                </td>
+                <td style="BORDER-BOTTOM: rgb(255,255,255) 1px solid; BORDER-LEFT: rgb(255,255,255) 1px solid; BACKGROUND-COLOR: rgb(231,235,245); VERTICAL-ALIGN: top; BORDER-TOP: rgb(255,255,255) 1px solid; BORDER-RIGHT: rgb(255,255,255) 1px solid">
+                  <div style="POSITION: relative; TEXT-ALIGN: left; TEXT-TRANSFORM: none; FONT-VARIANT: normal; FONT-STYLE: normal; MARGIN: 4px 7px; LETTER-SPACING: 0px; FONT-FAMILY: 'Constantia'; DIRECTION: ltr; COLOR: rgb(0,0,0); FONT-SIZE: 17px; VERTICAL-ALIGN: top; FONT-WEIGHT: normal">
+                    <p class="P1">
+                      <span>Verifies URL format.</span>
+                    </p>
+                  </div>
+                </td>
+              </tr>
+              <tr style="HEIGHT: 29px">
+                <td style="BORDER-BOTTOM: rgb(255,255,255) 1px solid; BORDER-LEFT: rgb(255,255,255) 1px solid; BACKGROUND-COLOR: rgb(204,213,234); VERTICAL-ALIGN: top; BORDER-TOP: rgb(255,255,255) 1px solid; BORDER-RIGHT: rgb(255,255,255) 1px solid">
+                  <div style="POSITION: relative; TEXT-ALIGN: left; TEXT-TRANSFORM: none; FONT-VARIANT: normal; FONT-STYLE: normal; MARGIN: 4px 7px; LETTER-SPACING: 0px; FONT-FAMILY: 'Constantia'; DIRECTION: ltr; COLOR: rgb(0,0,0); FONT-SIZE: 17px; VERTICAL-ALIGN: top; FONT-WEIGHT: normal">
+                    <p class="P1">
+                      <span>fieldexpression</span>
+                    </p>
+                  </div>
+                </td>
+                <td style="BORDER-BOTTOM: rgb(255,255,255) 1px solid; BORDER-LEFT: rgb(255,255,255) 1px solid; BACKGROUND-COLOR: rgb(204,213,234); VERTICAL-ALIGN: top; BORDER-TOP: rgb(255,255,255) 1px solid; BORDER-RIGHT: rgb(255,255,255) 1px solid">
+                  <div style="POSITION: relative; TEXT-ALIGN: left; TEXT-TRANSFORM: none; FONT-VARIANT: normal; FONT-STYLE: normal; MARGIN: 4px 7px; LETTER-SPACING: 0px; FONT-FAMILY: 'Constantia'; DIRECTION: ltr; COLOR: rgb(0,0,0); FONT-SIZE: 17px; VERTICAL-ALIGN: top; FONT-WEIGHT: normal">
+                    <p class="P1">
+                      <span>expression</span>
+                    </p>
+                  </div>
+                </td>
+                <td style="BORDER-BOTTOM: rgb(255,255,255) 1px solid; BORDER-LEFT: rgb(255,255,255) 1px solid; BACKGROUND-COLOR: rgb(204,213,234); VERTICAL-ALIGN: top; BORDER-TOP: rgb(255,255,255) 1px solid; BORDER-RIGHT: rgb(255,255,255) 1px solid">
+                  <div style="POSITION: relative; TEXT-ALIGN: left; TEXT-TRANSFORM: none; FONT-VARIANT: normal; FONT-STYLE: normal; MARGIN: 4px 7px; LETTER-SPACING: 0px; FONT-FAMILY: 'Constantia'; DIRECTION: ltr; COLOR: rgb(0,0,0); FONT-SIZE: 17px; VERTICAL-ALIGN: top; FONT-WEIGHT: normal">
+                    <p class="P1">
+                      <span>Evaluates OGNL expression against ValueStack.</span>
+                    </p>
+                  </div>
+                </td>
+              </tr>
+              <tr style="HEIGHT: 29px">
+                <td style="BORDER-BOTTOM: rgb(255,255,255) 1px solid; BORDER-LEFT: rgb(255,255,255) 1px solid; BACKGROUND-COLOR: rgb(231,235,245); VERTICAL-ALIGN: top; BORDER-TOP: rgb(255,255,255) 1px solid; BORDER-RIGHT: rgb(255,255,255) 1px solid">
+                  <div style="POSITION: relative; TEXT-ALIGN: left; TEXT-TRANSFORM: none; FONT-VARIANT: normal; FONT-STYLE: normal; MARGIN: 4px 7px; LETTER-SPACING: 0px; FONT-FAMILY: 'Constantia'; DIRECTION: ltr; COLOR: rgb(0,0,0); FONT-SIZE: 17px; VERTICAL-ALIGN: top; FONT-WEIGHT: normal">
+                    <p class="P1">
+                      <span>expression</span>
+                    </p>
+                  </div>
+                </td>
+                <td style="BORDER-BOTTOM: rgb(255,255,255) 1px solid; BORDER-LEFT: rgb(255,255,255) 1px solid; BACKGROUND-COLOR: rgb(231,235,245); VERTICAL-ALIGN: top; BORDER-TOP: rgb(255,255,255) 1px solid; BORDER-RIGHT: rgb(255,255,255) 1px solid">
+                  <div style="POSITION: relative; TEXT-ALIGN: left; TEXT-TRANSFORM: none; FONT-VARIANT: normal; FONT-STYLE: normal; MARGIN: 4px 7px; LETTER-SPACING: 0px; FONT-FAMILY: 'Constantia'; DIRECTION: ltr; COLOR: rgb(0,0,0); FONT-SIZE: 17px; VERTICAL-ALIGN: top; FONT-WEIGHT: normal">
+                    <p class="P1">
+                      <span>expression</span>
+                    </p>
+                  </div>
+                </td>
+                <td style="BORDER-BOTTOM: rgb(255,255,255) 1px solid; BORDER-LEFT: rgb(255,255,255) 1px solid; BACKGROUND-COLOR: rgb(231,235,245); VERTICAL-ALIGN: top; BORDER-TOP: rgb(255,255,255) 1px solid; BORDER-RIGHT: rgb(255,255,255) 1px solid">
+                  <div style="POSITION: relative; TEXT-ALIGN: left; TEXT-TRANSFORM: none; FONT-VARIANT: normal; FONT-STYLE: normal; MARGIN: 4px 7px; LETTER-SPACING: 0px; FONT-FAMILY: 'Constantia'; DIRECTION: ltr; COLOR: rgb(0,0,0); FONT-SIZE: 17px; VERTICAL-ALIGN: top; FONT-WEIGHT: normal">
+                    <p class="P1">
+                      <span>Same as fieldexpression, used at actionlevel.</span>
+                    </p>
+                  </div>
+                </td>
+              </tr>
+              <tr style="HEIGHT: 50px">
+                <td style="BORDER-BOTTOM: rgb(255,255,255) 1px solid; BORDER-LEFT: rgb(255,255,255) 1px solid; BACKGROUND-COLOR: rgb(204,213,234); VERTICAL-ALIGN: top; BORDER-TOP: rgb(255,255,255) 1px solid; BORDER-RIGHT: rgb(255,255,255) 1px solid">
+                  <div style="POSITION: relative; TEXT-ALIGN: left; TEXT-TRANSFORM: none; FONT-VARIANT: normal; FONT-STYLE: normal; MARGIN: 4px 7px; LETTER-SPACING: 0px; FONT-FAMILY: 'Constantia'; DIRECTION: ltr; COLOR: rgb(0,0,0); FONT-SIZE: 17px; VERTICAL-ALIGN: top; FONT-WEIGHT: normal">
+                    <p class="P1">
+                      <span>Visitor</span>
+                    </p>
+                  </div>
+                </td>
+                <td style="BORDER-BOTTOM: rgb(255,255,255) 1px solid; BORDER-LEFT: rgb(255,255,255) 1px solid; BACKGROUND-COLOR: rgb(204,213,234); VERTICAL-ALIGN: top; BORDER-TOP: rgb(255,255,255) 1px solid; BORDER-RIGHT: rgb(255,255,255) 1px solid">
+                  <div style="POSITION: relative; TEXT-ALIGN: left; TEXT-TRANSFORM: none; FONT-VARIANT: normal; FONT-STYLE: normal; MARGIN: 4px 7px; LETTER-SPACING: 0px; FONT-FAMILY: 'Constantia'; DIRECTION: ltr; COLOR: rgb(0,0,0); FONT-SIZE: 17px; VERTICAL-ALIGN: top; FONT-WEIGHT: normal">
+                    <p class="P1">
+                      <span>Context, appendPrefix</span>
+                    </p>
+                  </div>
+                </td>
+                <td style="BORDER-BOTTOM: rgb(255,255,255) 1px solid; BORDER-LEFT: rgb(255,255,255) 1px solid; BACKGROUND-COLOR: rgb(204,213,234); VERTICAL-ALIGN: top; BORDER-TOP: rgb(255,255,255) 1px solid; BORDER-RIGHT: rgb(255,255,255) 1px solid">
+                  <div style="POSITION: relative; TEXT-ALIGN: left; TEXT-TRANSFORM: none; FONT-VARIANT: normal; FONT-STYLE: normal; MARGIN: 4px 7px; LETTER-SPACING: 0px; FONT-FAMILY: 'Constantia'; DIRECTION: ltr; COLOR: rgb(0,0,0); FONT-SIZE: 17px; VERTICAL-ALIGN: top; FONT-WEIGHT: normal">
+                    <p class="P1">
+                      <span>Defers validation of a domain object property, to validations made local to domain object.</span>
+                    </p>
+                  </div>
+                </td>
+              </tr>
+              <tr style="HEIGHT: 50px">
+                <td style="BORDER-BOTTOM: rgb(255,255,255) 1px solid; BORDER-LEFT: rgb(255,255,255) 1px solid; BACKGROUND-COLOR: rgb(231,235,245); VERTICAL-ALIGN: top; BORDER-TOP: rgb(255,255,255) 1px solid; BORDER-RIGHT: rgb(255,255,255) 1px solid">
+                  <div style="POSITION: relative; TEXT-ALIGN: left; TEXT-TRANSFORM: none; FONT-VARIANT: normal; FONT-STYLE: normal; MARGIN: 4px 7px; LETTER-SPACING: 0px; FONT-FAMILY: 'Constantia'; DIRECTION: ltr; COLOR: rgb(0,0,0); FONT-SIZE: 17px; VERTICAL-ALIGN: top; FONT-WEIGHT: normal">
+                    <p class="P1">
+                      <span>regex</span>
+                    </p>
+                  </div>
+                </td>
+                <td style="BORDER-BOTTOM: rgb(255,255,255) 1px solid; BORDER-LEFT: rgb(255,255,255) 1px solid; BACKGROUND-COLOR: rgb(231,235,245); VERTICAL-ALIGN: top; BORDER-TOP: rgb(255,255,255) 1px solid; BORDER-RIGHT: rgb(255,255,255) 1px solid">
+                  <div style="POSITION: relative; TEXT-ALIGN: left; TEXT-TRANSFORM: none; FONT-VARIANT: normal; FONT-STYLE: normal; MARGIN: 4px 7px; LETTER-SPACING: 0px; FONT-FAMILY: 'Constantia'; DIRECTION: ltr; COLOR: rgb(0,0,0); FONT-SIZE: 17px; VERTICAL-ALIGN: top; FONT-WEIGHT: normal">
+                    <p class="P1">
+                      <span>exp, trim,<br /></span>
+                    </p>
+                    <p class="P2">
+                      <span>caseSensitive</span>
+                    </p>
+                  </div>
+                </td>
+                <td style="BORDER-BOTTOM: rgb(255,255,255) 1px solid; BORDER-LEFT: rgb(255,255,255) 1px solid; BACKGROUND-COLOR: rgb(231,235,245); VERTICAL-ALIGN: top; BORDER-TOP: rgb(255,255,255) 1px solid; BORDER-RIGHT: rgb(255,255,255) 1px solid">
+                  <div style="POSITION: relative; TEXT-ALIGN: left; TEXT-TRANSFORM: none; FONT-VARIANT: normal; FONT-STYLE: normal; MARGIN: 4px 7px; LETTER-SPACING: 0px; FONT-FAMILY: 'Constantia'; DIRECTION: ltr; COLOR: rgb(0,0,0); FONT-SIZE: 17px; VERTICAL-ALIGN: top; FONT-WEIGHT: normal">
+                    <p class="P1">
+                      <span>Verifies String conforming to regular expression</span>
+                    </p>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div id="Slide30" class="Slide Flow_Title_and_Content">
+          <img class="SlideBackground" alt="" src="content/images/struts2advance/Title_and_Content_BackGround.jpg" />
+          <div style="POSITION: absolute; BORDER-BOTTOM-STYLE: none; BORDER-LEFT-STYLE: none; WIDTH: 648px; BORDER-TOP-STYLE: none; BACKGROUND: none transparent scroll repeat 0% 0%; HEIGHT: 59px; BORDER-RIGHT-STYLE: none; TOP: 55px; LEFT: 36px" id="Slide30_Title_1" class="Title Title_1">
+            <table class="TextContainer" cellspacing="0" cellpadding="0">
+              <tr>
+                <td style="VERTICAL-ALIGN: bottom">
+                  <div style="POSITION: relative; TEXT-ALIGN: left; TEXT-TRANSFORM: none; FONT-VARIANT: normal; FONT-STYLE: normal; MARGIN: 4px 0px 0px; LETTER-SPACING: 0px; FONT-FAMILY: 'Calibri'; DIRECTION: ltr; COLOR: rgb(4,97,123); FONT-SIZE: 43px; VERTICAL-ALIGN: bottom; FONT-WEIGHT: normal">
+                    <p class="P1">
+                      <span>Writing a Custom Validator</span>
+                    </p>
+                  </div>
+                </td>
+              </tr>
+            </table>
+          </div>
+          <div style="POSITION: absolute; BORDER-BOTTOM-STYLE: none; BORDER-LEFT-STYLE: none; WIDTH: 648px; BORDER-TOP-STYLE: none; BACKGROUND: none transparent scroll repeat 0% 0%; HEIGHT: 402px; BORDER-RIGHT-STYLE: none; TOP: 126px; LEFT: 36px" id="Slide30_Content_Placeholder_2" class="Content_Placeholder_2">
+            <ul style="POSITION: relative; TEXT-ALIGN: left; TEXT-TRANSFORM: none; FONT-VARIANT: normal; FONT-STYLE: normal; MARGIN: 4px 7px; LETTER-SPACING: 0px; FONT-FAMILY: 'Constantia'; DIRECTION: ltr; COLOR: rgb(0,0,0); FONT-SIZE: 19px; VERTICAL-ALIGN: top; FONT-WEIGHT: normal">
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px" class="P1">
+                <span style="COLOR: rgb(0,0,0)">All validators are obligated to implement the Validator or FieldValidator interface.<br /></span>
+              </li>
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px; PADDING-TOP: 4px" class="P2">
+                <span style="COLOR: rgb(0,0,0)">One can extend either ValidatorSupport or FieldValidatorSupport, from the validators package to write a custom tag.<br /></span>
+              </li>
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px; PADDING-TOP: 4px" class="P3">
+                <span style="COLOR: rgb(0,0,0)">A nonfield validator, which performs a validation check involving more than one field, is written by extend ValidatorSupport class.<br /></span>
+              </li>
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px; PADDING-TOP: 4px" class="P4">
+                <span style="COLOR: rgb(0,0,0)">The validation code is specified in the validate() method.<br /></span>
+              </li>
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px; PADDING-TOP: 4px" class="P5">
+                <span style="COLOR: rgb(0,0,0)">The validator also needs to create JavaBeans properties to match all parameters to be exposed to the user.<br /></span>
+              </li>
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px; PADDING-TOP: 4px" class="P6">
+                <span style="COLOR: rgb(0,0,0)">The following snippet shows parameter passing from the XML file to the property:<br /></span>
+              </li>
+              <li style="TEXT-INDENT: -22px; MARGIN-LEFT: 22px; PADDING-TOP: 4px" class="NonBullet P7">
+                <span>&nbsp;<br /></span>
+              </li>
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px; FONT-WEIGHT: bold; PADDING-TOP: 4px" class="P8">
+                <span style="COLOR: rgb(11,83,149)">&lt;field-validator type="passwordintegrity"&gt;<br /></span>
+              </li>
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px; FONT-WEIGHT: bold; PADDING-TOP: 4px" class="P9">
+                <span style="COLOR: rgb(11,83,149)"><span>&nbsp; &lt;param name="specialCharacters"&gt;$!@#?&lt;/param&gt;<br /></span></span>
+              </li>
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px; FONT-WEIGHT: bold; PADDING-TOP: 4px" class="P10">
+                <span style="COLOR: rgb(11,83,149)"><span>&nbsp; &lt;message&gt;Password must have 1 of foll "${specialCharacters}".<br /></span></span>
+              </li>
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px; FONT-WEIGHT: bold; PADDING-TOP: 4px" class="P11">
+                <span style="COLOR: rgb(11,83,149)"><span>&nbsp; &lt;/message&gt;<br /></span></span>
+              </li>
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px; FONT-WEIGHT: bold; PADDING-TOP: 4px" class="P12">
+                <span style="COLOR: rgb(11,83,149)">&lt;/field-validator&gt;</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div id="Slide31" class="Slide Flow_Title_and_Content">
+          <img class="SlideBackground" alt="" src="content/images/struts2advance/Title_and_Content_BackGround.jpg" />
+          <div style="POSITION: absolute; BORDER-BOTTOM-STYLE: none; BORDER-LEFT-STYLE: none; WIDTH: 648px; BORDER-TOP-STYLE: none; BACKGROUND: none transparent scroll repeat 0% 0%; HEIGHT: 90px; BORDER-RIGHT-STYLE: none; TOP: 55px; LEFT: 36px" id="Slide31_Title_1" class="Title Title_1">
+            <table class="TextContainer" cellspacing="0" cellpadding="0">
+              <tr>
+                <td style="VERTICAL-ALIGN: bottom">
+                  <div style="POSITION: relative; TEXT-ALIGN: left; TEXT-TRANSFORM: none; FONT-VARIANT: normal; FONT-STYLE: normal; MARGIN: 4px 0px 0px; LETTER-SPACING: 0px; FONT-FAMILY: 'Calibri'; DIRECTION: ltr; COLOR: rgb(4,97,123); FONT-SIZE: 48px; VERTICAL-ALIGN: bottom; FONT-WEIGHT: normal">
+                    <p class="P1">
+                      <span>Writing a Custom Validator</span>
+                    </p>
+                  </div>
+                </td>
+              </tr>
+            </table>
+          </div>
+          <div style="POSITION: absolute; BORDER-BOTTOM-STYLE: none; BORDER-LEFT-STYLE: none; WIDTH: 648px; BORDER-TOP-STYLE: none; BACKGROUND: none transparent scroll repeat 0% 0%; HEIGHT: 346px; BORDER-RIGHT-STYLE: none; TOP: 152px; LEFT: 36px" id="Slide31_Content_Placeholder_2" class="Content_Placeholder_2">
+            <ul style="POSITION: relative; TEXT-ALIGN: left; TEXT-TRANSFORM: none; FONT-VARIANT: normal; FONT-STYLE: normal; MARGIN: 4px 7px; LETTER-SPACING: 0px; FONT-FAMILY: 'Constantia'; DIRECTION: ltr; COLOR: rgb(0,0,0); FONT-SIZE: 21px; VERTICAL-ALIGN: top; FONT-WEIGHT: normal">
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px" class="P1">
+                <span style="COLOR: rgb(0,0,0)">Most of the helper methods are actually defined in ValidatorSupport, which is extended by FieldValidatorSupport.<br /></span>
+              </li>
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px; PADDING-TOP: 4px" class="P2">
+                <span style="COLOR: rgb(0,0,0)">The Field name and value is retrieved by calling helper methods, getFieldName() and getFieldValue() defined in FieldValidatorSupport class.<br /></span>
+              </li>
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px; PADDING-TOP: 4px" class="P3">
+                <span style="COLOR: rgb(0,0,0)">Error storing methods are inherited from support classes.<br /></span>
+              </li>
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px; PADDING-TOP: 4px" class="P4">
+                <span style="COLOR: rgb(0,0,0)">The custom validators are declared in an application-local validators.xml file, placed in the root of the classpath—directly under the src folder in the WEB-INF/classes/.<br /></span>
+              </li>
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px; PADDING-TOP: 4px" class="P5">
+                <span style="COLOR: rgb(0,0,0)">&lt;validators&gt;<br /></span>
+              </li>
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px; PADDING-TOP: 4px" class="P6">
+                <span style="COLOR: rgb(0,0,0)">&lt;validator name="passwordintegrity"<br /></span>
+              </li>
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px; PADDING-TOP: 4px" class="P7">
+                <span style="COLOR: rgb(0,0,0)">class="manning.utils.PasswordIntegrityValidator"/&gt;<br /></span>
+              </li>
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px; PADDING-TOP: 4px" class="P8">
+                <span style="COLOR: rgb(0,0,0)">&lt;/validators&gt;<br /></span>
+              </li>
+              <li style="TEXT-INDENT: -22px; MARGIN-LEFT: 22px; PADDING-TOP: 4px" class="NonBullet P9">
+                <span>&nbsp;<br /></span>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div id="Slide32" class="Slide Flow_Title_and_Content">
+          <img class="SlideBackground" alt="" src="content/images/struts2advance/Title_and_Content_BackGround.jpg" /><img style="POSITION: absolute; WIDTH: 654px; HEIGHT: 510px; TOP: 18px; LEFT: 42px" id="Slide32_Content_Placeholder_3" alt="Struts2-Architecture.png" src="content/images/struts2advance/Slide32_Content_Placeholder_3.png" name="Slide32_Content_Placeholder_3" />
+        </div>
+        <div id="Slide33" class="Slide Flow_Title_and_Content">
+          <img class="SlideBackground" alt="" src="content/images/struts2advance/Title_and_Content_BackGround.jpg" />
+          <div style="POSITION: absolute; BORDER-BOTTOM-STYLE: none; BORDER-LEFT-STYLE: none; WIDTH: 648px; BORDER-TOP-STYLE: none; BACKGROUND: none transparent scroll repeat 0% 0%; HEIGHT: 41px; BORDER-RIGHT-STYLE: none; TOP: 24px; LEFT: 36px" id="Slide33_Title_1" class="Title Title_1">
+            <table class="TextContainer" cellspacing="0" cellpadding="0">
+              <tr>
+                <td style="VERTICAL-ALIGN: bottom">
+                  <div style="POSITION: relative; TEXT-ALIGN: left; TEXT-TRANSFORM: none; FONT-VARIANT: normal; FONT-STYLE: normal; MARGIN: 4px 0px 0px; LETTER-SPACING: 0px; FONT-FAMILY: 'Calibri'; DIRECTION: ltr; COLOR: rgb(4,97,123); FONT-SIZE: 43px; VERTICAL-ALIGN: bottom; FONT-WEIGHT: normal">
+                    <p class="P1">
+                      <span>Apache Struts 2 Framework</span>
+                    </p>
+                  </div>
+                </td>
+              </tr>
+            </table>
+          </div>
+          <div style="POSITION: absolute; BORDER-BOTTOM-STYLE: none; BORDER-LEFT-STYLE: none; WIDTH: 648px; BORDER-TOP-STYLE: none; BACKGROUND: none transparent scroll repeat 0% 0%; HEIGHT: 462px; BORDER-RIGHT-STYLE: none; TOP: 66px; LEFT: 36px" id="Slide33_Content_Placeholder_2" class="Content_Placeholder_2">
+            <ul style="POSITION: relative; TEXT-ALIGN: left; TEXT-TRANSFORM: none; FONT-VARIANT: normal; FONT-STYLE: normal; MARGIN: 4px 7px; LETTER-SPACING: 0px; FONT-FAMILY: 'Constantia'; DIRECTION: ltr; COLOR: rgb(0,0,0); FONT-SIZE: 21px; VERTICAL-ALIGN: top; FONT-WEIGHT: normal">
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px" class="P1">
+                <span style="COLOR: rgb(0,0,0)">An initial request goes to the Servlet container (such as Jetty or Resin) which is passed through a standard filter chain.<br /></span>
+              </li>
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px; PADDING-TOP: 4px" class="P2">
+                <span style="COLOR: rgb(0,0,0)">The chain includes the (optional)&nbsp;</span><span style="COLOR: rgb(0,0,0); FONT-WEIGHT: bold">ActionContextCleanUp filter</span><span style="COLOR: rgb(0,0,0)">, which is useful when integrating technologies such as SiteMesh Plugin.&nbsp;<br /></span>
+              </li>
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px; PADDING-TOP: 4px" class="P3">
+                <span style="COLOR: rgb(0,0,0)">Next, the required&nbsp;</span><span style="COLOR: rgb(0,0,0); FONT-WEIGHT: bold">FilterDispatcher</span><span style="COLOR: rgb(0,0,0)"><span>&nbsp;is called, which in turn consults the ActionMapper to determine if the request should invoke an action.<br /></span></span>
+              </li>
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px; PADDING-TOP: 4px" class="P4">
+                <span style="COLOR: rgb(0,0,0)">If the&nbsp;</span><span style="COLOR: rgb(0,0,0); FONT-WEIGHT: bold">ActionMapper</span><span style="COLOR: rgb(0,0,0)"><span>&nbsp;determines that an Action should be invoked, the FilterDispatcher delegates control to the ActionProxy.<br /></span></span>
+              </li>
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px; PADDING-TOP: 4px" class="P5">
+                <span style="COLOR: rgb(0,0,0)">The&nbsp;</span><span style="COLOR: rgb(0,0,0); FONT-WEIGHT: bold">ActionProxy</span><span style="COLOR: rgb(0,0,0)"><span>&nbsp;consults the framework&nbsp;</span></span><span style="COLOR: rgb(0,0,0); FONT-WEIGHT: bold">Configuration Files manager</span><span style="COLOR: rgb(0,0,0)"><span>&nbsp;(initialized from the struts.xml file).&nbsp;<br /></span></span>
+              </li>
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px; PADDING-TOP: 4px" class="P6">
+                <span style="COLOR: rgb(0,0,0)">Next, the ActionProxy creates an&nbsp;</span><span style="COLOR: rgb(0,0,0); FONT-WEIGHT: bold">ActionInvocation</span><span style="COLOR: rgb(0,0,0)">, which is responsible for the command pattern implementation which includes invoking any&nbsp;</span><span style="COLOR: rgb(0,0,0); FONT-WEIGHT: bold">Interceptors</span><span style="COLOR: rgb(0,0,0)"><span>&nbsp;(the before clause) in advance of invoking the Action itself.<br /></span></span>
+              </li>
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px; PADDING-TOP: 4px" class="P7">
+                <span style="COLOR: rgb(0,0,0)">Once the&nbsp;</span><span style="COLOR: rgb(0,0,0); FONT-WEIGHT: bold">Action</span><span style="COLOR: rgb(0,0,0)"><span>&nbsp;returns, the&nbsp;</span></span><span style="COLOR: rgb(0,0,0); FONT-WEIGHT: bold">ActionInvocation</span><span style="COLOR: rgb(0,0,0)"><span>&nbsp;is responsible for looking up the proper result associated with the Action result code mapped in struts.xml.&nbsp;</span></span>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div id="Slide34" class="Slide Flow_Title_and_Content">
+          <img class="SlideBackground" alt="" src="content/images/struts2advance/Title_and_Content_BackGround.jpg" />
+          <div style="POSITION: absolute; BORDER-BOTTOM-STYLE: none; BORDER-LEFT-STYLE: none; WIDTH: 648px; BORDER-TOP-STYLE: none; BACKGROUND: none transparent scroll repeat 0% 0%; HEIGHT: 41px; BORDER-RIGHT-STYLE: none; TOP: 43px; LEFT: 36px" id="Slide34_Title_1" class="Title Title_1">
+            <table class="TextContainer" cellspacing="0" cellpadding="0">
+              <tr>
+                <td style="VERTICAL-ALIGN: bottom">
+                  <div style="POSITION: relative; TEXT-ALIGN: left; TEXT-TRANSFORM: none; FONT-VARIANT: normal; FONT-STYLE: normal; MARGIN: 4px 0px 0px; LETTER-SPACING: 0px; FONT-FAMILY: 'Calibri'; DIRECTION: ltr; COLOR: rgb(4,97,123); FONT-SIZE: 43px; VERTICAL-ALIGN: bottom; FONT-WEIGHT: normal">
+                    <p class="P1">
+                      <span>Apache Struts 2 Framework</span>
+                    </p>
+                  </div>
+                </td>
+              </tr>
+            </table>
+          </div>
+          <div style="POSITION: absolute; BORDER-BOTTOM-STYLE: none; BORDER-LEFT-STYLE: none; WIDTH: 648px; BORDER-TOP-STYLE: none; BACKGROUND: none transparent scroll repeat 0% 0%; HEIGHT: 426px; BORDER-RIGHT-STYLE: none; TOP: 96px; LEFT: 36px" id="Slide34_Content_Placeholder_2" class="Content_Placeholder_2">
+            <ul style="POSITION: relative; TEXT-ALIGN: left; TEXT-TRANSFORM: none; FONT-VARIANT: normal; FONT-STYLE: normal; MARGIN: 4px 7px; LETTER-SPACING: 0px; FONT-FAMILY: 'Constantia'; DIRECTION: ltr; COLOR: rgb(0,0,0); FONT-SIZE: 19px; VERTICAL-ALIGN: top; FONT-WEIGHT: normal">
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px" class="P1">
+                <span style="COLOR: rgb(0,0,0)">The&nbsp;</span><span style="COLOR: rgb(0,0,0); FONT-WEIGHT: bold">result</span><span style="COLOR: rgb(0,0,0)"><span>&nbsp;is then executed, which often (but not always, as is the case for Action Chaining) involves a&nbsp;</span></span><span style="COLOR: rgb(0,0,0); FONT-WEIGHT: bold">template</span><span style="COLOR: rgb(0,0,0)"><span>&nbsp;written in JSP or FreeMarker to be rendered.<br /></span></span>
+              </li>
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px; PADDING-TOP: 4px" class="P2">
+                <span style="COLOR: rgb(0,0,0)">Some of those components will work with the&nbsp;</span><span style="COLOR: rgb(0,0,0); FONT-WEIGHT: bold">ActionMapper</span><span style="COLOR: rgb(0,0,0)"><span>&nbsp;to render proper URLs for additional requests.<br /></span></span>
+              </li>
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px; PADDING-TOP: 4px" class="P3">
+                <span style="COLOR: rgb(0,0,0)">All objects in the architecture (Actions, Results, Interceptors, and so forth) are created by an&nbsp;</span><span style="COLOR: rgb(0,0,0); FONT-WEIGHT: bold">ObjectFactory</span><span style="COLOR: rgb(0,0,0)"><span>&nbsp;which is pluggable.&nbsp;<br /></span></span>
+              </li>
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px; PADDING-TOP: 4px" class="P4">
+                <span style="COLOR: rgb(0,0,0)">One can provide his own ObjectFactory for any reason that requires knowing when objects in the framework are created. A popular ObjectFactory implementation uses&nbsp;</span><span style="COLOR: rgb(0,0,0); FONT-WEIGHT: bold">Spring</span><span style="COLOR: rgb(0,0,0)"><span>&nbsp;as provided by the Spring Plugin.<br /></span></span>
+              </li>
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px; PADDING-TOP: 4px" class="P5">
+                <span style="COLOR: rgb(0,0,0); FONT-WEIGHT: bold">Interceptors</span><span style="COLOR: rgb(0,0,0)"><span>&nbsp;are executed again (in reverse order, calling the after clause).&nbsp;<br /></span></span>
+              </li>
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px; PADDING-TOP: 4px" class="P6">
+                <span style="COLOR: rgb(0,0,0)">Finally, the&nbsp;</span><span style="COLOR: rgb(0,0,0); FONT-WEIGHT: bold">response</span><span style="COLOR: rgb(0,0,0)"><span>&nbsp;returns through the filters configured in the web.xml.&nbsp;<br /></span></span>
+              </li>
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px; PADDING-TOP: 4px" class="P7">
+                <span style="COLOR: rgb(0,0,0)">If the&nbsp;</span><span style="COLOR: rgb(0,0,0); FONT-WEIGHT: bold">ActionContextCleanUp filter</span><span style="COLOR: rgb(0,0,0)"><span>&nbsp;is present, the&nbsp;</span></span><span style="COLOR: rgb(0,0,0); FONT-WEIGHT: bold">FilterDispatcher</span><span style="COLOR: rgb(0,0,0)"><span>&nbsp;will not clean up the&nbsp;</span></span><span style="COLOR: rgb(0,0,0); FONT-WEIGHT: bold">ThreadLocal ActionContext</span><span style="FONT-FAMILY: '+mn-ea'; COLOR: rgb(0,0,0)">.<span>&nbsp;</span>&nbsp;<br /></span>
+              </li>
+              <li style="LIST-STYLE-TYPE: disc; COLOR: rgb(11,208,217); MARGIN-LEFT: 22px; PADDING-TOP: 4px" class="P8">
+                <span style="COLOR: rgb(0,0,0)">If the&nbsp;</span><span style="COLOR: rgb(0,0,0); FONT-WEIGHT: bold">ActionContextCleanUp filter</span><span style="COLOR: rgb(0,0,0)"><span>&nbsp;is not present, the&nbsp;</span></span><span style="COLOR: rgb(0,0,0); FONT-WEIGHT: bold">FilterDispatcher</span><span style="COLOR: rgb(0,0,0)"><span>&nbsp;will cleanup all&nbsp;</span></span><span style="COLOR: rgb(0,0,0); FONT-WEIGHT: bold">ThreadLocals</span><span style="FONT-FAMILY: '+mn-ea'; COLOR: rgb(0,0,0)">.<br /></span>
+              </li>
+            </ul>
+          </div>
+        </div>
+		
+		
+      </div>
+    </div>

@@ -1,0 +1,139 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>Search</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<meta name="description" content="Link Search allows to find the hyperlinks in the predefined bookmarks" />
+<meta name="keywords" content="search, find, links, hyperlinks, bookmarks"/>
+<link rel="shortcut icon" type="image/x-icon" href="img/globals/emproviseicon.ico" />
+<link rel="stylesheet" href="css/styles.css" type="text/css" />
+<link rel="stylesheet" href="css/mac-menu.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="css/search-box.css" type="text/css" media="screen" />
+
+<!-- Large Search Box -->
+<link rel="stylesheet" href="css/large-search-box.css" type="text/css" media="screen" />
+<script src="js/largesearchbox/jquery-latest.js"></script>
+<script src="js/largesearchbox/modernizr-1.js"></script>
+<script>
+        $(document).ready(function() {
+			if (!Modernizr.input.placeholder)
+			{
+
+				var placeholderText = $('#largesearch').attr('placeholder');
+
+				$('#largesearch').attr('value',placeholderText);
+				$('#largesearch').addClass('placeholder');
+
+				$('#largesearch').focus(function() {
+					if( ($('#largesearch').val() == placeholderText) )
+					{
+						$('#largesearch').attr('value','');
+						$('#largesearch').removeClass('placeholder');
+					}
+				});
+
+				$('#largesearch').blur(function() {
+					if ( ($('#largesearch').val() == placeholderText) || (($('#largesearch').val() == '')) )
+					{
+						$('#largesearch').addClass('placeholder');
+						$('#largesearch').attr('value',placeholderText);
+					}
+				});
+			}
+        });
+</script>
+
+</head>
+<body>
+<div class="bg_png">
+
+<div id="main">
+<!-- header begins -->
+<div id="header">
+	<div id="macmenu">
+    <ul id="macmenu_nav">
+	<li><a href="/">Home</a></li>
+	<li><a href="#">Technology</a>
+		<ul>
+			<li><a href="/projects.php">Projects</a></li>
+			<li><a href="/articles.php">Articles</a></li>
+			<li><a href="/presentations.php">Presentations</a></li>
+		</ul>
+	</li>
+	<li class="current"><a href="#">Tools</a>
+		<ul>
+			<li><a href="/search.html">LinkSearch</a></li>
+			<li><a href="/enotes.php">E-Notes</a></li>
+		</ul>
+	</li>
+	<li><a href="#">Entertainment</a>
+		<ul>
+			<li><a href="/music.php">Music</a></li>
+			<li><a href="/video.php">Video</a></li>
+		</ul>
+	</li>
+	<li><a href="/aboutme.php">About</a></li>
+	<li><a href="/contactus.html">Contact Us</a></li>
+	<li style="float:right; margin-right: 7px; margin-top:-3px;">
+       <form class="searchform">
+	     <input class="searchfield" value="Search..."
+                onfocus="if (this.value == 'Search...') {this.value = '';}"
+                onblur="if (this.value == '') {this.value = 'Search...';}"
+                type="text">
+         <input class="searchbutton" src="img/searchbox/search-button.png" type="image">
+       </form>
+    </li>
+    </ul>
+
+    </div>
+	<div id="logo">
+    	<b><a href="/index.html"><img src="img/globals/emprovise.gif" alt="emprovise" width="172" height="28" /></a><br />
+        <span><a href="#"><small style="font-size:10px;">Enshrining Knowledge, Fabricating Ideas</small></a></span>
+        </b>
+    </div>
+   <hr />
+</div>
+<!-- header ends -->
+	<div class="temp_top"></div>
+	<!-- content begins -->
+  <div id="content">
+        <center></center>
+    	<div class="text" style="background:#f1f1f1 repeat top left;">
+            <div style="height:10px"></div>
+
+        <!-- START OF SEARCH PAGE -->
+
+        <div id="largesearchpage">
+           <form id="largesearchbox">
+             <input id="largesearch" placeholder="Type here" type="text">
+             <input id="largesubmit" value="Search" type="submit">
+           </form>
+        </div>
+
+        <!-- END OF SEARCH PAGE -->
+        <div style="height:10px"></div>
+        </div>
+    </div>
+    <!-- content ends -->
+<!-- footer begins -->
+            <div id="footer">
+          		<div style="float: left; width: 500;">
+                	<p>Copyright  2011. <!-- Do not remove -->Designed and Developed by <a href="http://www.emprovise.com" title="Emprovise">Emprovise</a><!-- end --></p>
+		        <p><a href="/policy.html">Privacy Policy</a> | <a href="/terms.html">Terms of Use</a> | <a href="http://validator.w3.org/check/referer" title="This page validates as XHTML 1.0 Transitional"><abbr title="eXtensible HyperText Markup Language">XHTML</abbr></a> | <a href="http://jigsaw.w3.org/css-validator/check/referer" title="This page validates as CSS"><abbr title="Cascading Style Sheets">CSS</abbr></a></p>
+             	</div>
+                <div style="float: right; width: 500; padding: 0px 0px 0px 0px; height: 37px;">
+                	<a href="#" class="a_fu_i"><img src="img/footer/fu_i5.gif" class="fu_i" alt="" /></a>
+                    <a href="#" class="a_fu_i"><img src="img/footer/fu_i4.gif" class="fu_i" alt="" /></a>
+                    <a href="#" class="a_fu_i"><img src="img/footer/fu_i3.gif" class="fu_i" alt="" /></a>
+                    <a href="https://twitter.com/#!/EmproviseWeb" class="a_fu_i"><img src="img/footer/fu_i2.gif" class="fu_i" alt="" /></a>
+                    <a href="http://www.facebook.com/people/Emprovise-Web/100003220944716" class="a_fu_i"><img src="img/footer/fu_i1.gif" class="fu_i" alt="" /></a>
+
+                </div>
+             </div>
+        <!-- footer ends -->
+</div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,299 @@
+/*
+Design by Metamorphosis Design
+http://www.metamorphozis.com
+Released for free under a Creative Commons Attribution 2.5 License
+*/
+
+*
+{
+border: 0;
+margin: 0;
+}
+
+img
+{
+border: 0px;
+}
+
+body{
+	font: 12px Arial, Helvetica, sans-serif;
+	color: #000000;
+	background: url(../img/globals/bg.jpg) top repeat-x #E4E4E4;
+	line-height: 18px;
+}
+
+.bg_png { background:url(../img/globals/bg_png.png) center top no-repeat;}
+
+	
+#main {
+	width: 1014px;
+	margin: 0px auto 0px auto;
+	}
+
+#header { 
+	height: 110px;
+}
+
+#logo {	
+		height: 40px;
+		padding: 26px 0px 0px 13px;
+		text-align: left;
+		background: url(../img/globals/logo.gif) top repeat-x;
+		
+}
+
+#logo a {
+	text-decoration: none;
+	font-size: 16px;
+	color: #03688E;
+	font-style: italic;
+	font-weight: 100;
+}
+	
+#logo H2 a{
+	font-size: 12px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight:100;
+	color: #03688E;
+	font-style: italic;
+}
+
+#buttons{
+	text-align:center;
+	height: 44px;
+	padding-left: 0px;
+	background: url(../img/globals/buttons.gif) top repeat-x;
+	padding: 0px 0px 0px 7px;
+}
+
+#buttons a {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	display: block;
+	float: left;
+	text-decoration: none;
+	color: #ffffff;
+	text-align: center;
+	padding-top: 10px;
+	height: 34px;
+	
+}
+
+.but {
+	width: 200px;
+}
+
+#buttons .but:hover {
+	background: url(../img/globals/but_hover.gif) top repeat-x;
+	}
+	
+	
+	
+.top_top {
+	height: 15px;
+	background: url(../img/globals/top_top.jpg) left top no-repeat;}
+
+.temp_top {
+	height: 15px;
+	background: url(../img/globals/temp_top.jpg) left top no-repeat;}
+	
+.top { height:321px;
+	   background: #E4E4E4;
+	   padding-top: 13px;}
+
+.top_bot {
+	height: 15px;
+	background: url(../img/globals/top_bot.jpg) left top no-repeat;}
+
+#content{
+	padding: 10px 0px 1px 0px;
+	background: #ffffff;
+}
+
+
+.home_box {
+	float: left;
+	width: 303px; }
+
+.img_l {	float:left;
+		margin: 3px 18px 6px 0px;
+}
+
+.img_r {	float: right;
+		margin: 9px 10px 3px 10px;
+}
+
+.span_cont {	color: #003574;
+	font-size:12px;
+	font-weight:bold;
+}
+
+ h1{
+	font-size:16px;
+	font-weight: 100;
+	color: #FFFFFF;
+	text-align: left;
+	padding: 0px 0px 0px 0px;
+	background:url(../img/globals/h1.jpg) left top no-repeat;
+	padding: 4px 0px 4px 8px;
+	
+}
+
+ h2{
+	font-size:16px;
+	font-weight: bold;
+	color: #003574;
+	text-align: left;
+	font-style: italic;
+	padding: 0px 0px 0px 0px;
+	
+}
+
+.read {
+	font-size:14px;
+	color: #E40000;
+	text-decoration: underline;
+	font-weight:100;
+	padding-right: 2px;
+	display:block;
+	height: 17px;
+	line-height: 17px;
+	width: 80px;
+	padding: 0px 0px 0px 0px;
+	text-align: center;
+	float: right;
+	margin-top: 4px;
+	
+}
+
+.read:hover {
+	font-size:14px;
+	text-decoration: none ;
+}
+
+.text { padding: 0px 14px 0px 14px;}
+
+.razd_h { border-top: 1px solid #E4E4E4;}
+
+.span_bot {
+	color: #ffffff;
+	font-weight: bold;}
+	
+	
+#bottom {
+	background: url(../img/globals/bottom.gif) top repeat-x #03688E;
+	color: #000000;
+}
+
+#bottom_bot {
+	background: url(../img/globals/bottom.gif) 43px bottom no-repeat;
+	color: #FFFFFF;
+}
+
+#bottom h1 { 
+	color: #ffffff;
+	font-size: 16px;
+	font-weight: bold;
+	text-align: left;
+	padding: 10px 0px 15px 0px;
+	background: none;
+	font-style: italic;
+			}
+
+#b_col1 {
+	width: 324px;
+	float: left;
+	margin-left: 14px;
+}
+#b_col2 {
+	width: 305px;
+	float: left;
+	margin-left: 34px;
+}
+#b_col3 {
+	width: 290px;
+	float: left;
+	margin-left: 34px;
+	text-align: left;
+}
+
+
+.box_us {
+width: 270px;
+background: url(../img/globals/box_us.gif) 0px bottom repeat-x;
+}
+
+.box_us_l {
+width: 45px;
+float: left;
+padding-top:3px;}
+
+.box_us_r {
+width: 225px;
+float: left;}
+
+
+.spis_bot {
+	list-style:none;
+	padding: 0px 0px 0px 0px;}
+
+.spis_bot li {
+	padding: 2px 0px 0px 0px;
+	}
+	
+.spis_bot a {
+	color:#232323;
+	text-decoration:none;
+	font-weight: bold;
+	background: url(../img/globals/fish2.png) 2px 8px no-repeat;
+	display: block;
+	font-weight:bold;
+	padding: 5px 0px 3px 23px;}
+.spis_bot a:hover {
+	color:#ffffff;
+	padding: 5px 0px 3px 28px;
+	text-decoration: none;
+	background:url(../img/globals/fish2_hover.gif) left top no-repeat;
+	}
+	
+.fu_i {
+	
+	float: right;
+}
+
+
+.a_fu_i{ padding: 5px 0px 0px 0px;
+		margin: 0px 20px 0px 0px;
+		display:block;
+		width: 32px;
+		height:32px;
+		float: right;}
+.a_fu_i:hover { padding: 0px 0px 0px 0px;
+				display:block;}
+
+#footer{
+	height: 103px;
+	font-size: 10px;
+	color: #ffffff;
+	text-align: left;
+	padding: 12px 25px 0px 25px;
+	background: url(../img/globals/footer.jpg) bottom no-repeat #03688E;
+	border-top: 1px solid #ffffff;
+	
+}
+
+#footer a{
+	color: #ffffff;
+	font-size: 10px;
+	text-decoration: none;
+}
+
+#footer a:hover{
+	color: #ffffff;
+	font-size: 10px;
+	text-decoration: underline;
+}
+
+.lh {
+	line-height: 22px;
+}

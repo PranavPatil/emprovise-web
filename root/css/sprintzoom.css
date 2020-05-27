@@ -1,0 +1,503 @@
+@charset "UTF-8";
+/* CSS Document */
+/* Base font size: 16px
+
+/* CSS DIRECTORY
+	1. =RESET
+	2. =TEXT
+	3. =NAVIGATION
+	4. =CONTAINER
+	5. =CONTENT
+	6. =COMPONENTS
+*/
+
+/* NOTE on CSS Validation */
+/* This file will not validate because the proprietary -moz-border-radius and -webkit-border-radius properties are used in addition to other proprietary properties to create rounded corners on the horizontal accordion component. */
+
+/* NOTE ON CLEARING FLOATS IN Sprint 2.0 */
+/* Clearfix method is used to clear floats: http://blue-anvil.com/archives/experiments-with-floats-whats-the-best-method-of-clearance?cp=1  */
+/* A block-level element containing a floated element will collapse in most browsers because floats have no dimensions. To fix this you need to "clear" the float, so the container recognises the fact the float is there, and adjusts its height accordingly. */
+/* For testing purposes, add the clearfix class to test whether an issue is caused by an uncleared float. */
+/* For float production code, do NOT apply the .clearfix class to elements as this is similar to adding inline styles. Instead, add the .clearfix styles to elements that require clearing, especially as large blocks to minimize redundant styles. */
+/* Note that there is an additional aspect to the clearfix for IE browsers (see ie.css), which do not recognize the :after pseudoclass shown below. */
+
+.sprint .clearfix:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+
+/* Wrapper div to keep all styles separate from any other space that these styles are integrated with (e.g. Clearspace or other Sprint properties). */
+.sprint {
+	background-color: #fff;
+	margin: 0;
+	padding: 0;
+	
+	/*
+	margin-bottom: 60px;
+	padding-bottom: 0;
+	*/
+}
+/* Sets default font family for all content. Sets width of content area. Centers content. */
+.content {
+	/* font-size: 100%; /* added to correct ie exaggerated resize bug */
+	font-size: 1.2em;
+	font-family: Arial, Helvetica, sans-serif;
+	margin: 0 auto;
+	width: 960px;
+}
+
+/* ===RESET=== */
+/* A selection of elements have been reset to mitigate browser defaults in displaying these elements. */
+.sprint div, .sprint span, .sprint applet, .sprint object, .sprint iframe, .sprint h1, .sprint h2, .sprint h3, .sprint h4, .sprint h5, .sprint h6, .sprint p, .sprint blockquote, .sprint pre, .sprint a, .sprint abbr, .sprint acronym, .sprint address, .sprint big, .sprint cite, .sprint code, .sprint del, .sprint dfn, .sprint em, .sprint font, .sprint img, .sprint ins, .sprint samp, .sprint small, .sprint strong, .sprint sub, .sprint sup, .sprint dl, .sprint dt, .sprint dd, .sprint ul, .sprint fieldset, .sprint form, .sprint label, .sprint legend, .sprint table, .sprint caption, .sprint tbody, .sprint tfoot, .sprint thead, .sprint tr, .sprint th, .sprint td {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-weight: normal;
+	font-style: normal;
+	vertical-align: baseline;
+	background: transparent;
+}
+.sprint caption, 
+.sprint th, 
+.sprint td {
+	text-align: left;
+	font-weight: normal;
+}
+.sprint input {
+	margin: 0;
+	padding: 0;
+}
+.sprint strong {
+	font-weight: bold;
+}
+.sprint sup {
+	font-style: inherit;
+	font-size: 0.75em;
+	vertical-align: text-top;
+}
+/* cellspacing="0" required in markup */
+.sprint table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+.sprint textarea {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 1em;
+}
+.sprint ul, .sprint ol {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+}
+.sprint li {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-weight: normal;
+	vertical-align: baseline;
+	background: transparent;
+}
+
+/* BASIC PAGE ELEMENTS */
+/* Wraps top navigation menus and page title */
+.sprint .header {
+	margin: 0 0;
+}
+/* Wraps body content. Text styles only defined here */
+.sprint .body {
+	font: normal 0.688em Arial, Helvetica, sans-serif;
+	line-height: 1.182em;
+	color: #333;
+}
+/* clear float for body */
+.sprint .body:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+
+/* Default Type styles */
+.sprint p {
+	margin-bottom: 1em;
+}
+.sprint p em {
+	font-weight: bold;
+	/* font-size: 1.25em; */
+}
+.sprint h1, .sprint h2, .sprint h3, .sprint h4, .sprint h5, .sprint h6 {
+	font-weight: normal;
+	font-style: normal;
+}
+/* Alternate class if sIFR is not applied */
+.sprint h1 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 1.876em;
+	font-weight: normal;
+	line-height: 1em;
+	font-style: italic;
+	padding: 0 0 0.15em 20px;
+	color: #000;
+}
+
+/* Alternate h1 treatment: Black text on white bgd */
+.sprint h1.alt {
+	color: #282828;
+}
+/* Alternate class if sIFR is not applied */
+.sprint h2 {
+	font-size: 2.364em;
+	line-height: 1.1em;
+	font-style: italic;
+	color: #036;
+	padding-bottom: .25em;
+	border-bottom: 3px solid #000;
+	/* hasLayout triggered in ie6.css */
+}
+
+.sprint h3 {
+	font-size: 1.455em;
+	font-weight: normal;
+	line-height: 1em;
+	font-style: italic;
+	color: #036;
+	padding-bottom: .25em;
+	border-bottom: 1px solid #000;
+	/* hasLayout triggered in ie6.css */
+}
+.sprint h3.noRule {
+	border-width: 0;
+}
+
+.sprint h4 {
+	font-size: 1.272em;
+	font-weight: normal;
+	line-height: 1.1500em;
+	color: #141414;
+	margin-bottom: 0.25em;
+	padding-bottom: 0.2em;
+}
+.sprint h4.withRule {
+	border-bottom: 1px solid #000;
+}
+.sprint h4 em {
+	color: #1c94c3;
+	font-style: normal;
+}
+.sprint h5 {
+	font-size: 1.091em;
+	font-weight: bold;
+	color: #333;
+	margin-bottom: 1em;
+}
+.sprint h6, 
+.sprint th,
+
+/* Default link styles */
+.sprint a:link, 
+.sprint a:visited {
+	color: #1c94c3;
+	text-decoration: none;
+}
+.sprint a:hover, 
+.sprint a:focus,
+.sprint a:active,
+.sprint a.tooltipAnchor:hover, 
+.sprint a.tooltipAnchor:focus,
+.sprint a.tooltipAnchor:active {
+	color: #1c94c3;
+	text-decoration: underline;
+}
+.sprint a.disabled {
+}
+.sprint a.disabled:hover,
+.sprint a.disabled:active,
+.sprint a.disabled:focus {
+}
+
+.sprint div.summaryTitle div.filterableList {
+	padding: 0;
+}
+
+.sprint * {
+	font-size:inherit;    
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+.sprint .body {
+	background: #ecedee url(../img/sprintzoom/bgd_rounded_corners_body.gif) no-repeat;
+/*	padding: 1.818em 20px 0;
+	margin-bottom: 1.2em;
+	border-bottom: 5px solid #FFE100;
+*/
+}
+
+
+/*---------------------------------------------------------------------------- 
+                       Sprint Home Section Styles
+------------------------------------------------------------------------------ */
+
+
+.sprint #sprintHome {
+	margin-top: 0;
+	padding: 0 0 20px;
+	background: #FFF;
+}
+
+
+/* Home Page Modules
+------------------------------------------------------------------------------*/
+.sprint #homeModules {
+	position: relative;
+	z-index: 4; /* To sit above promos */
+	/*	margin-top: 19px;  */
+	margin-top: 0px;
+	width: 960px;
+	height: 127px;
+}
+
+.sprint #homeModules li.module {
+	float: left;
+	margin-right: 20px;
+	width: 223px;
+	height: 125px;
+	border: 1px solid #D9DCDD;
+	background: url(../img/sprintzoom/bgd_footermodules.gif) no-repeat -223px 0;
+}
+
+.sprint #homeModules li.last {
+	margin-right: 0;
+}
+
+/* shadow images */
+.sprint #homeModules li div.shadow {
+	position: absolute;
+	top: -8px;
+	overflow: hidden;
+}
+
+.sprint #homeModules li div.shadowLeft,
+.sprint #homeModules li div.shadowRight {
+	width: 7px;
+	height: 367px;
+}
+
+.sprint #homeModules li div.shadowLeft {
+	left: -8px;
+	background: url(../img/sprintzoom/bgd_fullcontent_shadow_left.png) no-repeat;
+}
+
+.sprint #homeModules li div.shadowRight {
+	right: -8px;
+	background: url(../img/sprintzoom/bgd_fullcontent_shadow_right.png) no-repeat;
+}
+
+.sprint #homeModules li div.shadowTop {
+	left: -1px;
+	width: 420px;
+	height: 7px;
+	background: url(../img/sprintzoom/bgd_fullcontent_shadow_top.png) no-repeat;
+}
+
+.sprint #homeModules li div.module {
+	position: relative;
+	height: 125px;
+}
+
+/* default summary styles (can be overriden if need-be) */
+.sprint #homeModules li div.summary {
+	position: relative;
+	z-index: 6;
+	width: 100%;
+	height: 100%;
+	background: url(../img/sprintzoom/bgd_footermodules.gif) no-repeat;
+	overflow: hidden;
+}
+
+.sprint #homeModules li div.summary h3 {
+	position: absolute;
+	right: 0;
+	top: 22px;
+	margin: 0;
+	padding: 0;
+	width: 125px;
+	border: none;
+	color: #333;
+}
+
+.sprint #homeModules li div.summary img {
+	position: absolute;
+	left: 0;
+	top: 0;
+	display: block;
+	width: 98px;
+	height: 125px;
+}
+
+.sprint #homeModules li div.summary div.summaryText {
+	position: absolute;
+	right: 20px;
+	top: 44px;
+	margin: 0;
+	padding: 0;
+	width: 105px;
+	height: 61px;
+	color: #656565;
+}
+
+.sprint #homeModules li div.summary div.summaryText,
+.sprint #homeModules li div.summary div.summaryText p {
+	font-style: normal;
+}
+
+/* Default full content styles. These should NOT be overridden */
+.sprint #homeModules li div.full {
+	padding: 19px;
+	width: 380px;
+	height: 320px;
+	overflow: hidden;
+}
+
+
+
+/* Full Module Template Styles
+----------------------------------------------------------*/
+.sprint #homeModules li div.full h2.main {
+	margin: 0;
+	padding: 0;
+	color: #000;
+	font-size: 21px;
+	border: none;
+}
+
+.sprint #homeModules .columnDivideWrapper {
+	margin-bottom: 20px;
+}
+
+.sprint #homeModules li div.full h3.subHeading {
+	margin: 0;
+	padding: 0;
+	color: #000;
+	font-size: 16px;
+	border: none;
+}
+
+.sprint .columnOneHalf,
+.sprint .columnOneHalfRt {
+	width: 180px;
+}
+
+.sprint .columnOneThird,
+.sprint .columnOneThirdRt {
+	width: 113px;
+}
+
+.sprint .columnTwoThirds,
+.sprint .columnTwoThirdsRt {
+	width: 247px;
+}
+
+.sprint .columnOneHalfRt,
+.sprint .columnOneThirdRt,
+.sprint .columnTwoThirdsRt .sprint .homeModuleTemplateOne
+
+.sprint .columnOneHalf,
+.sprint .columnOneThird,
+.sprint .columnTwoThirds {
+	float: left;
+	margin-right: 20px;
+}
+
+/* Home Module Template #1 */
+.sprint .homeModuleTemplateOne .full {
+	padding: 19px;
+}
+
+.sprint .homeModuleTemplateOne .topContainer {
+	position: relative;
+	height: 200px;
+	overflow: hidden;
+}
+
+.sprint .homeModuleTemplateOne .topContainer img {
+	float: left;
+	margin-right: 10px;
+	display: block;
+}
+
+.sprint .homeModuleTemplateOne .learnMoreLink {
+	background: transparent url(../img/sprintzoom/bullet_arrow.gif) no-repeat;
+	padding: 0 9px 0 19px;
+}
+
+.sprint .homeModuleTemplateOne .learnMoreLink a {
+	color: #000000;
+}
+
+.sprint .homeModuleTemplateOne .topContainer {
+	border-bottom:1px dashed #E3E3E3;
+	padding-bottom: 20px;
+}
+
+.sprint .homeModuleTemplateOne .columnTwoThirds p {
+	width: 237px;
+}
+
+.sprint .homeModuleTemplateOne .columnOneThirdRt ul {
+}
+
+.sprint .homeModuleTemplateOne .columnOneThirdRt {
+	width: 93px;
+}
+
+/* Home Module Template #2 */
+.sprint .homeModuleTemplateTwo .full {
+	padding: 19px;
+}
+
+.sprint .homeModuleTemplateTwo .topContainer {
+	position: relative;
+	height: 160px;
+	padding-top: 10px;
+	overflow: hidden;
+}
+
+.sprint .homeModuleTemplateTwo .topContainer img {
+	float: left;
+	margin-right: 10px;
+	display: block;
+}
+
+.sprint .homeModuleTemplateTwo .learnMoreLink {
+	background: transparent url(../img/sprintzoom/bullet_arrow.gif) no-repeat;
+	padding: 0 9px 0 19px;
+}
+
+.sprint .homeModuleTemplateTwo .learnMoreLink a {
+	color: #000000;
+}
+
+.sprint .homeModuleTemplateTwo .topContainer {
+	border-bottom:1px dashed #E3E3E3;
+	padding-bottom: 20px;
+}
+
+.sprint .homeModuleTemplateTwo .columnTwoThirds p {
+	width: 237px;
+}
+
+.sprint .homeModuleTemplateTwo .columnOneThirdRt ul {
+}
+
+.sprint .homeModuleTemplateTwo .columnOneThirdRt {
+	width: 93px;
+}
+

@@ -1,0 +1,19 @@
+
+h2.gradientbar {
+
+  margin-left:auto;
+  margin-right:auto;
+  width: 560px;
+  position: relative;
+  padding: 0 1em;
+  border: 1px solid #a0abbf;
+  -webkit-border-radius: 8px 12px;
+  -moz-border-radius: 8px / 12px;
+  border-radius: 8px / 12px;
+  background: #a0abbf;
+  background: #a0abbf -webkit-gradient(linear, left top, left bottom, from(#a0abbf), color-stop(0.5, #dedede), to(#a0abbf));
+  background: #a0abbf -moz-linear-gradient(top, #a0abbf, #dedede, #a0abbf);
+  letter-spacing: 1px;
+  font-size: 12px;
+  text-align:center;
+}

@@ -1,0 +1,1026 @@
+<div>
+<pre>  This summary was extracted from the C++ standard ISO/IEC 14882:1998,
+  working documents leading to the standard and various textbooks.
+
+  It is not intended to be 100% complete. Hopefully it will be
+  useful as a memory aid in writing C++ programs.
+</pre>
+
+<br/><br/>
+
+<h3><a name="Top"> Contents </a></h3>
+<dir>
+  <li><a href="#Notation"> Notation used in this summary  </a>
+  </li><li><a href="#Program"> Program Structure </a>
+  </li><li><a href="#Executable"> Executable Statements </a>
+  </li><li><a href="#Function"> Function Definition and Call </a>
+  </li><li><a href="#Reserved"> Key Words, Reserved Words</a>
+  </li><li><a href="#Operators"> Operators Defined in C++</a>
+  </li><li><a href="#Precedence"> Operator Precedence</a>
+  </li><li><a href="#Expressions"> Expressions </a>
+  </li><li><a href="#Basic"> Basic Types </a>
+  </li><li><a href="#Declarations">  Declarations </a>
+  </li><li><a href="#Objects"> Object Declarations  </a>
+  </li><li><a href="#Exceptions"> Exceptions </a>
+  </li><li><a href="#Templates"> Templates </a>
+  </li><li><a href="#Lexical"> Lexical Entities </a>
+  </li><li><a href="#Preprocessor"> Preprocessor Directives </a>
+  </li><li><a href="#Pragmas"> Some Pragmas defined C++ </a>
+  </li><li><a href="#Library"> Standard Library Defined in C++ </a>
+  </li><li><a href="#Static"> Static, four uses and examples </a>
+  </li><li><a href="#Other"> Other Links </a>
+</li></dir>
+
+<br/><br/>
+
+<h3><a name="Notation"> Notation used in this summary </a></h3>
+<pre>
+   Notation is kept as simple as possible. 
+      local_declarations  means C++ declaration(s) can be inserted
+      sequence_of_statements  means C++ executable statement(s) can be inserted
+
+      \_ optional  means this part or section is optional
+      /           ( all optional cases not necessarily shown)
+
+      ...  means more of the same allowed, use common sense
+
+      occasionally a statement will be shown in a structure,
+      this is just a reminder of something useful or required.
+
+    Comments in the language and this summary start with // , two consecutive
+    divide signs.  The rest of the line is a comment.
+
+    The end of a line is interpreted as a white space just like a space or tab.
+    The language is free form but is typically entered using indentation.
+
+    Key words, reserved words, must always be lower case.
+
+    Names that can be chosen by the programmer usually have a leading
+    uppercase letter or may be all lower case letters. Underscore "_" or
+    an embedded capital letter are used to make names readable. 
+    All names are case sensitive and no embedded white space is allowed.
+</pre>
+
+<br/>
+<h3><a name="Program"> Program Structure </a></h3>
+<pre>The "main" function and one or more other functions may be in a file.
+A function may be used like a procedure or subroutine by having no
+return value.
+Files are compiled with the some C++ compiler such as g++, CC,
+Borland, Microsoft, etc. Include file are usually not compiled separately.
+
+Some typical file structures:
+
+
+int main(int argc, char *argv[])        // This could be a complete program  
+{
+  local_declarations
+  sequence_of_statements
+  return 0;                             // a zero return usually means good
+}
+
+
+
+#include &lt;something&gt;
+void main(void)                         // main function and other functions  
+{                                       // in same file                       
+     local_declarations
+     sequence_of_statements
+}
+void procedure_1( formal_parameters )   // functions, procedures, subroutines
+{                                       // may not be nested
+     local_declarations
+     sequence_of_statements             // no return statement needed
+}
+some_type function_1(void)              // no formal parameters
+{
+     local_declarations
+     sequence_of_statements
+}                                       // as many functions as desired       
+
+
+#include &lt;something&gt;        // a main function that can get command line 
+// this area is known as "file scope" because it is outside of a function
+// global variables (use as few as possible)
+// function prototypes (for locally defined functions, others should come
+//                      in via included files)
+// template definitions
+// external declarations
+
+int main(int argc,          // argc, the number of command line items
+         char *argv[])      // argv, command line items including calling
+                            // program name as  argv[0]   
+{
+     local_declarations
+     sequence_of_statements
+     return good_or_bad;
+}
+
+</pre>
+
+
+<h3><a name="Executable"> Executable Statements </a></h3>
+<pre>Any of the following may be used for  sequence_of_statements
+either singly or in groups.
+
+Statements end with a semicolon or brace. A compound statement may be made
+from a sequence of statements by enclosing them in braces.
+       { statement ; statement ; statement ; }  is a statement
+Usually, one statement is written per line.
+
+Assignment statements  (with some short hand notation)
+
+  x = 10;
+  x = x+1;
+  ++x;                // same as x = x+1; 
+  x++;                // same as x = x+1;  sets a false flag to true 
+  --x;                // same as x = x-1; 
+  x--;                // same as x = x-1; 
+  x = x+20;  
+  x += 20;            // same as x = x+20; 
+  x -= 20;            // same as x = x-20; 
+  x *= 20;            // same as x = x*20; 
+  x /= 20;            // same as x = x/20; 
+  x %= 20;            // same as x = x%20;    modulo
+  x &lt;&lt;= 2;            // same as x = x&lt;&lt;2;    shift left
+  x &gt;&gt;= 2;            // same as x = x&gt;&gt;2;    shift right
+  x &amp;= 20;            // same as x = x&amp;20;    and bits
+  x ^= 20;            // same as x = x^20;    exclusive or bits
+  x |= 20;            // same as x = x|20;    or bits
+  x = (y=3,y++)       // same as y=3; x=y; y=y+1; 
+  x = who ? 3 : y;    // same as if(who)x=3; else x=y; 
+  x = sin(x) ;        // function call     
+  x = mat[i][j] ;     // subscripting      
+
+Function call with no return: (a procedure or subroutine in other languages)
+
+  go_do_it();          // no actual parameters, do NOT use "void" here
+  exit(0);             // special function that terminates execution  
+
+Unconditional branches:
+
+  break;              // immediate exit from loop or switch          
+
+  continue;           // immediate jump to end of loop ( not exit )  
+                         also used to exit a switch in a loop
+ 
+  return;             // immediate exit from function, no value returned
+  return exp;         // exit from function returning value of exp   
+
+  goto label;         // unconditional jump   ( should not be needed. )
+
+label: statement;     // label definition     ( should not be needed. )
+
+
+Conditional branching:
+
+  if ( expression )           // condition may be any expression, != 0 is true 
+  {
+     sequence_of_statements   // executed if expression is true or not equal 0
+  }
+  else 
+  {
+     sequence_of_statements   // executed if expression is false or equal zero
+  }
+
+
+if-else-if ladder structure
+
+  if(exp_1)               //  the first expression that is true, e.g. exp_i 
+       statement_1;       //  causes statement_i to be executed             
+  else if(exp_2)          //  then jump to end after statement_n            
+       statement_2;       //  use { } even if only one statement for safety
+  else if(exp_3)          //  when doing changes or maintenance
+       statement_3;
+  ...
+  else
+       statement_n;
+
+
+
+Switch statement:
+
+  switch ( expression )            // constants must be unique
+  {
+      case constant_1:             // do nothing for this case
+         break;
+      case constant_2:             // drop through and do same as constant_3
+      case constant_3:
+         sequence_of_statements    // can have but does not need  { }
+         break;
+      case constant_4:
+         sequence_of_statements    // does this and next statements also
+      case constant_5:
+         sequence_of_statements
+         break;
+      default:                     // default executes if no constant equals 
+         statement_sequence        // the expression. This is optional       
+  }
+
+An expression can be almost anything. e.g. (Pi - 37.026E5 &lt; x) &amp;&amp; (a &gt; b)
+
+
+Iteration statements:
+
+  for ( initialization ; condition ; increment )
+  {
+    sequence_of_statements
+  }
+                                  // The flow sequence is :              
+                                  //    initialization                   
+                                  //    test condition and exit if false 
+                                  //    sequence_of_statements
+                                  //    increment                        
+                                  //    loop back to test condition      
+    examples:
+      infinite loop:     for(;;){ statements ... if(stuff)break; ... }
+      self initialized:  for(int i=0; i&lt;n; i++){ statements }
+
+
+  while ( condition )
+  {
+    sequence_of_statements        // keep repeating while condition is true
+  }
+
+    examples:
+      infinite loop:     while(1){ statements ... if(stuff)break; ... }
+      non null pointers: while(!P){ P=P.next; statements to work on list }
+
+  do
+  {
+     statement_sequence
+  } while ( condition ) ;         // test for finished at the end, all    
+                                  // other loops test first               
+
+    example:
+      repeat if changes: do{ statements; if(what)changes=1; ..} while(changes);
+
+
+
+  in all iteration statements,  break; causes an immediate exit from loop
+                                continue; causes an immediate increment
+
+</pre>
+
+<h3><a name="Function"> Function Definition and Call </a></h3>
+<pre>
+
+  Function Prototype:
+  type function_name(type_1 v1, type_2 *v2, type_3 &amp;v3, const type_4 v4); 
+                       // e.g.  char * strcpy(char * s1, const char * s2); 
+                       // *v2 says pass a pointer to v2
+                       // &amp;v3 says pass by reference
+                       // const type_4 v4 says v4 is an 'in' parameter
+       a prefix of  static  makes the function visible only in this file
+  
+  Function Definition:
+  type function_name(int a, float b, const char * ch,...){ function_body }
+                      // only parameters passed by pointer or reference can
+                      // be modified in the calling function,
+                      // a local copy will be made and can be modified,
+                      // unsafely, unless  const  is used
+  char * strcpy( char * s1, const char * s2 ) { statements }
+
+  Obsolete  example of a function and call passing the address of a scalar
+
+     void func(int *num)
+     {
+         *num *= *num; // square num back in its place 
+     } ...
+     func(&amp;i); // call, passing address of i, the lvalue of i ( yuk!)
+
+  C++ example of a function and call passing a reference of a scalar
+
+    void func(int &amp;num)  // says do type checking and pass by reference
+    {
+        num = num*num;  // square num back in its place
+    }
+    func(i);  // just a normal call, the compiler knows to pass a reference
+
+</pre>
+
+<h3><a name="Reserved"> Key Words, Reserved Words  </a></h3>
+<pre>  Reserved words as the name implies are reserved for the language.
+  Reserved words must not be used as names of objects, types, functions
+  or anything else. Technically these are key words because a few can
+  be redefined by the user (without command line or preprocessor
+  directives) but resist the temptation! 
+
+  There are relatively few "reserved words" . But don't be complacent.
+  The next pages cover a lot of types, objects and other names that are
+  not technically reserved words but can create havoc if used in the
+  wrong place!
+
+  Some common sequences of reserved words are shown. Spaces are important.
+
+asm        assembly language, destroys portability
+auto       optional local declaration
+bool       basic declaration of type Boolean
+break      used to exit loop and used to exit switch 
+case       choice in a switch
+catch      catch block that handles a thrown exception
+char       basic declaration of a type character
+class      start a class definition
+const      prefix declaration meaning variable can not be changed
+const_cast remove 'const' property
+continue   go to bottom of loop in  for,  while  and  do loops
+default    optional last case of a switch
+delete     free space created by 'new' ( do not use 'free' )
+do         executable statement, do-while loop
+double     basic declaration double precision floating point
+dynamic_cast cast a pointer type if legal, else return null
+else       executable statement, part of "if" structure
+enum       basic declaration of enumeration type
+explicit   restricts constructors to not allow  myclass a = 7;
+export     precedes a template that can be used by other files
+extern     prefix declaration meaning variable is defined externally
+false      value of type bool
+float      basic declaration of floating point
+for        executable statement, for loop
+friend     a function that can see internal stuff in a class
+goto       jump within function to a label
+if         executable statement
+inline     expand the code rather than call it
+int        basic declaration of integer
+long       prefix declaration applying to many types
+long int   example of a type that is a long integer
+long unsigned int  example of sequence of reserved words  
+mutable    override const member functions in classes
+namespace  a scope for declarations and function prototypes
+new        get storage, free storage later with 'delete' ( do not use malloc)
+operator   followed by an operator symbol, can define overloaded functions
+private    the stuff after this is not visible outside the class
+protected  the stuff after this is for classes that inherit this class
+public     the stuff after this is visible outside the class
+register   prefix declaration meaning keep variable in register
+reinterpret_cast  converts a type into any different type (e.g. int to pointer)
+return     executable statement with or without a value
+short      prefix declaration applying to many types
+signed     prefix declaration applying to some types
+sizeof     operator applying to variables and types, gives size in bytes
+static     prefix declaration to make local variable static
+static_cast  a normal cast with no run time checking
+struct     declaration of a structure, like a record
+switch     executable statement for cases
+template   defines template class or function
+this       the class object, used in 'return' statements and others
+throw      throw an exception
+true       value of type bool
+try        try block that precedes a catch block
+typedef    creates a new type name for an existing type
+typeid     function for getting the type of a typename, == and != comparison
+typename   specifies the following name is a type
+union      declaration of variables that are in the same memory locations
+unsigned   prefix declaration applying to some types
+using      makes an entity in a namespace directly visible
+using namespace  make the namespace visible (in scope)
+virtual    this type of function is hidden if defined by an inheritor
+void       declaration of a typeless variable or no formal parameters
+volatile   prefix declaration meaning the variable can be changed at any time
+wchar_t    basic declaration for type wide character (internationalization)
+while      executable statement, while loop or do-while loop
+
+also reserved are names that start with __ ( double underscore )
+avoid names that start with _ ( single underscore ) except for special use
+
+</pre>
+
+<h3><a name="Operators">Operators Defined in C++ </a></h3>
+<pre>Remember! Operators can be redefined and overloaded.
+  The "&lt;&lt;" in  a = 2 &lt;&lt; 3;  is very different from  cout &lt;&lt; a;
+
+operator definitions ( in executable code, highest precedence first ) :
+
+  ::   scope resolution for class, namespace, etc.
+  ( )  grouping parenthesis, function call 
+  [ ]  array indexing, also  [ ][ ]  etc.
+  -&gt;   selector, structure pointer  employee-&gt;wage = 7.50 ;
+  .    select structure element     employee.wage = 7.50 ;
+  sizeof  size in bytes,   sizeof a     or  sizeof (int)
+  typedef defining a type
+  ++   increment, pre or post to a variable
+  --   decrement, pre or post to a variable
+  !    relational not, complement, ! a  yields true or false
+  ~    bitwise not, ones complement, ~ a
+  +    unary plus,  + a
+  -    unary minus, - a
+  (type)  a cast, explicit type conversion,  (float) i, (*fun)(a,b), (int *)x
+  new     allocate storage ( replaces malloc )
+  delete deallocate storage ( replaces free )
+  *    indirect, the value of a pointer,  * p is value at pointer p address
+  &amp;    the memory address, &amp; b is the memory address of variable b
+  .*   pointer to member operator, to class
+  -&gt;*  pointer to member operator, to class pointer
+  *    multiply, a * b
+  /    divide, a / b
+  %    modulo, a % b
+  +    add, a + b
+  -    subtract, a - b
+  &lt;&lt;   shift left or insert, left operand is shifted left by right operand bits
+  &gt;&gt;   shift right or extract, left operand is shifted right by right operand bits
+  &lt;    less than, result is true or false,  a &lt; b
+  &lt;=   less than or equal, result is true or false,  a &lt;= b
+  &gt;    greater than, result is true or false,  a &gt; b
+  &gt;=   greater than or equal, result is true or false, a &gt;= b
+  ==   equal, result is true or false,  a == b
+  !=   not equal, result is true or false,  a != b
+  &amp;    bitwise and,  a &amp; b
+  ^    bitwise exclusive or,  a ^ b
+  |    bitwise or,  a | b
+  &amp;&amp;   relational and, result is true or false,  a &lt; b &amp;&amp; c &gt;= d
+  ||   relational or, result is true or false,  a &lt; b || c &gt;= d
+  ?    exp1 ? exp2 : exp3  result is exp2 if exp1 != 0, else result is exp3
+  :    see above
+  =    store
+  +=   add and store
+  -=   subtract and store
+  *=   multiply and store
+  /=   divide and store
+  %=   modulo and store
+  &lt;&lt;=  shift left and store
+  &gt;&gt;=  shift right and store
+  &amp;=   bitwise and and store
+  ^=   bitwise exclusive or and store
+  |=   bitwise or and store
+  ,    separator as in   ( y=x,z=++x )
+
+
+  zero evaluates to false ( a null pointer has an equivalent zero value )
+  non zero evaluates to true ( !null_pointer is true )
+
+  * is heavily overloaded, so is &amp;
+
+
+</pre>
+
+<h3><a name="Precedence"> Operator Precedence </a></h3>
+<pre>
+operator precedence and associativity is:                                Assoc
+  highest :  ::                                                            LR
+             ( )   [ ]   -&gt;    .       x++          x--                    LR
+             !     ~     +&lt;unary&gt;      -&lt;unary&gt;     ++x  --x  *&lt;dereference&gt;
+             &amp;&lt;address of&gt;     sizeof  (type)&lt;cast&gt; new  delete            RL
+             .*    -&gt;*                                                     LR
+             *     /     %                                                 LR
+             +     -                                                       LR
+             &lt;&lt;    &gt;&gt;                                                      LR
+             &lt;     &lt;=    &gt;     &gt;=                                          LR
+             ==    !=                                                      LR
+             &amp;                                                             LR
+             ^                                                             LR
+             |                                                             LR
+             &amp;&amp;                                                            LR
+             ||                                                            LR
+             ?     :                                                       RL
+             =     +=    -=    *=    /=   %=   &gt;&gt;=   &lt;&lt;=   &amp;=   ^=   |=    RL
+  lowest :   ,                                                             LR
+
+LR means associate left to right, RL means associate right to left
+
+</pre>
+
+
+<h3><a name="Expressions"> Expressions </a></h3>
+<pre>
+Expressions:
+
+variable names    start with alphabetic or underscore, followed by 
+                  alphabetic, numeric or underscore
+                  I  some_name  ELSE   Else   z999  __do_not_use
+
+numbers           decimal integer ( no U or L yields shortest type )
+                  (int)                1     12349
+                  (unsigned int)       1U    12349U
+                  (long int)           1L    1234569L
+                  (unsigned long int)  1UL   1234569UL
+
+                  floating point ( default is double )
+                  (double)        .1    1.   1.5E-20
+                  (float)         .1F   1.F   1.5E-20F
+                  (long double)   .1L   1.L   1.5E-20L
+
+                  octal ( 0 prefix ) and hexadecimal ( 0x prefix ) integers 
+                  ( no U or L yields shortest type )
+                  (int)                   01777       0x248F
+                  (unsigned int)          01777U      0x248FU
+                  (long int)              01777L      0x248FL
+                  (unsigned long int)     01777UL     0x248FUL
+
+character         single character between apostrophes
+                  plus special backslash codes
+                  'a'  'Z'  '\n'
+
+string            characters between quotes plus special backslash codes
+                  a null is automatically placed at end of every string
+                  "Hello"   "good by \n"
+
+
+let exp, exp1, exp2, exp3  etc. stand for expressions
+
+expressions are:
+
+  variables
+  numbers
+  characters
+  strings
+  unary_operator expression
+  expression binary_operator expression
+  ( expression )
+  variable post_operator    ( ++ and -- )
+
+</pre>
+
+
+<h3><a name="Basic"> Basic Types </a></h3>
+<pre>
+Basic types:
+  char      character type, usually one byte ( a string is array of char )
+  bool      boolean type has values true and false, usually one byte
+  int       integer type, usually 2 or 4 bytes ( default ) may be 8 bytes
+  float     floating point type, usually 4 bytes  IEEE 32 bit
+  double    floating point type, usually 8 bytes  IEEE 64 bit
+  void      no type, typeless
+  enum      enumeration type ( user defines the type name )
+
+Type modifiers, prefix for basic types:
+  signed    has a sign ( default )
+  unsigned  no sign bit in variable
+  long      longer version of type   (short or long  alone means  short int  or
+  short     shorter version of type   long int  because  int  is the default )
+  const     variable can not be stored into
+
+Storage class, prefix for types:
+  auto      local variable ( default, not really needed )
+  static    persistent when function exits, not auto
+  volatile  can change from outside influence
+  extern    variables are defined elsewhere, externally
+  register  assign variable to register, usually ignored by modern compilers
+
+Other stuff:
+  inline    expand code inline rather than call the function(only a hint)
+  virtual   use unless over ridden by later definition, functions only
+  friend    can access internals of other classes
+  class     a basic data structure type
+  struct    a basic data structure type
+  union     overlay previously defined data types
+
+Modifier type:
+  *         makes a pointer to what follows
+  &amp;         makes a reference to what follows
+
+     int i = 1000;   // allocate storage and initialize value to 1000 
+     int *ptr;       // allocate storage for a pointer, garbage initially 
+     ptr = &amp;i;       // ptr now points to i 
+     *ptr = 100;     // change value of i to 100 
+
+</pre>
+
+<h3><a name="TypeDeclarations"> Type Declarations </a></h3>
+<pre>
+Declarations have the forms:
+
+  basic_type variable ;
+
+  basic_type variable_1, variable_2=value;  // only initializes variable_2 
+
+  prefix_type(s) basic_type modifier_type variable , variable ,... ;
+
+  Atype variable[val][val]...[val]={data,data,...};    
+
+  struct struct_name {                  // struct_name is now a type name
+     Atype variableA;                   // any declaration                 
+     Atype variableB;
+         ...
+     Atype variable;
+  } variable1, variable2, ... ;         // variables are optional          
+
+  struct struct_name {                  // struct_name is now a type name   
+     Atype variableA : length1;         // any declaration : length in bits 
+     Atype variableB : length2;         // type is int, unsigned or signed  
+         ...
+     Atype variableN : lengthN;
+  } variable1, variable2, ... ;         // variables are optional, they can  
+                                        // also be arrays and pointers       
+
+  struct_name another_variables;        // don't need extra 'struct' in C++
+
+  union union_name {                    // union_name is now a type name    
+    float variable_1;                   // variable_1 overlays variable_2    
+    int   variable_2;
+        ...
+    Atype variable;
+    } variable1, variable2, ...;        // variables are optional            
+
+  union_name variableX ;                // use an existing union definition  
+    variableX.variable1=3.5;            // set a float component
+    variableX.variable2=7;              // integer clobbers float
+
+  enum enum_type                        // enum_type is now a type name             
+  { 
+    enumeration_name_1,                 // establishes enumeration literals  
+    enumeration_name_2=number,          // assigns value to enumeration lit
+        ...
+    enumeration_name_n
+  } variable1, variable2, ...;          // variables are optional      
+
+  enum_type variable;                   // use an existing enum type definition   
+  enum_type variable = enumeration_name_1;  // normal initialization
+ 
+  typedef existing_type new_type_name ; // e.g. typedef unsigned int size_t  
+
+  typedef char * string;                // 'string' is now type  char *
+
+
+  class aClass                          // define a class
+  {
+    friend some_other_class;            // if two mutually related classes
+
+    public:                             // stuff after this is visible outside
+      double myStuff;
+      virtual void function_1(f_p's);   // can be redefined when inherited
+      void aMethod(void){myStuff=3.5};  // an inline defined method
+      aClass();                         // special function, the constructor
+      ~aClass();                        // special function, the destructor
+    protected:                          // stuff after this is for inheritors
+      virtual any funct2(any)=0;        // pure virtual, makes class abstract.
+      int for_descendents;
+    private:                            // stuff after this only for inside
+      int HandsOff;
+      MyFunction(formal_parameters);    // full definition later
+      inline Funct(const int i){HandsOff=i;}; // full definition here
+  };
+
+
+  aClass::aClass()             // all functions not defined above
+  {                            // must be defined ( body implemented )
+     // code for constructor if not inlined above
+  }
+
+  aClass::MyFunction(formal_parameters)
+  {
+     // code for function if not inlined above
+  }
+
+  aClass class_variable;               // make an object of type 'aClass'
+  aClass *class_pointer = &amp; class_variable;  // make a pointer to above
+  aClass *class_pointer = new aClass();  // a typical class pointer, constructed
+  class_variable.myStuff = 3.51;       // set a variable in a class object
+  class_variable.aMethod();            // use a function from a class object
+  class_pointer-&gt;myStuff = 3.52;       // set a variable using a pointer
+  class_pointer-&gt;aMethod();            // use a function via a class pointer
+
+  class aDerivedClass : public aClass  // public may be protected or private
+  {
+    double more_stuff;
+    void aNewMethod(void){myStuff=3.6};   // an additional method
+    virtual void function_1(f_p's); // this will do something different
+  }       // this derived class has all the stuff from 'aClass' plus more
+
+  void aDerivedClass::function_1(f_p's)
+  {
+     whatever_the_function_is_to_do;
+  }
+
+
+</pre>
+
+<h3><a name="Objects"> Declaring Objects of Types Given Above </a></h3>
+<pre>
+Samples of variable declarations:
+
+  auto xyz;              // int is default, bad practice
+  unsigned long int pqr;
+  extern int global_stuff, remote_function();
+  register int quick, *my_ptr;
+  void just_do_it();    // no return value 
+  char *my_string;      // typedef char * string;  then string my_string;
+  char *argv[];
+  struct account{
+     char name[20];
+     float bal;
+     unsigned sex:1;
+  } person;
+  struct account *p;
+  p=&amp;person;           // p is pointer to person 
+  (*p).bal=100.00;     // older usage 
+  p-&gt;bal=100.00;       // better usage, means same as above 
+
+
+Automatic setting of array size based on data
+  char msg[]="Set the size to correct length \n";
+  char *p="auto length";
+  char ary[3]="Element in an array of messages"; // 3 items, 0,1 and 2 
+  float matrix[][3]={1.,2.,3.,4,.5.,6.};      // fills in blank with 6 
+  float ***a;  // (a+10)[0][0][0] is a way to index 3 dimensional array
+               // old usage, not liked in C++
+  int ia[4][3]=
+    {{0, 1, 2},
+     {3, 4, 5},
+     {6, 7, 8},
+     {9, 0, 1}}; // initialization using nested {{},{},{},{}};
+
+Getting storage/ freeing storage ( do not use malloc and free ! )
+
+  aClass *p=new aClass; 
+  delete p;
+
+</pre>
+
+
+<h3><a name="Exceptions"> Exceptions </a></h3>
+<pre>
+Exception throwing and catching
+
+  try
+  {
+     // normal code that may throw exceptions
+     throw "ooopse: can't do it";
+     // nested to any depth
+        throw   stuff; // stuff is of type stuff_type
+     // a throw exits, something like a return, but to a catch rather 
+     // than to the caller
+  }
+  catch(const char *some_string){ // do something, like print and exit }
+  catch(stuff_type &amp;some_stuff)  { // do something with some_stuff }
+  catch(...){ // everything not caught above comes here }
+
+  try - catch structures can be placed anywhere executable statements
+  are allowed. In particular, the entire main program can be a try - catch
+  structure and a class may contain a try - catch structure.
+
+</pre>
+
+
+<h3><a name="Templates"> Templates </a></h3>
+<pre>Templates must be defined at file scope.
+There is significant differences in the way various compilers
+handle the compiling and linking of templates.
+
+Simple template definition and instantiation of a function.
+
+// define a template, must be at file level
+// first a "function template" ( still use "class" ) then a class template
+
+template &lt; class typ &gt;             // one or more dummy names for types
+typ funct( typ x, typ y, typ z)
+{
+   typ a, b;                      // substitution is made everywhere
+   a = x + y;                     // for the actual types, including operations
+   b = y - z;
+   return a * a / b;
+}
+
+#include &lt;iostream&gt;
+int main()
+{
+  int i = funct(3, 5, 7);     // funct( any numeric type 3 actual parameters )
+  long j = funct(3L, 5L, 7L);        // can also be in expressions 
+  unsigned k = funct(3U, 5U, 7U);
+  float x = funct(3.1F, 5.2F, 7.3F);
+  double y = funct(3.1, 5.2, 7.3);
+  cout &lt;&lt; i &lt;&lt; " int, "
+       &lt;&lt; j &lt;&lt; " long, "
+       &lt;&lt; k &lt;&lt; " unsigned, "
+       &lt;&lt; x &lt;&lt; " float, "
+       &lt;&lt; y &lt;&lt; " double.\n";
+  return 0;
+} // end main
+
+</pre>
+
+<h3><a name="Lexical"> Lexical Entities </a></h3>
+<pre>Lexical entities are treated as a single symbol. In addition to
+user defined names and reserved words there are operator and other
+special lexical entities:
+
+
+Operators and punctuation as single special characters:
+ !  %  ^  &amp;  *  (  )  -  +  =  {  }  |  ~
+ [  ]  \  ;  '  :  "  &lt;  &gt;  ?  ,  .  /  #
+
+Operators and other groups of special characters
+ -&gt;   ++   --   .*   -&gt;*  &lt;&lt;   &gt;&gt;   &lt;=   &gt;=   ==   !=   &amp;&amp;
+ ||   *=   /=   %=   +=   -=   &lt;&lt;=  &gt;&gt;=  &amp;=   ^=   |=   ::
+ //   /*   */   ##   &lt;%   %&gt;   &lt;:   :&gt;   %:
+ ...  %:%:
+
+Trigraphs for users who do not have certain special characters:
+  ??=  #     ??(  [     ??/  \     ??)  ]     ??'  ^
+  ??&lt;  {     ??!  |     ??&gt;  }     ??-  ~
+
+Character constants for special characters:
+      Backslash codes for in character constants and strings:
+      these can be used as characters when enclosed in apostrophes
+      the equivalent ASCII control character is shown as ^G for control G
+
+  \a  alert, audible alarm, bell, ^G
+  \b  Backspace, ^H
+  \f  Form feed, new page, ^L
+  \n  New line, carriage return and line feed, ^M^J '??/n' in trigraph notation
+  \o  Octal constant, \oddd, \ddd
+  \r  Carriage return, no line feed, ^M
+  \t  Horizontal tab, tab, ^I       " col 1 \t col 2 \t  \n" in string notation
+  \v  Vertical tab, ^K
+  \x  Hexadecimal constant,  \xdd    0 &lt;= d &lt;= F
+  \0  null, zero value character, ^@
+  \"  Quote character , '\"'
+  \'  Apostrophe character , '\''
+  \\  Backslash character
+  \?  Question mark character , '\?'
+  \ddd  Octal character value 0 &lt;= d &lt;= 7
+
+</pre>
+
+<h3><a name="Preprocessor"> Preprocessor Directives </a></h3>
+<pre>
+  #include "my_file.h"        search current working directory first
+  #include &lt;iostream&gt;         search command line directory then system
+  #define ONE 1               Obsolete, use  const One=1;
+  #define do_it(a) ((a&lt;0)?-(a):(a+1))   macro substitution, beware!
+  #define note /* this comment gets inserted every \
+                  time  note  appears */
+                              backslash  \  at end of line means continue  
+  #undef ONE                  undefines a previously defined macroname
+  #error                      stop compiling at this point
+  #if expression              conditional compilation, start if structure
+  #elif expression            else if expression != 0 compile following code
+  #else                       else compile following code
+  #endif                      end of conditional compiling
+  #ifdef macroname            like #if, compiles if macroname defined
+  #ifndef                     like #if, compiles if macroname undefined
+  #line number [filename]     set origin for __LINE__ and __FILE__
+  #pragma                     gives the compiler commands
+
+ Predefined macros
+
+  __LINE__     current line number
+  __FILE__     current file name
+  __DATE__     month/day/year of compilation
+  __TIME__     hour:minute:second of compilation
+  __STDC__     supposed to mean standard C/C++ compilation mode
+  __cplusplus  non zero if compiling C++, supposed to be six digits
+               for a C++ that conforms to the ISO 14882:1998 standard
+
+</pre>
+
+
+<h3><a name="Pragmas"> Some Pragmas, Compiler Directives </a></h3>
+<pre> #pragma starts a compiler specific directive
+         these directives are usually available also as command line options
+
+  pragmas can not change the semantics of the C++ code but may change
+  optimization level, interface conventions or other compiler operation.
+
+</pre>
+
+
+<h3><a name="Library"> Standard Library Defined in C++  </a></h3>
+<pre>Note that the file names do NOT have a  .h   in them
+Standard Template Library file names for  #include &lt; &gt;
+If you do NOT use  using namespace std;  then use library-name::function-name
+
+  algorithm
+  bitset
+  complex
+  deque
+  exception
+  fstream
+  functional
+  iomanip
+  ios
+  iosfwd
+  iostream
+  istream
+  iterator
+  limits
+  list
+  locale
+  map
+  memory
+  new
+  numeric
+  ostream
+  queue
+  set
+  sstream
+  stack
+  stdexcept
+  streambuf
+  string
+  strstream
+  typeinfo
+  utility
+  valarray
+  vector
+
+To safely bring in Standard "C" libraries, use these include files
+(Remember, no  .h  in the  #include &lt; &gt; )
+
+  cctype
+  cassert
+  cerrno
+  cfloat
+  climits
+  clocale
+  cmath
+  csetjmp
+  csignal
+  cstdarg
+  cstddef
+  cstdio
+  cstdlib
+  cstring
+  ctime
+  cwchar
+  cwctype
+
+</pre>
+
+
+<h3><a name="Static"> Static, four uses and examples </a></h3>
+<pre>The "traditional" use of the reserved word 'static' was to declare a
+local variable in a function to be preserved between function calls.
+The implication was static memory assignment rather than using the stack. (4)
+
+The next most common use of 'static' is to make a name at file scope
+local to the file rather than having the name visible to the linker where
+code in other files could access the name. This applies to both variables
+and functions. When 'static' is used in a function prototype it must also
+be used in the function definition. (3)
+
+A class variable can be declared static in order to have all instances of
+that class share a common memory location. The user must actually cause
+the global static memory allocation outside of the class. (2)
+
+A class member function can be defined so that it does not need a class
+instance to exists. No "this" is available because no object is passed
+as the first invisible parameter to a static member function. Static
+member functions can be called from other languages. (1)
+
+
+// static.cc  test various cases  note //! is about 'static'  FOUR USES !!
+//                                1) a static member function, no object to call
+//                                2) a static class object, shared by all instances
+//                                3) makes object or function local to a file
+//                                4) makes object persist between calls
+#include &lt;iostream&gt;
+
+class Base
+{
+  public:
+    Base(void) { B2=2; B3=3;}
+    static void BF1(void);   //! definition can not go here                 1)
+    void BF2(void) { cout &lt;&lt; B1 &lt;&lt; "  " &lt;&lt; B2 &lt;&lt; " BF2 in Base \n";
+                     B2=5; }
+  private:
+    static B1; //! no  =1;  here                                            2)
+    int B2;
+    int B3;
+};
+
+int Base::B1 = 1; //! has to be at file scope. Not in 'main' or in class
+                  //! only one per total program, not in .h file
+
+void Base::BF1(void) //! can not use word static in front of this
+{
+  cout &lt;&lt; B1 &lt;&lt; " BF1 static in Base \n"; //! can not use B2 or B3 in here
+  B1=4;
+}
+
+static int j;  //! means local to this file, not visible to linker          3)
+
+int main(void)
+{
+  static  i;   //! means not on stack, value saved from call to call        4)
+  Base a, b;
+
+  a.BF2();
+  a.BF1();     //! object can be used, any object, same result
+  a.BF2();
+  b.BF2();
+  Base::BF1(); //! no object needed, but do need  Base:: syntax
+  b.BF2();
+  return 0;
+}
+
+//  results, note B1 is changed in object 'a' and B1 gets changed also in 'b'
+//          while B2 is changed in object 'a' and B2 in  'b' unaffected
+
+//  1  2 BF2 in Base                                  B1==1, B2==2, B2=5 in 'a' 
+//  1 BF1 static in Base                              B1==1, B1=4        global
+//  4  5 BF2 in Base                                  B1==4, B2==5, B2=5 in 'a'
+//  4  2 BF2 in Base                                  B1==4, B2==2, B2=5 in 'b' 
+//  4 BF1 static in Base                              B1==4, B1=4        global
+//  4  5 BF2 in Base                                  B1==4, B2==5, B2=5 in 'b'
+
+
+</pre>
+
+<h3><a name="Other"> Other Links </a></h3>
+<ul>
+</ul>
+
+<h3><a href="#Top"> Go to top </a></h3>
+
+<p> Last updated 4/8/05 </p>
+</div>

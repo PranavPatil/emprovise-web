@@ -1,0 +1,93 @@
+
+
+#textglow {
+	margin:0;
+	padding:2em 4em;
+	background:#fff;
+	font:90% Arial, Helvetica, sans-serif;
+	color:#555;
+	line-height:180%;
+}
+#textglow h1 {
+	font-size:300%;
+	line-height:1em;
+	color:#8bb544;
+	font-weight:bold;
+	text-transform:uppercase;
+	letter-spacing:-.05em;
+	position:relative;	
+}
+#textglow h2 {
+	font-size:260%;
+	color:#0079b6;
+	font-weight:bold;
+	letter-spacing:-.05em;
+	position:relative;
+	margin:.6em 0;
+	padding-top:1px; /* use top padding to adjust the start of the gradient  */
+	width:100%;
+}
+#textglow h3 {
+	font-size:240%;
+	color:#7365a0;
+	font-weight:bold;
+	text-transform:uppercase;
+	letter-spacing:-.05em;
+	padding-top:3px;
+	position:relative;
+	margin:.6em 0;
+	width:100%;
+}
+#textglow h4 {
+	font-size:220%;
+	color:#dc5b24;
+	font-weight:normal;
+	letter-spacing:-.05em;
+	position:relative;
+	margin:.6em 0;
+	padding-top:1px;
+	width:100%;
+}
+
+#textglow h1 span, h2 span, h3 span, h4 span{
+	position:absolute;
+	display:block;
+	top:0;
+	left:0;
+	height:100%;
+	width:100%;
+	background:url(../img/slidesmenu/textglow/gradient_1.png) repeat-x;
+}
+#textglow h1 span, #textglow h3 span{background:url(../img/slidesmenu/textglow/gradient_2.png) repeat-x;}
+* html #textglow h1 span, * html #textglow h3 span{
+	background-color:#fff;
+	back\ground-color:transparent;
+	background-image: url(none.gif);
+	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="../img/slidesmenu/textglow/gradient_2.png", sizingMethod="scale");
+}
+* html #textglow h2 span, * html #textglow h4 span{
+	background-color:#fff;
+	back\ground-color:transparent;
+	background-image: url(none.gif);
+	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="../img/slidesmenu/textglow/gradient_1.png", sizingMethod="scale");
+}
+
+.descbox {width:95%; margin:1em auto; border: 1px solid #000; border-radius: 10px; -moz-border-radius:10px; -webkit-border-radius: 10px; padding:5px; color:#000; font:normal 11px georgia; box-shadow: 6px 6px 5px #444; -moz-box-shadow: 6px 6px 5px #444; -webkit-box-shadow: 6px 6px 5px #444;}
+
+
+#insetBgd {
+  width: 550px;
+  height: 100px;
+  background: -moz-linear-gradient(-90deg,#003471,#448CCB);
+  background: -webkit-gradient(linear, left top, left bottom, from(#003471), to(#448CCB));
+}
+
+h1.insetType {
+  padding-left: 50px; /* The padding is just there to move the h1 element to the center of the div */
+  padding-top: 17px;
+  font-family: Rockwell, Georgia, "Times New Roman", Times, serif;
+  font-size: 50px;
+  color: #2676D7;
+  text-shadow: rgba(0,0,0,0.5) -1px 0, rgba(0,0,0,0.3) 0 -1px, rgba(255,255,255,0.5) 0 1px, rgba(0,0,0,0.3) -1px -2px;
+}
+

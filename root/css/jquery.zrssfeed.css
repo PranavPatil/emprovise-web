@@ -1,0 +1,62 @@
+﻿@charset "UTF-8";
+/*
+ * Example of zRSSFeed Styling
+ *
+ * Version: 1.1.4
+ * (c) Copyright 2011, Zazar Ltd
+ *
+ */
+
+/*body {
+	margin: 1em 3em;
+	font-family: Tahoma, Genevam, sans-serif;
+}
+*/
+
+.slidorion .rssFeed {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 70%;
+/*	margin: 0.1em 0.1em;  */
+}
+.slidorion .rssFeed a {
+	color: #0000CC;
+	text-decoration: none;
+	font-size: 0.9em;
+}
+.slidorion .rssFeed a:hover {
+	color: #000;
+	text-decoration: underline;
+}
+
+/* .rssHeader { padding: 0.1em 0; } */
+
+.slidorion .rssBody { 
+    /* border: 1px solid #999;  */
+}
+.slidorion .rssBody ul { 
+    list-style: none;
+ }
+.slidorion .rssBody ul, .slidorion .rssRow, 
+.slidorion .rssRow h4, .slidorion .rssRow p {
+	margin: 0;
+	padding: 0;
+}
+
+.slidorion .rssRow { 
+  /*padding: 0.1em; */
+  padding:0.4em 0.1em;
+}
+.slidorion .rssRow h4 { font-size: 0.6em; }
+.slidorion .rssRow div {
+	font-size: 90%;
+	color: #666;
+	margin: 0.2em 0 0.4em 0;
+}
+
+.slidorion .odd { background-color: #e8e8fc; }
+.slidorion .even { background-color: #d4d4e8; }
+
+.slidorion .rssRow .rssMedia {
+	padding: 0.5em;
+	font-size: 1em;
+}

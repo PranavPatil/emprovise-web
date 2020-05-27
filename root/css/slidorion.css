@@ -1,0 +1,220 @@
+/* Slidorion Stylesheet */
+.slidorion {
+
+	line-height:20px;
+	font-size:14px;
+	color:#333;
+	font-family: Helvetica, Tahoma, sans-serif;
+	font-weight:normal;
+
+	width: 380px;			/* Set to slidorion width. Is equal to #slider + #accordion width */
+	height: 320px;			/* Set to slidorion height. Is equal to #slider and #accordion height */
+	/* position: relative; */
+	left: 50%;
+	/* margin-left: -194px; */
+	padding: 5px;
+	background: #cbcbcb;
+	border: 1px solid #bbb;
+	-webkit-box-shadow: 0 0 34px #bbb;
+	-moz-box-shadow: 0 0 34px #bbb;
+	box-shadow: 0 0 34px #bbb;
+	text-align:center;
+}
+
+.slidorion div, .slidorion span, .slidorion applet, .slidorion object, .slidorion iframe,
+.slidorion h1, .slidorion h2, .slidorion h3, .slidorion h4, .slidorion h5, .slidorion h6,
+.slidorion p, .slidorion a,.slidorion ol, .slidorion ul, .slidorion li,
+.slidorion table, .slidorion tr, .slidorion th, .slidorion td {
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	outline: 0;
+	background:none;	
+}
+
+#slidorion {
+    border: 2px solid #bbb;	
+}
+
+.slidorion ol, .slidorion ul {
+	list-style: none;
+	background:inherit;
+}
+
+.slidorion * {
+	font-size:inherit;
+	font-family: 'Yanone Kaffeesatz', sans-serif; font-weight:bold;
+}
+
+.slidorion strong {
+	font-weight:bold;
+}
+
+.slidorion h1, .slidorion h2, .slidorion h3 { font-family: 'Yanone Kaffeesatz', sans-serif; font-weight:bold; }
+.slidorion h1 {
+	font-size:90px;
+	text-shadow:0 0 1px rgba(51,51,51,0.3);
+	text-align:center;
+	line-height:90px;
+}
+.slidorion h2 {
+	font-size:36px;
+	line-height:36px;
+	text-shadow:0 0 1px rgba(51,51,51,0.2);
+	padding-bottom:5px;
+	margin-bottom:15px;
+	border-bottom:1px solid #ccc;
+}
+.slidorion h3 {
+	font-size:30px;
+	line-height:38px;
+	margin-bottom:14px;
+}
+.slidorion h4 {
+	font-size:16px;
+	line-height:24px;
+	font-weight:bold;
+}
+.slidorion a:link, .slidorion a:active, .slidorion a:visited {
+	border:none;
+	outline:none;
+	/* color:#072B29; */
+}
+
+.slidorion #newsslider {
+	width: 240px;			/* Set to newsslider width */
+	height: 320px;			/* Set to newsslider height */
+	position: relative;
+	float: left;
+	overflow: hidden;		/* Hides the animations */
+}
+
+.slidorion #newsslider > div {
+	position:absolute;
+	width:100%;
+	height:100%;
+}
+
+.slidorion #accordion {
+	width: 140px;			/* Set to accordion width */
+	height: 320px;			/* Set to image height */
+	font-family: Verdana;
+	background: #eee;
+	-webkit-box-shadow: -3px 0px 3px -1px rgba(51,51,51,0.3);
+	-moz-box-shadow: -3px 0px 3px -1px rgba(51,51,51,0.3);
+	box-shadow: -3px 0px 3px -1px rgba(51,51,51,0.3);
+	position: relative;
+	z-index:999;
+	overflow: hidden;
+	float: left;
+}
+
+.slidorion #accordion p {
+	margin-bottom:14px;
+}
+.slidorion #accordion strong {
+	font-weight: bold !important;
+}
+
+.slidorion #accordion > .link-header {
+	padding: 4px 7px;
+	font-size: 11px;
+	font-weight: bold;
+	color: #333;
+	background: #ededed;
+	background: -moz-linear-gradient(top, #ededed 59%, #dcdcdc 100%);
+	background: -webkit-linear-gradient(top, #ededed 59%,#dcdcdc 100%);
+	background: -o-linear-gradient(top, #ededed 59%,#dcdcdc 100%);
+	background: -ms-linear-gradient(top, #ededed 59%,#dcdcdc 100%);
+	background: linear-gradient(top, #ededed 59%,#dcdcdc 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ededed', endColorstr='#dcdcdc',GradientType=0 );
+	border-top: 1px solid #ccc;
+}
+
+.slidorion #accordion > .link-header:first-child {
+	border-top:none;
+}
+
+.slidorion #accordion > .link-header:hover {
+	background: #ededed;
+	cursor: pointer;
+}
+
+.slidorion #accordion > .link-header.active {
+	border-bottom: none;
+	background: #342D7E !important;  /* #676767 */
+	color: #fff;
+}
+
+.slidorion #accordion > .link-content {
+	height: 231px;			/* This height needs to be changed as it depends on the accordion height and number of tabs */
+	font-weight: normal;
+	font-size: 10px;
+	line-height:10px;
+	margin: 0;
+	padding: 1px;
+	border: none;
+	background: #d6d6d6;
+	background: -moz-linear-gradient(top, #d6d6d6 0%, #ffffff 10%);
+	background: -webkit-linear-gradient(top, #d6d6d6 0%,#ffffff 10%);
+	background: -o-linear-gradient(top, #d6d6d6 0%,#ffffff 10%);
+	background: -ms-linear-gradient(top, #d6d6d6 0%,#ffffff 10%);
+	background: linear-gradient(top, #d6d6d6 0%,#ffffff 10%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d6d6d6', endColorstr='#ffffff',GradientType=0 );
+	overflow:auto;
+}
+
+
+/* -------------------------------------------------------------------------------------------------------------------------------------------------------- */
+
+.slidorion .newsslide {
+	background:#f2f2f2;
+	/* background: #eaeaea; */
+	/* padding: 20px; */
+	-webkit-border-top-right-radius: 5px;
+	-webkit-border-top-left-radius: 5px;
+	-webkit-border-bottom-right-radius: 5px;
+	-webkit-border-bottom-left-radius: 5px;
+	-moz-border-radius-topright: 5px;
+	-moz-border-radius-topleft: 5px;
+	-moz-border-radius-bottomright: 5px;
+	-moz-border-radius-bottomleft: 5px;
+	border-top-right-radius: 5px;
+	border-top-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+	border-bottom-left-radius: 5px;
+}
+.slidorion .newsslide .newscontent {
+	padding:10px;
+	padding-right:12px;
+	font-family: 'Yanone Kaffeesatz', sans-serif; font-weight:bold;
+}
+.slidorion .newsslide h4 {
+	font-size:12px !important;
+	line-height:14px !important;
+}
+.slidorion .newsslide .newscontent ul {
+	list-style: none;
+	 overflow: auto;
+/*	margin-top:15px;
+	margin-left:40px; */
+}
+.slidorion .newsslide .newscontent li {
+/*	margin-bottom:10px; */
+}
+
+.slidorion .newsslide .newscontent span {
+    font-size:19px; 
+	color:#810541;
+}
+
+.slidorion .rsswidget {
+    overflow:auto; 
+	height:274px; 
+	line-height: 1.5;
+	margin-top: 5px;
+	border: 1px solid #999; 
+}
+
+
+

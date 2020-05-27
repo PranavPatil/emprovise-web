@@ -1,0 +1,48 @@
+#quotebox{
+	/* This holds the full view of the quote */
+	width:274px;
+	margin:0px auto;
+	float:left;
+}
+
+div > #quotetop{
+	/* Setting the height to auto for non-IE6 browsers */
+	height:auto;
+}
+
+#quotebot{
+	/* Bottom part of the full view */
+	height:24px;
+	float:left;
+	width:100%;
+	margin-bottom:-10px;
+}
+
+h1.quotetext{
+	/* This is the text of the quote in the full view. Replaced by Cufon */
+/*	margin-bottom:15px; */
+	text-align:right;
+/*	padding:0px 40px 0 40px; */
+	line-height:30px;	 
+	font-family: "Segoe UI","HelveticaNeue-Light","Helvetica Neue Light","Helvetica Neue",Arial,Tahoma,Verdana,sans-serif; 
+	
+	display: block; 
+	text-decoration: none; 
+/*	margin: 0px;  */
+	font: italic 15px Georgia, Times, Serif;  
+	text-align: center; 
+	color: #99FF99; 
+	text-shadow: 0px 2px 6px #151B8D;
+}
+
+#quoteauthor{
+	/* The span that holds the name of the author */
+	color:#9C9C9C;
+	float:right;
+	font-size:10px;
+	font-style:italic;
+	font-weight:bold;
+	letter-spacing:1px;
+	text-align:right;
+	text-transform:uppercase;
+}

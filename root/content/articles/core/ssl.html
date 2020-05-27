@@ -1,0 +1,216 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>SSL</title>
+</head>
+
+<body>
+<div id="post-16">
+  <div>
+    <!-- <h1>Secure Socket Layer</h1> -->
+    <span class="byline-author">Posted By: 
+    <a href="http://emprovise.comuf.com/aboutme.html" title="Editor">Pranav Patil</a>
+    </span>
+    <br /><br />
+    <div class="entry">
+<br />  
+<h3 align="left">General Terms</h3>
+<p>Message Authentication Code  (MAC), Hash MAC, Message Digest5, RSA, TLS Record Protocol, TLS Handshake  Protocol, Alert Protocol, Change Cipher Spec Protocol, Cipher Block Chaining  (CBC), Initialization Vector (IV), Pseudo Random Function (PRF), Close Alerts, Error Alerts, Premaster Key, Master Key,  Digital Certificates, Digital Signing, Rollbacks attacks, Man in the Middle  attack, Timing attack.</p>
+<br />  
+<h3 align="left">Keywords</h3>
+<p>Hash, encryption, compression, stream  encoding, secret, random, session, security parameters, handshake, hello  message, message digest, connection state, certificate, security, privacy,  cipher suites, fatal error alerts, warning error alerts.</p>
+<br />
+<h2 align="left">INTRODUCTION</h2>
+<p>With the  expansion of internet and growing network between various groups of computers,  there has been a need of a secure communication channel to ensure privacy for  business and ecommerce applications. SSL has emerged to satisfy such needs and  provides secure network communication using the modern cryptographic protocols.  The SSL 1.0 protocol was developed by Netscape in early 1994 and was released  publicly after development of SSL 2.0 in 1995. SSL 2.0 contained numerous  security flaws and was corrected leading to the release of SSL 3.0 in 1996.  Later the Internet Task Force standardized the SSL 3.0 protocol with suitable  modifications defined in RFC 2246 and renamed it as Transport Layer Security  (TLS) 1.0. Although TLS 1.0 and SSL 3.0 are not interoperable, TLS could be downgraded  to operate with SSL 3.0. TLS 1.0 was updated to TLS 1.1, defined in RFC 4346 by  adding protection against Cipher Block Chaining attacks. TLS 1.2 defined in RFC  5246 is the most recent update of the protocol by replacing MD5/SHA1  combination in Pseudo Random Function (PRF) with cipher suites and MD5/SHA1  combination in digitally signed element by single hash. Also client and server  could specify hash and signature algorithms along with addition of AES in the  cipher suites. </p>
+
+<br />
+<h2 align="left">TLS PROTOCOL</h2>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;The primary goal of the SSL/TLS protocol is  to provide privacy and data integrity between two communicating machines. SSL/TLS  are used to encrypt the data over the transmission channel at the transport  layer from end to end network connection. SSL mainly uses a reliable protocol  like TCP at such a lower layer. The protocol comprises of two main layers, the  TLS Record Protocol and TLS Handshake Protocol. The TLS Record  Protocol provides connection security such that the connection is private and  reliable. Privacy is achieved using various symmetric cryptographic algorithms  such as DES, RC4 etc and reliability is achieved using message integrity check by  keyed MAC computed using secure hash functions such as SHA, MD5. The Record Protocol  could be used without encryption and also operates without MAC, but only used  in such a mode while other protocol uses Record Protocol in order to negotiate  security parameters. The TLS protocol provides independency of application  protocol as higher level protocols lay on top of TLS transparently. Also the  implementers of the protocol are free to provide security in various ways along  with handshake decisions and certificate interpretation. The main goals of the  TLS protocol is to provide cryptographic security by providing secure  connection, interoperability by allowing applications to utilize TLS regardless  of their implementation, extensibility by providing framework to incorporate  new encryption methods and relative efficiency by incorporating session caching  scheme in order to reduce the number of connections. The TLS protocol works  with the handshake protocol allowing the peers to agree upon security parameters  authenticate themselves and report errors to each other. Then the record protocol  takes messages to be transmitted between the peers, fragments the data into  manageable blocks, optionally compresses the data, applies the MAC, encrypts,  and transmits the resulting block. At the other end the data is received, decrypted, verified, decompressed, and  reassembled, then delivered to higher layers of the client.</p>
+<br />
+<h3 align="left">Cryptographic Operations in SSL</h3>
+<p>The four major cryptographic  operations used in TLS are digital signing, stream cipher encryption, block  cipher encryption, and public key encryption. One way hash functions are used  in digital signing to encode the entity into a vector whose length is  determined by the signing algorithm and the specified key. Some of the major digital signing schemes are  RSA signing and Digital signature standard. In case of stream cipher  encryption, plaintext is EX-ORed with the same number of output generated using  a pseudo random generator. In the block cipher encryption each and every block  is encrypted to the corresponding block of cipher text using Cipher Chaining  Block mode with the number of blocks being multiple of cipher block length. Lastly  in case of public key encryption, a public key algorithm such as RSA is used to  encrypt the data, decrypted using the matching private key. The encoded block  is of same length as specified in the public key algorithm and the key. </p>
+<br />
+<h3 align="left">Hash Message Authentication Code</h3>
+<p>Number of operations in  TLS Record and Handshake layer require keyed MAC which is the secure digest of  the data using MAC secret in order to ensure that the data is not altered or  modified. The message digest is constructed in order to ensure that the forging  of the message be impossible without the MAC secret. Hash algorithms are used  mainly to implement such operation in combination with the secret key and the  operation is termed as HMAC. The algorithms such as SHA1 and MD5 are often used  and hardcoded in handshaking, along with additional algorithms defined in the  cipher suites to protect the record data. The cryptographic strength of HMAC  depends upon the underlying cryptographic strength of underlying hash function,  size of hash output in bits and size with the quality of cryptographic key. The  HMAC is mathematically defined as follows:<br /><br />
+  <strong>HMAC</strong>(<em>K</em>,<em>m</em>)  =&nbsp;<strong>H</strong>((<em>K</em>&nbsp;EXOR opad) ||&nbsp;<strong>H</strong>((<em>K</em>&nbsp;EXOR ipad) || m)).<br /><br />
+  Where  k is the secret key, m is the message, opad is outer padding, inpad is inner  padding, <strong>H</strong>() is the hash function  with || denoting concatenation. HMACs are less affected with the collisions of hash values from their  corresponding hash algorithms. It is used to carry out data expansion using a  single hash function, with a secret and a seed as input producing arbitrary  length data as output. The function is iterated several times in order to  required amount of output, and extra bytes are discarded in case of output of  more bytes is produced. The hash function is given as follows:<br /><br />
+  P_hash(secret, seed) =  HMAC_hash( secret, A(1) + seed) + HMAC_hash(  secret, A(2) + seed) + <br /><br />
+  where A(0) is the seed and A(1) = HMAC_hash(secret, A(i-1)).</p>
+  <br />
+<h3 align="left">Pseudo Random Function (PRF)</h3>
+<p>The Pseudo Random  Function is used to expand the secrets into blocks of data for the purposes of  key generation such as the master key and key validation. The input to the  pseudo random function is the secret, seed, identifying label and it produces  the output of arbitrary length. The pseudo random function uses at least two  hash functions such as MD5 and SHA1 in order to enhance its security. The PRF  for TLS is created by splitting the secret into two equal halves, using one  half S1 to generate data with P_SHA1 and the other half S2 to generate the data  with P_MD5 where P_SHA1 and P_MD5 are PRF functions using SHA1 and MD5 hash  functions respectively. The length of the secret is rounded up such that the  overall secret is divided into two. In case the length of the secret is odd the  last byte of the S1 half of secret will be same as the first byte of S2 half of  the secret. Both the output streams generate from P_SHA1 and P_MD5 are exclusively  OR-ed together to create the resulting output stream, as follows:<br /><br />
+  PRF(secret, label, seed)  = P_MD5(S1, label + seed) XOR P_SHA-1(S2,  label + seed)<br />
+  <br />
+  Here  the label is an ASCII string without any null termination. Also as both MD5 and  SHA1 might produce different length of output, with MD5 producing less number  of bytes, it is iterated more such that both the outputs produced are of equal  length.</p>
+<br />  
+<h2 align="left">TLS RECORD PROTOCOL</h2>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;As discussed in section 2, the TLS record  protocol provides secure connection using private and reliable connection. It  also encapsulates the higher level protocol such as the TLS Handshake protocol.  The record protocol is responsible for fragmenting the un-interpreted data from  higher layers into blocks of 2^14 bytes or less. The blocks obtained are  optionally compressed using a lossless active compression algorithm such as  Delta encoding or Deflate algorithm defined in the current session state such  that the resulting content doesn't exceed 1024 bytes. Then the MAC functions  are applied to compute the MAC before encryption. The computed MAC also  includes the sequence number in order to detect the missing or repeated set of  messages. Later the encryption is used to translate the compressed record into TLS  cipher text. The stream ciphers are used to convert compressed fragments into  cipher text fragment structures by encrypting the entire block along with the  MAC. The cipher block chaining (CBC) could also be used to block TLS Cipher  text. The CBC mode uses IV for encryption process which in turn is computed  using the secret keys from the security parameters. The TLS cipher text stream  is forwarded to the transport layer for transmission. At the other end the data  received is decrypted, verified using MAC and decompressed, reassembled and  delivered to higher application layers such as https, ssh, sftp etc. The  clients for the record protocol include the handshake protocol, the alert protocol,  the change cipher spec protocol and the application protocol.</p>
+<br />  
+<h3 align="left">TLS Connection States</h3>
+<p>The TLS  record protocol operates using various connection states. The connection state  specifies compression algorithms, bulk encryption algorithms and MAC algorithms.  The algorithms take various parameters such as MAC secret, bulk encryption keys  initialization vectors (IVs), for both read and write directions. Overall there  are four connection states namely, the current read and write connection states  and pending read and write state. All the records are processed using the  current read and write state. TLS handshake protocol can set the security  parameters for the pending states and can selectively change pending states to  current state by disposing the current state and replacing it with the pending  state such that the pending state is reinitialized to empty state. The initial  current state must be initialized with security parameters such that it  confirms with the use of encryption, compression and MAC algorithm for data  transfer in the corresponding connection state.</p>
+<br />  
+<h3 align="left">Record Protocol Key Computation</h3>
+<p>The  Record Protocol requires an algorithm to generate keys, IVs, and MAC secrets  from the security parameters of the current session provided by the handshake  protocol. The master secret key is used to compute the hash value which is used  to generate the MAC secret, secret keys and computation of Initialization  vector for the current connection state. The 48 byte master key is used as the  prime source for generation of MAC secrets and keys along with the random  values provided by the handshake protocol to add randomness for every session  and avoiding replay attacks. The MAC secrets, keys and IV's are computed using  the key expansion of master secret key using the Pseudo Random Function. The  key expansion is carried out as follows:<br /><br />
+  Key block = PRF(master_secret, "key  expansion",
+  server_random +  client_random).<br /><br />
+  were  master_secret, server_random and client random are provided by security parameters  and + sign indicates concatenation. The key block (generally 104 bytes) is  later partitioned to obtain the client and server write MAC secrets, keys and  IVs. </p>
+<br />  
+<h2 align="left">TLS HANDSHAKE PROTOCOLS</h2>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;The TLS Handshake protocols are responsible  for authenticating the connecting peers, determining the security parameters  and, instantiating them after negotiating a session. It also carries out error  reporting to corresponding peers using the alert protocol. The session  negotiated consists of session identifier, peer certificates, compression  methods, cipher specs, master secret and flag indicating new sessions which in  turn are used to create security parameters for use of Record Protocol. The  group of Handshake protocols consists of three sub protocols, Handshake protocol,  Alert Protocol and Change Cipher Spec protocol.</p>
+<br />  
+<h3 align="left">Change Cipher Spec Protocol</h3>
+<p>The  Change Cipher spec protocol is used to signal the change of current encryption scheme.  The signal consists of single byte with value 1, compressed and encrypted, send  by both client and server to notify the other that the future messages send by  the peer would be using newly negotiated Cipher Specs and keys. On receipt of  such signal, the receiver instructs the record layer to copy the read pending  state to read current state so that the peer could read the messages send by  the sender using new schemes. While the sender after sending such signal  instructs its record layer to make the write pending state, the write active  state in order to send all the messages using the newly adopted cipher specs.  This process occurs after the security parameters are set between the peers but  before the end of the handshake.</p>
+<br />  
+<h3 align="left">Alert Protocol</h3>
+<p>The  Alert protocol allows the peers to send alert messages to each other. The alert  message also indicates the severity of the alert along with the alert  description. Severity of the alert message is indicated by two levels, fatal  and warning. In case of fatal alert messages, the connection is terminated  immediately and the session is invalidated to prevent reuse of the session to  establish new connections. While in case of warning messages it depends on the  implementers to terminate the session or handle the message with custom  approach. All the messages in the alert protocol are compressed and encrypted  in order to avoid fake alert messages to be received during the connection. The  alert messages consist of two types, Closing alerts and Error alerts.<br />
+  The closing alerts are sent either by client  or the server to notify the other party the termination of connection. It is  mainly used to avoid truncation attacks were the attacker causes the session of  the peer to be closed, truncating the integrity protected data stream which  benefits the attacker. After the close alerts are sent no data is accepted from  the peer. Also either connected peer sends close notify before closing the  connection and the receiver responds to the notification before closing its  connection.<br />
+  Error Alerts are used for error handling in  which case the error detecting party sends an error message to the other end  for notification. In case of fatal error messages the connection is closed and  the attributes of session are deleted invalidating the session. All the error  alerts are categorized fatal, warnings and fatal/warning alerts. The fatal  alerts are as follows:   
+</p>
+<br />
+<table class="bordered" width="809">
+  <tr>
+    <th width="27" scope="col">No</th>
+    <th width="283" scope="col">Alert</th>
+    <th width="477" scope="col">Description</th>
+  </tr>
+  <tr>
+    <td>1</td>
+    <td>bad_record_mac (fatal)</td>
+    <td>MAC of the message is  incorrect.</td>
+  </tr>
+  <tr>
+    <td>2</td>
+    <td>decryption_failed  (fatal)</td>
+    <td>cipher text decryption is invalid.</td>
+  </tr>
+  <tr>
+    <td>3</td>
+    <td>record_overflow  (fatal)</td>
+    <td>record length is more than 2^14+2048 bytes.</td>
+  </tr>
+  <tr>
+    <td>4</td>
+    <td>decompression_failure  (fatal)</td>
+    <td>decompression function received  an improper input.</td>
+  </tr>
+  <tr>
+    <td>5</td>
+    <td>handshake_failure  (fatal)</td>
+    <td>unable to negotiate an  acceptable set of security parameters.</td>
+  </tr>
+  <tr>
+    <td>6</td>
+    <td>unsupported_certificate  (warning/fatal)</td>
+    <td>certificate is of unsupported type.</td>
+  </tr>
+  <tr>
+    <td>7</td>
+    <td>illegal_parameter  (fatal)</td>
+    <td>field in handshake was out of  range</td>
+  </tr>
+  <tr>
+    <td>8</td>
+    <td>access_denied  (fatal)</td>
+    <td>server decided not to proceed  with negotiation as the user has no access rights.</td>
+  </tr>
+  <tr>
+    <td>9</td>
+    <td>decode_error  (fatal)</td>
+    <td>message could not be decoded due  to incorrect length or other reasons.</td>
+  </tr>
+  <tr>
+    <td>10</td>
+    <td>decrypt_error (warning/fatal)</td>
+    <td>handshake cryptographic operation failed.</td>
+  </tr>
+  <tr>
+    <td>11</td>
+    <td>export_restriction (fatal)</td>
+    <td>negotiation not compliant with export  restrictions.</td>
+  </tr>
+  <tr>
+    <td>12</td>
+    <td>insufficient_security (fatal)</td>
+    <td>server requires more secure ciphers.</td>
+  </tr>
+  <tr>
+    <td>13</td>
+    <td>internal_error (fatal)</td>
+    <td>internal error unrelated to peer or protocol.</td>
+  </tr>
+  <tr>
+    <td>14</td>
+    <td>no_renegotiation (warning)</td>
+    <td>renegotiation is not possible.</td>
+  </tr>
+  <tr>
+    <td>15</td>
+    <td>unexpected_message (fatal)</td>
+    <td>inappropriate message.</td>
+  </tr>
+  <tr>
+    <td>16</td>
+    <td>user_canceled (warning)</td>
+    <td>user canceled the operation.</td>
+  </tr>
+  <tr>
+    <td>17</td>
+    <td>bad_certificate (warning/fatal)</td>
+    <td>certificate is corrupt.</td>
+  </tr>
+  <tr>
+    <td>18</td>
+    <td>unknown_ca (fatal)</td>
+    <td>CA of certificate could not be located.</td>
+  </tr>
+  <tr>
+    <td>19</td>
+    <td>certificate_revoked/expired  (warning/fatal)</td>
+    <td>certificate is revoker  by signer or expired and currently in  valid.</td>
+  </tr>
+  <tr>
+    <td>20</td>
+    <td>protocol_version (fatal)</td>
+    <td>protocol_version (fatal): protocol version is not supported.</td>
+  </tr>
+</table>
+<blockquote>
+  <p>&nbsp;</p>
+  <h3 align="left">Handshake Protocol</h3>
+  <p>The TLS Handshake Protocol generates security  attributes of the session state and operates on top of the Record Layer. The  Handshake messages are supplied to the TLS Record Layer which are processed and  transmitted by the record layer using the current parameters in the session  state. Such Handshake messages tend to have precedence over the application  data during transmission. During the handshake the actual key exchange is  carried using four messages: the server certificate, the server key exchange,  the client certificate, and the client key exchange. The handshake between the  client and the server takes place using the messages as follows:</p>
+  <ol>
+    <li><strong>Hello  Request</strong>: It is send by the server anytime and indicates the client to  initiate a new negotiating process by sending a client hello response. The  client may ignore the message by sending a no-renegotiating alert or the server  closes the connection after the timeout. </li>
+    <li><strong>Client Hello</strong>: The client sends client hello message in response to hello request  from the server or by its own initiative to re-negotiate security parameters in  the existing connection. It includes the variable length session identifier along  with random values which identifies the session and security parameters used by  the client. Also it contains cipher suite list indicating the list of  algorithms supported by the client. The server might select a cipher suite or  respond with the failure in case none of them is acceptable. </li>
+    <li><strong>Server Hello</strong>: The server responds with this message indicating that it has accepted  one of the cipher suite else sends a handshake failure alert closing the  connection. </li>
+    <li><strong>Server Certificate</strong>: The server sends its certificate in order to  identify itself and to use a well agreed key exchange method. The certificate should  be appropriate with the selected cipher suite along with the key exchange  method. The public keys used in the certificate could be of varying length. </li>
+    <li><strong>Server Key Exchange</strong>: Send after server hello or server  certificate message by the server only when the server certificate does not  have required server public key in order to send the pre-master secret key by  the client.</li>
+    <li><strong>Certificate Request</strong>: It is the request send by the server to the  client in order to provide its identity using appropriate certificate. </li>
+    <li><strong>Server Hello Done</strong>: It indicates that server is done with its  own phase of key exchange and will be waiting for the client's response and its  key exchange. The client checks for the acceptability of the hello parameters  and the validity of the Server certificate. </li>
+    <li><strong>Client Certificate</strong>: It is send by the client only after  receiving the server certificate request and hence is optional. The client  responds with message with no certificate if it doesn't have a valid  certificate and would respond with a fatal error message incase client authentication  s required by the server.</li>
+    <li><strong>Client Key Exchange message</strong>: Such message is send either after the server  hello done or the client certificate. The client computes the premaster secret whose  size is 48 bytes for RSA else depending on the key exchange method, and is  transmitted to the server.</li>
+    <li><strong>Certificate  verify</strong>: Such message is sent  by the client capable of signing certificates in order to provide verification  for client's certificate to the server.</li>
+    <li><strong>Finished</strong>: It is send immediately after the change cipher  spec message, to verify that the key exchange along with the authentication  process being successful. It is said to be the first encrypted message using  the set of negotiated algorithms, keys and secrets. Recipients need to verify  the contents of the finished message and once validated the normal data  transmission proceeds.</li>
+  </ol>
+  <p>All the  handshake messages are sent in the corresponding order; else there is a fatal  error due to unexpected order. The exception for ordering includes the  Certificate messages send twice and the hello messages send numerous times by  the server. The unwanted handshake messages could be excluded seamlessly. <br />
+    During the key exchange the algorithms are  determined and used to calculate all the keys including the computation of  master secret from premaster secret. Once the master secret is calculated the  premaster secret is deleted both the client and the server. The 48 byte master secret is  computed using the PRF function as follows:<br /><br />
+    master_secret =  PRF(pre_master_secret, &quot;master secret&quot;, client.random + server.random). </p>
+  <p><br />  
+  </p>
+  <h2 align="left">TLS ATTACKS</h2>
+  <p>Even though SSL protocol is designed to prevent any  attackers by using strong cryptographic and hash algorithms, in proper  application such as small key sizes, implementation faults, weak server  security could lead to different kinds of attacks. The most famous attack on  the SSL is the man in the middle attack which is carried by active  eavesdropping and relaying the messages listened by attacker to the members of  the connection. The attacker then controls the conversation by making the peers  believe to be having direct interaction between them and could insert new  custom messages. The attacker could attempt at least to make the entities drop  down the secure method they support and promote an unsecure method which is  more vulnerable for attack.
+    Other  attacks include based on identical MAC value for different messages due to the  flaw in MD5 hash algorithm which is required to generate a unique hash value of  every different file.
+    The precaution needed to be taken is to use both MD5  and SHA1 for computation of MAC. Another attack discovered by Daniel  Bieichenbacher is used to attack the TLS Server using RSA. It takes the  advantage of failure in different ways to get clues about the right cipher text  for the plain text. It can be prevented by making the reply of the TLS Server  coerced and unpredictable. <br />
+    &nbsp;&nbsp;&nbsp;Timing  attacks could be launched on CBC padding based on the time required to compute  the MAC. Such attacks could be prevented by ensuring that processing time  remains same, and by carrying out random operations. Also it is important not  to generate alert messages on failure in computation of premaster encrypted  message. Instead the server uses a randomly generated premaster secret  continuing the handshake, thus hiding the exact errors. Rollback attacks which  were possible in previous versions of SSL, were the client could make use of  older premaster secrets in order to negotiate the connection. This is prevented  by adding the version number in the premaster secret along with the server and  the client random numbers generated during the hello phase of the handshake. There  are other attacks such as replay attacks which are similar to man in the middle  attacks, by replaying the old messages and could be prevented by adding  expiration time and filtering the old messages. </p>
+  <p><br />  
+  </p>
+  <h2 align="left">REFERENCES</h2>
+  <p>Internet Task Force, Request for Commons <a href="http://www.ietf.org/rfc/rfc2246.txt">2246</a> and <a href="http://www.ietf.org/rfc/rfc5246.txt">5246</a>, January  1999.<br /><a href="http://en.wikipedia.org/wiki/Secure_Sockets_Layer">Wikipedia</a>.</p>
+  <p><br />
+  </p>
+</blockquote>
+    </div>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,180 @@
+*{
+	/* Universal page reset */
+	margin:0;
+	padding:0;
+}
+
+#pagebox{
+	/* Setting default text color, background and a font stack */
+	font-size:1.225em;
+	color:#666;
+	/* background:url('img/pagebox/page_bg.jpg') repeat-x #383b3f; */
+	font-family:Arial, Helvetica, sans-serif;
+	/* The mainbox container div */
+	position:relative;
+	margin:auto;    /* margin:10px auto; */
+	width:610px;
+	background:url('img/pagebox/main_bg.jpg') repeat-x #aeadad;
+	border:1px solid #CCCCCC;
+	padding:25px 25px 60px;
+	
+	/* CSS3 rounded cornenrs */
+	
+	-moz-border-radius:12px;
+	-webkit-border-radius:12px;
+	border-radius:12px;
+}
+
+#pagebox #holder{
+	/* The unordered list that is to be split into pages */
+
+	width:600px;
+	overflow:hidden;
+	position:relative;
+	background:url('img/pagebox/dark_bg.jpg') repeat #565097;   /* Original Color: #4e5355; */
+	padding-bottom:10px;
+
+	/*	CSS3 inner shadow (the webkit one is commeted, because Google Chrome
+		does not like rounded corners combined with inset shadows): */
+
+	-moz-box-shadow:0 0 10px #191554 inset;                    /* Original Color: #222; */
+	/*-webkit-box-shadow:0 0 10px #222 inset;*/
+	box-shadow:0 0 10px #191554 inset;                         /* Original Color: #222; */
+}
+
+#pagebox .swControls{
+	position:absolute;
+	margin-top:10px;
+}
+
+#pagebox a.swShowPage{
+
+	/* The links that initiate the page slide */
+
+	background-color:#444444;
+	float:left;
+	height:15px;
+	margin:4px 3px;
+	text-indent:-9999px;
+	width:15px;
+	/*border:1px solid #ccc;*/
+	
+	/* CSS3 rounded corners */
+	
+	-moz-border-radius:7px;
+	-webkit-border-radius:7px;
+	border-radius:7px;
+}
+
+#pagebox a.swShowPage:hover,
+#pagebox a.swShowPage.active{
+	background-color:#2993dd;
+	
+	/*	CSS3 inner shadow */
+	
+	-moz-box-shadow:0 0 7px #1e435d inset;
+	/*-webkit-box-shadow:0 0 7px #1e435d inset;*/
+	box-shadow:0 0 7px #1e435d inset;
+}
+
+#pagebox #holder li{
+	background-color:#FCFCFC;
+	list-style:none outside none;
+	margin:10px 10px 0;
+	padding:20px;
+	float:left;
+
+	/* Regular CSS3 box shadows (not inset): */
+
+	-moz-box-shadow:0 0 6px #111111;
+	-webkit-box-shadow:0 0 6px #111111;
+	box-shadow:0 0 6px #111111;
+}
+
+#pagebox #holder,
+#pagebox #holder li{
+	/* Applying rouded corners to both the holder and the holder lis */
+	-moz-border-radius:8px;
+	-webkit-border-radius:8px;
+	border-radius:8px;
+}
+
+#pagebox .clear{
+	/* This class clears the floated elements */
+	clear:both;
+}
+
+
+/* The styles below are only necessary for the styling of the demo page */
+
+#pagebox h1{
+	background-color:#272B2C;
+	border-bottom:1px solid #000000;
+	color:#EEEEEE;
+	font-size:32px;
+	font-weight:normal;
+	margin-bottom:30px;
+	padding:30px 0;
+	text-align:center;
+	
+	-moz-box-shadow:0 1px 0 #444444;
+	-webkit-box-shadow:0 1px 0 #444444;
+	box-shadow:0 1px 0 #444444;
+}
+
+#pagebox h1,#pagebox h2{
+	font-family:"Myriad Pro",Arial,Helvetica,sans-serif;
+}
+
+#pagebox h2{
+	font-size:14px;
+	font-weight:normal;
+	text-align:center;
+	
+	position:absolute;
+	right:40px;
+	top:43px;
+}
+
+#pagebox h4 {
+	padding-bottom:5px;
+}
+
+#pagebox h4 a, #pagebox h4 a:visited{
+	cursor:pointer;
+    font:normal 12pt Arial;
+	font-weight: bold;
+	color:#666;
+	text-shadow: 0 0.5px 0 #ccc,
+	 0 1px 0 #c9c9c9,
+	 0 1.5px 0 #bbb,
+	 0 2px 0 #b9b9b9,
+	 0 2.5px 0 #aaa,
+	 0 3px 0.5px rgba(0,0,0,.1),
+	 0 0 2.5px rgba(0,0,0,.1),
+	 0 0.5px 1.5px rgba(0,0,0,.3),
+	 0 1.5px 2.5px rgba(0,0,0,.2),
+	 0 2.5px 5px rgba(0,0,0,.25),
+	 0 5px 5px rgba(0,0,0,.2),
+	 0 10px 10px rgba(0,0,0,.15);
+}
+
+#pagebox h4 a:hover{
+	text-decoration:none;
+	color:#FFFFFF;
+	/* text-shadow: 4px 4px 8px blue; */
+}
+
+#pagebox a, #pagebox a:visited {
+	color:#0196e3;
+	text-decoration:none;
+	outline:none;
+}
+
+#pagebox a:hover{
+	text-decoration:underline;
+}
+
+#pagebox a img{
+	border:none;
+}

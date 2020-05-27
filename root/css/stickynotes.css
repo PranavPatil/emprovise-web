@@ -1,0 +1,255 @@
+.stickynotes h1,
+.stickynotes h2,
+.stickynotes h3,
+.stickynotes p,
+.stickynotes quote,
+.stickynotes small,
+.stickynotes form,
+.stickynotes input,
+.stickynotes ul,
+.stickynotes li,
+.stickynotes ol,
+.stickynotes label{
+	/* Simple page reset */
+	margin:0;
+	padding:0;
+}
+
+.stickynotes body{
+	/* Setting default text color, background and a font stack */
+	color:#555555;
+	font-size:0.825em;
+	background: #fcfcfc;
+	font-family:Arial, Helvetica, sans-serif;
+}
+
+.stickynotes .note{
+	height:150px;
+	padding:10px;
+	width:150px;
+	position:absolute;
+	overflow:hidden;
+	cursor:move;
+	
+	font-family:Trebuchet MS,Tahoma,Myriad Pro,Arial,Verdana,sans-serif;
+	font-size:22px;
+	
+	/* Adding a CSS3 shadow below the note, in the browsers which support it: */
+	-moz-box-shadow:2px 2px 0 #DDDDDD;
+	-webkit-box-shadow:2px 2px 0 #DDDDDD;
+	box-shadow:2px 2px 0 #DDDDDD;
+}
+
+.stickynotes #fancy_ajax .note{	cursor:default; }
+
+/* Three styles for the notes: */
+
+.stickynotes .yellow{
+	background-color:#FDFB8C;
+	border:1px solid #DEDC65;	
+}
+
+.stickynotes .blue{
+	background-color:#A6E3FC;
+	border:1px solid #75C5E7;	
+}
+
+.stickynotes .green{
+	background-color:#A5F88B;
+	border:1px solid #98E775;	
+}
+
+/* Each note has a data span, which holds its ID */
+.stickynotes span.data{	display:none; }
+
+/* The "Add a note" button: */
+.stickynotes #addButton{
+	position:absolute;
+	top:-55px;
+	left:0;
+}
+
+/* Green button class: */
+.stickynotes a.green-button,
+.stickynotes a.green-button:visited{
+	color:black;
+	display:block;
+	font-size:10px;
+	font-weight:bold;
+	height:15px;
+	padding:3px 5px 7px;
+	text-align:center;
+	width:60px;
+	
+	text-shadow:1px 1px 1px #DDDDDD;
+	background:url(../img/stickynotes/main/button_green.png) no-repeat left top;
+}
+
+.stickynotes a.green-button:hover{
+	text-decoration:none;
+	background-position:left bottom;
+}
+
+.stickynotes .author{
+	/* The author name on the note: */
+	bottom:10px;
+	color:#666666;
+	font-family:Arial,Verdana,sans-serif;
+	font-size:12px;
+	position:absolute;
+	right:10px;
+}
+
+.stickynotes #main{
+	/* Contains all the notes and limits their movement: */
+	margin:0 auto;
+	position:relative;
+	width:980px;
+	height:500px;
+	z-index:10;
+	/* background:url(../img/stickynotes/main/add_a_note_help.gif) no-repeat left top; */
+}
+
+.stickynotes h3.popupTitle{
+	border-bottom:1px solid #DDDDDD;
+	color:#666666;
+	font-size:24px;
+	font-weight:normal;
+	padding:0 0 5px;
+}
+
+.stickynotes #noteData{
+	/* The input form in the pop-up: */
+	height:200px;
+	margin:30px 0 0 200px;
+	width:350px;
+}
+
+.stickynotes .note-form label{
+	display:block;
+	font-size:10px;
+	font-weight:bold;
+	letter-spacing:1px;
+	text-transform:uppercase;
+	padding-bottom:3px;
+}
+
+.stickynotes .note-form textarea, .stickynotes .note-form input[type=text]{
+	background-color:#FCFCFC;
+	border:1px solid #AAAAAA;
+	font-family:Arial,Verdana,sans-serif;
+	font-size:16px;
+	height:60px;
+	padding:5px;
+	width:300px;
+	margin-bottom:10px;
+}
+
+.stickynotes .note-form input[type=text]{	height:auto; }
+
+.stickynotes .color{
+	/* The color swatches in the form: */
+	cursor:pointer;
+	float:left;
+	height:10px;
+	margin:0 5px 0 0;
+	width:10px;
+}
+
+.stickynotes #note-submit{	margin:20px auto; }
+
+/* The styles below are only necessary for the demo page */
+
+.stickynotes h1{
+	/* background:#f0f0f0; */
+	background:none;
+	border-bottom:1px solid #eaeaea;
+	font-size:1.5em;
+	font-weight:normal;
+	margin-bottom:15px;
+	padding:15px;
+	text-align:center;
+}
+
+.stickynotes h2 {
+	font-size:0.9em;
+	font-weight:normal;
+	padding-right:40px;
+	position:relative;
+	right:0;
+	text-align:right;
+	text-transform:uppercase;
+	top:-48px;
+}
+
+.stickynotes a, .stickynotes a:visited {
+	color:#0196e3;
+	text-decoration:none;
+	outline:none;
+}
+
+.stickynotes a:hover{
+	text-decoration:underline;
+}
+
+.stickynotes p.tutInfo{
+	/* The tutorial info on the bottom of the page */
+	padding:10px 0;
+	text-align:center;
+	position:fixed;
+	bottom:0px;
+	background:#f0f0f0;
+	border-top:1px solid #eaeaea;
+	width:100%;
+	z-index:15;
+}
+
+.stickynotes h1,h2,p.tutInfo{
+	font-family:"Myriad Pro",Arial,Helvetica,sans-serif;
+}
+
+
+/* Tags
+*******************************************************************************/
+.stickynotes .tags {
+	line-height: 20px;
+	bottom:10px;
+	position:absolute;
+	right:10px;
+}
+.stickynotes .tag {
+  background: #3b88d8;
+  background: -moz-linear-gradient(0% 100% 90deg, #377ad0, #52a8e8);
+  background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#52a8e8), to(#377ad0));
+  border-top: 1px solid #4081af;
+  border-right: 1px solid #2e69a3;
+  border-bottom: 1px solid #20559a;
+  border-left: 1px solid #2e69a3;
+  -moz-border-radius: 16px;
+  -webkit-border-radius: 16px;
+  border-radius: 16px;
+  -moz-box-shadow: inset 0 1px 0 0 #72b9eb, 0 1px 2px 0 #b3b3b3;
+  -webkit-box-shadow: inset 0 1px 0 0 #72b9eb, 0 1px 2px 0 #b3b3b3;
+  color: #fff;
+  font-family: "lucida grande", sans-serif;
+  font-size: 11px;
+  font-weight: normal;
+  padding: 2px 5px;
+  margin-right: 2px;
+  margin-top: 10px;
+  text-align: center;
+  text-shadow: 0 -1px 1px #3275bc;
+  width: 112px;
+  -webkit-background-clip: padding-box;
+}
+
+
+.date{
+	margin: 2px;
+	margin-bottom: 4px;
+	color:#666666;
+	font-family:Arial,Verdana,sans-serif;
+	font-size:12px;
+}
+
+
