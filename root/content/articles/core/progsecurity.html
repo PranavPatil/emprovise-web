@@ -158,9 +158,9 @@
 
   <p>Consider the Memory Structure:</p>
 
-  <p><img src="/content/articles/core/images/progsecurity_files/citi-security-manual-9.png" width="440" height="313" alt="[image]"></p>
+  <p><img src="/content/articles/core/images/progsecurity_files/security-manual-9.png" width="440" height="313" alt="[image]"></p>
 
-  <p><img src="/content/articles/core/images/progsecurity_files/citi-security-manual-1.jpg" width="376" height="432" alt="[image]"></p>
+  <p><img src="/content/articles/core/images/progsecurity_files/security-manual-1.jpg" width="376" height="432" alt="[image]"></p>
 
   <p>The main cause for all Buffer overflows is the failure to validate the length of user-supplied input.</p>
 
@@ -198,9 +198,9 @@
 
   <p>When a function must be interrupted, the following actions are carried out in order:</p>
 
-  <p><img src="/content/articles/core/images/progsecurity_files/citi-security-manual-8.png" width="473" height="282" alt="[image]"></p>
+  <p><img src="/content/articles/core/images/progsecurity_files/security-manual-8.png" width="473" height="282" alt="[image]"></p>
 
-  <p><img src="/content/articles/core/images/progsecurity_files/citi-security-manual-2.jpg" width="265" height="222" alt="[image]"></p>
+  <p><img src="/content/articles/core/images/progsecurity_files/security-manual-2.jpg" width="265" height="222" alt="[image]"></p>
 
   <p>To prevent Buffer overflows, first step is to avoid using dangerous C functions such as follows:</p>
 
@@ -232,7 +232,7 @@
     </li>
   </ul>
 
-  <p><img src="/content/articles/core/images/progsecurity_files/citi-security-manual-3.jpg" width="620" height="220" alt="[image]"></p>
+  <p><img src="/content/articles/core/images/progsecurity_files/security-manual-3.jpg" width="620" height="220" alt="[image]"></p>
 
   <p>The Internet-facing Web cache receives these requests and forwards them along to the web server.</p>
 
@@ -248,15 +248,15 @@
     </li>
   </ul>
 
-  <p><img src="/content/articles/core/images/progsecurity_files/citi-security-manual-4.jpg" width="620" height="220" alt="[image]"></p>
+  <p><img src="/content/articles/core/images/progsecurity_files/security-manual-4.jpg" width="620" height="220" alt="[image]"></p>
 
-  <p><img src="/content/articles/core/images/progsecurity_files/citi-security-manual-5.jpg" width="620" height="168" alt="[image]"></p>
+  <p><img src="/content/articles/core/images/progsecurity_files/security-manual-5.jpg" width="620" height="168" alt="[image]"></p>
 
   <p>Response B will be ignored because it does not correspond to a known request.</p>
 
   <p>The attacker hence has successfully caused the Web caching device to improperly match the request/response pairs. Any user who subsequently requests the same content as request B (i.e., index.html) will be served with the “poisoned” cached result.</p>
 
-  <p><img src="/content/articles/core/images/progsecurity_files/citi-security-manual-6.jpg" width="620" height="283" alt="[image]"></p>
+  <p><img src="/content/articles/core/images/progsecurity_files/security-manual-6.jpg" width="620" height="283" alt="[image]"></p>
 
   <p>The most restrictive input validation method possible should be used to avoid accepting unnecessary characters. Validation must be performed on any data that will be embedded into HTTP in case of:</p>
 
@@ -400,7 +400,7 @@
 
   <p><strong>Cookie:</strong> <strong><span style="color:#FF0000;">PRIV=5;</span></strong> <strong>SESSIONID=2KDSU72H9GSA289</strong></p>
 
-  <p><img src="/content/articles/core/images/progsecurity_files/citi-security-manual-7.jpg" width="625" height="266" alt="[image]"></p>
+  <p><img src="/content/articles/core/images/progsecurity_files/security-manual-7.jpg" width="625" height="266" alt="[image]"></p>
 
   <h2 align="left">Forceful Browsing:</h2>
 
@@ -420,11 +420,11 @@
     </li>
 
     <li style="font-size:11pt;margin-left:36pt;">
-      <p class="List_Paragraph">Company + Report Name (Citigroup-expense-report.pdf etc.)</p>
+      <p class="List_Paragraph">Company + Report Name (Expense-report.pdf etc.)</p>
     </li>
   </ul>
 
-  <p>With incremental temporary filename the attacker can simply predict the next files/reports present in the Web folder and try to access them. Also with the account number and social security the attacker can search for known SSN and account numbers or use trial and error to find matching reports which may be present. Also from proper report names helps the attacker to guess other probable report names such as from Citigroup-expense-report.pdf he can try Citigroup-accounts-report.pdf etc.</p>
+  <p>With incremental temporary filename the attacker can simply predict the next files/reports present in the Web folder and try to access them. Also with the account number and social security the attacker can search for known SSN and account numbers or use trial and error to find matching reports which may be present. Also from proper report names helps the attacker to guess other probable report names such as from Expense-report.pdf he can try Accounts-report.pdf etc.</p>
 
   <p>Assuming the remote computer is a Unix-like computer, the user list will be located in the /etc/passwd file. Also, since “/” is not a valid URL character, %2F will be translated back to “/” but will be sent as %2F on the URL. The following URL is formatted in a way as to fool the application into looking at the “passwd” file instead of the file requested:</p>
 
@@ -622,7 +622,7 @@
 
   <p>&nbsp;</p>
 
-  <h2 align="left">Debug Code:</h2>  
+  <h2 align="left">Debug Code:</h2>
 
   <p>“Debug code” is actually just additional symbols and references, such as line numbers and names of functions, objects, and variables. When a problem is detected or the program is interrupted while executing, the debugger will use the references stored in the class file to show the programmer where the problem is</p>
 
@@ -649,7 +649,7 @@
 
   <p>&nbsp;</p>
 
-  <h2 align="left">Cross-Frame Scripting:</h2>  
+  <h2 align="left">Cross-Frame Scripting:</h2>
 
   <p>Cross-Frame Scripting is a form of attack that takes place between frames on a multi-frame web page. Each frame is actually a unique HTML document that works independently of one another and each can have their own URL. In order to connect the events of the frames, it is possible to associate events in one frame to report to event handlers in a different frame.</p>
 
