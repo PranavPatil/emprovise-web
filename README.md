@@ -5,26 +5,79 @@ Emprovise was a showcase website created using HTML5, JQuery and PHP in 2012. It
 ## Emprovise Home
 
 
-   ![Emprovise Home Page](images/home.png)
-
-## Emprovise Video
+   ![Emprovise Home Page](images/home1.png)
 
 
-   ![Emprovise Video](images/video.png)
+   ![Emprovise Home Page](images/home2.png)
+
+## Emprovise Projects
+
+
+   ![Emprovise Projects](images/projects1.png)
+
+
+   ![Emprovise Projects](images/projects2.png)
+
+
+   ![Emprovise Source View](images/sourceview.png)
 
 ## Emprovise Articles
 
 
    ![Emprovise Articles](images/articles.png)
 
+
+   ![Emprovise Article View](images/articlesview.png)
+
+## Emprovise Presentations
+
+
+   ![Emprovise Presentations](images/presentations.png)
+
+
+   ![Emprovise Presentation View](images/presentationview1.png)
+
+
+   ![Emprovise Presentation View](images/presentationview2.png)
+
+## Emprovise Link Search
+
+
+   ![Emprovise Link Search](images/linksearch.png)
+
+## Emprovise E-Notes
+
+
+   ![Emprovise E-Notes](images/enotes.png)
+
+## Emprovise Music
+
+
+   ![Emprovise Video](images/music.png)
+
+## Emprovise Video
+
+
+   ![Emprovise Video](images/video.png)
+
+## Emprovise About Me
+
+
+   ![Emprovise About Me](images/aboutme.png)
+
 ## Emprovise Contact
 
 
-   ![Emprovise Contact](images/contact.png)
+   ![Emprovise Contact](images/contactus.png)
+
+## Emprovise Search
+
+
+   ![Emprovise Search](images/search.png)
 
 ## Requirements
 
-* PHP
+* PHP 4.3.1 (or subsequent versions until 5.5.0)
 * MySQL
 * JQuery
 
