@@ -81,11 +81,62 @@ Emprovise was a showcase website created using HTML5, JQuery and PHP in 2012. It
 * MySQL
 * JQuery
 
+### Installation and Running of MySQL Server
+
+* Download latest [MySQL Installer](https://dev.mysql.com/downloads/installer/) and follow windows installation steps.
+* Alternatively, can download [Latest MySQL Community Server](https://dev.mysql.com/downloads/mysql/) or [MySQL Archive Release](https://downloads.mysql.com/archives/community/) and extract the zip file. MYSQL_HOME is the path to the unzipped MySQL **mysql** directory. Set MYSQL_HOME as an environment (system) variable.
+* Create a **my.cnf** file in MYSQL_HOME directory and add below contents. Create **data** and **temp** directories in MYSQL_HOME.
+
+        [client]
+        port=3306
+        socket=%MYSQL_HOME%\\temp\\mysql.sock
+
+        [mysqld]
+        port=3306
+
+        # set basedir to your installation path
+        basedir=%MYSQL_HOME%
+
+        # set datadir to the location of your data directory
+        datadir=%MYSQL_HOME%\\data
+
+        socket=%MYSQL_HOME%\\temp\\mysql.sock
+        key_buffer_size=16M
+        max_allowed_packet=128M
+
+        [mysqldump]
+        quick
+
+* Initialize MySQL using the below initialize option in mysqld command. Then start the mysqld server.
+
+        $ cd /d %MYSQL_HOME%
+        $ bin\mysqld --console --initialize
+        $ bin\mysqld --console
+
+* To run MySQL on Windows as a service execute the commands in [Starting MySQL as a Windows Service](https://dev.mysql.com/doc/refman/8.0/en/windows-start-service.html).
+* To update root password follow the below commands. The current root password can be found from the output of the previous **mysqld --console --initialize** command, from the line **[Server] A temporary password is generated for root@localhost: xxxxxxxx**.
+
+        $ .\bin\mysql -u root -p xxxxxxxx
+
+        mysql> FLUSH PRIVILEGES;
+        mysql> ALTER USER 'root'@'localhost' IDENTIFIED BY 'new_password';
+
+* Create a new database named **emprovis_root**. Then create a new user **emprovis_user** with password **user123** and grant the permissions to **emprovis_root** database using below **mysql** commands. The database credentials are stored in files `root/lib/db/connect.php` and `root/admin/sphider/settings/database.php` of the application. The FLUSH PRIVILEGES allows to save the changes and reload updated privileges.
+
+
+        $ bin\mysqld --console
+
+        mysql> CREATE DATABASE emprovis_root;
+        mysql> CREATE USER 'emprovis_user'@'localhost' IDENTIFIED BY 'user123';
+        mysql> GRANT ALL PRIVILEGES ON emprovis_root.* TO 'emprovis_user'@'localhost';
+        mysql> FLUSH PRIVILEGES;
+
+* MySQL runs on default port 3306 which can be changed using **my.cnf** configuration file.
+* Create all the required tables from sql scripts located in `root/lib/db/table.sql` and `root/admin/sphider/sql/tables.sql`. The db scripts for sphider is used to enable search functionality.
+
 ## Setup and Configuring Apache Http Server for Windows
 
-Use the Microsoft Windows Installer version of Apache. Visit the Apache Web Site at www.apache.org. Follow the links to the download page. The current MSI file is `apache_2.0.49-win32-x86-no_ssl.msi`. If you intend to continue to use IIS, as I do, you will need to stop IIS before proceeding with the installation. After stopping IIS, locate the msi file and double-click on it. Since you are only using a development server, you can just insert dummy data at every occasion that Apache asks.
-
-It is recommended to accept the All Users, Port 80 option. If we want to use another port, we can set this up later, in the configuration file.
+Download Apache HTTP Server Windows binary with version [apache_2.0.49-win32-x86-no_ssl.msi](https://archive.apache.org/dist/httpd/binaries/win32/). We can also use IIS for HTTP Server. It is recommended to accept the All Users, Port 80 option. If we want to use another port, we can set this up later, in the configuration file.
 Finally, you are asked to click install. You can now find Apache, as a Windows service, in the Control Panel, under **Administrative Tools > Services**.
 Configuring Apache will be analogous, whatever platform you are on. These instructions will be for a Windows environment. The only changes you will need will be to account for the different way file paths are described on Linux, Mac and Windows. On all platforms, Apache is configured by a file called httpd.conf. Open this file up in a text editor. (I often need multiple text files, so I use NoteTab in preference to NotePad. NoteTab is free, and is available from www.notetab.com. On Linux (I’m using Mandrake 9.1); I use Quanta, which also permits multiple files open.).
 
@@ -132,7 +183,7 @@ As usual, after any changes, save **httpd.conf**, and restart Apache.
 Download the whole PHP zipped package instead of using the Windows Installer. PHP is obtained from www.php.net, where you will find detailed instructions on installation, which is not difficult.
 
 * Stop Apache
-* Download zip file **Php-4.3.1-Win32.zip**, rather than win installer.
+* [Download](https://museum.php.net/win32/) zip file **Php-4.3.1-Win32.zip**, rather than win installer.
 * Extract contents to **C:\php**
 * Copy **php.ini-dist** to your Windows directory – Windows in XP, WINNT in 2000. Rename it as php.ini
 * Copy **php4ts.dll** from C:\php to C:\Windows\System32
@@ -160,3 +211,5 @@ The next job is to test that php is working. Create a file in a text editor, or 
       ?>
 
 Save the file into the root of the Apache web server, as phpinfo.php. Call the file up in your browser, e.g. as http://localhost:8080/phpinfo.php When you do this, you should see a page of information about PHP. This will show that your installation is working. If you do not get such a page, check all the steps above very carefully.
+
+Follow the instructions in [Sphider Readme](root/admin/sphider/README.md) to enable search feature.
